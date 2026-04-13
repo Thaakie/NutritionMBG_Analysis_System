@@ -1,0 +1,118 @@
+AI ENGINE CONCEPTS
+
+Struktur utama:
+- app.py
+- optimizer.py
+- akg_profiles.py
+
+1. Flask sebagai service layer
+Flask dipakai untuk expose endpoint AI:
+- /health
+- /akg-profiles
+- /optimize
+
+Konsep:
+- microservice
+- domain service
+- JSON API in Python
+
+2. Validation di layer AI
+Walaupun backend sudah validasi, AI engine tetap validasi ulang.
+
+Konsep:
+- trust but verify
+- boundary protection
+- defense in depth
+
+3. AKG profile
+File akg_profiles.py menyimpan referensi kebutuhan gizi per kelompok usia.
+
+Konsep:
+- reference data
+- domain modeling
+- meal target derived from daily target
+
+Di project ini, target porsi MBG dihitung dari persentase kebutuhan harian.
+
+4. Nutrition evaluation
+optimizer.py menghitung:
+- total kalori
+- total protein
+- total lemak
+- total karbohidrat
+- total biaya
+
+Konsep:
+- aggregation
+- nutrition scoring
+- domain calculation
+
+5. AKG percentage
+Setelah total gizi didapat, sistem membandingkannya dengan target AKG.
+
+Konsep:
+- ratio / percentage evaluation
+- benchmark comparison
+- decision support metric
+
+6. Feasibility classification
+Sistem mengklasifikasikan hasil menjadi:
+- Layak
+- Perlu optimasi
+- Tidak layak
+
+Konsep:
+- rule-based decision system
+- threshold logic
+- business rule evaluation
+
+7. Linear programming
+Optimasi menu memakai PuLP dengan variable biner.
+Setiap makanan bisa:
+- dipilih (1)
+- tidak dipilih (0)
+
+Konsep:
+- decision variable
+- objective function
+- constraint
+- optimization solver
+
+8. Constraint dalam optimasi
+Constraint yang dipakai:
+- total biaya <= budget
+- total kalori >= minimum_calories
+- total protein >= minimum_protein
+
+Konsep:
+- feasible solution
+- constrained optimization
+- optimization under budget
+
+9. Objective function
+Sistem memaksimalkan skor nutrisi berbobot.
+Score ini mempertimbangkan:
+- protein
+- kalori
+- lemak
+- karbohidrat
+- penalti kecil untuk biaya
+
+Konsep:
+- weighted scoring
+- approximation of multi-objective optimization
+
+10. Ranking alternatives
+AI engine tidak hanya memberi 1 menu.
+Ia menghasilkan beberapa alternatif, lalu mengurutkannya.
+
+Konsep:
+- top-k optimization
+- exclusion constraint
+- recommendation ranking
+
+11. Kenapa AI engine dipisah?
+Karena logika evaluasi dan optimasi biasanya:
+- lebih kompleks
+- lebih mudah dikembangkan di Python
+- cocok dipakai ulang oleh service lain

@@ -1,0 +1,39 @@
+.recommendation-list,
+.ranking-list {
+  display: grid;
+  gap: 16px;
+}
+
+.ranking-list {
+  margin-top: 18px;
+  gap: 12px;
+}
+
+.food-card,
+.ranking-card {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--card-bg);
+  padding: 18px;
+  text-align: left;
+}
+
+.food-card h3 {
+  margin: 0 0 10px;
+}
+
+.food-card p {
+  margin-top: 6px;
+}
+
+.ranking-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.ranking-header span {
+  color: var(--accent);
+  font-weight: 700;
+}

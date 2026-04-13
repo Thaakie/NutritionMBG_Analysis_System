@@ -1,0 +1,37 @@
+NUTRISAFETY AI - SYSTEM OVERVIEW
+
+1. Tujuan sistem
+Project ini dibuat untuk mengevaluasi menu MBG dan mencari kombinasi menu terbaik
+berdasarkan gizi, biaya, dan target AKG.
+
+2. Arsitektur utama
+Sistem dibagi menjadi 3 layer:
+- Frontend React
+- Backend Express
+- AI Engine Flask + PuLP
+
+3. Alur data
+User input di React
+-> dikirim ke Express API
+-> divalidasi
+-> diteruskan ke Flask AI Engine
+-> dihitung total gizi, AKG, biaya, dan optimasi
+-> hasil dikirim kembali ke frontend
+
+4. Konsep besar yang dipakai
+- Component-based UI
+- State management dengan React hooks
+- REST API
+- Request validation
+- Separation of concerns
+- Nutrition evaluation
+- AKG-based rule evaluation
+- Linear programming / knapsack-style optimization
+- Ranked recommendation output
+
+5. Kenapa dipisah 3 layer?
+- Frontend fokus ke tampilan dan interaksi user
+- Backend fokus ke API gateway dan validasi
+- AI Engine fokus ke logika domain dan optimasi
+
+Dengan pemisahan ini, setiap layer lebih mudah dikembangkan, dites, dan diubah.

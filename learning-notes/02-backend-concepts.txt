@@ -1,0 +1,80 @@
+BACKEND CONCEPTS
+
+Struktur utama:
+- server.js
+
+1. Backend sebagai API gateway
+Backend Express tidak menyimpan logika optimasi.
+Ia berfungsi sebagai penghubung antara frontend dan AI engine.
+
+Konsep:
+- gateway pattern
+- service separation
+- middleware-based API
+
+2. REST endpoint
+Endpoint utama:
+- GET /api/health
+- GET /api/akg-profiles
+- POST /api/optimize
+
+Konsep:
+- REST API
+- request-response cycle
+- endpoint design
+
+3. Middleware
+Express memakai:
+- cors()
+- express.json()
+
+Penjelasan:
+- cors() mengizinkan frontend beda port mengakses backend
+- express.json() mengubah request body JSON menjadi object JavaScript
+
+4. Validation
+Sebelum request diteruskan ke AI engine, backend memeriksa:
+- field wajib ada atau tidak
+- tipe data valid atau tidak
+- angka bernilai non-negatif atau tidak
+- age_group didukung atau tidak
+
+Konsep:
+- input validation
+- defensive programming
+- fail fast
+
+5. Error handling
+Backend menangani 2 jenis error:
+- validation error dari sisi backend
+- service error saat AI engine gagal dihubungi
+
+Konsep:
+- graceful degradation
+- HTTP status code
+- consistent error response
+
+6. Axios untuk komunikasi antar service
+Backend menggunakan axios untuk request ke Flask.
+
+Konsep:
+- service-to-service communication
+- internal API call
+- timeout control
+
+7. Environment-based configuration
+Backend memakai:
+- PORT
+- AI_ENGINE_URL
+
+Konsep:
+- configurability
+- portability
+- easier local testing
+
+8. Separation of concerns
+Node backend sengaja tidak memindahkan logika Python ke JavaScript.
+Ini bagus karena:
+- logika AI tetap terisolasi
+- backend tetap ringan
+- teknologi bisa berkembang sendiri-sendiri

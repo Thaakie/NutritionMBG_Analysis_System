@@ -1,0 +1,112 @@
+FRONTEND CONCEPTS
+
+Struktur utama:
+- App.jsx
+- components/
+- data/
+- utils/
+
+1. App.jsx sebagai orchestrator
+App.jsx berfungsi sebagai parent component.
+Tugasnya:
+- menyimpan state utama
+- mengatur komunikasi antar komponen
+- memanggil API backend
+- menyusun tampilan dashboard
+
+Konsep yang dipakai:
+- useState
+- useMemo
+- lifted state
+- prop drilling sederhana
+
+2. Component-based architecture
+Komponen dipisah berdasarkan tanggung jawab:
+- HeroPanel: ringkasan utama
+- DatasetPanel: pilih dataset contoh
+- ControlsPanel: aturan budget, usia, target minimal
+- MenuInputPanel: input bahan makanan
+- ResultsPanel: hasil rekomendasi dan ranking
+- SummaryPanel: ringkasan AKG, biaya, payload
+
+Konsep:
+- single responsibility
+- reusable UI block
+- parent-child communication via props
+
+3. State management
+State yang dipakai di frontend:
+- foods
+- constraints
+- result
+- error
+- isSubmitting
+
+Konsep:
+- source of truth
+- derived state dihitung dengan useMemo
+- controlled input
+
+4. Controlled form
+Input form di React dibuat controlled.
+Artinya nilai input selalu mengikuti state React.
+
+Keuntungan:
+- mudah divalidasi
+- mudah di-reset
+- mudah dipakai untuk payload API
+
+5. Derived calculation
+Frontend tidak hanya menampilkan data mentah.
+Ia juga menghitung:
+- total kalori
+- total protein
+- total lemak
+- total karbohidrat
+- total biaya
+- persentase AKG
+- status kelayakan saat ini
+
+Konsep:
+- pure function
+- local evaluation
+- immediate feedback ke user
+
+6. Data module
+Folder data dipakai untuk:
+- sampleDatasets.js
+- akgProfiles.js
+
+Tujuannya:
+- memisahkan data statis dari komponen
+- mempermudah maintenance
+- mempermudah scaling jika nanti data diambil dari API/database
+
+7. Utility module
+Folder utils dipakai untuk:
+- formatting angka
+- helper perhitungan nutrisi
+
+Konsep:
+- utility function
+- code reuse
+- business logic kecil dipindah keluar dari komponen
+
+8. Fetch API
+Frontend memakai fetch untuk POST ke backend.
+
+Konsep:
+- asynchronous programming
+- promise
+- request/response JSON
+- error handling
+
+9. Dashboard thinking
+Frontend bukan hanya form.
+Ia dibuat seperti dashboard yang memberi:
+- input
+- evaluasi cepat
+- hasil rekomendasi
+- ringkasan keputusan
+
+Ini penting untuk aplikasi decision support system.

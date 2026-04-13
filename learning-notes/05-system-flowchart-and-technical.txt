@@ -1,0 +1,207 @@
+NUTRISAFETY AI - FLOWCHART DAN PENJELASAN TEKNIS
+
+1. Gambaran singkat
+File ini menjelaskan alur kerja sistem, algoritma "AI" yang dipakai, dan cara kerja
+teknis antar layer pada project NutriSafety.
+
+2. Flow utama sistem
+Alur sistem secara sederhana:
+
+User input data menu di frontend
+-> frontend menghitung preview total gizi dan AKG
+-> frontend membentuk payload JSON
+-> request dikirim ke backend Express
+-> backend memvalidasi data
+-> backend meneruskan request ke AI Engine Flask
+-> AI Engine memvalidasi ulang data
+-> AI Engine mengambil profil AKG sesuai kelompok usia
+-> optimizer membentuk model optimasi
+-> solver mencari kombinasi menu terbaik
+-> hasil dihitung ulang: total gizi, AKG, biaya, status
+-> hasil dikirim ke backend
+-> backend mengirim hasil ke frontend
+-> frontend menampilkan rekomendasi menu
+
+3. Flowchart versi teks
+[Mulai]
+  |
+  v
+[User memasukkan makanan, harga, kandungan gizi, usia, budget]
+  |
+  v
+[Frontend React hitung preview total gizi dan AKG]
+  |
+  v
+[Frontend kirim POST /api/optimize ke backend]
+  |
+  v
+[Backend Express validasi payload]
+  |
+  +-> jika tidak valid -> [Return error]
+  |
+  v
+[Backend forward request ke AI Engine Flask]
+  |
+  v
+[AI Engine validasi ulang]
+  |
+  +-> jika tidak valid -> [Return error]
+  |
+  v
+[Ambil profil AKG berdasarkan age group]
+  |
+  v
+[Bentuk model optimasi biner]
+  |
+  v
+[Terapkan objective function dan constraints]
+  |
+  v
+[Solve dengan PuLP + CBC solver]
+  |
+  +-> jika infeasible -> [Tidak ada kombinasi yang memenuhi syarat]
+  |
+  v
+[Ambil solusi terbaik dan alternatif]
+  |
+  v
+[Hitung total gizi, persen AKG, biaya, dan feasibility]
+  |
+  v
+[Kirim hasil ke frontend]
+  |
+  v
+[Selesai]
+
+4. "AI" yang dipakai sebenarnya apa?
+Project ini tidak memakai machine learning, deep learning, atau model generatif.
+Pendekatan yang dipakai adalah optimasi matematis.
+
+Algoritma utamanya:
+- Binary Linear Programming / Integer Linear Programming
+- Library Python: PuLP
+- Solver: CBC
+
+Artinya, sistem memilih kombinasi makanan terbaik berdasarkan aturan matematika
+dan batasan tertentu, bukan belajar dari data training.
+
+5. Cara kerja algoritma optimasi
+Setiap makanan direpresentasikan sebagai variabel biner:
+- 1 = makanan dipilih
+- 0 = makanan tidak dipilih
+
+Sistem lalu mencari kombinasi makanan yang:
+- memenuhi batas biaya
+- memenuhi minimum kalori
+- memenuhi minimum protein
+- memberi skor gizi terbaik
+
+6. Objective function
+Optimizer memaksimalkan nutrition score.
+
+Rumus score yang dipakai:
+score =
+(protein * 5)
++ (calories * 0.03)
++ (fat * 0.7)
++ (carbs * 0.04)
+- (price * 0.001)
+
+Maknanya:
+- protein diberi bobot paling tinggi
+- kalori, lemak, dan karbohidrat tetap dihitung
+- harga menjadi pengurang kecil agar solusi tetap efisien secara biaya
+
+7. Constraint yang dipakai
+Model optimasi memiliki batasan:
+- total biaya <= budget
+- total kalori >= minimum_calories
+- total protein >= minimum_protein
+
+Jadi, tidak semua kombinasi makanan boleh dipilih.
+Hanya kombinasi yang lolos constraint yang bisa jadi solusi.
+
+8. Kenapa hasilnya bisa sampai 3 alternatif?
+Sistem tidak berhenti di satu solusi.
+Setelah solusi pertama ditemukan, kombinasi itu dimasukkan ke daftar exclude.
+Lalu solver dijalankan lagi untuk mencari kombinasi lain yang berbeda.
+
+Dengan cara ini, sistem bisa memberi:
+- alternatif rank 1
+- alternatif rank 2
+- alternatif rank 3
+
+Setelah itu alternatif diurutkan berdasarkan:
+- status kelayakan
+- nutrition score
+- total biaya
+
+9. Penentuan status kelayakan
+Hasil menu diklasifikasikan menjadi:
+
+- Layak
+  Budget aman, kalori >= 100 persen target makan, protein >= 100 persen,
+  dan lemak serta karbohidrat >= 80 persen.
+
+- Perlu optimasi
+  Budget aman, tetapi target kalori atau protein belum benar-benar optimal.
+
+- Tidak layak
+  Kombinasi tidak memenuhi kriteria minimum.
+
+10. AKG dipakai bagaimana?
+Sistem punya profil AKG untuk beberapa kelompok usia:
+- 7-9 tahun
+- 10-12 tahun
+- 13-15 tahun
+- 16-18 tahun
+
+Target makan dihitung sebagai 30 persen dari kebutuhan harian.
+Jadi sistem mengevaluasi menu per porsi makan, bukan kebutuhan harian penuh.
+
+11. Peran tiap layer
+Frontend React:
+- tempat user input data
+- menampilkan dataset contoh
+- menghitung preview total gizi dan AKG
+- mengirim payload ke backend
+- menampilkan hasil optimasi
+
+Backend Express:
+- menerima request dari frontend
+- memvalidasi payload
+- menjadi API gateway ke AI Engine
+- mengembalikan response hasil optimasi
+
+AI Engine Flask:
+- memvalidasi ulang request
+- mengambil profil AKG
+- menjalankan optimizer PuLP
+- menghitung hasil akhir dan ranked alternatives
+
+12. Struktur teknis sistem
+Arsitektur project:
+- Frontend: React + Vite
+- Backend: Node.js + Express + Axios + CORS
+- AI Engine: Python + Flask + PuLP
+
+Pemisahan ini penting karena:
+- UI tidak bercampur dengan logika API
+- validasi request tidak bercampur dengan logika optimasi
+- engine optimasi bisa dikembangkan terpisah dari frontend
+
+13. File penting untuk dipelajari
+- frontend/src/App.jsx
+- frontend/src/utils/nutrition.js
+- backend/server.js
+- ai-engine/app.py
+- ai-engine/akg_profiles.py
+- ai-engine/optimizer.py
+
+14. Kesimpulan
+NutriSafety adalah sistem rekomendasi menu berbasis optimasi matematis.
+Sistem ini memilih kombinasi makanan yang paling baik berdasarkan gizi dan biaya,
+dengan referensi target AKG per kelompok usia.
+
+Jadi, "AI" di project ini lebih tepat disebut:
+AI optimization engine, bukan AI machine learning.

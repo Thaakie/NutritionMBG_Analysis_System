@@ -1,0 +1,41 @@
+FILE MAP UNTUK BELAJAR
+
+Kalau ingin belajar pelan-pelan, urutan bacanya saya sarankan:
+
+1. Frontend flow
+- frontend/src/App.jsx
+- frontend/src/components/ControlsPanel.jsx
+- frontend/src/components/MenuInputPanel.jsx
+- frontend/src/components/ResultsPanel.jsx
+- frontend/src/utils/nutrition.js
+
+2. Backend flow
+- backend/server.js
+
+3. AI flow
+- ai-engine/app.py
+- ai-engine/akg_profiles.py
+- ai-engine/optimizer.py
+
+4. Data references
+- frontend/src/data/sampleDatasets.js
+- frontend/src/data/akgProfiles.js
+
+5. Apa yang perlu dipahami dulu?
+- React state dan props
+- REST API dasar
+- Validasi input
+- JSON payload
+- Linear programming dasar
+- Business rule / threshold logic
+
+6. Cara membaca project ini
+Mulai dari pertanyaan:
+"Data masuk dari mana?"
+Jawab:
+MenuInputPanel -> App.jsx -> backend/server.js -> ai-engine/app.py -> optimizer.py
+
+Lalu lanjut ke:
+"Keputusan dibuat di mana?"
+Jawab:
+Di optimizer.py dan helper evaluasi nutrisi / AKG
