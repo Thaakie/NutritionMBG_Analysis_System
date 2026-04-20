@@ -18,13 +18,20 @@ function ControlsPanel({
     <div className="panel controls-panel">
       <div className="panel-heading">
         <h2>Optimization Controls</h2>
-        <p>Atur target menu, kelompok usia siswa, dan batas biaya per porsi sebelum optimasi.</p>
+        <p>
+          Atur target menu, kelompok usia siswa, dan batas biaya per porsi
+          sebelum optimasi.
+        </p>
       </div>
 
       <div className="input-grid">
         <label>
           <span>Kelompok usia</span>
-          <select name="ageGroup" value={constraints.ageGroup} onChange={onConstraintChange}>
+          <select
+            name="ageGroup"
+            value={constraints.ageGroup}
+            onChange={onConstraintChange}
+          >
             {Object.entries(akgProfiles).map(([value, profile]) => (
               <option key={value} value={value}>
                 {profile.label}
@@ -34,7 +41,13 @@ function ControlsPanel({
         </label>
         <label>
           <span>Budget (Rp)</span>
-          <input min="0" name="budget" type="number" value={constraints.budget} onChange={onConstraintChange} />
+          <input
+            min="0"
+            name="budget"
+            type="number"
+            value={constraints.budget}
+            onChange={onConstraintChange}
+          />
         </label>
         <label>
           <span>Minimum calories</span>
@@ -60,8 +73,10 @@ function ControlsPanel({
 
       <div className="reference-note">
         <p>
-          Target referensi per porsi MBG: {formatNumber(mealTarget.calories)} kcal, {formatNumber(mealTarget.protein)} g
-          protein, {formatNumber(mealTarget.fat)} g lemak, {formatNumber(mealTarget.carbs)} g karbohidrat.
+          Target referensi per porsi MBG: {formatNumber(mealTarget.calories)}{" "}
+          kcal, {formatNumber(mealTarget.protein)} g protein,{" "}
+          {formatNumber(mealTarget.fat)} g lemak,{" "}
+          {formatNumber(mealTarget.carbs)} g karbohidrat.
         </p>
       </div>
 
@@ -112,8 +127,16 @@ function ControlsPanel({
       </div>
 
       <div className="status-row">
-        <span className={currentTotals.totalCost <= constraints.budget ? "status-pill success" : "status-pill warning"}>
-          {currentTotals.totalCost <= constraints.budget ? "Within budget" : "Over budget"}
+        <span
+          className={
+            currentTotals.totalCost <= constraints.budget
+              ? "status-pill success"
+              : "status-pill warning"
+          }
+        >
+          {currentTotals.totalCost <= constraints.budget
+            ? "Within budget"
+            : "Over budget"}
         </span>
         <span
           className={
@@ -128,7 +151,9 @@ function ControlsPanel({
         </span>
         <span
           className={
-            currentTotals.totalProtein >= constraints.minimumProtein ? "status-pill success" : "status-pill warning"
+            currentTotals.totalProtein >= constraints.minimumProtein
+              ? "status-pill success"
+              : "status-pill warning"
           }
         >
           {currentTotals.totalProtein >= constraints.minimumProtein
@@ -137,7 +162,11 @@ function ControlsPanel({
         </span>
       </div>
 
-      <button className="primary-button" disabled={isSubmitting || foodsCount === 0} onClick={onOptimize}>
+      <button
+        className="primary-button"
+        disabled={isSubmitting || foodsCount === 0}
+        onClick={onOptimize}
+      >
         {isSubmitting ? "Optimizing menu..." : "Run AI Optimization"}
       </button>
     </div>
