@@ -2,7 +2,7 @@ NUTRISAFETY AI - SYSTEM OVERVIEW
 
 1. Tujuan sistem
 Project ini dibuat untuk mengevaluasi menu MBG dan mencari kombinasi menu terbaik
-berdasarkan gizi, biaya, dan target AKG.
+berdasarkan gizi, biaya, dan target AKG (Angka Kecukupan Gizi).
 
 2. Arsitektur utama
 Sistem dibagi menjadi 3 layer:
