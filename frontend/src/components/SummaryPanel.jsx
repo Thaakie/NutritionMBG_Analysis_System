@@ -1,12 +1,12 @@
 import "./SummaryPanel.css";
 import { formatNumber, formatPercent } from "../utils/formatters";
 
-function SummaryPanel({ result, payloadPreview }) {
+function SummaryPanel({ result, payloadPreview, mealTarget }) {
   return (
     <div className="panel">
       <div className="panel-heading">
         <h2>Dashboard Output</h2>
-        <p>Tampilkan total biaya, pemenuhan AKG, dan ringkasan evaluasi kelayakan.</p>
+        <p>Tampilkan hasil optimasi final, pemenuhan AKG, dan payload yang dikirim ke engine.</p>
       </div>
 
       <div className="totals-grid metrics-wide">
@@ -64,6 +64,17 @@ function SummaryPanel({ result, payloadPreview }) {
               result.nutrition_reference.meal_target.calories,
             )}{" "}
             kcal, {formatNumber(result.nutrition_reference.meal_target.protein)} g protein.
+          </p>
+        </div>
+      ) : null}
+
+      {!result ? (
+        <div className="reference-note">
+          <p>
+            Belum ada hasil optimasi. Saat tombol dijalankan, panel ini akan
+            menampilkan hasil menu final berdasarkan target otomatis{" "}
+            {formatNumber(mealTarget.calories)} kcal dan{" "}
+            {formatNumber(mealTarget.protein)} g protein.
           </p>
         </div>
       ) : null}

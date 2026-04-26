@@ -1,5 +1,5 @@
 import "./ControlsPanel.css";
-import { akgProfiles, getMealTarget } from "../data/akgProfiles";
+import { akgProfiles } from "../data/akgProfiles";
 import { formatNumber, formatPercent } from "../utils/formatters";
 
 function ControlsPanel({
@@ -9,18 +9,17 @@ function ControlsPanel({
   currentStatus,
   isSubmitting,
   foodsCount,
+  mealTarget,
   onConstraintChange,
   onOptimize,
 }) {
-  const mealTarget = getMealTarget(constraints.ageGroup);
-
   return (
     <div className="panel controls-panel">
       <div className="panel-heading">
         <h2>Optimization Controls</h2>
         <p>
-          Atur target menu, kelompok usia siswa, dan batas biaya per porsi
-          sebelum optimasi.
+          Atur kelompok usia siswa dan batas biaya per porsi. Target minimum AI
+          akan dihitung otomatis dari referensi AKG.
         </p>
       </div>
 
@@ -49,26 +48,6 @@ function ControlsPanel({
             onChange={onConstraintChange}
           />
         </label>
-        <label>
-          <span>Minimum calories</span>
-          <input
-            min="0"
-            name="minimumCalories"
-            type="number"
-            value={constraints.minimumCalories}
-            onChange={onConstraintChange}
-          />
-        </label>
-        <label>
-          <span>Minimum protein</span>
-          <input
-            min="0"
-            name="minimumProtein"
-            type="number"
-            value={constraints.minimumProtein}
-            onChange={onConstraintChange}
-          />
-        </label>
       </div>
 
       <div className="reference-note">
@@ -78,27 +57,31 @@ function ControlsPanel({
           {formatNumber(mealTarget.fat)} g lemak,{" "}
           {formatNumber(mealTarget.carbs)} g karbohidrat.
         </p>
+        <p>
+          Minimum kalori dan protein untuk engine diisi otomatis berdasarkan
+          kelompok usia yang dipilih.
+        </p>
       </div>
 
       <div className="totals-grid metrics-wide">
         <article className="metric-card">
-          <span>Current calories</span>
+          <span>Preview kandidat kalori</span>
           <strong>{formatNumber(currentTotals.totalCalories)} kcal</strong>
         </article>
         <article className="metric-card">
-          <span>Current protein</span>
+          <span>Preview kandidat protein</span>
           <strong>{formatNumber(currentTotals.totalProtein)} g</strong>
         </article>
         <article className="metric-card">
-          <span>Current fat</span>
+          <span>Preview kandidat lemak</span>
           <strong>{formatNumber(currentTotals.totalFat)} g</strong>
         </article>
         <article className="metric-card">
-          <span>Current carbs</span>
+          <span>Preview kandidat karbo</span>
           <strong>{formatNumber(currentTotals.totalCarbs)} g</strong>
         </article>
         <article className="metric-card">
-          <span>Current cost</span>
+          <span>Preview kandidat biaya</span>
           <strong>Rp {formatNumber(currentTotals.totalCost)}</strong>
         </article>
       </div>
@@ -140,25 +123,25 @@ function ControlsPanel({
         </span>
         <span
           className={
-            currentTotals.totalCalories >= constraints.minimumCalories
+            currentTotals.totalCalories >= mealTarget.calories
               ? "status-pill success"
               : "status-pill warning"
           }
         >
-          {currentTotals.totalCalories >= constraints.minimumCalories
-            ? "Calories target met"
-            : "Calories target not met"}
+          {currentTotals.totalCalories >= mealTarget.calories
+            ? "Preview kalori capai target AI"
+            : "Preview kalori belum capai target AI"}
         </span>
         <span
           className={
-            currentTotals.totalProtein >= constraints.minimumProtein
+            currentTotals.totalProtein >= mealTarget.protein
               ? "status-pill success"
               : "status-pill warning"
           }
         >
-          {currentTotals.totalProtein >= constraints.minimumProtein
-            ? "Protein target met"
-            : "Protein target not met"}
+          {currentTotals.totalProtein >= mealTarget.protein
+            ? "Preview protein capai target AI"
+            : "Preview protein belum capai target AI"}
         </span>
       </div>
 

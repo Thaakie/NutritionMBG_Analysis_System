@@ -33,6 +33,7 @@ function App() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const currentTotals = useMemo(() => calculateTotals(foods), [foods]);
+  const mealTarget = useMemo(() => getMealTarget(constraints.ageGroup), [constraints.ageGroup]);
   const currentAkgPercentages = useMemo(
     () => calculateAkgPercentages(currentTotals, constraints.ageGroup),
     [constraints.ageGroup, currentTotals],
@@ -46,8 +47,8 @@ function App() {
     () => ({
       budget: constraints.budget,
       age_group: constraints.ageGroup,
-      minimum_calories: constraints.minimumCalories,
-      minimum_protein: constraints.minimumProtein,
+      minimum_calories: mealTarget.calories,
+      minimum_protein: mealTarget.protein,
       foods: foods.map(({ name, portionGrams, protein, calories, fat, carbs, price }) => ({
         name,
         portion_grams: portionGrams,
@@ -58,7 +59,7 @@ function App() {
         price,
       })),
     }),
-    [constraints, foods],
+    [constraints.ageGroup, constraints.budget, foods, mealTarget.calories, mealTarget.protein],
   );
 
   const recommendedFoods = useMemo(() => {
@@ -190,6 +191,7 @@ function App() {
           currentTotals={currentTotals}
           foodsCount={foods.length}
           isSubmitting={isSubmitting}
+          mealTarget={mealTarget}
           onConstraintChange={handleConstraintChange}
           onOptimize={optimizeMenu}
         />
@@ -205,7 +207,7 @@ function App() {
 
       <section className="results-grid">
         <ResultsPanel recommendedFoods={recommendedFoods} result={result} />
-        <SummaryPanel payloadPreview={payloadPreview} result={result} />
+        <SummaryPanel mealTarget={mealTarget} payloadPreview={payloadPreview} result={result} />
       </section>
     </main>
   );
