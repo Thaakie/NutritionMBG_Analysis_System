@@ -16,3 +16,36 @@
   color: var(--heading-color);
   font-size: 0.88rem;
 }
+
+.comparison-section {
+  margin-top: 20px;
+}
+
+.comparison-table-wrap {
+  margin-top: 12px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.comparison-table th {
+  color: var(--muted);
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.comparison-note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}

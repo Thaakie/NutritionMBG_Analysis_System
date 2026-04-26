@@ -7,3 +7,13 @@ export function formatNumber(value) {
 export function formatPercent(value) {
   return `${formatNumber(value)}%`;
 }
+
+export function formatSignedNumber(value) {
+  const numericValue = Number(value || 0);
+
+  if (numericValue > 0) {
+    return `+${formatNumber(numericValue)}`;
+  }
+
+  return formatNumber(numericValue);
+}

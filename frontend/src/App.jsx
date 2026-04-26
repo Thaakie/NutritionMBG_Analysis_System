@@ -207,7 +207,14 @@ function App() {
 
       <section className="results-grid">
         <ResultsPanel recommendedFoods={recommendedFoods} result={result} />
-        <SummaryPanel mealTarget={mealTarget} payloadPreview={payloadPreview} result={result} />
+        <SummaryPanel
+          currentAkgPercentages={currentAkgPercentages}
+          currentStatus={currentStatus}
+          currentTotals={currentTotals}
+          mealTarget={mealTarget}
+          payloadPreview={payloadPreview}
+          result={result}
+        />
       </section>
     </main>
   );

@@ -167,20 +167,19 @@ Kebutuhan revisi:
 - Pastikan perhitungan nutrisi dan biaya ikut menyesuaikan.
 
 8. Perhitungan manual untuk membandingkan AKG
-Status: SEBAGIAN
+Status: SUDAH
 Kondisi saat ini:
-- Frontend sudah menghitung preview total nutrisi dan persentase AKG.
-- AI engine juga menghitung total hasil rekomendasi dan persentase AKG.
-- Belum ada panel khusus yang membandingkan:
-  hitung manual vs hasil optimasi.
+- Frontend sudah menampilkan tabel perbandingan manual/preview vs hasil
+  optimasi.
+- Perbandingan mencakup total nutrisi, biaya, dan persentase AKG.
+- Selisih hasil optimasi terhadap hitungan manual juga sudah terlihat.
 File terkait:
 - frontend/src/utils/nutrition.js
 - frontend/src/components/ControlsPanel.jsx
 - frontend/src/components/SummaryPanel.jsx
 - ai-engine/optimizer.py
 Kebutuhan revisi:
-- Buat tabel/section pembanding manual vs hasil optimasi.
-- Jelaskan selisih kalori, protein, lemak, karbohidrat, dan biaya.
+- Sudah tersedia di dashboard output.
 
 9. Dashboard output dan optimization control belum sync
 Status: SUDAH
@@ -282,5 +281,5 @@ CHECKLIST PENGERJAAN
 [ ] Tambah pilihan skala gramasi
 [ ] Tambah history anti-menu-berulang
 [x] Sinkronkan dashboard preview vs hasil optimasi
-[ ] Tambah pembanding hitung manual vs hasil optimasi
+[x] Tambah pembanding hitung manual vs hasil optimasi
 [ ] Update flowchart final sistem

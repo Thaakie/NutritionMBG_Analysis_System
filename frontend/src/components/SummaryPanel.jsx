@@ -1,7 +1,94 @@
 import "./SummaryPanel.css";
-import { formatNumber, formatPercent } from "../utils/formatters";
+import { formatNumber, formatPercent, formatSignedNumber } from "../utils/formatters";
 
-function SummaryPanel({ result, payloadPreview, mealTarget }) {
+function SummaryPanel({
+  result,
+  payloadPreview,
+  mealTarget,
+  currentTotals,
+  currentAkgPercentages,
+  currentStatus,
+}) {
+  const optimizedTotals = {
+    calories: result?.total_calories || 0,
+    protein: result?.total_protein || 0,
+    fat: result?.total_fat || 0,
+    carbs: result?.total_carbs || 0,
+    cost: result?.total_cost || 0,
+  };
+
+  const optimizedAkg = result?.akg_percentages || {
+    calories: 0,
+    protein: 0,
+    fat: 0,
+    carbs: 0,
+  };
+
+  const comparisonRows = [
+    {
+      label: "Kalori",
+      manual: currentTotals.totalCalories,
+      optimized: optimizedTotals.calories,
+      suffix: "kcal",
+    },
+    {
+      label: "Protein",
+      manual: currentTotals.totalProtein,
+      optimized: optimizedTotals.protein,
+      suffix: "g",
+    },
+    {
+      label: "Lemak",
+      manual: currentTotals.totalFat,
+      optimized: optimizedTotals.fat,
+      suffix: "g",
+    },
+    {
+      label: "Karbohidrat",
+      manual: currentTotals.totalCarbs,
+      optimized: optimizedTotals.carbs,
+      suffix: "g",
+    },
+    {
+      label: "Biaya",
+      manual: currentTotals.totalCost,
+      optimized: optimizedTotals.cost,
+      prefix: "Rp ",
+    },
+    {
+      label: "AKG Kalori",
+      manual: currentAkgPercentages.calories,
+      optimized: optimizedAkg.calories,
+      suffix: "%",
+    },
+    {
+      label: "AKG Protein",
+      manual: currentAkgPercentages.protein,
+      optimized: optimizedAkg.protein,
+      suffix: "%",
+    },
+    {
+      label: "AKG Lemak",
+      manual: currentAkgPercentages.fat,
+      optimized: optimizedAkg.fat,
+      suffix: "%",
+    },
+    {
+      label: "AKG Karbo",
+      manual: currentAkgPercentages.carbs,
+      optimized: optimizedAkg.carbs,
+      suffix: "%",
+    },
+  ];
+
+  function renderValue(value, { prefix = "", suffix = "" } = {}) {
+    return `${prefix}${formatNumber(value)}${suffix}`;
+  }
+
+  function renderDeltaValue(value, { prefix = "", suffix = "" } = {}) {
+    return `${prefix}${formatSignedNumber(value)}${suffix}`;
+  }
+
   return (
     <div className="panel">
       <div className="panel-heading">
@@ -78,6 +165,42 @@ function SummaryPanel({ result, payloadPreview, mealTarget }) {
           </p>
         </div>
       ) : null}
+
+      <div className="summary-preview comparison-section">
+        <h3>Perbandingan manual vs hasil optimasi</h3>
+        <div className="table-wrap comparison-table-wrap">
+          <table className="comparison-table">
+            <thead>
+              <tr>
+                <th>Metode</th>
+                <th>Manual / preview</th>
+                <th>Hasil optimasi</th>
+                <th>Selisih optimasi</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonRows.map((row) => (
+                <tr key={row.label}>
+                  <td>{row.label}</td>
+                  <td>{renderValue(row.manual, row)}</td>
+                  <td>{renderValue(row.optimized, row)}</td>
+                  <td>{renderDeltaValue(row.optimized - row.manual, row)}</td>
+                </tr>
+              ))}
+              <tr>
+                <td>Status kelayakan</td>
+                <td>{currentStatus}</td>
+                <td>{result?.feasibility_status || "Belum ada hasil"}</td>
+                <td>{result ? "Bandingkan dengan tabel di atas" : "-"}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="comparison-note">
+          Selisih optimasi dihitung sebagai hasil optimasi dikurangi perhitungan
+          manual kandidat bahan.
+        </p>
+      </div>
 
       <div className="summary-preview">
         <h3>API payload preview</h3>
