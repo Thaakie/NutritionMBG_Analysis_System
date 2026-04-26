@@ -8,12 +8,14 @@ import MenuInputPanel from "./components/MenuInputPanel";
 import ResultsPanel from "./components/ResultsPanel";
 import SummaryPanel from "./components/SummaryPanel";
 import { getMealTarget } from "./data/akgProfiles";
+import { foodCategoryOptions } from "./data/foodCategories";
 import { findPortionScale } from "./data/portionScales";
 import { sampleDatasets } from "./data/sampleDatasets";
 import { calculateAkgPercentages, calculateTotals, classifyFeasibility } from "./utils/nutrition";
 
 const initialFoodForm = {
   name: "",
+  category: foodCategoryOptions.at(-1),
   portionScale: "custom",
   portionGrams: "",
   protein: "",
@@ -51,8 +53,9 @@ function App() {
       age_group: constraints.ageGroup,
       minimum_calories: mealTarget.calories,
       minimum_protein: mealTarget.protein,
-      foods: foods.map(({ name, portionGrams, protein, calories, fat, carbs, price }) => ({
+      foods: foods.map(({ name, category, portionGrams, protein, calories, fat, carbs, price }) => ({
         name,
+        category: category || "Lainnya",
         portion_grams: portionGrams,
         protein,
         calories,
@@ -146,6 +149,7 @@ function App() {
       {
         id: Date.now(),
         name: trimmedName,
+        category: foodForm.category,
         portionScale: foodForm.portionScale,
         portionGrams,
         protein,

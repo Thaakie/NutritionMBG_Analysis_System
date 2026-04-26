@@ -45,6 +45,11 @@ def validate_payload(payload):
         if not isinstance(food["name"], str) or not food["name"].strip():
             return f"Food at index {index} must have a non-empty name."
 
+        if "category" in food and (
+            not isinstance(food["category"], str) or not food["category"].strip()
+        ):
+            return f"category for food at index {index} must be a non-empty string."
+
         for field in ["portion_grams", "protein", "calories", "fat", "carbs", "price"]:
             if not is_valid_number(food[field]) or food[field] < 0:
                 return f"{field} for food at index {index} must be a non-negative number."

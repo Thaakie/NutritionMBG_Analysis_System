@@ -100,22 +100,20 @@ Catatan tindak lanjut:
   pemisahan laki-laki/perempuan, atau update sumber referensi final.
 
 4. Klasifikasi jenis 4 sehat 5 sempurna
-Status: SEBAGIAN
+Status: SUDAH
 Kondisi saat ini:
-- Backend sudah punya field `category` pada schema bahan.
-- Kategori yang tersedia:
-  Makanan Pokok, Lauk Pauk, Sayuran, Buah-buahan, Susu & Produk Susu, Lainnya.
-- Frontend belum punya input kategori bahan.
-- Optimizer belum memakai kategori sebagai aturan pemilihan menu.
+- Frontend sudah punya input kategori bahan.
+- Payload optimasi sekarang ikut mengirim kategori bahan.
+- Optimizer sekarang memakai kategori sebagai rule dasar komposisi menu:
+  minimal ada makanan pokok, lauk pauk, dan sayuran bila kandidatnya tersedia.
+- Buah dan susu juga diberi bobot bonus agar komposisi menu lebih seimbang.
 File terkait:
 - backend/server.js
 - frontend/src/components/MenuInputPanel.jsx
 - frontend/src/App.jsx
 - ai-engine/optimizer.py
 Kebutuhan revisi:
-- Tampilkan pilihan kategori bahan di frontend.
-- Kirim kategori ke backend dan AI engine.
-- Tambahkan rule agar hasil menu mempertimbangkan komposisi 4 sehat 5 sempurna.
+- Sudah diterapkan pada frontend dan AI engine.
 
 5. Database dimasukkan
 Status: SEBAGIAN
@@ -209,20 +207,20 @@ Kebutuhan revisi:
 - Tentukan periode history, misalnya harian atau mingguan.
 
 11. Isi menu sayur
-Status: SEBAGIAN
+Status: SUDAH
 Kondisi saat ini:
-- Dataset contoh sudah punya beberapa item sayur:
-  Sayur Bayam, Tumis Kangkung, Sayur Sop.
-- Belum ada pengelolaan database sayur yang lengkap.
-- Belum ada rule wajib sayur di hasil rekomendasi.
+- Dataset contoh sekarang berisi pilihan sayur yang lebih kaya:
+  Sayur Bayam, Wortel Kukus, Tumis Kangkung, Capcay, Sayur Sop, dan Buncis Rebus.
+- Hasil optimasi sekarang diarahkan untuk memasukkan kategori sayuran jika
+  kandidat sayur tersedia.
+- Pengelolaan database sayur tetap bisa dilanjutkan di tahap admin panel nanti.
 File terkait:
 - frontend/src/data/sampleDatasets.js
 - backend/server.js
 - frontend/src/components/MenuInputPanel.jsx
 - ai-engine/optimizer.py
 Kebutuhan revisi:
-- Tambah data sayur yang lebih lengkap di database.
-- Pertimbangkan validasi atau constraint agar menu hasil mengandung sayur.
+- Sudah diperkuat di dataset dan logika optimasi.
 
 12. Flowchart code
 Status: SEBAGIAN
@@ -271,7 +269,7 @@ CATATAN RISIKO
 CHECKLIST PENGERJAAN
 ====================================================================
 
-[ ] Finalisasi desain data bahan dan kategori
+[x] Finalisasi desain data bahan dan kategori
 [ ] Finalisasi integrasi database bahan
 [x] Hilangkan input minimum yang tidak perlu
 [ ] Tambah input jumlah siswa

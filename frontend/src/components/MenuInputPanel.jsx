@@ -1,4 +1,5 @@
 import "./MenuInputPanel.css";
+import { foodCategoryOptions } from "../data/foodCategories";
 import { portionScaleOptions } from "../data/portionScales";
 import { formatNumber } from "../utils/formatters";
 
@@ -7,7 +8,10 @@ function MenuInputPanel({ foodForm, foods, error, onFoodFormChange, onAddFood, o
     <div className="panel">
       <div className="panel-heading">
         <h2>Komposisi Bahan</h2>
-        <p>Masukkan komposisi bahan, pilih skala gramasi, lalu lengkapi kandungan nutrisi dan biaya per bahan.</p>
+        <p>
+          Masukkan komposisi bahan, pilih kategori menu 4 sehat 5 sempurna,
+          atur skala gramasi, lalu lengkapi kandungan nutrisi dan biaya.
+        </p>
       </div>
 
       <form className="menu-form" onSubmit={onAddFood}>
@@ -15,6 +19,16 @@ function MenuInputPanel({ foodForm, foods, error, onFoodFormChange, onAddFood, o
           <label>
             <span>Food name</span>
             <input name="name" placeholder="Example: Telur" value={foodForm.name} onChange={onFoodFormChange} />
+          </label>
+          <label>
+            <span>Kategori bahan</span>
+            <select name="category" value={foodForm.category} onChange={onFoodFormChange}>
+              {foodCategoryOptions.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             <span>Skala gramasi</span>
@@ -112,6 +126,7 @@ function MenuInputPanel({ foodForm, foods, error, onFoodFormChange, onAddFood, o
           <thead>
             <tr>
               <th>Food</th>
+              <th>Kategori</th>
               <th>Porsi</th>
               <th>Protein</th>
               <th>Kalori</th>
@@ -125,6 +140,7 @@ function MenuInputPanel({ foodForm, foods, error, onFoodFormChange, onAddFood, o
             {foods.map((food) => (
               <tr key={food.id}>
                 <td>{food.name}</td>
+                <td>{food.category || "Lainnya"}</td>
                 <td>
                   {formatNumber(food.portionGrams)} g
                   {food.portionScale && food.portionScale !== "custom" ? ` (${food.portionScale} g)` : ""}

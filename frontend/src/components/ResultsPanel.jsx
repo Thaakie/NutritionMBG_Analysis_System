@@ -39,6 +39,7 @@ function ResultsPanel({ result, recommendedFoods }) {
               recommendedFoods.map((food) => (
                 <article className="food-card" key={food.id}>
                   <h3>{food.name}</h3>
+                  <p>Kategori: {food.category || "Lainnya"}</p>
                   <p>{formatNumber(food.portionGrams)} g per porsi</p>
                   <p>{formatNumber(food.protein)} g protein</p>
                   <p>{formatNumber(food.calories)} kcal</p>
@@ -59,6 +60,9 @@ function ResultsPanel({ result, recommendedFoods }) {
                     <span>{alternative.feasibility_status}</span>
                   </div>
                   <p>{alternative.recommended_menu.join(", ")}</p>
+                  {alternative.selected_categories?.length ? (
+                    <p>Kategori: {alternative.selected_categories.join(", ")}</p>
+                  ) : null}
                   <p>
                     Skor {formatNumber(alternative.nutrition_score)} | Rp {formatNumber(alternative.total_cost)}
                   </p>
