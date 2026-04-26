@@ -8,28 +8,38 @@ teknis antar layer pada project NutriSafety.
 Alur sistem secara sederhana:
 
 User input data menu di frontend
--> frontend menghitung preview total gizi dan AKG
+-> frontend memilih kategori bahan, skala gramasi, kelompok usia, budget,
+   dan jumlah siswa
+-> frontend menghitung preview total gizi, AKG, dan kebutuhan batch
+-> frontend mengambil history menu lokal agar rekomendasi berikutnya tidak berulang
 -> frontend membentuk payload JSON
 -> request dikirim ke backend Express
 -> backend memvalidasi data
 -> backend meneruskan request ke AI Engine Flask
 -> AI Engine memvalidasi ulang data
 -> AI Engine mengambil profil AKG sesuai kelompok usia
--> optimizer membentuk model optimasi
--> solver mencari kombinasi menu terbaik
--> hasil dihitung ulang: total gizi, AKG, biaya, status
+-> optimizer membentuk model optimasi dengan constraint biaya, target gizi,
+   dan struktur kategori menu
+-> solver mencari kombinasi menu terbaik sambil menghindari menu history
+-> hasil dihitung ulang: total gizi, AKG, biaya, status, kategori menu,
+   dan kebutuhan bahan batch
 -> hasil dikirim ke backend
 -> backend mengirim hasil ke frontend
--> frontend menampilkan rekomendasi menu
+-> frontend menampilkan rekomendasi menu, pembanding manual vs optimasi,
+   dan menyimpan history hasil terbaru
 
 3. Flowchart versi teks
 [Mulai]
   |
   v
-[User memasukkan makanan, harga, kandungan gizi, usia, budget]
+[User memasukkan makanan, kategori bahan, harga, kandungan gizi,
+ usia, budget, dan jumlah siswa]
   |
   v
-[Frontend React hitung preview total gizi dan AKG]
+[Frontend React hitung preview total gizi, AKG, dan kebutuhan batch]
+  |
+  v
+[Frontend ambil riwayat menu dari localStorage]
   |
   v
 [Frontend kirim POST /api/optimize ke backend]
@@ -51,24 +61,33 @@ User input data menu di frontend
 [Ambil profil AKG berdasarkan age group]
   |
   v
-[Bentuk model optimasi biner]
+[Bentuk model optimasi biner + daftar exclude dari history]
   |
   v
 [Terapkan objective function dan constraints]
   |
+  +-> biaya <= budget
+  +-> kalori >= minimum otomatis dari AKG
+  +-> protein >= minimum otomatis dari AKG
+  +-> kategori inti menu: makanan pokok, lauk, sayuran
+  +-> bonus skor untuk buah dan susu
+  |
   v
 [Solve dengan PuLP + CBC solver]
   |
-  +-> jika infeasible -> [Tidak ada kombinasi yang memenuhi syarat]
+  +-> jika infeasible karena history -> [Coba fallback tanpa history]
+  |
+  +-> jika tetap infeasible -> [Tidak ada kombinasi yang memenuhi syarat]
   |
   v
-[Ambil solusi terbaik dan alternatif]
+[Ambil solusi terbaik dan alternatif yang tidak duplikat]
   |
   v
-[Hitung total gizi, persen AKG, biaya, dan feasibility]
+[Hitung total gizi, persen AKG, biaya, kategori terpilih,
+ status feasibility, dan kebutuhan bahan batch]
   |
   v
-[Kirim hasil ke frontend]
+[Kirim hasil ke frontend dan simpan history terbaru di browser]
   |
   v
 [Selesai]
@@ -92,9 +111,11 @@ Setiap makanan direpresentasikan sebagai variabel biner:
 
 Sistem lalu mencari kombinasi makanan yang:
 - memenuhi batas biaya
-- memenuhi minimum kalori
-- memenuhi minimum protein
+- memenuhi minimum kalori otomatis dari AKG
+- memenuhi minimum protein otomatis dari AKG
+- menjaga struktur menu inti: makanan pokok, lauk pauk, dan sayuran
 - memberi skor gizi terbaik
+- menghindari kombinasi menu yang baru saja dipakai jika memungkinkan
 
 6. Objective function
 Optimizer memaksimalkan nutrition score.
@@ -106,17 +127,22 @@ score =
 + (fat * 0.7)
 + (carbs * 0.04)
 - (price * 0.001)
++ bonus kategori
 
 Maknanya:
 - protein diberi bobot paling tinggi
 - kalori, lemak, dan karbohidrat tetap dihitung
 - harga menjadi pengurang kecil agar solusi tetap efisien secara biaya
+- buah, susu, dan sayuran mendapat bonus agar komposisi menu lebih seimbang
 
 7. Constraint yang dipakai
 Model optimasi memiliki batasan:
 - total biaya <= budget
 - total kalori >= minimum_calories
 - total protein >= minimum_protein
+- minimal ada 1 makanan pokok jika kandidat tersedia
+- minimal ada 1 lauk pauk jika kandidat tersedia
+- minimal ada 1 sayuran jika kandidat tersedia
 
 Jadi, tidak semua kombinasi makanan boleh dipilih.
 Hanya kombinasi yang lolos constraint yang bisa jadi solusi.
@@ -125,6 +151,9 @@ Hanya kombinasi yang lolos constraint yang bisa jadi solusi.
 Sistem tidak berhenti di satu solusi.
 Setelah solusi pertama ditemukan, kombinasi itu dimasukkan ke daftar exclude.
 Lalu solver dijalankan lagi untuk mencari kombinasi lain yang berbeda.
+
+Selain itu, sistem juga bisa menerima daftar menu history dari frontend.
+Daftar ini ikut dimasukkan ke exclude agar hasil menu harian tidak berulang.
 
 Dengan cara ini, sistem bisa memberi:
 - alternatif rank 1
@@ -163,7 +192,8 @@ Jadi sistem mengevaluasi menu per porsi makan, bukan kebutuhan harian penuh.
 Frontend React:
 - tempat user input data
 - menampilkan dataset contoh
-- menghitung preview total gizi dan AKG
+- menghitung preview total gizi, AKG, dan kebutuhan batch
+- menyimpan history menu lokal
 - mengirim payload ke backend
 - menampilkan hasil optimasi
 
@@ -177,7 +207,8 @@ AI Engine Flask:
 - memvalidasi ulang request
 - mengambil profil AKG
 - menjalankan optimizer PuLP
-- menghitung hasil akhir dan ranked alternatives
+- menghitung hasil akhir, kategori menu, dan ranked alternatives
+- mengelola exclude list dari history dan fallback bila perlu
 
 12. Struktur teknis sistem
 Arsitektur project:
@@ -192,6 +223,8 @@ Pemisahan ini penting karena:
 
 13. File penting untuk dipelajari
 - frontend/src/App.jsx
+- frontend/src/data/foodCategories.js
+- frontend/src/data/portionScales.js
 - frontend/src/utils/nutrition.js
 - backend/server.js
 - ai-engine/app.py

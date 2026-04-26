@@ -29,10 +29,10 @@ User input bahan di frontend
 -> hasil dikirim lagi ke frontend
 
 Catatan penting:
-- Sistem saat ini masih berorientasi pada optimasi per porsi, bukan total kebutuhan
-  untuk sejumlah siswa.
-- Sistem saat ini masih meminta input minimum kalori dan minimum protein secara
-  manual pada dashboard.
+- Sistem optimasi tetap bekerja per porsi, tetapi dashboard sekarang sudah bisa
+  menghitung kebutuhan batch untuk sejumlah siswa.
+- Input minimum kalori dan minimum protein sudah tidak ditampilkan lagi karena
+  target diisi otomatis dari profil AKG.
 - Database MongoDB sudah mulai dipasang di backend, tetapi alur CRUD dan integrasi
   frontend belum selesai.
 
@@ -222,16 +222,15 @@ Kebutuhan revisi:
 - Sudah diperkuat di dataset dan logika optimasi.
 
 12. Flowchart code
-Status: SEBAGIAN
+Status: SUDAH
 Kondisi saat ini:
-- Sudah ada catatan flow sistem dalam bentuk teks.
-- Belum ada flowchart final yang disesuaikan dengan revisi sistem terbaru.
+- Catatan flow sistem sudah diperbarui sesuai implementasi terbaru.
+- Flow sekarang sudah mencerminkan target otomatis, kategori bahan, jumlah
+  siswa, history anti-repeat, dan output batch.
 File terkait:
 - learning-notes/05-system-flowchart-and-technical.txt
 Kebutuhan revisi:
-- Update flow setelah perubahan sistem selesai.
-- Buat flowchart yang merepresentasikan alur final:
-  input bahan -> database -> kontrol optimasi -> AI engine -> output -> history.
+- Sudah diperbarui pada catatan flow teknis.
 
 ====================================================================
 PRIORITAS IMPLEMENTASI YANG DISARANKAN
@@ -239,19 +238,12 @@ PRIORITAS IMPLEMENTASI YANG DISARANKAN
 
 Prioritas 1 - Fondasi data dan input:
 - Poin 5 database dimasukkan
-- Poin 4 klasifikasi jenis 4 sehat 5 sempurna
-- Poin 7 skala gramasi dibuat pilihan
-- Poin 11 isi menu sayur
 
 Prioritas 2 - Perubahan logika bisnis:
-- Poin 6 hilangkan beberapa inputan minimum
-- Poin 2 generate kebutuhan bahan untuk sejumlah siswa
-- Poin 10 history supaya menu tidak berulang
+- Penguatan admin panel CRUD database
 
 Prioritas 3 - Penyelarasan output dan dokumentasi:
-- Poin 8 perhitungan manual untuk membandingkan AKG
-- Poin 9 dashboard output dan optimization control belum sync
-- Poin 12 flowchart code
+- Finalisasi dokumentasi setelah tahap database selesai
 
 ====================================================================
 CATATAN RISIKO
@@ -277,4 +269,4 @@ CHECKLIST PENGERJAAN
 [x] Tambah history anti-menu-berulang
 [x] Sinkronkan dashboard preview vs hasil optimasi
 [x] Tambah pembanding hitung manual vs hasil optimasi
-[ ] Update flowchart final sistem
+[x] Update flowchart final sistem
