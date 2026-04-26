@@ -11,7 +11,13 @@ import { getMealTarget } from "./data/akgProfiles";
 import { foodCategoryOptions } from "./data/foodCategories";
 import { findPortionScale } from "./data/portionScales";
 import { sampleDatasets } from "./data/sampleDatasets";
-import { calculateAkgPercentages, calculateTotals, classifyFeasibility } from "./utils/nutrition";
+import {
+  calculateAkgPercentages,
+  calculateBatchTotals,
+  calculateTotals,
+  classifyFeasibility,
+  scaleFoodsForStudents,
+} from "./utils/nutrition";
 
 const initialFoodForm = {
   name: "",
@@ -51,6 +57,7 @@ function App() {
     () => ({
       budget: constraints.budget,
       age_group: constraints.ageGroup,
+      student_count: constraints.studentCount,
       minimum_calories: mealTarget.calories,
       minimum_protein: mealTarget.protein,
       foods: foods.map(({ name, category, portionGrams, protein, calories, fat, carbs, price }) => ({
@@ -74,6 +81,24 @@ function App() {
 
     return foods.filter((food) => result.recommended_menu.includes(food.name));
   }, [foods, result]);
+  const recommendedBatch = useMemo(
+    () => scaleFoodsForStudents(recommendedFoods, constraints.studentCount),
+    [constraints.studentCount, recommendedFoods],
+  );
+  const recommendedBatchTotals = useMemo(
+    () =>
+      calculateBatchTotals(
+        {
+          totalCalories: result?.total_calories || 0,
+          totalProtein: result?.total_protein || 0,
+          totalFat: result?.total_fat || 0,
+          totalCarbs: result?.total_carbs || 0,
+          totalCost: result?.total_cost || 0,
+        },
+        constraints.studentCount,
+      ),
+    [constraints.studentCount, result],
+  );
 
   function handleFoodFormChange(event) {
     const { name, value } = event.target;
@@ -231,6 +256,9 @@ function App() {
           currentTotals={currentTotals}
           mealTarget={mealTarget}
           payloadPreview={payloadPreview}
+          recommendedBatch={recommendedBatch}
+          recommendedBatchTotals={recommendedBatchTotals}
+          studentCount={constraints.studentCount}
           result={result}
         />
       </section>

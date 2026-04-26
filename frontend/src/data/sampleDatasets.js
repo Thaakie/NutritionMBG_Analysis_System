@@ -12,6 +12,7 @@ export const sampleDatasets = [
     constraints: {
       ageGroup: "7-9",
       budget: 15000,
+      studentCount: 1,
       minimumCalories: elementaryTarget.calories,
       minimumProtein: elementaryTarget.protein,
     },
@@ -32,6 +33,7 @@ export const sampleDatasets = [
     constraints: {
       ageGroup: "13-15",
       budget: 22000,
+      studentCount: 1,
       minimumCalories: middleTarget.calories,
       minimumProtein: middleTarget.protein,
     },
@@ -53,6 +55,7 @@ export const sampleDatasets = [
     constraints: {
       ageGroup: "16-18",
       budget: 24000,
+      studentCount: 1,
       minimumCalories: teenTarget.calories,
       minimumProtein: teenTarget.protein,
     },

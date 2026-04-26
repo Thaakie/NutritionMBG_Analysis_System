@@ -27,6 +27,10 @@ function HeroPanel({ constraints, currentStatus }) {
           <strong>Rp {formatNumber(constraints.budget)}</strong>
         </article>
         <article className="stat-card">
+          <span>Jumlah siswa</span>
+          <strong>{formatNumber(constraints.studentCount || 1)} siswa</strong>
+        </article>
+        <article className="stat-card">
           <span>Status evaluasi saat ini</span>
           <strong>{currentStatus}</strong>
         </article>

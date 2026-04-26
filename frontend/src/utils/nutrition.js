@@ -40,3 +40,21 @@ export function classifyFeasibility(totals, akgPercentages, budget) {
 
   return "Tidak layak";
 }
+
+export function scaleFoodsForStudents(foods, studentCount) {
+  return foods.map((food) => ({
+    ...food,
+    totalPortionGrams: Number((food.portionGrams * studentCount).toFixed(2)),
+    totalPrice: Number((food.price * studentCount).toFixed(2)),
+  }));
+}
+
+export function calculateBatchTotals(totals, studentCount) {
+  return {
+    totalCalories: Number((totals.totalCalories * studentCount).toFixed(2)),
+    totalProtein: Number((totals.totalProtein * studentCount).toFixed(2)),
+    totalFat: Number((totals.totalFat * studentCount).toFixed(2)),
+    totalCarbs: Number((totals.totalCarbs * studentCount).toFixed(2)),
+    totalCost: Number((totals.totalCost * studentCount).toFixed(2)),
+  };
+}

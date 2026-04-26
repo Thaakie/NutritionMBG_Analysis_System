@@ -71,20 +71,19 @@ Catatan tindak lanjut:
   bukan hanya input manual.
 
 2. Generate kebutuhan bahan untuk menu sejumlah siswa
-Status: BELUM
+Status: SUDAH
 Kondisi saat ini:
-- Sistem hanya menghitung per porsi menu.
-- Belum ada input jumlah siswa.
-- Belum ada perhitungan total kebutuhan bahan = gramasi per porsi x jumlah siswa.
+- Dashboard sekarang punya input jumlah siswa.
+- Hasil optimasi sekarang punya perhitungan total kebutuhan bahan untuk seluruh
+  siswa berdasarkan menu terpilih.
+- Total gramasi dan total biaya batch sudah ditampilkan di dashboard output.
 File terkait:
 - frontend/src/App.jsx
 - frontend/src/components/ControlsPanel.jsx
 - frontend/src/components/SummaryPanel.jsx
 - ai-engine/optimizer.py
 Kebutuhan revisi:
-- Tambah input jumlah siswa.
-- Tambah perhitungan total gramasi bahan untuk seluruh siswa.
-- Tambah output kebutuhan bahan total per menu hasil optimasi.
+- Sudah diterapkan di frontend tanpa mengubah optimasi per porsi yang sudah ada.
 
 3. Data AKG per kelompok usia
 Status: SUDAH
@@ -272,8 +271,8 @@ CHECKLIST PENGERJAAN
 [x] Finalisasi desain data bahan dan kategori
 [ ] Finalisasi integrasi database bahan
 [x] Hilangkan input minimum yang tidak perlu
-[ ] Tambah input jumlah siswa
-[ ] Tambah output kebutuhan bahan total
+[x] Tambah input jumlah siswa
+[x] Tambah output kebutuhan bahan total
 [x] Tambah pilihan skala gramasi
 [ ] Tambah history anti-menu-berulang
 [x] Sinkronkan dashboard preview vs hasil optimasi

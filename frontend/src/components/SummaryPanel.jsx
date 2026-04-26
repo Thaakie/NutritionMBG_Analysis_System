@@ -8,6 +8,9 @@ function SummaryPanel({
   currentTotals,
   currentAkgPercentages,
   currentStatus,
+  studentCount,
+  recommendedBatch,
+  recommendedBatchTotals,
 }) {
   const optimizedTotals = {
     calories: result?.total_calories || 0,
@@ -200,6 +203,57 @@ function SummaryPanel({
           Selisih optimasi dihitung sebagai hasil optimasi dikurangi perhitungan
           manual kandidat bahan.
         </p>
+      </div>
+
+      <div className="summary-preview">
+        <h3>Kebutuhan bahan untuk {formatNumber(studentCount)} siswa</h3>
+        {!result ? (
+          <p className="comparison-note">
+            Jalankan optimasi terlebih dahulu untuk melihat total gramasi dan
+            biaya bahan untuk seluruh siswa.
+          </p>
+        ) : (
+          <>
+            <div className="totals-grid">
+              <article className="metric-card">
+                <span>Total gramasi batch</span>
+                <strong>{formatNumber(recommendedBatch.reduce((sum, food) => sum + food.totalPortionGrams, 0))} g</strong>
+              </article>
+              <article className="metric-card">
+                <span>Total biaya batch</span>
+                <strong>Rp {formatNumber(recommendedBatchTotals.totalCost)}</strong>
+              </article>
+              <article className="metric-card">
+                <span>Total protein batch</span>
+                <strong>{formatNumber(recommendedBatchTotals.totalProtein)} g</strong>
+              </article>
+            </div>
+            <div className="table-wrap comparison-table-wrap">
+              <table className="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Bahan</th>
+                    <th>Kategori</th>
+                    <th>Per porsi</th>
+                    <th>Total untuk siswa</th>
+                    <th>Total biaya</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {recommendedBatch.map((food) => (
+                    <tr key={food.id}>
+                      <td>{food.name}</td>
+                      <td>{food.category || "Lainnya"}</td>
+                      <td>{formatNumber(food.portionGrams)} g</td>
+                      <td>{formatNumber(food.totalPortionGrams)} g</td>
+                      <td>Rp {formatNumber(food.totalPrice)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        )}
       </div>
 
       <div className="summary-preview">

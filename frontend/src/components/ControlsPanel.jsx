@@ -48,6 +48,16 @@ function ControlsPanel({
             onChange={onConstraintChange}
           />
         </label>
+        <label>
+          <span>Jumlah siswa</span>
+          <input
+            min="1"
+            name="studentCount"
+            type="number"
+            value={constraints.studentCount}
+            onChange={onConstraintChange}
+          />
+        </label>
       </div>
 
       <div className="reference-note">
