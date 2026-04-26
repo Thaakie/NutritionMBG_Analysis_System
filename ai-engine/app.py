@@ -29,6 +29,21 @@ def validate_payload(payload):
     if payload["age_group"] not in AKG_PROFILES:
         return "age_group is not supported."
 
+    if "excluded_menus" in payload:
+        excluded_menus = payload["excluded_menus"]
+        if not isinstance(excluded_menus, list):
+            return "excluded_menus must be an array."
+
+        for index, menu in enumerate(excluded_menus):
+            if not isinstance(menu, list):
+                return f"excluded_menus at index {index} must be an array of food names."
+
+            for food_name in menu:
+                if not isinstance(food_name, str) or not food_name.strip():
+                    return (
+                        f"excluded_menus at index {index} must only contain non-empty food names."
+                    )
+
     foods = payload["foods"]
     if not isinstance(foods, list) or len(foods) == 0:
         return "foods must be a non-empty array."

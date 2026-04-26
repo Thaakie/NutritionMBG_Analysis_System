@@ -1,7 +1,7 @@
 import "./ResultsPanel.css";
 import { formatNumber, formatPercent } from "../utils/formatters";
 
-function ResultsPanel({ result, recommendedFoods }) {
+function ResultsPanel({ result, recommendedFoods, historyEntries, onClearHistory }) {
   return (
     <div className="panel">
       <div className="panel-heading">
@@ -76,6 +76,31 @@ function ResultsPanel({ result, recommendedFoods }) {
           ) : null}
         </>
       )}
+
+      <div className="history-block">
+        <div className="history-header">
+          <h3>Riwayat menu anti-pengulangan</h3>
+          <button className="table-button" onClick={onClearHistory} type="button">
+            Clear history
+          </button>
+        </div>
+        {historyEntries.length === 0 ? (
+          <p className="comparison-note">Belum ada riwayat menu yang disimpan.</p>
+        ) : (
+          <div className="ranking-list">
+            {historyEntries.map((entry) => (
+              <article className="ranking-card" key={entry.menuKey}>
+                <div className="ranking-header">
+                  <h3>{entry.recommendedMenu.join(", ")}</h3>
+                  <span>{entry.ageGroup}</span>
+                </div>
+                <p>{new Date(entry.generatedAt).toLocaleString("id-ID")}</p>
+                <p>{formatNumber(entry.studentCount || 1)} siswa</p>
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

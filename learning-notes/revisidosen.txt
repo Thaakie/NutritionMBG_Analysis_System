@@ -191,19 +191,19 @@ Kebutuhan revisi:
 - Sudah diberi pemisahan istilah dan konteks tampilan.
 
 10. History supaya menu tidak berulang
-Status: BELUM
+Status: SUDAH
 Kondisi saat ini:
-- Belum ada penyimpanan riwayat menu yang pernah keluar.
-- Belum ada aturan untuk mencegah rekomendasi berulang antar proses sebelumnya.
-- Saat ini alternatif hanya menghindari duplikasi dalam satu kali proses optimasi.
+- Riwayat menu sekarang disimpan lokal di frontend.
+- Riwayat tersebut dikirim ke AI engine sebagai daftar kombinasi menu yang
+  harus dihindari pada optimasi berikutnya.
+- Engine juga punya fallback aman jika semua kombinasi unik tidak feasible,
+  sehingga aplikasi tidak macet hanya karena history terlalu ketat.
 File terkait:
 - ai-engine/optimizer.py
 - backend/server.js
 - frontend/src/App.jsx
 Kebutuhan revisi:
-- Simpan history rekomendasi menu.
-- Tambahkan rule exclude menu yang baru saja dipakai.
-- Tentukan periode history, misalnya harian atau mingguan.
+- Sudah ada penyimpanan history dasar dengan kapasitas riwayat terbaru.
 
 11. Isi menu sayur
 Status: SUDAH
@@ -274,7 +274,7 @@ CHECKLIST PENGERJAAN
 [x] Tambah input jumlah siswa
 [x] Tambah output kebutuhan bahan total
 [x] Tambah pilihan skala gramasi
-[ ] Tambah history anti-menu-berulang
+[x] Tambah history anti-menu-berulang
 [x] Sinkronkan dashboard preview vs hasil optimasi
 [x] Tambah pembanding hitung manual vs hasil optimasi
 [ ] Update flowchart final sistem

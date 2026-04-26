@@ -123,16 +123,22 @@ def sort_alternatives(alternatives):
     return sorted_alternatives
 
 
-def optimize_menu(data):
-    items = data["foods"]
-    budget = data["budget"]
-    minimum_calories = data["minimum_calories"]
-    minimum_protein = data["minimum_protein"]
-    age_group = data["age_group"]
-    nutrition_reference = get_akg_profile(age_group)
+def filter_excluded_menu_names(items, excluded_menus):
+    available_names = {food["name"] for food in items}
+    filtered_menus = []
 
+    for menu in excluded_menus:
+        filtered_names = [name for name in menu if name in available_names]
+        if filtered_names:
+            filtered_menus.append(filtered_names)
+
+    return filtered_menus
+
+
+def solve_ranked_alternatives(
+    items, budget, minimum_calories, minimum_protein, nutrition_reference, excluded_name_sets
+):
     ranked_alternatives = []
-    excluded_name_sets = []
     solver = PULP_CBC_CMD(msg=False)
 
     for rank in range(1, 4):
@@ -184,6 +190,38 @@ def optimize_menu(data):
         )
         excluded_name_sets.append([food["name"] for food in selected_foods])
 
+    return ranked_alternatives
+
+
+def optimize_menu(data):
+    items = data["foods"]
+    budget = data["budget"]
+    minimum_calories = data["minimum_calories"]
+    minimum_protein = data["minimum_protein"]
+    age_group = data["age_group"]
+    nutrition_reference = get_akg_profile(age_group)
+    history_exclusions = filter_excluded_menu_names(items, data.get("excluded_menus", []))
+    ranked_alternatives = solve_ranked_alternatives(
+        items,
+        budget,
+        minimum_calories,
+        minimum_protein,
+        nutrition_reference,
+        history_exclusions.copy(),
+    )
+    history_fallback_used = False
+
+    if not ranked_alternatives and history_exclusions:
+        ranked_alternatives = solve_ranked_alternatives(
+            items,
+            budget,
+            minimum_calories,
+            minimum_protein,
+            nutrition_reference,
+            [],
+        )
+        history_fallback_used = bool(ranked_alternatives)
+
     if not ranked_alternatives:
         return {
             "recommended_menu": [],
@@ -212,6 +250,12 @@ def optimize_menu(data):
     return {
         **best_alternative,
         "status": "optimal",
+        "history_fallback_used": history_fallback_used,
         "nutrition_reference": nutrition_reference,
         "ranked_alternatives": ranked_alternatives,
+        "message": (
+            "Riwayat menu diabaikan sementara karena semua kombinasi unik tidak memenuhi syarat."
+            if history_fallback_used
+            else ""
+        ),
     }

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "./styles/ui.css";
 import "./App.css";
 import ControlsPanel from "./components/ControlsPanel";
@@ -32,6 +32,30 @@ const initialFoodForm = {
 };
 
 const defaultDataset = sampleDatasets[0];
+const MENU_HISTORY_STORAGE_KEY = "nutrisafety-menu-history";
+const MAX_MENU_HISTORY = 5;
+
+function normalizeMenuKey(menu) {
+  return [...menu].sort().join("|");
+}
+
+function readMenuHistory() {
+  if (typeof window === "undefined") {
+    return [];
+  }
+
+  try {
+    const storedValue = window.localStorage.getItem(MENU_HISTORY_STORAGE_KEY);
+    if (!storedValue) {
+      return [];
+    }
+
+    const parsedValue = JSON.parse(storedValue);
+    return Array.isArray(parsedValue) ? parsedValue : [];
+  } catch {
+    return [];
+  }
+}
 
 function App() {
   const [foods, setFoods] = useState(defaultDataset.foods);
@@ -41,6 +65,7 @@ function App() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [menuHistory, setMenuHistory] = useState(readMenuHistory);
 
   const currentTotals = useMemo(() => calculateTotals(foods), [foods]);
   const mealTarget = useMemo(() => getMealTarget(constraints.ageGroup), [constraints.ageGroup]);
@@ -57,6 +82,7 @@ function App() {
     () => ({
       budget: constraints.budget,
       age_group: constraints.ageGroup,
+      excluded_menus: menuHistory.map((entry) => entry.recommendedMenu),
       student_count: constraints.studentCount,
       minimum_calories: mealTarget.calories,
       minimum_protein: mealTarget.protein,
@@ -71,7 +97,7 @@ function App() {
         price,
       })),
     }),
-    [constraints.ageGroup, constraints.budget, foods, mealTarget.calories, mealTarget.protein],
+    [constraints.ageGroup, constraints.budget, constraints.studentCount, foods, mealTarget.calories, mealTarget.protein, menuHistory],
   );
 
   const recommendedFoods = useMemo(() => {
@@ -99,6 +125,14 @@ function App() {
       ),
     [constraints.studentCount, result],
   );
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    window.localStorage.setItem(MENU_HISTORY_STORAGE_KEY, JSON.stringify(menuHistory));
+  }, [menuHistory]);
 
   function handleFoodFormChange(event) {
     const { name, value } = event.target;
@@ -194,6 +228,10 @@ function App() {
     setActiveDatasetId(null);
   }
 
+  function clearMenuHistory() {
+    setMenuHistory([]);
+  }
+
   async function optimizeMenu() {
     setIsSubmitting(true);
     setError("");
@@ -214,6 +252,23 @@ function App() {
       }
 
       setResult(data);
+      if (data.recommended_menu?.length) {
+        const menuKey = normalizeMenuKey(data.recommended_menu);
+        setMenuHistory((current) => {
+          const nextHistory = [
+            {
+              menuKey,
+              ageGroup: constraints.ageGroup,
+              generatedAt: new Date().toISOString(),
+              recommendedMenu: data.recommended_menu,
+              studentCount: constraints.studentCount,
+            },
+            ...current.filter((entry) => entry.menuKey !== menuKey),
+          ];
+
+          return nextHistory.slice(0, MAX_MENU_HISTORY);
+        });
+      }
     } catch (requestError) {
       setError(requestError.message);
     } finally {
@@ -249,7 +304,12 @@ function App() {
       </section>
 
       <section className="results-grid">
-        <ResultsPanel recommendedFoods={recommendedFoods} result={result} />
+        <ResultsPanel
+          historyEntries={menuHistory}
+          onClearHistory={clearMenuHistory}
+          recommendedFoods={recommendedFoods}
+          result={result}
+        />
         <SummaryPanel
           currentAkgPercentages={currentAkgPercentages}
           currentStatus={currentStatus}
