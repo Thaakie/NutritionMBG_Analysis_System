@@ -1,4 +1,5 @@
 import "./MenuInputPanel.css";
+import { portionScaleOptions } from "../data/portionScales";
 import { formatNumber } from "../utils/formatters";
 
 function MenuInputPanel({ foodForm, foods, error, onFoodFormChange, onAddFood, onRemoveFood }) {
@@ -6,7 +7,7 @@ function MenuInputPanel({ foodForm, foods, error, onFoodFormChange, onAddFood, o
     <div className="panel">
       <div className="panel-heading">
         <h2>Komposisi Bahan</h2>
-        <p>Masukkan komposisi bahan, berat porsi, kandungan nutrisi, dan biaya per bahan.</p>
+        <p>Masukkan komposisi bahan, pilih skala gramasi, lalu lengkapi kandungan nutrisi dan biaya per bahan.</p>
       </div>
 
       <form className="menu-form" onSubmit={onAddFood}>
@@ -16,11 +17,22 @@ function MenuInputPanel({ foodForm, foods, error, onFoodFormChange, onAddFood, o
             <input name="name" placeholder="Example: Telur" value={foodForm.name} onChange={onFoodFormChange} />
           </label>
           <label>
+            <span>Skala gramasi</span>
+            <select name="portionScale" value={foodForm.portionScale} onChange={onFoodFormChange}>
+              {portionScaleOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label>
             <span>Porsi (gram)</span>
             <input
+              disabled={foodForm.portionScale !== "custom"}
               min="0"
               name="portionGrams"
-              placeholder="60"
+              placeholder={foodForm.portionScale === "custom" ? "60" : "Terisi otomatis"}
               type="number"
               value={foodForm.portionGrams}
               onChange={onFoodFormChange}
@@ -88,6 +100,11 @@ function MenuInputPanel({ foodForm, foods, error, onFoodFormChange, onAddFood, o
         </button>
       </form>
 
+      <p className="helper-copy">
+        Pilih preset gramasi untuk mengisi porsi otomatis, atau pilih `Custom`
+        jika ingin menulis gramasi sendiri.
+      </p>
+
       {error ? <p className="feedback error">{error}</p> : null}
 
       <div className="table-wrap">
@@ -108,7 +125,10 @@ function MenuInputPanel({ foodForm, foods, error, onFoodFormChange, onAddFood, o
             {foods.map((food) => (
               <tr key={food.id}>
                 <td>{food.name}</td>
-                <td>{formatNumber(food.portionGrams)} g</td>
+                <td>
+                  {formatNumber(food.portionGrams)} g
+                  {food.portionScale && food.portionScale !== "custom" ? ` (${food.portionScale} g)` : ""}
+                </td>
                 <td>{formatNumber(food.protein)} g</td>
                 <td>{formatNumber(food.calories)} kcal</td>
                 <td>{formatNumber(food.fat)} g</td>

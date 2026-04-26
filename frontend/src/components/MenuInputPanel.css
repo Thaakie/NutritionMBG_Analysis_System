@@ -4,6 +4,13 @@
   gap: 16px;
 }
 
+.helper-copy {
+  margin: 14px 0 0;
+  color: var(--muted);
+  text-align: left;
+  font-size: 0.92rem;
+}
+
 .table-wrap {
   overflow-x: auto;
   margin-top: 18px;

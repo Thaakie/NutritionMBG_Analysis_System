@@ -8,11 +8,13 @@ import MenuInputPanel from "./components/MenuInputPanel";
 import ResultsPanel from "./components/ResultsPanel";
 import SummaryPanel from "./components/SummaryPanel";
 import { getMealTarget } from "./data/akgProfiles";
+import { findPortionScale } from "./data/portionScales";
 import { sampleDatasets } from "./data/sampleDatasets";
 import { calculateAkgPercentages, calculateTotals, classifyFeasibility } from "./utils/nutrition";
 
 const initialFoodForm = {
   name: "",
+  portionScale: "custom",
   portionGrams: "",
   protein: "",
   calories: "",
@@ -72,6 +74,17 @@ function App() {
 
   function handleFoodFormChange(event) {
     const { name, value } = event.target;
+
+    if (name === "portionScale") {
+      const selectedScale = findPortionScale(value);
+      setFoodForm((current) => ({
+        ...current,
+        portionScale: value,
+        portionGrams: selectedScale.grams ?? current.portionGrams,
+      }));
+      return;
+    }
+
     setFoodForm((current) => ({
       ...current,
       [name]: value,
@@ -133,6 +146,7 @@ function App() {
       {
         id: Date.now(),
         name: trimmedName,
+        portionScale: foodForm.portionScale,
         portionGrams,
         protein,
         calories,

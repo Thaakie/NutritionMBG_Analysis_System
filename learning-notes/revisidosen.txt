@@ -151,20 +151,18 @@ Kebutuhan revisi:
 - Selesai di sisi frontend tanpa memutus kompatibilitas payload lama.
 
 7. Skala gramasi dibuat pilihan
-Status: BELUM
+Status: SUDAH
 Kondisi saat ini:
-- Gramasi masih diinput bebas lewat `portionGrams`.
-- Belum ada pilihan skala gramasi atau preset porsi.
+- Form input bahan sudah punya pilihan skala gramasi preset.
+- Tersedia opsi preset dan opsi `Custom` untuk menjaga fleksibilitas input lama.
+- Preset gramasi dapat mengisi nilai gram secara otomatis.
 File terkait:
 - frontend/src/components/MenuInputPanel.jsx
 - frontend/src/App.jsx
 - backend/server.js
 - ai-engine/app.py
 Kebutuhan revisi:
-- Tambahkan opsi skala gramasi.
-- Tentukan apakah skala berupa preset tetap, misalnya kecil/sedang/besar,
-  atau daftar gram tertentu.
-- Pastikan perhitungan nutrisi dan biaya ikut menyesuaikan.
+- Sudah tersedia dalam bentuk preset gramasi di frontend.
 
 8. Perhitungan manual untuk membandingkan AKG
 Status: SUDAH
@@ -278,7 +276,7 @@ CHECKLIST PENGERJAAN
 [x] Hilangkan input minimum yang tidak perlu
 [ ] Tambah input jumlah siswa
 [ ] Tambah output kebutuhan bahan total
-[ ] Tambah pilihan skala gramasi
+[x] Tambah pilihan skala gramasi
 [ ] Tambah history anti-menu-berulang
 [x] Sinkronkan dashboard preview vs hasil optimasi
 [x] Tambah pembanding hitung manual vs hasil optimasi
