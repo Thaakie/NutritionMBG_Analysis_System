@@ -1,17 +1,7 @@
 import "./SummaryPanel.css";
 import { formatNumber, formatPercent, formatSignedNumber } from "../utils/formatters";
 
-function SummaryPanel({
-  result,
-  payloadPreview,
-  mealTarget,
-  currentTotals,
-  currentAkgPercentages,
-  currentStatus,
-  studentCount,
-  recommendedBatch,
-  recommendedBatchTotals,
-}) {
+function SummaryPanel({ result, mealTarget, currentTotals, currentAkgPercentages, currentStatus, studentCount, recommendedBatch, recommendedBatchTotals }) {
   const optimizedTotals = {
     calories: result?.total_calories || 0,
     protein: result?.total_protein || 0,
@@ -150,10 +140,7 @@ function SummaryPanel({
       {result?.nutrition_reference ? (
         <div className="reference-note">
           <p>
-            Referensi: {result.nutrition_reference.label} | Target porsi MBG {formatNumber(
-              result.nutrition_reference.meal_target.calories,
-            )}{" "}
-            kcal, {formatNumber(result.nutrition_reference.meal_target.protein)} g protein.
+            Referensi: {result.nutrition_reference.label} | Target porsi MBG {formatNumber(result.nutrition_reference.meal_target.calories)} kcal, {formatNumber(result.nutrition_reference.meal_target.protein)} g protein.
           </p>
         </div>
       ) : null}
@@ -161,10 +148,7 @@ function SummaryPanel({
       {!result ? (
         <div className="reference-note">
           <p>
-            Belum ada hasil optimasi. Saat tombol dijalankan, panel ini akan
-            menampilkan hasil menu final berdasarkan target otomatis{" "}
-            {formatNumber(mealTarget.calories)} kcal dan{" "}
-            {formatNumber(mealTarget.protein)} g protein.
+            Belum ada hasil optimasi. Saat tombol dijalankan, panel ini akan menampilkan hasil menu final berdasarkan target otomatis {formatNumber(mealTarget.calories)} kcal dan {formatNumber(mealTarget.protein)} g protein.
           </p>
         </div>
       ) : null}
@@ -199,19 +183,13 @@ function SummaryPanel({
             </tbody>
           </table>
         </div>
-        <p className="comparison-note">
-          Selisih optimasi dihitung sebagai hasil optimasi dikurangi perhitungan
-          manual kandidat bahan.
-        </p>
+        <p className="comparison-note">Selisih optimasi dihitung sebagai hasil optimasi dikurangi perhitungan manual kandidat bahan.</p>
       </div>
 
       <div className="summary-preview">
         <h3>Kebutuhan bahan untuk {formatNumber(studentCount)} siswa</h3>
         {!result ? (
-          <p className="comparison-note">
-            Jalankan optimasi terlebih dahulu untuk melihat total gramasi dan
-            biaya bahan untuk seluruh siswa.
-          </p>
+          <p className="comparison-note">Jalankan optimasi terlebih dahulu untuk melihat total gramasi dan biaya bahan untuk seluruh siswa.</p>
         ) : (
           <>
             <div className="totals-grid">
@@ -254,11 +232,6 @@ function SummaryPanel({
             </div>
           </>
         )}
-      </div>
-
-      <div className="summary-preview">
-        <h3>API payload preview</h3>
-        <pre>{JSON.stringify(payloadPreview, null, 2)}</pre>
       </div>
     </div>
   );

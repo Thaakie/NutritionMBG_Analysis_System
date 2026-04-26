@@ -71,7 +71,6 @@ function validateOptimizePayload(payload) {
   return null;
 }
 
-
 //restApi
 app.get("/", (req, res) => {
   res.json({ message: "NutriSafety API is running." });

@@ -8,10 +8,7 @@ function MenuInputPanel({ foodForm, foods, error, onFoodFormChange, onAddFood, o
     <div className="panel">
       <div className="panel-heading">
         <h2>Komposisi Bahan</h2>
-        <p>
-          Masukkan komposisi bahan, pilih kategori menu 4 sehat 5 sempurna,
-          atur skala gramasi, lalu lengkapi kandungan nutrisi dan biaya.
-        </p>
+        <p>Masukkan komposisi bahan, pilih kategori menu 4 sehat 5 sempurna, atur skala gramasi, lalu lengkapi kandungan nutrisi dan biaya.</p>
       </div>
 
       <form className="menu-form" onSubmit={onAddFood}>
@@ -54,58 +51,23 @@ function MenuInputPanel({ foodForm, foods, error, onFoodFormChange, onAddFood, o
           </label>
           <label>
             <span>Protein (g)</span>
-            <input
-              min="0"
-              name="protein"
-              placeholder="12"
-              type="number"
-              value={foodForm.protein}
-              onChange={onFoodFormChange}
-            />
+            <input min="0" name="protein" placeholder="12" type="number" value={foodForm.protein} onChange={onFoodFormChange} />
           </label>
           <label>
             <span>Calories</span>
-            <input
-              min="0"
-              name="calories"
-              placeholder="150"
-              type="number"
-              value={foodForm.calories}
-              onChange={onFoodFormChange}
-            />
+            <input min="0" name="calories" placeholder="150" type="number" value={foodForm.calories} onChange={onFoodFormChange} />
           </label>
           <label>
             <span>Fat (g)</span>
-            <input
-              min="0"
-              name="fat"
-              placeholder="6"
-              type="number"
-              value={foodForm.fat}
-              onChange={onFoodFormChange}
-            />
+            <input min="0" name="fat" placeholder="6" type="number" value={foodForm.fat} onChange={onFoodFormChange} />
           </label>
           <label>
             <span>Carbs (g)</span>
-            <input
-              min="0"
-              name="carbs"
-              placeholder="18"
-              type="number"
-              value={foodForm.carbs}
-              onChange={onFoodFormChange}
-            />
+            <input min="0" name="carbs" placeholder="18" type="number" value={foodForm.carbs} onChange={onFoodFormChange} />
           </label>
           <label>
             <span>Price (Rp)</span>
-            <input
-              min="0"
-              name="price"
-              placeholder="3500"
-              type="number"
-              value={foodForm.price}
-              onChange={onFoodFormChange}
-            />
+            <input min="0" name="price" placeholder="3500" type="number" value={foodForm.price} onChange={onFoodFormChange} />
           </label>
         </div>
 
@@ -114,10 +76,7 @@ function MenuInputPanel({ foodForm, foods, error, onFoodFormChange, onAddFood, o
         </button>
       </form>
 
-      <p className="helper-copy">
-        Pilih preset gramasi untuk mengisi porsi otomatis, atau pilih `Custom`
-        jika ingin menulis gramasi sendiri.
-      </p>
+      <p className="helper-copy">Pilih preset gramasi untuk mengisi porsi otomatis, atau pilih `Custom` jika ingin menulis gramasi sendiri.</p>
 
       {error ? <p className="feedback error">{error}</p> : null}
 
@@ -142,8 +101,7 @@ function MenuInputPanel({ foodForm, foods, error, onFoodFormChange, onAddFood, o
                 <td>{food.name}</td>
                 <td>{food.category || "Lainnya"}</td>
                 <td>
-                  {formatNumber(food.portionGrams)} g
-                  {food.portionScale && food.portionScale !== "custom" ? ` (${food.portionScale} g)` : ""}
+                  {formatNumber(food.portionGrams)} g{food.portionScale && food.portionScale !== "custom" ? ` (${food.portionScale})` : ""}
                 </td>
                 <td>{formatNumber(food.protein)} g</td>
                 <td>{formatNumber(food.calories)} kcal</td>

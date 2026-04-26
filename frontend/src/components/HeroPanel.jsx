@@ -7,15 +7,8 @@ function HeroPanel({ constraints, currentStatus }) {
     <section className="hero-panel">
       <div className="hero-copy">
         <p className="eyebrow">NutriSafety AI</p>
-        <h1>
-          TEST MBG meal composition with nutrition, budget, and AI-backed
-          recommendations.
-        </h1>
-        <p className="hero-text">
-          Build candidate menus, validate nutritional adequacy, evaluate AKG
-          fulfillment, and generate ranked recommendations for Program Makan
-          Bergizi Gratis.
-        </p>
+        <h1>MBG meal composition with nutrition, budget, and AI-backed recommendations.</h1>
+        <p className="hero-text">Build candidate menus, validate nutritional adequacy, evaluate AKG fulfillment, and generate ranked recommendations for Program Makan Bergizi Gratis.</p>
       </div>
       <div className="hero-stats">
         <article className="stat-card">
