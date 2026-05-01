@@ -3,6 +3,7 @@ import "./styles/ui.css";
 import "./App.css";
 import ControlsPanel from "./components/ControlsPanel";
 import DatasetPanel from "./components/DatasetPanel";
+import FoodDatabasePanel from "./components/FoodDatabasePanel";
 import HeroPanel from "./components/HeroPanel";
 import MenuInputPanel from "./components/MenuInputPanel";
 import ResultsPanel from "./components/ResultsPanel";
@@ -228,6 +229,18 @@ function App() {
     setActiveDatasetId(null);
   }
 
+  function addFoodFromDatabase(food) {
+    setFoods((current) => [...current, food]);
+    setActiveDatasetId(null);
+  }
+
+  function loadAllFoodsFromDatabase(mappedFoods) {
+    setFoods(mappedFoods);
+    setActiveDatasetId(null);
+    setResult(null);
+    setError("");
+  }
+
   function clearMenuHistory() {
     setMenuHistory([]);
   }
@@ -280,6 +293,8 @@ function App() {
     <main className="dashboard-shell">
       <HeroPanel constraints={constraints} currentStatus={currentStatus} />
       <DatasetPanel datasets={sampleDatasets} activeDatasetId={activeDatasetId} onLoadDataset={loadDataset} />
+
+      <FoodDatabasePanel onAddToOptimizer={addFoodFromDatabase} onLoadAllToOptimizer={loadAllFoodsFromDatabase} />
 
       <section className="content-grid">
         <ControlsPanel

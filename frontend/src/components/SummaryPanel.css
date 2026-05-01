@@ -1,51 +1,60 @@
+/* ── Summary ──────────────────────────────────────────────────────── */
 .summary-preview {
-  margin-top: 20px;
+  margin-top: 16px;
   text-align: left;
 }
 
 .summary-preview h3 {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
+  font-size: 0.95rem;
 }
 
 .summary-preview pre {
   overflow-x: auto;
   margin: 0;
-  padding: 16px;
-  border-radius: 18px;
+  padding: 12px;
+  border-radius: var(--radius);
   background: var(--code-bg);
   color: var(--heading-color);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
 }
 
 .comparison-section {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .comparison-table-wrap {
-  margin-top: 12px;
+  margin-top: 10px;
+  overflow-x: auto;
 }
 
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
+  font-size: 0.85rem;
 }
 
 .comparison-table th,
 .comparison-table td {
-  padding: 14px 12px;
+  padding: 10px 10px;
   border-bottom: 1px solid var(--border);
+  white-space: nowrap;
 }
 
 .comparison-table th {
   color: var(--muted);
-  font-size: 0.84rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  background: var(--card-bg);
+  position: sticky;
+  top: 0;
 }
 
 .comparison-note {
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.82rem;
 }

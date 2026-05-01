@@ -1,0 +1,69 @@
+/* ── Food Database Panel ──────────────────────────────────────────── */
+.database-toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.database-toolbar .secondary-button {
+  flex: none;
+  font-size: 0.82rem;
+  padding: 8px 14px;
+}
+
+.food-db-table-wrap {
+  overflow-x: auto;
+}
+
+.food-db-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.food-db-table-wrap th,
+.food-db-table-wrap td {
+  padding: 10px 10px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.food-db-table-wrap th {
+  font-weight: 700;
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--card-bg);
+  position: sticky;
+  top: 0;
+}
+
+.food-db-table-wrap td {
+  color: var(--text);
+}
+
+.action-cell {
+  display: flex;
+  gap: 4px;
+  flex-wrap: nowrap;
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.edit-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(32, 79, 81, 0.1);
+  color: #204f51;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}

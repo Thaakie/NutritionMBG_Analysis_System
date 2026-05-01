@@ -1,6 +1,18 @@
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
+const {
+  createFood,
+  deleteFood,
+  getDatabaseHealth,
+  initializeDatabase,
+  listFoods,
+  listOptimizationHistory,
+  saveOptimizationRun,
+  updateFood,
+} = require("./db");
 
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
@@ -16,6 +28,42 @@ app.use(express.json());
 
 function isValidNumber(value) {
   return typeof value === "number" && Number.isFinite(value) && value >= 0;
+}
+
+function normalizeLimit(value, fallback = 10) {
+  const parsedLimit = Number.parseInt(value, 10);
+  if (Number.isNaN(parsedLimit) || parsedLimit <= 0) {
+    return fallback;
+  }
+
+  return Math.min(parsedLimit, 50);
+}
+
+function validateFoodPayload(payload) {
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    return "Request body must be a JSON object.";
+  }
+
+  if (typeof payload.name !== "string" || !payload.name.trim()) {
+    return "name must be a non-empty string.";
+  }
+
+  if ("category" in payload && (typeof payload.category !== "string" || !payload.category.trim())) {
+    return "category must be a non-empty string.";
+  }
+
+  const numericFields = ["portion_grams", "protein", "calories", "fat", "carbs", "price"];
+  for (const field of numericFields) {
+    if (!(field in payload)) {
+      return `Missing required field: ${field}.`;
+    }
+
+    if (!isValidNumber(payload[field])) {
+      return `${field} must be a non-negative number.`;
+    }
+  }
+
+  return null;
 }
 
 function validateOptimizePayload(payload) {
@@ -39,6 +87,26 @@ function validateOptimizePayload(payload) {
 
   if (!SUPPORTED_AGE_GROUPS.includes(payload.age_group)) {
     return "age_group is not supported.";
+  }
+
+  if (
+    "student_count" in payload &&
+    (!Number.isInteger(payload.student_count) || payload.student_count <= 0)
+  ) {
+    return "student_count must be a positive integer.";
+  }
+
+  if ("excluded_menus" in payload) {
+    if (!Array.isArray(payload.excluded_menus)) {
+      return "excluded_menus must be an array.";
+    }
+
+    const hasInvalidMenu = payload.excluded_menus.some(
+      (menu) => !Array.isArray(menu) || menu.some((item) => typeof item !== "string" || !item.trim()),
+    );
+    if (hasInvalidMenu) {
+      return "excluded_menus must contain arrays of non-empty strings.";
+    }
   }
 
   if (!Array.isArray(payload.foods) || payload.foods.length === 0) {
@@ -77,20 +145,31 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/health", async (req, res) => {
-  try {
-    const response = await axios.get(`${AI_ENGINE_URL}/health`, { timeout: 3000 });
-    res.json({
-      status: "ok",
-      api: "nutrisafety-backend",
-      ai_engine: response.data,
-    });
-  } catch (error) {
-    res.status(503).json({
-      status: "degraded",
-      api: "nutrisafety-backend",
-      error: "AI engine is unavailable.",
-    });
-  }
+  const [aiEngineResult, databaseResult] = await Promise.allSettled([
+    axios.get(`${AI_ENGINE_URL}/health`, { timeout: 3000 }),
+    getDatabaseHealth(),
+  ]);
+
+  const responseBody = {
+    status: aiEngineResult.status === "fulfilled" && databaseResult.status === "fulfilled" ? "ok" : "degraded",
+    api: "nutrisafety-backend",
+    ai_engine:
+      aiEngineResult.status === "fulfilled"
+        ? aiEngineResult.value.data
+        : {
+            status: "unavailable",
+            error: "AI engine is unavailable.",
+          },
+    database:
+      databaseResult.status === "fulfilled"
+        ? databaseResult.value
+        : {
+            status: "unavailable",
+            error: "PostgreSQL is unavailable.",
+          },
+  };
+
+  res.status(responseBody.status === "ok" ? 200 : 503).json(responseBody);
 });
 
 app.get("/api/akg-profiles", async (req, res) => {
@@ -118,7 +197,20 @@ app.post("/api/optimize", async (req, res) => {
       timeout: 10000,
     });
 
-    return res.json(response.data);
+    try {
+      const savedRun = await saveOptimizationRun(req.body, response.data);
+
+      return res.json({
+        ...response.data,
+        history_id: savedRun.id,
+        saved_at: savedRun.created_at,
+      });
+    } catch (databaseError) {
+      console.error("Database save error:", databaseError.message);
+      return res.status(503).json({
+        error: "Optimization result was generated, but PostgreSQL is unavailable.",
+      });
+    }
   } catch (error) {
     if (error.response) {
       return res.status(error.response.status).json(
@@ -128,17 +220,108 @@ app.post("/api/optimize", async (req, res) => {
       );
     }
 
-    console.error("AI service error:", error.message);
+    console.error("Request processing error:", error.message);
     return res.status(503).json({
-      error: "Unable to reach AI optimization service.",
+      error: "Unable to process optimization request.",
     });
   }
 });
 
+app.get("/api/optimization-history", async (req, res) => {
+  try {
+    const history = await listOptimizationHistory(normalizeLimit(req.query.limit));
+    res.json({
+      items: history,
+    });
+  } catch (error) {
+    console.error("Database read error:", error.message);
+    res.status(503).json({
+      error: "Unable to load optimization history from PostgreSQL.",
+    });
+  }
+});
+
+// ── Food CRUD ───────────────────────────────────────────────────────────
+
+app.get("/api/foods", async (req, res) => {
+  try {
+    const items = await listFoods(normalizeLimit(req.query.limit, 100));
+    res.json({ items });
+  } catch (error) {
+    console.error("Database read error:", error.message);
+    res.status(503).json({ error: "Unable to load foods from PostgreSQL." });
+  }
+});
+
+app.post("/api/foods", async (req, res) => {
+  const validationError = validateFoodPayload(req.body);
+  if (validationError) {
+    return res.status(400).json({ error: validationError });
+  }
+
+  try {
+    const food = await createFood(req.body);
+    res.status(201).json(food);
+  } catch (error) {
+    console.error("Database write error:", error.message);
+    res.status(503).json({ error: "Unable to save food to PostgreSQL." });
+  }
+});
+
+app.put("/api/foods/:id", async (req, res) => {
+  const foodId = Number(req.params.id);
+  if (!Number.isInteger(foodId) || foodId <= 0) {
+    return res.status(400).json({ error: "Invalid food ID." });
+  }
+
+  const validationError = validateFoodPayload(req.body);
+  if (validationError) {
+    return res.status(400).json({ error: validationError });
+  }
+
+  try {
+    const food = await updateFood(foodId, req.body);
+    if (!food) {
+      return res.status(404).json({ error: "Food not found." });
+    }
+
+    res.json(food);
+  } catch (error) {
+    console.error("Database update error:", error.message);
+    res.status(503).json({ error: "Unable to update food in PostgreSQL." });
+  }
+});
+
+app.delete("/api/foods/:id", async (req, res) => {
+  const foodId = Number(req.params.id);
+  if (!Number.isInteger(foodId) || foodId <= 0) {
+    return res.status(400).json({ error: "Invalid food ID." });
+  }
+
+  try {
+    const deleted = await deleteFood(foodId);
+    if (!deleted) {
+      return res.status(404).json({ error: "Food not found." });
+    }
+
+    res.json({ message: "Food deleted." });
+  } catch (error) {
+    console.error("Database delete error:", error.message);
+    res.status(503).json({ error: "Unable to delete food from PostgreSQL." });
+  }
+});
+
 if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`NutriSafety backend running at http://localhost:${PORT}`);
-  });
+  initializeDatabase()
+    .then(() => {
+      app.listen(PORT, () => {
+        console.log(`NutriSafety backend running at http://localhost:${PORT}`);
+      });
+    })
+    .catch((error) => {
+      console.error("Failed to initialize PostgreSQL:", error.message);
+      process.exit(1);
+    });
 }
 
 module.exports = app;

@@ -1,51 +1,70 @@
+/* ── Results ──────────────────────────────────────────────────────── */
 .recommendation-list,
 .ranking-list {
   display: grid;
-  gap: 16px;
+  gap: 10px;
 }
 
 .ranking-list {
-  margin-top: 18px;
-  gap: 12px;
+  margin-top: 14px;
+  gap: 8px;
 }
 
 .history-block {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .history-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .food-card,
 .ranking-card {
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--radius);
   background: var(--card-bg);
-  padding: 18px;
+  padding: 14px;
   text-align: left;
+  transition: background var(--transition);
+}
+
+.food-card:hover,
+.ranking-card:hover {
+  background: var(--card-hover);
 }
 
 .food-card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 6px;
+  font-size: 0.95rem;
 }
 
 .food-card p {
-  margin-top: 6px;
+  margin-top: 3px;
+  font-size: 0.85rem;
 }
 
 .ranking-header {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   align-items: baseline;
+}
+
+.ranking-header h3 {
+  font-size: 0.92rem;
 }
 
 .ranking-header span {
   color: var(--accent);
   font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.ranking-card p {
+  font-size: 0.85rem;
+  margin-top: 3px;
 }

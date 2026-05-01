@@ -1,8 +1,10 @@
+/* ── App layout ───────────────────────────────────────────────────── */
 .dashboard-shell {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 32px;
+  gap: 16px;
+  padding: 20px 24px;
+  min-height: 100vh;
 }
 
 .content-grid,
@@ -14,7 +16,7 @@
 
 @media (max-width: 960px) {
   .dashboard-shell {
-    padding: 18px;
+    padding: 12px;
   }
 
   .content-grid,

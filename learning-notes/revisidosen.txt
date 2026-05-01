@@ -115,21 +115,25 @@ Kebutuhan revisi:
 - Sudah diterapkan pada frontend dan AI engine.
 
 5. Database dimasukkan
-Status: SEBAGIAN
+Status: SUDAH
 Kondisi saat ini:
-- Backend sudah memasang koneksi MongoDB dan schema `Food`.
-- Belum ada endpoint CRUD bahan.
-- Frontend belum mengambil data bahan dari backend/database.
-- Saat ini data bahan masih dominan dari input manual dan dataset contoh.
+- Backend sudah memasang koneksi PostgreSQL dan tabel `foods`.
+- Endpoint CRUD bahan (GET, POST, PUT, DELETE /api/foods) sudah tersedia.
+- Frontend sudah punya panel Database Bahan Makanan untuk kelola data bahan
+  dan memuat bahan dari DB ke kandidat optimasi.
+- Seed script tersedia via `npm run db:seed` untuk isi data awal.
+- Dataset contoh tetap dipertahankan sebagai preset demo.
 File terkait:
+- backend/db.js
 - backend/server.js
+- backend/scripts/seed-foods.js
 - backend/package.json
+- frontend/src/services/api.js
+- frontend/src/components/FoodDatabasePanel.jsx
+- frontend/src/components/FoodDatabasePanel.css
 - frontend/src/App.jsx
-- frontend/src/data/sampleDatasets.js
 Kebutuhan revisi:
-- Buat endpoint tambah, lihat, ubah, hapus bahan.
-- Hubungkan frontend ke database.
-- Tentukan apakah dataset contoh tetap dipakai sebagai demo atau diganti sumber DB.
+- Sudah selesai. CRUD bahan, panel admin, dan integrasi frontend sudah tersedia.
 
 6. Hilangkan beberapa inputan minimum
 Status: SUDAH
@@ -261,7 +265,7 @@ CHECKLIST PENGERJAAN
 ====================================================================
 
 [x] Finalisasi desain data bahan dan kategori
-[ ] Finalisasi integrasi database bahan
+[x] Finalisasi integrasi database bahan
 [x] Hilangkan input minimum yang tidak perlu
 [x] Tambah input jumlah siswa
 [x] Tambah output kebutuhan bahan total
