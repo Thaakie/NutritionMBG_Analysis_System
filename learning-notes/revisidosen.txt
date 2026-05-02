@@ -1,0 +1,276 @@
+NUTRISAFETY - TRACKING REVISI DOSEN
+Tanggal catatan: 2026-04-27
+
+Tujuan file:
+File ini dipakai untuk tracking revisi dosen agar setiap poin bisa dipantau
+statusnya, dipetakan ke file terkait, dan dikerjakan bertahap tanpa bingung.
+
+Status yang dipakai:
+- BELUM = belum ada implementasi yang memadai
+- SEBAGIAN = sudah ada pondasi, tetapi belum lengkap / belum sinkron
+- SUDAH = sudah tersedia dan bisa dipakai
+
+====================================================================
+RINGKASAN KONTEKS SISTEM SAAT INI
+====================================================================
+
+Arsitektur utama:
+- Frontend React
+- Backend Express
+- AI Engine Flask + PuLP
+
+Alur data saat ini:
+User input bahan di frontend
+-> frontend hitung preview total gizi
+-> frontend kirim payload ke backend
+-> backend validasi request
+-> backend forward ke AI engine
+-> AI engine optimasi kombinasi menu
+-> hasil dikirim lagi ke frontend
+
+Catatan penting:
+- Sistem optimasi tetap bekerja per porsi, tetapi dashboard sekarang sudah bisa
+  menghitung kebutuhan batch untuk sejumlah siswa.
+- Input minimum kalori dan minimum protein sudah tidak ditampilkan lagi karena
+  target diisi otomatis dari profil AKG.
+- Database MongoDB sudah mulai dipasang di backend, tetapi alur CRUD dan integrasi
+  frontend belum selesai.
+
+File inti yang paling sering terkait revisi:
+- frontend/src/App.jsx
+- frontend/src/components/ControlsPanel.jsx
+- frontend/src/components/MenuInputPanel.jsx
+- frontend/src/components/ResultsPanel.jsx
+- frontend/src/components/SummaryPanel.jsx
+- frontend/src/data/akgProfiles.js
+- frontend/src/data/sampleDatasets.js
+- backend/server.js
+- ai-engine/app.py
+- ai-engine/optimizer.py
+- ai-engine/akg_profiles.py
+
+====================================================================
+TRACKING REVISI DOSEN
+====================================================================
+
+1. Harga beli bahan
+Status: SUDAH
+Kondisi saat ini:
+- Field harga sudah ada dengan nama `price`.
+- Harga sudah dipakai di input frontend, dataset contoh, validasi backend,
+  validasi AI engine, dan objective/constraint optimasi.
+File terkait:
+- frontend/src/components/MenuInputPanel.jsx
+- frontend/src/App.jsx
+- frontend/src/data/sampleDatasets.js
+- backend/server.js
+- ai-engine/app.py
+- ai-engine/optimizer.py
+Catatan tindak lanjut:
+- Tinggal dipastikan sumber harga nanti berasal dari database bahan,
+  bukan hanya input manual.
+
+2. Generate kebutuhan bahan untuk menu sejumlah siswa
+Status: SUDAH
+Kondisi saat ini:
+- Dashboard sekarang punya input jumlah siswa.
+- Hasil optimasi sekarang punya perhitungan total kebutuhan bahan untuk seluruh
+  siswa berdasarkan menu terpilih.
+- Total gramasi dan total biaya batch sudah ditampilkan di dashboard output.
+File terkait:
+- frontend/src/App.jsx
+- frontend/src/components/ControlsPanel.jsx
+- frontend/src/components/SummaryPanel.jsx
+- ai-engine/optimizer.py
+Kebutuhan revisi:
+- Sudah diterapkan di frontend tanpa mengubah optimasi per porsi yang sudah ada.
+
+3. Data AKG per kelompok usia
+Status: SUDAH
+Kondisi saat ini:
+- Profil AKG sudah tersedia untuk kelompok usia:
+  7-9, 10-12, 13-15, 16-18.
+- Frontend dan AI engine sama-sama punya referensi AKG.
+File terkait:
+- frontend/src/data/akgProfiles.js
+- ai-engine/akg_profiles.py
+Catatan tindak lanjut:
+- Perlu dicek lagi apakah dosen ingin penambahan kelompok usia lain,
+  pemisahan laki-laki/perempuan, atau update sumber referensi final.
+
+4. Klasifikasi jenis 4 sehat 5 sempurna
+Status: SUDAH
+Kondisi saat ini:
+- Frontend sudah punya input kategori bahan.
+- Payload optimasi sekarang ikut mengirim kategori bahan.
+- Optimizer sekarang memakai kategori sebagai rule dasar komposisi menu:
+  minimal ada makanan pokok, lauk pauk, dan sayuran bila kandidatnya tersedia.
+- Buah dan susu juga diberi bobot bonus agar komposisi menu lebih seimbang.
+File terkait:
+- backend/server.js
+- frontend/src/components/MenuInputPanel.jsx
+- frontend/src/App.jsx
+- ai-engine/optimizer.py
+Kebutuhan revisi:
+- Sudah diterapkan pada frontend dan AI engine.
+
+5. Database dimasukkan
+Status: SUDAH
+Kondisi saat ini:
+- Backend sudah memasang koneksi PostgreSQL dan tabel `foods`.
+- Endpoint CRUD bahan (GET, POST, PUT, DELETE /api/foods) sudah tersedia.
+- Frontend sudah punya panel Database Bahan Makanan untuk kelola data bahan
+  dan memuat bahan dari DB ke kandidat optimasi.
+- Seed script tersedia via `npm run db:seed` untuk isi data awal.
+- Dataset contoh tetap dipertahankan sebagai preset demo.
+File terkait:
+- backend/db.js
+- backend/server.js
+- backend/scripts/seed-foods.js
+- backend/package.json
+- frontend/src/services/api.js
+- frontend/src/components/FoodDatabasePanel.jsx
+- frontend/src/components/FoodDatabasePanel.css
+- frontend/src/App.jsx
+Kebutuhan revisi:
+- Sudah selesai. CRUD bahan, panel admin, dan integrasi frontend sudah tersedia.
+
+6. Hilangkan beberapa inputan minimum
+Status: SUDAH
+Kondisi saat ini:
+- Input `minimumCalories` dan `minimumProtein` sudah tidak tampil lagi
+  di dashboard.
+- Nilai minimum untuk payload tetap dikirim, tetapi sekarang diisi otomatis
+  dari target AKG kelompok usia.
+File terkait:
+- frontend/src/components/ControlsPanel.jsx
+- frontend/src/App.jsx
+- backend/server.js
+- ai-engine/app.py
+- ai-engine/optimizer.py
+Kebutuhan revisi:
+- Selesai di sisi frontend tanpa memutus kompatibilitas payload lama.
+
+7. Skala gramasi dibuat pilihan
+Status: SUDAH
+Kondisi saat ini:
+- Form input bahan sudah punya pilihan skala gramasi preset.
+- Tersedia opsi preset dan opsi `Custom` untuk menjaga fleksibilitas input lama.
+- Preset gramasi dapat mengisi nilai gram secara otomatis.
+File terkait:
+- frontend/src/components/MenuInputPanel.jsx
+- frontend/src/App.jsx
+- backend/server.js
+- ai-engine/app.py
+Kebutuhan revisi:
+- Sudah tersedia dalam bentuk preset gramasi di frontend.
+
+8. Perhitungan manual untuk membandingkan AKG
+Status: SUDAH
+Kondisi saat ini:
+- Frontend sudah menampilkan tabel perbandingan manual/preview vs hasil
+  optimasi.
+- Perbandingan mencakup total nutrisi, biaya, dan persentase AKG.
+- Selisih hasil optimasi terhadap hitungan manual juga sudah terlihat.
+File terkait:
+- frontend/src/utils/nutrition.js
+- frontend/src/components/ControlsPanel.jsx
+- frontend/src/components/SummaryPanel.jsx
+- ai-engine/optimizer.py
+Kebutuhan revisi:
+- Sudah tersedia di dashboard output.
+
+9. Dashboard output dan optimization control belum sync
+Status: SUDAH
+Kondisi saat ini:
+- `ControlsPanel` sekarang diposisikan jelas sebagai preview kandidat bahan.
+- `SummaryPanel` sekarang diposisikan jelas sebagai hasil optimasi final.
+- Label target dan status sudah dibedakan agar angka preview dan hasil tidak
+  terbaca seperti data yang sama.
+File terkait:
+- frontend/src/components/ControlsPanel.jsx
+- frontend/src/components/SummaryPanel.jsx
+- frontend/src/App.jsx
+Kebutuhan revisi:
+- Sudah diberi pemisahan istilah dan konteks tampilan.
+
+10. History supaya menu tidak berulang
+Status: SUDAH
+Kondisi saat ini:
+- Riwayat menu sekarang disimpan lokal di frontend.
+- Riwayat tersebut dikirim ke AI engine sebagai daftar kombinasi menu yang
+  harus dihindari pada optimasi berikutnya.
+- Engine juga punya fallback aman jika semua kombinasi unik tidak feasible,
+  sehingga aplikasi tidak macet hanya karena history terlalu ketat.
+File terkait:
+- ai-engine/optimizer.py
+- backend/server.js
+- frontend/src/App.jsx
+Kebutuhan revisi:
+- Sudah ada penyimpanan history dasar dengan kapasitas riwayat terbaru.
+
+11. Isi menu sayur
+Status: SUDAH
+Kondisi saat ini:
+- Dataset contoh sekarang berisi pilihan sayur yang lebih kaya:
+  Sayur Bayam, Wortel Kukus, Tumis Kangkung, Capcay, Sayur Sop, dan Buncis Rebus.
+- Hasil optimasi sekarang diarahkan untuk memasukkan kategori sayuran jika
+  kandidat sayur tersedia.
+- Pengelolaan database sayur tetap bisa dilanjutkan di tahap admin panel nanti.
+File terkait:
+- frontend/src/data/sampleDatasets.js
+- backend/server.js
+- frontend/src/components/MenuInputPanel.jsx
+- ai-engine/optimizer.py
+Kebutuhan revisi:
+- Sudah diperkuat di dataset dan logika optimasi.
+
+12. Flowchart code
+Status: SUDAH
+Kondisi saat ini:
+- Catatan flow sistem sudah diperbarui sesuai implementasi terbaru.
+- Flow sekarang sudah mencerminkan target otomatis, kategori bahan, jumlah
+  siswa, history anti-repeat, dan output batch.
+File terkait:
+- learning-notes/05-system-flowchart-and-technical.txt
+Kebutuhan revisi:
+- Sudah diperbarui pada catatan flow teknis.
+
+====================================================================
+PRIORITAS IMPLEMENTASI YANG DISARANKAN
+====================================================================
+
+Prioritas 1 - Fondasi data dan input:
+- Poin 5 database dimasukkan
+
+Prioritas 2 - Perubahan logika bisnis:
+- Penguatan admin panel CRUD database
+
+Prioritas 3 - Penyelarasan output dan dokumentasi:
+- Finalisasi dokumentasi setelah tahap database selesai
+
+====================================================================
+CATATAN RISIKO
+====================================================================
+
+- Backend sedang punya perubahan lokal yang belum dikomit:
+  backend/server.js
+  backend/package.json
+  backend/package-lock.json
+- Saat mengerjakan revisi, perubahan harus hati-hati agar tidak menimpa
+  modifikasi yang sudah ada.
+
+====================================================================
+CHECKLIST PENGERJAAN
+====================================================================
+
+[x] Finalisasi desain data bahan dan kategori
+[x] Finalisasi integrasi database bahan
+[x] Hilangkan input minimum yang tidak perlu
+[x] Tambah input jumlah siswa
+[x] Tambah output kebutuhan bahan total
+[x] Tambah pilihan skala gramasi
+[x] Tambah history anti-menu-berulang
+[x] Sinkronkan dashboard preview vs hasil optimasi
+[x] Tambah pembanding hitung manual vs hasil optimasi
+[x] Update flowchart final sistem

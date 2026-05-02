@@ -1,0 +1,205 @@
+/* ── Food Database Panel ──────────────────────────────────────────── */
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--heading-color);
+  font: inherit;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+}
+
+.category-select {
+  flex: none;
+  min-width: 180px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--heading-color);
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Toolbar */
+.database-toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.selection-count {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Table */
+.food-db-table-wrap {
+  overflow-x: auto;
+  max-height: 420px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.food-db-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.82rem;
+}
+
+.food-db-table-wrap th,
+.food-db-table-wrap td {
+  padding: 7px 8px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.food-db-table-wrap th {
+  font-weight: 700;
+  color: var(--muted);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--card-bg);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.food-db-table-wrap td {
+  color: var(--text);
+}
+
+.food-db-table-wrap tr.row-selected {
+  background: rgba(212, 95, 46, 0.05);
+}
+
+.food-db-table-wrap tr:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.food-db-table-wrap tr.row-selected:hover {
+  background: rgba(212, 95, 46, 0.08);
+}
+
+.food-db-table-wrap input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.cat-badge {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+  background: rgba(32, 79, 81, 0.08);
+  color: #204f51;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.action-cell {
+  display: flex;
+  gap: 4px;
+  flex-wrap: nowrap;
+}
+
+/* Pagination */
+.pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.page-info {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* Form */
+.form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* Collapsible add form */
+.add-food-details {
+  margin-top: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  overflow: hidden;
+}
+
+.add-food-summary {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--heading-color);
+  user-select: none;
+  list-style: none;
+}
+
+.add-food-summary::-webkit-details-marker {
+  display: none;
+}
+
+.add-food-summary::before {
+  content: "＋ ";
+  color: var(--accent);
+}
+
+.add-food-details[open] .add-food-summary::before {
+  content: "− ";
+}
+
+.add-food-details .menu-form {
+  padding: 0 14px 14px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .filter-bar {
+    flex-direction: column;
+  }
+
+  .category-select {
+    min-width: 0;
+    width: 100%;
+  }
+}

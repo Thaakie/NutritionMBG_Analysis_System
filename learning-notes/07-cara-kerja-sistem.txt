@@ -1,0 +1,392 @@
+NUTRISAFETY AI — CARA KERJA SISTEM (LENGKAP)
+Tanggal: 2026-05-02
+
+====================================================================
+GAMBARAN UMUM
+====================================================================
+
+NutriSafety AI adalah sistem optimasi menu untuk Program Makan
+Bergizi Gratis (MBG). Sistem ini membantu menentukan kombinasi
+bahan makanan terbaik yang memenuhi:
+  - Target gizi minimum (kalori, protein)
+  - Batas biaya (budget) per porsi
+  - Keragaman kategori (makanan pokok, lauk, sayur)
+
+Arsitektur: 3 layer terpisah
+
+  [Frontend React] → [Backend Express] → [AI Engine Flask]
+       :5173             :3000               :5001
+
+  [Database PostgreSQL]
+  Tabel: foods, optimization_history
+
+====================================================================
+BAGIAN 1 — SUMBER DATA NUTRISI BAHAN MAKANAN
+====================================================================
+
+Sumber: Tabel Komposisi Pangan Indonesia (TKPI) dari Kemenkes RI
+
+Dataset yang dipakai:
+  - Nama: Indonesian Food and Drink Nutrition Dataset
+  - Sumber asli: panganku.org (TKPI Kemenkes RI)
+  - Diunduh dari: Kaggle (anasfikrihanif)
+  - Lisensi: CC0 Public Domain
+  - Jumlah: 1.346 bahan makanan & minuman Indonesia
+
+File CSV: backend/data/nutrition.csv
+
+Format data per baris:
+  id, calories, proteins, fat, carbohydrate, name, image
+
+  Contoh:
+    1,280,9.2,28.4,0,Abon,https://...
+    206,60,1,60,13,Bubur,https://...
+    1342,42,1.2,0.6,9.3,Wortel Segar,https://...
+
+Catatan penting:
+  - Semua nilai nutrisi berdasarkan per 100 GRAM bahan
+  - Data HARGA tidak tersedia di dataset (diisi Rp 0 saat seed)
+  - Harga perlu diisi manual oleh user lewat dashboard
+
+Proses import ke database:
+  1. Script: backend/scripts/seed-foods.js
+  2. Membaca CSV baris per baris
+  3. Nama bahan dianalisa untuk menentukan kategori otomatis
+  4. Insert ke tabel "foods" di PostgreSQL
+  5. Perintah: npm run db:seed
+
+Kategori otomatis (ditentukan dari keyword di nama bahan):
+
+  Keyword mengandung               → Kategori
+  ─────────────────────────────────────────────
+  nasi, beras, roti, mie, kentang  → Makanan Pokok
+  ayam, sapi, ikan, udang, telur   → Lauk Hewani
+  tempe, tahu, kacang, oncom       → Lauk Nabati
+  bayam, kangkung, wortel, tomat   → Sayuran
+  pisang, apel, jeruk, mangga      → Buah-buahan
+  susu, yoghurt, keju              → Susu & Produk Susu
+  kue, biskuit, es krim, dodol     → Jajanan & Kue
+  teh, kopi, jus, air              → Minuman
+  minyak, santan, margarin         → Minyak & Lemak
+  sambal, kecap, bawang, cabai     → Bumbu & Rempah
+  (tidak cocok semua)              → Lainnya
+
+====================================================================
+BAGIAN 2 — DATA AKG (ANGKA KECUKUPAN GIZI) PER KELOMPOK USIA
+====================================================================
+
+Sumber referensi:
+  Permenkes No. 28 Tahun 2019 tentang Angka Kecukupan Gizi
+  yang Dianjurkan untuk Masyarakat Indonesia
+
+Data AKG disimpan di 2 tempat (identik, sinkron):
+  1. Frontend: frontend/src/data/akgProfiles.js
+  2. AI Engine: ai-engine/akg_profiles.py
+
+Data AKG HARIAN per kelompok usia:
+
+  Kelompok    Kalori     Protein    Lemak     Karbo
+  ──────────────────────────────────────────────────
+  7-9 thn     1.650      40 g       55 g      250 g
+  10-12 thn   2.000      50 g       65 g      300 g
+  13-15 thn   2.400      70 g       80 g      350 g
+  16-18 thn   2.650      75 g       85 g      400 g
+
+Konversi ke TARGET PER PORSI MBG:
+  Rumus: target_per_porsi = AKG_harian × 0.30 (30%)
+
+  Asumsi: MBG menyediakan 1 kali makan = 30% kebutuhan harian
+
+  Kelompok    Kalori     Protein    Lemak     Karbo
+  ──────────────────────────────────────────────────
+  7-9 thn     495 kcal   12 g       16,5 g    75 g
+  10-12 thn   600 kcal   15 g       19,5 g    90 g
+  13-15 thn   720 kcal   21 g       24 g      105 g
+  16-18 thn   795 kcal   22,5 g     25,5 g    120 g
+
+Kode perhitungan (frontend/src/data/akgProfiles.js):
+  export const mbgMealShare = 0.3;
+
+  export function getMealTarget(ageGroup) {
+    const profile = akgProfiles[ageGroup];
+    return {
+      calories: profile.dailyTarget.calories * 0.3,
+      protein: profile.dailyTarget.protein * 0.3,
+      fat: profile.dailyTarget.fat * 0.3,
+      carbs: profile.dailyTarget.carbs * 0.3,
+    };
+  }
+
+====================================================================
+BAGIAN 3 — ALUR INPUT BAHAN MAKANAN (FRONTEND)
+====================================================================
+
+Alur user di dashboard:
+
+  1. BUKA DASHBOARD (http://localhost:5173)
+     ↓
+  2. PANEL "Daftar Bahan Makanan" memuat data dari database
+     - GET /api/foods → mengembalikan 1.345 bahan
+     - Ditampilkan dalam tabel dengan pagination (50/halaman)
+     ↓
+  3. USER MENCARI/MEMFILTER BAHAN
+     - Search bar: ketik nama untuk filter
+     - Dropdown kategori: filter per kategori (Makanan Pokok, dll)
+     ↓
+  4. USER MENCENTANG BAHAN yang ingin dioptimasi
+     - Checkbox individual per bahan
+     - "Pilih semua" untuk centang semua hasil filter
+     - Bahan yang dicentang = kandidat yang dikirim ke AI
+     ↓
+  5. USER ATUR PARAMETER OPTIMASI (panel "Optimization Controls")
+     - Kelompok usia (dropdown): 7-9, 10-12, 13-15, 16-18
+     - Budget per porsi (Rp): batas biaya maksimum
+     - Jumlah siswa: untuk kalkulasi batch
+     - Target minimum otomatis terisi dari AKG × 30%
+     ↓
+  6. PREVIEW ditampilkan real-time
+     - Preview kandidat kalori/protein/lemak/karbo/biaya
+     - Persentase AKG (% dari target)
+     - Status kelayakan (Layak / Perlu optimasi / Tidak layak)
+     ↓
+  7. USER KLIK "Run AI Optimization"
+     ↓
+  8. Frontend kirim payload ke backend
+
+Payload yang dikirim (contoh):
+  {
+    "budget": 15000,
+    "age_group": "7-9",
+    "student_count": 1,
+    "minimum_calories": 495,
+    "minimum_protein": 12,
+    "excluded_menus": [],
+    "foods": [
+      {
+        "name": "Nasi",
+        "category": "Makanan Pokok",
+        "portion_grams": 100,
+        "protein": 4,
+        "calories": 180,
+        "fat": 0.4,
+        "carbs": 40,
+        "price": 2500
+      },
+      ...
+    ]
+  }
+
+====================================================================
+BAGIAN 4 — PROSES OPTIMASI DI AI ENGINE
+====================================================================
+
+Lokasi kode: ai-engine/optimizer.py
+
+Metode: Linear Programming (Integer Binary) dengan PuLP
+Solver: CBC (Coin-or Branch and Cut) — open source
+
+Langkah-langkah optimasi:
+
+  LANGKAH 1: Terima data dari backend
+  ─────────────────────────────────────
+  - Daftar bahan (foods[])
+  - Budget maksimum
+  - Minimum kalori dan protein (dari AKG)
+  - Riwayat menu yang harus dihindari (excluded_menus)
+
+  LANGKAH 2: Hitung skor nutrisi setiap bahan
+  ─────────────────────────────────────────────
+  Formula skor:
+    skor = (protein × 5)
+         + (kalori × 0.03)
+         + (lemak × 0.7)
+         + (karbo × 0.04)
+         - (harga × 0.001)
+         + bonus_kategori
+
+  Bonus kategori:
+    Buah-buahan:         +4
+    Susu & Produk Susu:  +4
+    Sayuran:             +2.5
+    Lainnya:             +0
+
+  Interpretasi: skor tinggi = bahan bergizi tinggi, murah,
+  dan dari kategori yang dianjurkan.
+
+  LANGKAH 3: Formulasi masalah optimasi
+  ──────────────────────────────────────
+  Variabel keputusan:
+    x_i ∈ {0, 1} untuk setiap bahan i
+    (1 = bahan dipilih, 0 = tidak dipilih)
+
+  Fungsi objektif (MAKSIMASI):
+    max Σ (x_i × skor_i)
+    → Pilih kombinasi bahan dengan total skor tertinggi
+
+  Kendala (constraints):
+    1. BIAYA: Σ (x_i × harga_i) ≤ budget
+    2. KALORI: Σ (x_i × kalori_i) ≥ minimum_kalori
+    3. PROTEIN: Σ (x_i × protein_i) ≥ minimum_protein
+    4. KERAGAMAN: minimal 1 bahan dari setiap kategori inti:
+       - Makanan Pokok ≥ 1
+       - Lauk Pauk ≥ 1
+       - Sayuran ≥ 1
+    5. ANTI-PENGULANGAN: menu sebelumnya dihindari
+       Σ (x_i untuk bahan di menu lama) ≤ jumlah_bahan - 1
+
+  LANGKAH 4: Solve dan ranking
+  ─────────────────────────────
+  - Solver CBC menjalankan optimasi hingga 3x
+  - Setiap iterasi menghasilkan 1 alternatif menu
+  - Menu yang sudah ditemukan ditambah ke excluded untuk
+    iterasi berikutnya (agar dapat menu berbeda)
+
+  Ranking alternatif diurutkan berdasarkan:
+    1. Status kelayakan (Layak > Perlu optimasi > Tidak layak)
+    2. Skor nutrisi (tertinggi duluan)
+    3. Biaya total (termurah duluan)
+
+  LANGKAH 5: Fallback jika gagal
+  ───────────────────────────────
+  - Jika tidak ada solusi karena excluded_menus terlalu banyak,
+    coba ulang TANPA exclusion
+  - Jika tetap gagal → status "infeasible"
+
+====================================================================
+BAGIAN 5 — PENILAIAN KELAYAKAN MENU (AKG %)
+====================================================================
+
+Setelah AI memilih kombinasi bahan, sistem menghitung:
+
+  AKG% = (total_nutrisi_menu / target_per_porsi) × 100
+
+  Contoh untuk usia 7-9 tahun:
+    Target kalori per porsi = 495 kcal
+    Menu terpilih total kalori = 520 kcal
+    AKG% kalori = (520 / 495) × 100 = 105,05%
+
+Klasifikasi kelayakan:
+
+  STATUS           SYARAT
+  ────────────────────────────────────────────────────────
+  "Layak"          - Biaya ≤ budget
+                   - AKG kalori ≥ 100%
+                   - AKG protein ≥ 100%
+                   - AKG lemak ≥ 80% DAN AKG karbo ≥ 80%
+
+  "Perlu optimasi" - Biaya ≤ budget
+                   - AKG kalori ≥ 80%
+                   - AKG protein ≥ 80%
+                   - (lemak/karbo belum memenuhi)
+
+  "Tidak layak"    - Tidak memenuhi syarat di atas
+
+====================================================================
+BAGIAN 6 — OUTPUT HASIL OPTIMASI
+====================================================================
+
+Respons dari AI Engine ke frontend:
+
+  {
+    "recommended_menu": ["Nasi", "Ayam", "Bayam", ...],
+    "total_calories": 520,
+    "total_protein": 25,
+    "total_fat": 18,
+    "total_carbs": 65,
+    "total_cost": 12000,
+    "akg_percentages": {
+      "calories": 105.05,
+      "protein": 208.33,
+      "fat": 109.09,
+      "carbs": 86.67
+    },
+    "feasibility_status": "Layak",
+    "budget_status": "within_budget",
+    "nutrition_score": 152.3,
+    "status": "optimal",
+    "nutrition_reference": {
+      "age_group": "7-9",
+      "daily_target": { ... },
+      "meal_target": { ... }
+    },
+    "ranked_alternatives": [ ... 3 alternatif ... ]
+  }
+
+Tampilan di dashboard:
+  1. Panel "Rekomendasi Menu" — menu terbaik + 3 alternatif
+  2. Panel "Dashboard Output" — metrik nutrisi + perbandingan
+  3. Tabel perbandingan manual vs optimasi
+  4. Kebutuhan batch untuk N siswa
+
+====================================================================
+BAGIAN 7 — PENYIMPANAN RIWAYAT
+====================================================================
+
+Riwayat optimasi disimpan di 2 tempat:
+
+  1. PostgreSQL (tabel optimization_history)
+     - Payload request dan response disimpan lengkap
+     - Untuk audit trail dan analisis
+
+  2. LocalStorage browser (menu history)
+     - 5 menu terakhir disimpan di browser
+     - Digunakan untuk fitur anti-pengulangan menu
+     - Saat user klik "Run AI Optimization", menu sebelumnya
+       dikirim sebagai excluded_menus agar AI menghasilkan
+       menu yang berbeda
+
+====================================================================
+BAGIAN 8 — RINGKASAN ALUR LENGKAP (END-TO-END)
+====================================================================
+
+  USER                FRONTEND           BACKEND          AI ENGINE
+  ────                ────────           ───────          ─────────
+  Buka dashboard
+       │
+       ├──► Load bahan ──► GET /api/foods ──► PostgreSQL
+       │    dari database        │                │
+       │                    ◄────┘            1345 bahan
+       │
+  Centang bahan ✓
+  Atur usia/budget
+       │
+  Klik "Run AI"
+       │
+       ├──► Kirim payload ──► POST /api/optimize ──► POST /optimize
+       │                           │                      │
+       │                           │               PuLP Linear
+       │                           │               Programming
+       │                           │                      │
+       │                           │               Solve 3 alternatif
+       │                           │                      │
+       │                     Simpan ke DB  ◄──────  Return hasil
+       │                     (history)
+       │
+       ◄── Tampilkan hasil ◄────────┘
+       │
+  Lihat rekomendasi
+  + 3 alternatif
+  + perbandingan AKG
+  + kebutuhan batch
+
+====================================================================
+STACK TEKNOLOGI
+====================================================================
+
+Frontend:
+  - React 19 + Vite
+  - Vanilla CSS (design system sendiri)
+  - Font: Inter (Google Fonts)
+
+Backend:
+  - Node.js + Express
+  - PostgreSQL (via pg driver)
+
+AI Engine:
+  - Python + Flask
+  - PuLP (linear programming solver)
+  - CBC solver (open source)
+
+Data:
+  - TKPI Kemenkes RI via Kaggle CSV
+  - AKG dari Permenkes No. 28 Tahun 2019

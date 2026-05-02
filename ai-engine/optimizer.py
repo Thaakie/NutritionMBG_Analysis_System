@@ -11,6 +11,13 @@ from pulp import (
 
 from akg_profiles import get_akg_profile
 
+CORE_MENU_CATEGORIES = ("Makanan Pokok", "Lauk Pauk", "Sayuran")
+CATEGORY_SCORE_BONUS = {
+    "Buah-buahan": 4,
+    "Susu & Produk Susu": 4,
+    "Sayuran": 2.5,
+}
+
 
 def calculate_totals(foods):
     return {
@@ -55,23 +62,37 @@ def classify_feasibility(totals, akg_percentages, budget):
     return "Tidak layak"
 
 
+def normalize_category(food):
+    return food.get("category", "Lainnya")
+
+
+def calculate_food_score(food):
+    return round(
+        (food["protein"] * 5)
+        + (food["calories"] * 0.03)
+        + (food["fat"] * 0.7)
+        + (food["carbs"] * 0.04)
+        - (food["price"] * 0.001)
+        + CATEGORY_SCORE_BONUS.get(normalize_category(food), 0),
+        2,
+    )
+
+
+def extract_selected_categories(foods):
+    return sorted({normalize_category(food) for food in foods})
+
+
 def build_alternative_result(selected_foods, nutrition_reference, budget, rank):
     totals = calculate_totals(selected_foods)
     akg_percentages = calculate_akg_percentages(totals, nutrition_reference)
     feasibility_status = classify_feasibility(totals, akg_percentages, budget)
 
-    nutrition_score = round(
-        (totals["total_protein"] * 5)
-        + (totals["total_calories"] * 0.03)
-        + (totals["total_fat"] * 0.7)
-        + (totals["total_carbs"] * 0.04)
-        - (totals["total_cost"] * 0.001),
-        2,
-    )
+    nutrition_score = round(sum(calculate_food_score(food) for food in selected_foods), 2)
 
     return {
         "rank": rank,
         "recommended_menu": [food["name"] for food in selected_foods],
+        "selected_categories": extract_selected_categories(selected_foods),
         **totals,
         "akg_percentages": akg_percentages,
         "budget_status": "within_budget" if totals["total_cost"] <= budget else "over_budget",
@@ -102,16 +123,22 @@ def sort_alternatives(alternatives):
     return sorted_alternatives
 
 
-def optimize_menu(data):
-    items = data["foods"]
-    budget = data["budget"]
-    minimum_calories = data["minimum_calories"]
-    minimum_protein = data["minimum_protein"]
-    age_group = data["age_group"]
-    nutrition_reference = get_akg_profile(age_group)
+def filter_excluded_menu_names(items, excluded_menus):
+    available_names = {food["name"] for food in items}
+    filtered_menus = []
 
+    for menu in excluded_menus:
+        filtered_names = [name for name in menu if name in available_names]
+        if filtered_names:
+            filtered_menus.append(filtered_names)
+
+    return filtered_menus
+
+
+def solve_ranked_alternatives(
+    items, budget, minimum_calories, minimum_protein, nutrition_reference, excluded_name_sets
+):
     ranked_alternatives = []
-    excluded_name_sets = []
     solver = PULP_CBC_CMD(msg=False)
 
     for rank in range(1, 4):
@@ -123,14 +150,7 @@ def optimize_menu(data):
         }
 
         problem += lpSum(
-            decision_variables[food["name"]]
-            * (
-                (food["protein"] * 5)
-                + (food["calories"] * 0.03)
-                + (food["fat"] * 0.7)
-                + (food["carbs"] * 0.04)
-                - (food["price"] * 0.001)
-            )
+            decision_variables[food["name"]] * calculate_food_score(food)
             for food in items
         )
 
@@ -143,6 +163,12 @@ def optimize_menu(data):
             lpSum(decision_variables[food["name"]] * food["protein"] for food in items)
             >= minimum_protein
         )
+        for category in CORE_MENU_CATEGORIES:
+            category_foods = [
+                food["name"] for food in items if normalize_category(food) == category
+            ]
+            if category_foods:
+                problem += lpSum(decision_variables[name] for name in category_foods) >= 1
 
         for excluded_names in excluded_name_sets:
             problem += (
@@ -163,6 +189,38 @@ def optimize_menu(data):
             build_alternative_result(selected_foods, nutrition_reference, budget, rank)
         )
         excluded_name_sets.append([food["name"] for food in selected_foods])
+
+    return ranked_alternatives
+
+
+def optimize_menu(data):
+    items = data["foods"]
+    budget = data["budget"]
+    minimum_calories = data["minimum_calories"]
+    minimum_protein = data["minimum_protein"]
+    age_group = data["age_group"]
+    nutrition_reference = get_akg_profile(age_group)
+    history_exclusions = filter_excluded_menu_names(items, data.get("excluded_menus", []))
+    ranked_alternatives = solve_ranked_alternatives(
+        items,
+        budget,
+        minimum_calories,
+        minimum_protein,
+        nutrition_reference,
+        history_exclusions.copy(),
+    )
+    history_fallback_used = False
+
+    if not ranked_alternatives and history_exclusions:
+        ranked_alternatives = solve_ranked_alternatives(
+            items,
+            budget,
+            minimum_calories,
+            minimum_protein,
+            nutrition_reference,
+            [],
+        )
+        history_fallback_used = bool(ranked_alternatives)
 
     if not ranked_alternatives:
         return {
@@ -192,6 +250,12 @@ def optimize_menu(data):
     return {
         **best_alternative,
         "status": "optimal",
+        "history_fallback_used": history_fallback_used,
         "nutrition_reference": nutrition_reference,
         "ranked_alternatives": ranked_alternatives,
+        "message": (
+            "Riwayat menu diabaikan sementara karena semua kombinasi unik tidak memenuhi syarat."
+            if history_fallback_used
+            else ""
+        ),
     }

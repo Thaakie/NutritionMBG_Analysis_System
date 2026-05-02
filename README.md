@@ -90,6 +90,7 @@ TESTING/
 - Express
 - Axios
 - CORS
+- PostgreSQL
 
 ## AI Engine
 
@@ -107,11 +108,13 @@ TESTING/
 - `GET /`
   Mengecek apakah backend aktif
 - `GET /api/health`
-  Mengecek kesehatan backend dan AI engine
+  Mengecek kesehatan backend, AI engine, dan PostgreSQL
 - `GET /api/akg-profiles`
   Mengambil profil AKG dari AI engine
 - `POST /api/optimize`
-  Mengirim data makanan dan constraint untuk dioptimasi
+  Mengirim data makanan dan constraint untuk dioptimasi, lalu menyimpan hasil ke PostgreSQL
+- `GET /api/optimization-history`
+  Mengambil riwayat hasil optimasi dari PostgreSQL
 
 ## AI Engine
 
@@ -147,6 +150,7 @@ http://localhost:5001
 ```powershell
 cd backend
 npm install
+copy .env.example .env
 node server.js
 ```
 
@@ -161,6 +165,40 @@ Backend akan meneruskan request optimasi ke AI engine melalui:
 ```text
 AI_ENGINE_URL=http://localhost:5001
 ```
+
+### Setup PostgreSQL
+
+1. Install PostgreSQL dan pastikan servicenya aktif.
+2. Buat database baru:
+
+```sql
+CREATE DATABASE nutrisafety;
+```
+
+3. Salin file environment:
+
+```powershell
+cd backend
+copy .env.example .env
+```
+
+4. Sesuaikan kredensial di `.env`:
+
+```text
+PGHOST=localhost
+PGPORT=5432
+PGDATABASE=nutrisafety
+PGUSER=postgres
+PGPASSWORD=postgres
+```
+
+5. Cek koneksi PostgreSQL:
+
+```powershell
+npm run db:check
+```
+
+Saat backend dijalankan, tabel `optimization_history` akan dibuat otomatis jika belum ada.
 
 ## 3. Jalankan Frontend
 
