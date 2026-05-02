@@ -1,0 +1,449 @@
+NUTRISAFETY - CATATAN PERUBAHAN & CARA KERJA SISTEM
+Tanggal catatan: 2026-05-01
+
+====================================================================
+RINGKASAN PERUBAHAN
+====================================================================
+
+Commit: dafee56
+Pesan: "changes ui and databases"
+Total file berubah: 24 file (1467 baris ditambah, 358 baris dihapus)
+
+Perubahan ini mencakup dua pekerjaan utama:
+1. Integrasi database bahan makanan (CRUD lengkap)
+2. Perbaikan UI/UX dashboard agar lebih kompak dan rapi
+
+====================================================================
+BAGIAN 1 — INTEGRASI DATABASE BAHAN MAKANAN
+====================================================================
+
+Tujuan:
+Menyelesaikan Poin 5 revisi dosen (status sebelumnya: SEBAGIAN).
+Sekarang bahan makanan bisa dikelola lewat database PostgreSQL,
+bukan hanya input manual dan dataset contoh.
+
+--------------------------------------------------------------------
+1.1. File baru: backend/scripts/seed-foods.js
+--------------------------------------------------------------------
+
+Fungsi:
+  Script untuk mengisi tabel `foods` dengan 23 data bahan awal.
+  Data diambil dari sample datasets yang sudah ada (deduplicated).
+
+Cara pakai:
+  cd backend
+  npm run db:seed
+
+Perilaku:
+  - Jika tabel `foods` sudah berisi data, script tidak menambah ulang.
+  - Jika tabel kosong, 23 bahan akan di-insert satu per satu.
+  - Data mencakup: nasi, ayam, tempe, tahu, telur, ikan, sayuran,
+    buah-buahan, susu — lengkap dengan kategori, gramasi, nutrisi,
+    dan harga.
+
+--------------------------------------------------------------------
+1.2. File diubah: backend/db.js
+--------------------------------------------------------------------
+
+Perubahan:
+  1. Tambah pembuatan tabel `foods` di fungsi initializeDatabase().
+     Tabel ini dibuat otomatis saat backend pertama kali jalan.
+
+  2. Tambah 4 fungsi CRUD baru:
+     - listFoods(limit)      -> SELECT semua bahan, urut nama abjad
+     - createFood(data)      -> INSERT bahan baru, return row lengkap
+     - updateFood(id, data)  -> UPDATE bahan by ID, return row baru
+     - deleteFood(id)        -> DELETE bahan by ID, return boolean
+
+  3. Semua fungsi baru di-export di module.exports.
+
+Skema tabel foods:
+  id             BIGSERIAL PRIMARY KEY
+  name           VARCHAR(100) NOT NULL
+  category       VARCHAR(50) NOT NULL DEFAULT 'Lainnya'
+  portion_grams  NUMERIC(10, 2) NOT NULL DEFAULT 0
+  protein        NUMERIC(10, 2) NOT NULL DEFAULT 0
+  calories       NUMERIC(10, 2) NOT NULL DEFAULT 0
+  fat            NUMERIC(10, 2) NOT NULL DEFAULT 0
+  carbs          NUMERIC(10, 2) NOT NULL DEFAULT 0
+  price          NUMERIC(12, 2) NOT NULL DEFAULT 0
+  created_at     TIMESTAMPTZ NOT NULL DEFAULT NOW()
+  updated_at     TIMESTAMPTZ NOT NULL DEFAULT NOW()
+
+--------------------------------------------------------------------
+1.3. File diubah: backend/server.js
+--------------------------------------------------------------------
+
+Perubahan:
+  1. Import fungsi CRUD baru dari db.js:
+     createFood, deleteFood, listFoods, updateFood
+
+  2. Tambah fungsi validateFoodPayload() untuk validasi request
+     pada endpoint bahan. Validasi mencakup:
+     - name harus string non-kosong
+     - category opsional, tapi kalau ada harus string non-kosong
+     - portion_grams, protein, calories, fat, carbs, price
+       semua wajib dan harus angka >= 0
+
+  3. Tambah 4 endpoint REST baru:
+
+     GET    /api/foods
+       -> Ambil daftar bahan dari database
+       -> Query parameter: ?limit=100 (default 100, max 50)
+       -> Response: { items: [...] }
+
+     POST   /api/foods
+       -> Tambah bahan baru ke database
+       -> Body: { name, category, portion_grams, protein,
+                  calories, fat, carbs, price }
+       -> Response: object bahan yang baru dibuat (status 201)
+
+     PUT    /api/foods/:id
+       -> Update bahan yang sudah ada
+       -> Body: sama seperti POST
+       -> Response: object bahan yang diupdate
+       -> 404 jika id tidak ditemukan
+
+     DELETE /api/foods/:id
+       -> Hapus bahan dari database
+       -> Response: { message: "Food deleted." }
+       -> 404 jika id tidak ditemukan
+
+--------------------------------------------------------------------
+1.4. File diubah: backend/package.json
+--------------------------------------------------------------------
+
+Perubahan:
+  Tambah script baru:
+    "db:seed": "node scripts/seed-foods.js"
+
+  Script yang tersedia sekarang:
+    npm start       -> node server.js
+    npm run db:check -> node scripts/check-db.js
+    npm run db:seed  -> node scripts/seed-foods.js
+
+--------------------------------------------------------------------
+1.5. File baru: frontend/src/services/api.js
+--------------------------------------------------------------------
+
+Fungsi:
+  Module terpusat untuk semua panggilan HTTP ke backend.
+  Menggunakan native fetch() tanpa dependency tambahan.
+
+  Fungsi yang di-export:
+    fetchFoods()            -> GET /api/foods
+    createFoodInDb(food)    -> POST /api/foods
+    updateFoodInDb(id, food)-> PUT /api/foods/:id
+    deleteFoodFromDb(id)    -> DELETE /api/foods/:id
+
+  Semua fungsi otomatis throw Error jika response tidak ok,
+  dengan pesan error dari backend.
+
+  Base URL: http://localhost:3000
+
+--------------------------------------------------------------------
+1.6. File baru: frontend/src/components/FoodDatabasePanel.jsx
+--------------------------------------------------------------------
+
+Fungsi:
+  Komponen React untuk panel admin CRUD bahan makanan.
+  Ditampilkan di dashboard utama antara DatasetPanel dan
+  content-grid.
+
+Fitur:
+  1. Tabel daftar bahan dari database PostgreSQL
+     - Kolom: Nama, Kategori, Porsi, Protein, Kalori, Lemak,
+       Karbo, Harga, Aksi
+     - Setiap baris punya 3 tombol:
+       a. "+ Optimasi" -> tambah bahan ini ke kandidat optimasi
+       b. "Edit"       -> isi form dengan data bahan untuk diedit
+       c. "Hapus"      -> hapus bahan dari database
+
+  2. Form tambah/edit bahan
+     - Mode create: form kosong, tombol "Tambah ke Database"
+     - Mode edit: form terisi, tombol "Simpan Perubahan" + "Batal Edit"
+     - Field: nama, kategori (dropdown), porsi, protein, kalori,
+       lemak, karbo, harga
+
+  3. Toolbar atas
+     - "Refresh Data"             -> fetch ulang dari database
+     - "Muat Semua ke Optimasi"   -> load semua bahan DB ke daftar
+                                     kandidat optimasi (mengganti
+                                     daftar yang ada)
+
+  4. Feedback
+     - Pesan error merah jika operasi gagal
+     - Pesan sukses hijau jika operasi berhasil
+
+Cara kerja integrasi dengan optimasi:
+  - Tombol "+ Optimasi" pada setiap baris menambahkan SATU bahan
+    ke daftar kandidat di App.jsx (append, tidak mengganti).
+  - Tombol "Muat Semua ke Optimasi" MENGGANTI seluruh daftar
+    kandidat dengan semua bahan dari database.
+  - Setelah bahan dimuat ke kandidat, user bisa menjalankan
+    "Run AI Optimization" seperti biasa.
+
+--------------------------------------------------------------------
+1.7. File baru: frontend/src/components/FoodDatabasePanel.css
+--------------------------------------------------------------------
+
+Styling untuk panel database bahan. Mengikuti design system yang
+sudah ada (.panel, .input-grid, .table-wrap, dll).
+
+Kelas CSS yang dipakai:
+  .database-toolbar   -> baris tombol Refresh + Muat Semua
+  .food-db-table-wrap -> wrapper tabel dengan overflow-x: auto
+  .action-cell        -> container 3 tombol aksi per baris
+  .form-actions       -> baris tombol submit/batal
+  .edit-badge         -> badge "Mengedit: nama bahan"
+
+--------------------------------------------------------------------
+1.8. File diubah: frontend/src/App.jsx
+--------------------------------------------------------------------
+
+Perubahan:
+  1. Import FoodDatabasePanel (baris 6)
+
+  2. Tambah 2 handler baru:
+     - addFoodFromDatabase(food)
+       -> Menambah satu bahan ke daftar foods (append)
+       -> Dipanggil oleh tombol "+ Optimasi" di panel database
+
+     - loadAllFoodsFromDatabase(mappedFoods)
+       -> Mengganti seluruh daftar foods dengan data dari database
+       -> Reset result dan error
+       -> Dipanggil oleh tombol "Muat Semua ke Optimasi"
+
+  3. Render FoodDatabasePanel di JSX:
+     Ditempatkan antara DatasetPanel dan content-grid.
+     Props: onAddToOptimizer, onLoadAllToOptimizer
+
+--------------------------------------------------------------------
+1.9. File diubah: learning-notes/revisidosen.txt
+--------------------------------------------------------------------
+
+Perubahan:
+  - Poin 5 status diubah dari SEBAGIAN ke SUDAH
+  - Deskripsi kondisi diperbarui sesuai implementasi
+  - File terkait diperbarui
+  - Checklist "Finalisasi integrasi database bahan" dicentang [x]
+
+====================================================================
+BAGIAN 2 — PERBAIKAN UI/UX DASHBOARD
+====================================================================
+
+Tujuan:
+Membuat tampilan dashboard lebih kompak, rapi, dan UX-friendly
+tanpa mengubah warna dasar (tetap warm beige/cream/orange).
+
+--------------------------------------------------------------------
+2.1. File diubah: frontend/index.html
+--------------------------------------------------------------------
+
+Perubahan:
+  - lang diubah dari "en" ke "id"
+  - Tambah meta description untuk SEO
+  - Title diubah dari "frontend" ke "NutriSafety AI — Dashboard
+    Optimasi Menu MBG"
+  - Tambah Google Fonts preconnect + import font Inter
+
+--------------------------------------------------------------------
+2.2. File diubah: frontend/src/index.css
+--------------------------------------------------------------------
+
+Perubahan:
+  - Font utama diubah ke Inter (sebelumnya Segoe UI + Georgia serif)
+  - Tambah design token baru:
+    --bg-subtle, --panel-hover, --card-hover, --border-active,
+    --text, --accent-light, --accent-glow, --success, --success-bg,
+    --warning, --warning-bg, --danger, --danger-bg,
+    --radius, --radius-lg, --radius-pill, --transition
+  - Font size dasar diubah ke 14px (lebih kompak)
+  - Background gradient tetap warm beige
+  - Container max-width ditambah ke 1400px
+  - Heading h1/h2/h3 font-weight 700, tanpa font serif
+
+  Palet warna TETAP sama:
+    --bg:            #f4efe6
+    --panel:         rgba(255, 251, 245, 0.94)
+    --card-bg:       #fffdf8
+    --input-bg:      #fffaf2
+    --border:        #dfd2bf
+    --heading-color: #1f2525
+    --muted:         #6e7068
+    --accent:        #d45f2e
+
+--------------------------------------------------------------------
+2.3. File diubah: frontend/src/styles/ui.css
+--------------------------------------------------------------------
+
+Perubahan utama:
+  - Padding panel dikurangi dari 24px ke 20px
+  - Border-radius dikecilkan dari 28px ke 16px
+  - Input padding dikurangi dari 12px ke 8px
+  - Label menggunakan uppercase micro-label pattern
+  - Metric card padding dikurangi dari 18px ke 12px
+  - Metric card label font-size dikurangi ke 0.72rem uppercase
+  - Status pill padding dikurangi
+  - Button border-radius diubah dari 999px ke 8px (kotak rounded)
+  - Reference note menggunakan left-border accent
+  - Feedback block menggunakan left-border accent
+  - Tambah .success-feedback class
+  - Semua transisi menggunakan cubic-bezier untuk smoothness
+
+--------------------------------------------------------------------
+2.4. File diubah: frontend/src/App.css
+--------------------------------------------------------------------
+
+Perubahan:
+  - Gap antar section dikurangi dari 24px ke 16px
+  - Padding dashboard dikurangi dari 32px ke 20px 24px
+  - min-height: 100vh ditambahkan
+
+--------------------------------------------------------------------
+2.5. File diubah: frontend/src/components/HeroPanel.css
+--------------------------------------------------------------------
+
+Perubahan:
+  - Grid diubah dari 1.7fr 1fr ke 1.4fr 1fr (lebih seimbang)
+  - Padding dikurangi dari 32px ke 24px
+  - Hero stats berubah dari 1 kolom ke grid 2x2
+  - Stat card padding dikurangi dari 18px ke 12px
+  - Stat card label menjadi uppercase 0.72rem
+  - H1 font-size dikurangi dari clamp(2.4rem, 4vw, 4.4rem)
+    ke clamp(1.4rem, 2.5vw, 1.75rem)
+  - Font H1 diganti dari serif ke sans-serif (Inter)
+
+--------------------------------------------------------------------
+2.6. File diubah: frontend/src/components/DatasetPanel.css
+--------------------------------------------------------------------
+
+Perubahan:
+  - Gap dikurangi dari 16px ke 10px
+  - Card padding dikurangi dari 18px ke 14px
+  - Card border-radius dari 20px ke 12px
+  - Tambah hover effect pada card
+  - Font size h3 dikecilkan ke 0.92rem
+
+--------------------------------------------------------------------
+2.7. File diubah: frontend/src/components/MenuInputPanel.css
+--------------------------------------------------------------------
+
+Perubahan:
+  - Form gap dikurangi dari 16px ke 12px
+  - Table padding dikurangi dari 14px ke 10px
+  - Table header font uppercase 0.72rem dengan sticky position
+  - Table font size dikecilkan ke 0.85rem
+  - Table row menggunakan nowrap untuk konsistensi
+
+--------------------------------------------------------------------
+2.8. File diubah: frontend/src/components/ResultsPanel.css
+--------------------------------------------------------------------
+
+Perubahan:
+  - Gap dikurangi
+  - Card padding dikurangi dari 18px ke 14px
+  - Tambah hover effect pada food-card dan ranking-card
+  - Font size header dikecilkan
+  - Ranking card p margin dikurangi
+
+--------------------------------------------------------------------
+2.9. File diubah: frontend/src/components/SummaryPanel.css
+--------------------------------------------------------------------
+
+Perubahan:
+  - Spacing margin/padding dikurangi
+  - Table header sticky position + background
+  - Table font size dikecilkan
+  - Pre padding dikurangi
+
+====================================================================
+CARA KERJA SISTEM (DIPERBARUI)
+====================================================================
+
+Arsitektur tetap 3 layer:
+  Frontend React (Vite)  ->  Backend Express  ->  AI Engine Flask
+
+Alur data utama (optimasi):
+  1. User memilih sumber bahan:
+     a. Load dari Sample Datasets (preset demo)
+     b. Load dari Database PostgreSQL (panel baru)
+     c. Input manual lewat form Komposisi Bahan
+  2. Bahan masuk ke daftar kandidat di frontend
+  3. User atur kelompok usia, budget, jumlah siswa
+  4. Target minimum kalori/protein diisi otomatis dari AKG
+  5. Klik "Run AI Optimization"
+  6. Frontend kirim payload ke backend POST /api/optimize
+  7. Backend validasi, forward ke AI engine POST /optimize
+  8. AI engine jalankan optimasi PuLP (linear programming)
+  9. Hasil dikirim balik ke frontend
+  10. Hasil juga disimpan ke tabel optimization_history di PostgreSQL
+
+Alur data CRUD bahan (BARU):
+  1. Panel "Database Bahan Makanan" otomatis fetch GET /api/foods
+     saat halaman dibuka
+  2. User bisa tambah bahan baru lewat form -> POST /api/foods
+  3. User bisa edit bahan -> PUT /api/foods/:id
+  4. User bisa hapus bahan -> DELETE /api/foods/:id
+  5. User bisa klik "+ Optimasi" untuk tambah satu bahan ke
+     daftar kandidat
+  6. User bisa klik "Muat Semua ke Optimasi" untuk load semua
+     bahan dari DB sekaligus
+
+Tabel di PostgreSQL:
+  1. optimization_history -> riwayat hasil optimasi
+  2. foods               -> master data bahan makanan (BARU)
+
+Endpoint lengkap backend:
+  GET    /                        -> cek backend aktif
+  GET    /api/health              -> cek kesehatan backend + AI + DB
+  GET    /api/akg-profiles        -> ambil profil AKG dari AI engine
+  POST   /api/optimize            -> jalankan optimasi
+  GET    /api/optimization-history-> riwayat optimasi
+  GET    /api/foods               -> daftar bahan dari DB (BARU)
+  POST   /api/foods               -> tambah bahan ke DB (BARU)
+  PUT    /api/foods/:id           -> update bahan di DB (BARU)
+  DELETE /api/foods/:id           -> hapus bahan dari DB (BARU)
+
+====================================================================
+CARA MENJALANKAN SETELAH PERUBAHAN INI
+====================================================================
+
+1. Pastikan PostgreSQL aktif dan database sudah dibuat.
+
+2. Jalankan AI Engine:
+   cd ai-engine
+   python -m venv venv
+   venv\Scripts\activate
+   pip install -r requirement.txt
+   python app.py
+
+3. Jalankan Backend:
+   cd backend
+   npm install
+   copy .env.example .env  (sesuaikan kredensial)
+   npm run db:seed          (isi data bahan awal, cukup 1x)
+   node server.js
+
+4. Jalankan Frontend:
+   cd frontend
+   npm install
+   npm run dev
+
+5. Buka http://localhost:5173
+
+====================================================================
+CATATAN PENTING
+====================================================================
+
+- Sample datasets TETAP tersedia sebagai demo preset. Database bahan
+  adalah sumber data TAMBAHAN, bukan pengganti.
+
+- Seed script (npm run db:seed) hanya perlu dijalankan sekali.
+  Jika dijalankan lagi saat tabel sudah ada isinya, script akan
+  skip otomatis.
+
+- Semua 12 poin revisi dosen sekarang berstatus SUDAH.
+
+- Palet warna UI tetap warm beige/cream/orange, hanya layout dan
+  tipografi yang diperbaiki agar lebih kompak dan dashboard-like.

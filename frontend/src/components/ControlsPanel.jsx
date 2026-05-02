@@ -85,7 +85,7 @@ function ControlsPanel({ constraints, currentTotals, currentAkgPercentages, curr
       </div>
 
       <div className="status-row">
-        <span className={currentTotals.totalCost <= constraints.budget ? "status-pill success" : "status-pill warning"}>{currentTotals.totalCost <= constraints.budget ? "Within budget" : "Over budget"}</span>
+        <span className={currentTotals.totalCost <= Number(constraints.budget) ? "status-pill success" : "status-pill warning"}>{currentTotals.totalCost <= Number(constraints.budget) ? "Within budget" : "Over budget"}</span>
         <span className={currentTotals.totalCalories >= mealTarget.calories ? "status-pill success" : "status-pill warning"}>
           {currentTotals.totalCalories >= mealTarget.calories ? "Preview kalori capai target AI" : "Preview kalori belum capai target AI"}
         </span>

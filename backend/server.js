@@ -36,7 +36,7 @@ function normalizeLimit(value, fallback = 10) {
     return fallback;
   }
 
-  return Math.min(parsedLimit, 50);
+  return Math.min(parsedLimit, 2000);
 }
 
 function validateFoodPayload(payload) {
@@ -245,7 +245,7 @@ app.get("/api/optimization-history", async (req, res) => {
 
 app.get("/api/foods", async (req, res) => {
   try {
-    const items = await listFoods(normalizeLimit(req.query.limit, 100));
+    const items = await listFoods(normalizeLimit(req.query.limit, 1500));
     res.json({ items });
   } catch (error) {
     console.error("Database read error:", error.message);

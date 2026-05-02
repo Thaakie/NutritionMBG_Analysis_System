@@ -155,7 +155,7 @@ async function listOptimizationHistory(limit = 10) {
   return response.rows;
 }
 
-async function listFoods(limit = 100) {
+async function listFoods(limit = 1500) {
   const response = await pool.query(
     `
       SELECT id, name, category, portion_grams, protein, calories, fat, carbs, price, created_at, updated_at
