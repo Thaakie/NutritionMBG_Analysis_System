@@ -1,0 +1,1347 @@
+name,status,match_fields,diff_fields,nutrition_calories,reference_calories,delta_calories,nutrition_proteins,reference_proteins,delta_proteins,nutrition_fat,reference_fat,delta_fat,nutrition_carbohydrate,reference_carbohydrate,delta_carbohydrate
+Abon,MATCH,4,0,280,280,0,9.2,9.2,0,28.4,28.4,0,0,0,0
+Abon haruwan,MATCH,4,0,513,513,0,23.7,23.7,0,37,37,0,21.3,21.3,0
+Agar-agar,MATCH,4,0,0,0,0,0,0,0,0.2,0.2,0,0,0,0
+Akar tonjong segar,MATCH,4,0,45,45,0,1.1,1.1,0,0.4,0.4,0,10.8,10.8,0
+Aletoge segar,MATCH,4,0,37,37,0,4.4,4.4,0,0.5,0.5,0,3.8,3.8,0
+Alpukat segar,MATCH,4,0,85,85,0,0.9,0.9,0,6.5,6.5,0,7.7,7.7,0
+Ampas kacang hijau,MATCH,4,0,96,96,0,3.7,3.7,0,0.6,0.6,0,19.1,19.1,0
+Ampas Tahu,MATCH,4,0,414,414,0,26.6,26.6,0,18.3,18.3,0,41.3,41.3,0
+Ampas tahu kukus,MATCH,4,0,75,75,0,4.1,4.1,0,2.1,2.1,0,10.7,10.7,0
+Ampas tahu mentah,MATCH,4,0,67,67,0,5,5,0,2.1,2.1,0,8.1,8.1,0
+Anak sapi daging gemuk segar,MATCH,4,0,184,184,0,18.8,18.8,0,14,14,0,0,0,0
+Anak sapi daging kurus segar,MATCH,4,0,174,174,0,19.6,19.6,0,10,10,0,0,0,0
+Anak sapi daging sedang segar,MATCH,4,0,190,190,0,19.1,19.1,0,12,12,0,0,0,0
+Andaliman segar,MATCH,4,0,99,99,0,4.6,4.6,0,1,1,0,18,18,0
+Andewi,MATCH,4,0,25,25,0,1.6,1.6,0,0.2,0.2,0,5.3,5.3,0
+Anggur hutan segar,MATCH,4,0,30,30,0,0.5,0.5,0,0.2,0.2,0,6.8,6.8,0
+Angsa,MATCH,4,0,354,354,0,16.4,16.4,0,31.5,31.5,0,0,0,0
+Anyang sayur,MATCH,4,0,126,126,0,3.4,3.4,0,7.9,7.9,0,10.3,10.3,0
+Apel,MATCH,4,0,58,58,0,0.3,0.3,0,0.4,0.4,0,14.9,14.9,0
+Apel malang segar,MATCH,4,0,57,57,0,0.5,0.5,0,0.4,0.4,0,12.8,12.8,0
+Arbei,MATCH,4,0,37,37,0,0.8,0.8,0,0.5,0.5,0,8.3,8.3,0
+Ares sayur,MATCH,4,0,113,113,0,0.9,0.9,0,7.2,7.2,0,11.2,11.2,0
+Arrowroot segar,MATCH,4,0,102,102,0,1,1,0,0.2,0.2,0,24.1,24.1,0
+Arwan sirsir,MATCH,4,0,277,277,0,2.4,2.4,0,25,25,0,10.7,10.7,0
+Asam kandis segar,MATCH,4,0,75,75,0,0.2,0.2,0,1.1,1.1,0,16.1,16.1,0
+Asam masak di pohon,MATCH,4,0,239,239,0,2.8,2.8,0,0.6,0.6,0,62.5,62.5,0
+Asam payak segar,MATCH,4,0,135,135,0,0.8,0.8,0,0.4,0.4,0,32.1,32.1,0
+Asan kandis kering,MATCH,4,0,261,261,0,0.9,0.9,0,1.6,1.6,0,63.3,63.3,0
+Asinan Bogor sayuran,MATCH,4,0,98,98,0,3.9,3.9,0,2.6,2.6,0,14.8,14.8,0
+Ayam,MATCH,4,0,302,302,0,18.2,18.2,0,25,25,0,0,0,0
+Ayam  goreng Kentuckysayap,MATCH,4,0,297,297,0,35.9,35.9,0,15.2,15.2,0,1.6,1.6,0
+Ayam ampela goreng,MATCH,4,0,270,270,0,32.3,32.3,0,11.2,11.2,0,9.9,9.9,0
+Ayam dideh/darah segar,MATCH,4,0,75,75,0,13.8,13.8,0,1.9,1.9,0,0.7,0.7,0
+Ayam goreng church texa sayap,MATCH,4,0,295,295,0,34,34,0,16,16,0,1.5,1.5,0
+Ayam goreng church texas dada,MATCH,4,0,338,338,0,35.2,35.2,0,20.6,20.6,0,0.4,0.4,0
+Ayam goreng kalasan paha,MATCH,4,0,275,275,0,37.4,37.4,0,12.2,12.2,0,1.3,1.3,0
+Ayam goreng kentucky dada,MATCH,4,0,298,298,0,34.2,34.2,0,16.8,16.8,0,0.1,0.1,0
+Ayam goreng Kentucky paha,MATCH,4,0,286,286,0,32.1,32.1,0,16.1,16.1,0,1.1,1.1,0
+Ayam goreng mbok berek dada,MATCH,4,0,295,295,0,39.2,39.2,0,13.6,13.6,0,1,1,0
+Ayam goreng paha,MATCH,4,0,287,287,0,31,31,0,15.7,15.7,0,1.7,1.7,0
+Ayam goreng pasundan dada,MATCH,4,0,246,246,0,37.9,37.9,0,9,9,0,0.7,0.7,0
+Ayam goreng pasundan paha,MATCH,4,0,245,245,0,33.1,33.1,0,11.4,11.4,0,0.3,0.3,0
+Ayam goreng pioneer dada,MATCH,4,0,295,295,0,37.4,37.4,0,14.7,14.7,0,0.6,0.6,0
+Ayam goreng sukabumi dada,MATCH,4,0,244,244,0,36.7,36.7,0,9.2,9.2,0,1,1,0
+Ayam goreng sukabumi paha,MATCH,4,0,283,283,0,35.7,35.7,0,14.3,14.3,0,0.5,0.5,0
+Ayam hati segar,MATCH,4,0,261,261,0,27.4,27.4,0,16.1,16.1,0,1.6,1.6,0
+Ayam taliwang masakan,MATCH,4,0,264,264,0,18.2,18.2,0,20.1,20.1,0,2.7,2.7,0
+Ayam usus goreng,MATCH,4,0,473,473,0,45.2,45.2,0,26.3,26.3,0,13.9,13.9,0
+Babat,MATCH,4,0,113,113,0,17.6,17.6,0,4.2,4.2,0,0,0,0
+Babi daging gemuk segar,MATCH,4,0,453,453,0,11.9,11.9,0,45,45,0,0,0,0
+Babi daging kurus segar,MATCH,4,0,371,371,0,14.1,14.1,0,35,35,0,0,0,0
+Babi ginjal segar,MATCH,4,0,110,110,0,16.3,16.3,0,4.6,4.6,0,0.8,0.8,0
+Babi hati segar,MATCH,4,0,129,129,0,19.7,19.7,0,4.8,4.8,0,1.7,1.7,0
+Babi hutan masak rica masakan,MATCH,4,0,491,491,0,24.6,24.6,0,16.3,16.3,0,0.2,0.2,0
+Bacang,MATCH,4,0,102.9,102.9,0,3.3,3.3,0,2.7,2.7,0,16.3,16.3,0
+Bagea kelapa asin,MATCH,4,0,450,450,0,3.2,3.2,0,13.9,13.9,0,78.1,78.1,0
+Bagea kelapa manis,MATCH,4,0,452,452,0,1.3,1.3,0,13.8,13.8,0,80.6,80.6,0
+Bagea kenari asin,MATCH,4,0,529,529,0,3.2,3.2,0,29.1,29.1,0,63.6,63.6,0
+Bagea kenari manis,MATCH,4,0,523,523,0,3.2,3.2,0,28.2,28.2,0,64.2,64.2,0
+Bagea kw 1,MATCH,4,0,416,416,0,6.5,6.5,0,9.4,9.4,0,76.3,76.3,0
+Bagea kw 2,MATCH,4,0,382,382,0,0.3,0.3,0,3.5,3.5,0,87.2,87.2,0
+Baje,MATCH,4,0,129,129,0,1.9,1.9,0,6.6,6.6,0,15.6,15.6,0
+Bakpia kue,MATCH,4,0,272,272,0,8.7,8.7,0,6.7,6.7,0,44.1,44.1,0
+Bakso ,MATCH,4,0,76,76,0,4.1,4.1,0,2.5,2.5,0,9.2,9.2,0
+Bakung segar,MATCH,4,0,27,27,0,2,2,0,0.2,0.2,0,4.2,4.2,0
+Bakwan,MATCH,4,0,280,280,0,8.2,8.2,0,10.2,10.2,0,39,39,0
+Baligo,MATCH,4,0,13,13,0,0.4,0.4,0,0.2,0.2,0,3,3,0
+Bantal,MATCH,4,0,190,190,0,3.3,3.3,0,0.3,0.3,0,43.5,43.5,0
+Barongko,MATCH,4,0,159,159,0,3.1,3.1,0,5.8,5.8,0,23.5,23.5,0
+Batang Tading,MATCH,4,0,137,137,0,4.3,4.3,0,4.8,4.8,0,19.1,19.1,0
+Batar daan,MATCH,4,0,107,107,0,2.2,2.2,0,2.2,2.2,0,19.6,19.6,0
+Batatas gembili segar,MATCH,4,0,76,76,0,1.1,1.1,0,0.9,0.9,0,16,16,0
+Batatas kelapa ubi bakar,MATCH,4,0,110,110,0,1.4,1.4,0,1.1,1.1,0,23.4,23.4,0
+Batatas kelapa ubi kukus,MATCH,4,0,92,92,0,1.2,1.2,0,0.3,0.3,0,21,21,0
+Batatas kelapa ubi segar,MATCH,4,0,89,89,0,1.1,1.1,0,0.1,0.1,0,21,21,0
+Batatas tali ubi rebus,MATCH,4,0,182,182,0,2.4,2.4,0,0.4,0.4,0,42.2,42.2,0
+Bawang Bombay,MATCH,4,0,45,45,0,1.4,1.4,0,0.2,0.2,0,10.3,10.3,0
+Bawang Merah,MATCH,4,0,39,39,0,1.5,1.5,0,0.3,0.3,0,0.2,0.2,0
+Bawang Putih,MATCH,4,0,95,95,0,4.5,4.5,0,0.2,0.2,0,23.1,23.1,0
+Bayam kukus,MATCH,4,0,30,30,0,1.3,1.3,0,0.7,0.7,0,5.8,5.8,0
+Bayam Merah,MATCH,4,0,51,51,0,4.6,4.6,0,0.5,0.5,0,10,10,0
+Bayam merah segar,MATCH,4,0,41,41,0,2.2,2.2,0,0.8,0.8,0,6.3,6.3,0
+Bayam rebus,MATCH,4,0,23,23,0,1.2,1.2,0,0.6,0.6,0,3.7,3.7,0
+Bayam segar,MATCH,4,0,36,36,0,3.5,3.5,0,0.5,0.5,0,6.5,6.5,0
+Bayam tumis + oncom,MATCH,4,0,102,102,0,3.7,3.7,0,6.7,6.7,0,6.9,6.9,0
+Bayam tumis bersantan,MATCH,4,0,48,48,0,1.4,1.4,0,4.2,4.2,0,2.6,2.6,0
+Bebek (itik),MATCH,4,0,326,326,0,16,16,0,28.6,28.6,0,0,0,0
+Bebek alabio daging segar,MATCH,4,0,303,303,0,11.3,11.3,0,27,27,0,3.7,3.7,0
+Bebek daging goreng,MATCH,4,0,300,300,0,24,24,0,20.7,20.7,0,4.5,4.5,0
+Beberuk,MATCH,4,0,65,65,0,1.1,1.1,0,5.2,5.2,0,3.5,3.5,0
+Beef burger,DIFF,0,4,258,45.5,212.5,10.6,258,-247.4,9.5,10.6,-1.1,32.5,9.5,23
+Beef teriyaki masakan,MATCH,4,0,151,151,0,8.6,8.6,0,3.1,3.1,0,22.3,22.3,0
+Beef yakiniku masakan,MATCH,4,0,132,132,0,9.8,9.8,0,1.1,1.1,0,20.7,20.7,0
+Bekasam,MATCH,4,0,116,116,0,11.9,11.9,0,4.9,4.9,0,6.1,6.1,0
+Bekasang,MATCH,4,0,78,78,0,11.4,11.4,0,2,2,0,3.6,3.6,0
+Belibis daging segar,MATCH,4,0,131,131,0,20.2,20.2,0,4.3,4.3,0,2.8,2.8,0
+Belimbing,MATCH,4,0,36,36,0,0.4,0.4,0,0.4,0.4,0,8.8,8.8,0
+Belitung talas kukus,MATCH,4,0,145,145,0,1.2,1.2,0,0.4,0.4,0,34.2,34.2,0
+Belut goreng,MATCH,4,0,417,417,0,25.9,25.9,0,19.4,19.4,0,32,32,0
+Belut segar,MATCH,4,0,70,70,0,14.6,14.6,0,0.8,0.8,0,1,1,0
+Belutlaut segar,MATCH,4,0,93,93,0,12.8,12.8,0,1.5,1.5,0,6.1,6.1,0
+Bengkuang,MATCH,4,0,55,55,0,1.4,1.4,0,0.2,0.2,0,12.8,12.8,0
+Bentul (Komba)  talas segar,MATCH,4,0,98,98,0,1.6,1.6,0,0.7,0.7,0,20.9,20.9,0
+Bentul talas kukus,MATCH,4,0,71,71,0,2.3,2.3,0,0.3,0.3,0,15.4,15.4,0
+Beras Cerdas,MATCH,4,0,350,350,0,2.7,2.7,0,1.1,1.1,0,82.3,82.3,0
+Beras ganyong,MATCH,4,0,364,364,0,3.4,3.4,0,0.7,0.7,0,86.3,86.3,0
+Beras Giling,MATCH,4,0,360,360,0,6.8,6.8,0,0.7,0.7,0,78.9,78.9,0
+Beras Giling masak (nasi) ,MATCH,4,0,178,178,0,2.1,2.1,0,0.1,0.1,0,40.6,40.6,0
+Beras giling mentah,MATCH,4,0,357,357,0,8.4,8.4,0,1.7,1.7,0,77.1,77.1,0
+Beras giling var pelita mentah,MATCH,4,0,369,369,0,9.5,9.5,0,1.4,1.4,0,77.1,77.1,0
+Beras giling var rojolele mentah,MATCH,4,0,357,357,0,8.4,8.4,0,1.7,1.7,0,77.1,77.1,0
+Beras hitam mentah,MATCH,4,0,351,351,0,8,8,0,1.3,1.3,0,76.9,76.9,0
+Beras jagung kuning kering mentah,MATCH,4,0,358,358,0,5.5,5.5,0,0.1,0.1,0,82.7,82.7,0
+Beras jagung putih kering mentah,MATCH,4,0,307,307,0,4.8,4.8,0,0.1,0.1,0,71.8,71.8,0
+Beras Ketan Hitam,MATCH,4,0,356,356,0,7,7,0,0.7,0.7,0,78,78,0
+Beras Ketan Hitam kukus,MATCH,4,0,181,181,0,4,4,0,1.2,1.2,0,37.3,37.3,0
+Beras Ketan Hitam tape,MATCH,4,0,166,166,0,3.8,3.8,0,1,1,0,34.4,34.4,0
+Beras Ketan Hitam tumbuk,MATCH,4,0,360,360,0,8,8,0,2.3,2.3,0,74.5,74.5,0
+Beras ketan hitam tumbuk mentah,MATCH,4,0,360,360,0,8,8,0,2.3,2.3,0,74.5,74.5,0
+Beras Ketan Putih,MATCH,4,0,362,362,0,6.7,6.7,0,0.7,0.7,0,79.4,79.4,0
+Beras Ketan Putih kukus,MATCH,4,0,163,163,0,3,3,0,0.4,0.4,0,35.7,35.7,0
+Beras Ketan Putih tape,MATCH,4,0,172,172,0,3,3,0,0.5,0.5,0,37.5,37.5,0
+Beras Ketan Putih tumbuk,MATCH,4,0,361,361,0,7.4,7.4,0,0.8,0.8,0,78.4,78.4,0
+Beras ketan putih tumbuk mentah,MATCH,4,0,361,361,0,7.4,7.4,0,0.8,0.8,0,78.4,78.4,0
+Beras ladang mentah,MATCH,4,0,376,376,0,7.5,7.5,0,3.8,3.8,0,78,78,0
+Beras Menir,MATCH,4,0,339,339,0,7.7,7.7,0,4.4,4.4,0,73,73,0
+Beras menir mentah,MATCH,4,0,362,362,0,7.7,7.7,0,4.4,4.4,0,73,73,0
+Beras Merah tumbuk,MATCH,4,0,359,359,0,7.5,7.5,0,0.9,0.9,0,77.6,77.6,0
+Beras Parboiled,DIFF,2,2,364,353,11,6.8,6.8,0,0.6,0.6,0,80.1,80,0.1
+Beras parboiled,MATCH,4,0,353,353,0,6.8,6.8,0,0.6,0.6,0,80,80,0
+Beras Pecah Kulit,MATCH,4,0,335,335,0,7.4,7.4,0,1.9,1.9,0,76.2,76.2,0
+Beras Setengah Giling,MATCH,4,0,363,363,0,7.6,7.6,0,1.1,1.1,0,78.3,78.3,0
+Beras Siger,MATCH,4,0,344,344,0,1.1,1.1,0,0.2,0.2,0,28.3,28.3,0
+Beras tumbuk mentah,MATCH,4,0,354,354,0,7.8,7.8,0,0.4,0.4,0,79.9,79.9,0
+Beras tumbuk merah mentah,MATCH,4,0,352,352,0,7.3,7.3,0,0.9,0.9,0,76.2,76.2,0
+Betok wadi masakan,MATCH,4,0,145,145,0,16.3,16.3,0,7,7,0,4.1,4.1,0
+Bihun,MATCH,4,0,360,360,0,4.7,4.7,0,0.1,0.1,0,82.1,82.1,0
+Bihun Goreng ,MATCH,4,0,154,154,0,3,3,0,4.5,4.5,0,25.5,25.5,0
+Bihun goreng instan,MATCH,4,0,381,381,0,6.1,6.1,0,3.9,3.9,0,80.3,80.3,0
+Bihun Jagung mentah,MATCH,4,0,354,354,0,0.5,0.5,0,0.3,0.3,0,87.4,87.4,0
+Bihun mentah,MATCH,4,0,348,348,0,4.7,4.7,0,0.1,0.1,0,82.1,82.1,0
+Biji Jambu Mete,MATCH,4,0,562,562,0,21.2,21.2,0,49.6,49.6,0,23.6,23.6,0
+Biji Jambu Mete goreng,MATCH,4,0,629,629,0,21.5,21.5,0,56.6,56.6,0,19.8,19.8,0
+Biji nangka/Biji salak,MATCH,4,0,262,262,0,2.3,2.3,0,5.4,5.4,0,51.1,51.1,0
+Bika ambon,MATCH,4,0,199,199,0,2.1,2.1,0,1.5,1.5,0,44.4,44.4,0
+Bika Ambon ,DIFF,0,4,225.7,199,26.7,3,2.1,0.9,0.3,1.5,-1.2,52.9,44.4,8.5
+Bir (4% alkohol),MATCH,4,0,48,48,0,0.6,0.6,0,0,0,0,4.4,4.4,0
+Biskuit,MATCH,4,0,458,458,0,6.9,6.9,0,14.4,14.4,0,75.1,75.1,0
+Bit,MATCH,4,0,42,42,0,1.6,1.6,0,0.1,0.1,0,9.6,9.6,0
+Biwah segar,MATCH,4,0,51,51,0,0.3,0.3,0,0.1,0.1,0,12.1,12.1,0
+Bonggol Pisang,MATCH,4,0,43,43,0,2.6,2.6,0,0,0,0,11.6,11.6,0
+Bonggol Pisang kering,MATCH,4,0,245,245,0,3.4,3.4,0,0,0,0,66.2,66.2,0
+Bongkrek (tempe bungkil),MATCH,4,0,119,119,0,4.4,4.4,0,3.5,3.5,0,18.3,18.3,0
+Boros Kunci,MATCH,4,0,23,23,0,1,1,0,0.8,0.8,0,7.2,7.2,0
+Boros Laja (lengkuas),MATCH,4,0,22,22,0,1,1,0,0.3,0.3,0,4.7,4.7,0
+Botok lamtoro,MATCH,4,0,186,186,0,11.7,11.7,0,9.7,9.7,0,13,13,0
+Brem,MATCH,4,0,249,249,0,3.4,3.4,0,0.4,0.4,0,58,58,0
+Brondong ,MATCH,4,0,400,400,0,4,4,0,0.7,0.7,0,95.3,95.3,0
+Brongkos,MATCH,4,0,141,141,0,15.3,15.3,0,3.3,3.3,0,12.6,12.6,0
+Buah Atung,MATCH,4,0,23,23,0,0.8,0.8,0,0.2,0.2,0,5.2,5.2,0
+Buah kelenting segar,MATCH,4,0,110,110,0,1.4,1.4,0,2.1,2.1,0,21.4,21.4,0
+Buah kelor,MATCH,4,0,38,38,0,1.5,1.5,0,0.2,0.2,0,7.5,7.5,0
+Buah kom segar,MATCH,4,0,264,264,0,4,4,0,1.1,1.1,0,59.6,59.6,0
+Buah Mentega (bisbul),MATCH,4,0,39,39,0,0.7,0.7,0,0.2,0.2,0,9.7,9.7,0
+Buah merah,MATCH,4,0,87,87,0,2.6,2.6,0,2.7,2.7,0,13.1,13.1,0
+Buah Naga Merah segar,MATCH,4,0,71,71,0,1.7,1.7,0,3.1,3.1,0,9.1,9.1,0
+Buah Naga Putih segar,MATCH,4,0,56,56,0,0.8,0.8,0,1,1,0,10.9,10.9,0
+Buah negri segar,MATCH,4,0,55,55,0,1.2,1.2,0,0.1,0.1,0,12.2,12.2,0
+Buah Nona,MATCH,4,0,101,101,0,1.7,1.7,0,0.6,0.6,0,25.2,25.2,0
+Buah rotan segar,MATCH,4,0,78,78,0,0.6,0.6,0,0.3,0.3,0,18.2,18.2,0
+Buah rukam segar,MATCH,4,0,113,113,0,0.8,0.8,0,0.3,0.3,0,26.8,26.8,0
+Buah ruruhi segar,MATCH,4,0,29,29,0,2.1,2.1,0,0.7,0.7,0,3.6,3.6,0
+Buah tuppa segar,MATCH,4,0,67,67,0,0.4,0.4,0,0.2,0.2,0,15.9,15.9,0
+Buaya daging dendeng mentah,MATCH,4,0,365,365,0,49.6,49.6,0,4.8,4.8,0,30.8,30.8,0
+Bubur ,MATCH,4,0,60,60,0,1,1,0,60,60,0,13,13,0
+Bubur sagu,MATCH,4,0,167,167,0,0.2,0.2,0,4,4,0,33,33,0
+Bubur tinotuan (Manado),MATCH,4,0,156,156,0,2.3,2.3,0,0.2,0.2,0,15.6,15.6,0
+Bulgogi masakan,MATCH,4,0,72,72,0,11.4,11.4,0,4.9,4.9,0,1.4,1.4,0
+Bulung Jajan,MATCH,4,0,212,212,0,16.9,16.9,0,0.2,0.2,0,47.6,47.6,0
+Bulung Sangu,MATCH,4,0,237,237,0,14.7,14.7,0,0.2,0.2,0,56,56,0
+Buncis,MATCH,4,0,35,35,0,2.4,2.4,0,0.2,0.2,0,7.7,7.7,0
+Buncis asam,MATCH,4,0,60,60,0,5.1,5.1,0,0.5,0.5,0,8.5,8.5,0
+Buncis rebus,MATCH,4,0,30,30,0,2.2,2.2,0,0.2,0.2,0,6.4,6.4,0
+Bunga pepaya segar,MATCH,4,0,45,45,0,2.6,2.6,0,0.3,0.3,0,8.1,8.1,0
+Bunga turi segar,MATCH,4,0,42,42,0,2,2,0,1.1,1.1,0,6.1,6.1,0
+Bungkil Biji Karet,MATCH,4,0,333,333,0,29.3,29.3,0,3.3,3.3,0,50,50,0
+Bungkil Kacang Tanah,MATCH,4,0,336,336,0,37.4,37.4,0,13,13,0,30.5,30.5,0
+Bungkil Kelapa,MATCH,4,0,368,368,0,23,23,0,15,15,0,40,40,0
+Buntil ,MATCH,4,0,106,106,0,4.4,4.4,0,6.3,6.3,0,7.9,7.9,0
+Buntil daun talas,MATCH,4,0,141,141,0,4.4,4.4,0,10.2,10.2,0,8,8,0
+Buras ,MATCH,4,0,125.7,125.7,0,3.3,3.3,0,1.9,1.9,0,23.9,23.9,0
+Burung sarang segar,MATCH,4,0,281,281,0,37.5,37.5,0,0.3,0.3,0,32.1,32.1,0
+Cabai gembor merah segar,MATCH,4,0,38,38,0,1.6,1.6,0,0.8,0.8,0,6.3,6.3,0
+Cabai hijau segar,MATCH,4,0,26,26,0,0.7,0.7,0,0.3,0.3,0,5.2,5.2,0
+Cabai merah kering,MATCH,4,0,367,367,0,15.9,15.9,0,6.2,6.2,0,61.8,61.8,0
+Cabai merah segar,MATCH,4,0,36,36,0,1,1,0,0.3,0.3,0,7.3,7.3,0
+Cabai rawit segar,MATCH,4,0,120,120,0,4.7,4.7,0,2.4,2.4,0,19.9,19.9,0
+Caisin segar,MATCH,4,0,20,20,0,1.7,1.7,0,0.4,0.4,0,3.4,3.4,0
+Cakalang asar (asap papua),MATCH,4,0,155,155,0,20.1,20.1,0,3.8,3.8,0,10.2,10.2,0
+Cake tape,MATCH,4,0,323,323,0,4.9,4.9,0,11.5,11.5,0,50.1,50.1,0
+Cammetutu,MATCH,4,0,102,102,0,3.2,3.2,0,6,6,0,8.7,8.7,0
+Cantel mentah,MATCH,4,0,366,366,0,11,11,0,3.3,3.3,0,73,73,0
+Cap cai sayur,MATCH,4,0,97,97,0,5.8,5.8,0,6.3,6.3,0,4.2,4.2,0
+Carica papaya segar,MATCH,4,0,24,24,0,1.9,1.9,0,0.2,0.2,0,3.7,3.7,0
+Cassavastick,MATCH,4,0,460,460,0,0.8,0.8,0,18.7,18.7,0,17.2,17.2,0
+Cempedak,MATCH,4,0,116,116,0,3,3,0,0.4,0.4,0,28.6,28.6,0
+Cengkeh kering,MATCH,4,0,330,330,0,5.2,5.2,0,8.9,8.9,0,57.4,57.4,0
+Centel,MATCH,4,0,332,332,0,11,11,0,3.3,3.3,0,73,73,0
+Ceriping getuk singkong,MATCH,4,0,462,462,0,1.2,1.2,0,20.7,20.7,0,67.7,67.7,0
+Chicken teriyaki masakan,MATCH,4,0,168,168,0,13,13,0,9.6,9.6,0,7.5,7.5,0
+Chikiniku masakan,MATCH,4,0,143,143,0,9.8,9.8,0,1.4,1.4,0,22.8,22.8,0
+Coklat bubuk,MATCH,4,0,311,311,0,8,8,0,4,4,0,48.9,48.9,0
+Coklat Manis batang,MATCH,4,0,472,472,0,2,2,0,29.8,29.8,0,62.7,62.7,0
+Coklat Pahit batang,MATCH,4,0,504,504,0,5.5,5.5,0,52.9,52.9,0,29.2,29.2,0
+Coklat Susu batang,MATCH,4,0,381,381,0,9,9,0,35,35,0,53.6,53.6,0
+Combro ,MATCH,4,0,210,210,0,1.6,1.6,0,6.6,6.6,0,35.8,35.8,0
+Corned Beef,MATCH,4,0,241,241,0,16,16,0,25,25,0,0,0,0
+Coto mangkasara kuda masakan,MATCH,4,0,96,96,0,6.8,6.8,0,5.9,5.9,0,3.8,3.8,0
+Coto mangkasara sapi masakan,MATCH,4,0,84,84,0,6,6,0,6,6,0,1.4,1.4,0
+Cue Selar Kuning,MATCH,4,0,145,145,0,27,27,0,2.3,2.3,0,0,0,0
+Cuka,DIFF,3,1,12,21,-9,0.1,0.1,0,0.1,0.1,0,5,5,0
+Cumi-cumi goreng,MATCH,4,0,265,265,0,40.6,40.6,0,10.1,10.1,0,0,0,0
+Cumi-cumi segar,MATCH,4,0,75,75,0,16.1,16.1,0,0.7,0.7,0,0.1,0.1,0
+Daging Anak Sapi,MATCH,4,0,190,190,0,19.1,19.1,0,12,12,0,0,0,0
+Daging Asap,MATCH,4,0,191,191,0,32,32,0,6,6,0,0,0,0
+Daging Babi Gemuk,MATCH,4,0,457,457,0,11.6,11.6,0,45,45,0,0,0,0
+Daging Babi Kurus,MATCH,4,0,376,376,0,14.1,14.1,0,35,35,0,0,0,0
+Daging Domba,MATCH,4,0,206,206,0,17.1,17.1,0,14.8,14.8,0,0,0,0
+Daging Kambing,MATCH,4,0,154,154,0,16.6,16.6,0,9.2,9.2,0,0,0,0
+Daging Kerbau,MATCH,4,0,84,84,0,18.7,18.7,0,0.5,0.5,0,0,0,0
+Daging Kuda,MATCH,4,0,118,118,0,18.1,18.1,0,4.1,4.1,0,0.9,0.9,0
+Daging Sapi,MATCH,4,0,207,207,0,18.8,18.8,0,14,14,0,0,0,0
+Daun bangun-bangun segar,MATCH,4,0,27,27,0,1.3,1.3,0,0.6,0.6,0,4,4,0
+Daun Bawang,MATCH,4,0,29,29,0,1.8,1.8,0,0.7,0.7,0,5.2,5.2,0
+Daun bawang  merah segar,MATCH,4,0,41,41,0,2,2,0,0.3,0.3,0,7.8,7.8,0
+Daun bebuas segar,MATCH,4,0,41,41,0,2.7,2.7,0,1,1,0,7.3,7.3,0
+Daun belem segar,MATCH,4,0,50,50,0,4.4,4.4,0,1.4,1.4,0,7.8,7.8,0
+Daun Beluntas,MATCH,4,0,42,42,0,1.8,1.8,0,0.5,0.5,0,9.4,9.4,0
+Daun Cincau,MATCH,4,0,122,122,0,6,6,0,1,1,0,26,26,0
+Daun Gandaria,MATCH,4,0,60,60,0,3.1,3.1,0,0.3,0.3,0,14,14,0
+Daun gedi besar segar,MATCH,4,0,58,58,0,2.9,2.9,0,0.7,0.7,0,10,10,0
+Daun gelang segar,MATCH,4,0,30,30,0,1.3,1.3,0,0.7,0.7,0,5.8,5.8,0
+Daun gunda bali segar,MATCH,4,0,50,50,0,4.6,4.6,0,0.9,0.9,0,7,7,0
+Daun gunda serang segar,MATCH,4,0,62,62,0,4.2,4.2,0,0.9,0.9,0,9.2,9.2,0
+Daun Jambu Mete muda,MATCH,4,0,73,73,0,4.6,4.6,0,0.5,0.5,0,16.2,16.2,0
+Daun jampang segar,MATCH,4,0,34,34,0,3.8,3.8,0,0.5,0.5,0,5.3,5.3,0
+Daun jawaw seluang segar,MATCH,4,0,93,93,0,5,5,0,1.3,1.3,0,15.3,15.3,0
+Daun jonghe segar,MATCH,4,0,27,27,0,2.1,2.1,0,0.7,0.7,0,4.4,4.4,0
+Daun kacang ma segar,MATCH,4,0,36,36,0,2.9,2.9,0,0.6,0.6,0,6.8,6.8,0
+Daun Kacang Panjang,MATCH,4,0,34,34,0,4.1,4.1,0,0.4,0.4,0,5.8,5.8,0
+Daun Kacang Panjang kukus,MATCH,4,0,40,40,0,3.7,3.7,0,0.3,0.3,0,8,8,0
+Daun kacang panjang segar,MATCH,4,0,30,30,0,3.1,3.1,0,0.3,0.3,0,5.8,5.8,0
+Daun kasbi/singkong karet segar,MATCH,4,0,92,92,0,4,4,0,3.6,3.6,0,10.9,10.9,0
+Daun Katuk,MATCH,4,0,59,59,0,4.8,4.8,0,1,1,0,11,11,0
+Daun katuk rebus,MATCH,4,0,53,53,0,5.3,5.3,0,0.9,0.9,0,9.1,9.1,0
+Daun katuk segar,MATCH,4,0,59,59,0,6.4,6.4,0,1,1,0,9.9,9.9,0
+Daun Kecipir,MATCH,4,0,47,47,0,5,5,0,0.5,0.5,0,8.5,8.5,0
+Daun Kedondong,MATCH,4,0,59,59,0,2.8,2.8,0,0.3,0.3,0,13.4,13.4,0
+Daun Kelor,MATCH,4,0,82,82,0,6.7,6.7,0,1.7,1.7,0,14.3,14.3,0
+Daun Kelor rebus,MATCH,4,0,61,61,0,6.1,6.1,0,0.9,0.9,0,10,10,0
+Daun Kemangi,MATCH,4,0,46,46,0,4,4,0,0.5,0.5,0,8.9,8.9,0
+Daun kenikir segar,MATCH,4,0,45,45,0,3.7,3.7,0,0.5,0.5,0,6.6,6.6,0
+Daun kesum segar,MATCH,4,0,48,48,0,4.5,4.5,0,0.8,0.8,0,9.1,9.1,0
+Daun kol sawi segar,MATCH,4,0,22,22,0,2.1,2.1,0,0.5,0.5,0,3.6,3.6,0
+Daun Koro,MATCH,4,0,23,23,0,3,3,0,0.3,0.3,0,3.7,3.7,0
+Daun kubis segar,MATCH,4,0,51,51,0,2.5,2.5,0,1.1,1.1,0,8,8,0
+Daun Kumak,MATCH,4,0,14,14,0,1.3,1.3,0,0.3,0.3,0,2.3,2.3,0
+Daun Labu Siam,MATCH,4,0,60,60,0,4,4,0,0.4,0.4,0,4.7,4.7,0
+Daun Labu Waluh,MATCH,4,0,30,30,0,3.6,3.6,0,0.6,0.6,0,4.5,4.5,0
+Daun lamtoro segar,MATCH,4,0,87,87,0,8.3,8.3,0,1.8,1.8,0,14.4,14.4,0
+Daun leilem segar,MATCH,4,0,76,76,0,2.8,2.8,0,0.2,0.2,0,15.8,15.8,0
+Daun Leunca,MATCH,4,0,45,45,0,4.7,4.7,0,0.5,0.5,0,8.1,8.1,0
+Daun Lobak,MATCH,4,0,30,30,0,2.3,2.3,0,0.4,0.4,0,5.8,5.8,0
+Daun Lompong Tales,MATCH,4,0,40,40,0,3,3,0,0.8,0.8,0,7.4,7.4,0
+Daun Mangkokan,MATCH,4,0,54,54,0,3.7,3.7,0,0.3,0.3,0,11.8,11.8,0
+Daun matel ambon segar,MATCH,4,0,71,71,0,6.8,6.8,0,1.6,1.6,0,11.5,11.5,0
+Daun Melinjo,MATCH,4,0,99,99,0,5,5,0,1.3,1.3,0,21.3,21.3,0
+Daun Mengkudu Kukus,MATCH,4,0,63,63,0,3.8,3.8,0,1.5,1.5,0,11.5,11.5,0
+Daun ndusuk segar,MATCH,4,0,166,166,0,1.7,1.7,0,0.5,0.5,0,38.8,38.8,0
+Daun Oyong,MATCH,4,0,22,22,0,1,1,0,0.1,0.1,0,5.3,5.3,0
+Daun oyong segar,MATCH,4,0,22,22,0,1,1,0,0.1,0.1,0,5.3,5.3,0
+Daun Pakis,MATCH,4,0,35,35,0,4,4,0,0.3,0.3,0,6.4,6.4,0
+Daun pakis longgiho segar,MATCH,4,0,54,54,0,2.2,2.2,0,3.6,3.6,0,3.1,3.1,0
+Daun pakis segar,MATCH,4,0,39,39,0,4.5,4.5,0,0.4,0.4,0,6.9,6.9,0
+Daun pakis wambateu segar,MATCH,4,0,53,53,0,3.4,3.4,0,1.2,1.2,0,7.2,7.2,0
+Daun paku segar,MATCH,4,0,29,29,0,3.4,3.4,0,0.1,0.1,0,6.5,6.5,0
+Daun pangisegar,MATCH,4,0,104,104,0,3.9,3.9,0,0.6,0.6,0,17.9,17.9,0
+Daun pare segar,MATCH,4,0,49,49,0,2.7,2.7,0,1,1,0,8.4,8.4,0
+Daun pepaya segar,MATCH,4,0,87,87,0,8,8,0,2,2,0,11.9,11.9,0
+Daun Pete Cina,MATCH,4,0,128,128,0,12,12,0,6.5,6.5,0,12.4,12.4,0
+Daun Poh-pohan,MATCH,4,0,37,37,0,2.5,2.5,0,0.8,0.8,0,6.9,6.9,0
+Daun salam  bubuk,MATCH,4,0,301,301,0,14.2,14.2,0,10.9,10.9,0,49,49,0
+Daun selasih segar,MATCH,4,0,62,62,0,4,4,0,0.5,0.5,0,10.5,10.5,0
+Daun Semanggi,MATCH,4,0,45,45,0,4.4,4.4,0,8,8,0,0.5,0.5,0
+Daun semanggi segar,MATCH,4,0,45,45,0,4.4,4.4,0,0.5,0.5,0,8.5,8.5,0
+Daun simpur segar,MATCH,4,0,53,53,0,3.2,3.2,0,2.5,2.5,0,7.6,7.6,0
+Daun singkil segar,MATCH,4,0,68,68,0,2,2,0,1,1,0,15.2,15.2,0
+Daun Singkong,MATCH,4,0,73,73,0,6.8,6.8,0,1.2,1.2,0,13,13,0
+Daun singkong ambon segar,MATCH,4,0,144,144,0,12.7,12.7,0,1.2,1.2,0,25.2,25.2,0
+Daun singkong ampenan segar,MATCH,4,0,50,50,0,6.2,6.2,0,1.1,1.1,0,7.1,7.1,0
+Daun singkong kopang segar,MATCH,4,0,74,74,0,6.3,6.3,0,0.7,0.7,0,10.7,10.7,0
+Daun Singkong lodeh,MATCH,4,0,55,55,0,4,4,0,0.5,0.5,0,8.5,8.5,0
+Daun Singkong rebus,MATCH,4,0,31,31,0,3.7,3.7,0,0.6,0.6,0,4.8,4.8,0
+Daun singkong segar,MATCH,4,0,50,50,0,6.2,6.2,0,1.1,1.1,0,7.1,7.1,0
+Daun Sintrong,MATCH,4,0,36,36,0,2.6,2.6,0,0.9,0.9,0,6.1,6.1,0
+Daun talas rebus,MATCH,4,0,27,27,0,1.3,1.3,0,0.2,0.2,0,5.9,5.9,0
+Daun talas segar,MATCH,4,0,59,59,0,3,3,0,0.4,0.4,0,13.5,13.5,0
+Daun Tales,MATCH,4,0,71,71,0,4.1,4.1,0,2.1,2.1,0,12.3,12.3,0
+Daun Tales rebus,MATCH,4,0,27,27,0,1.3,1.3,0,0.2,0.2,0,5.9,5.9,0
+Daun tespong segar,MATCH,4,0,70,70,0,2.9,2.9,0,0.3,0.3,0,13.9,13.9,0
+Daun Ubi Jalar,MATCH,4,0,47,47,0,2.8,2.8,0,0.4,0.4,0,10.4,10.4,0
+Daun Ubi Jalar kukus,MATCH,4,0,56,56,0,3.1,3.1,0,0.3,0.3,0,13,13,0
+Daun ubi kuning segar,MATCH,4,0,62,62,0,3.7,3.7,0,0.3,0.3,0,11.1,11.1,0
+Daun ubi merah kukus,MATCH,4,0,56,56,0,3.1,3.1,0,0.3,0.3,0,13,13,0
+Daun ubi merah segar,MATCH,4,0,48,48,0,3,3,0,0.3,0.3,0,10.8,10.8,0
+Daun ubi putih segar,MATCH,4,0,46,46,0,2.8,2.8,0,0.2,0.2,0,8.2,8.2,0
+Daun ubi tinta segar,MATCH,4,0,55,55,0,1.7,1.7,0,0.1,0.1,0,11.9,11.9,0
+Deblo ,MATCH,4,0,260,260,0,2,2,0,15,15,0,53,53,0
+Dendeng belut goreng,MATCH,4,0,382,382,0,55.7,55.7,0,14.1,14.1,0,8,8,0
+Dendeng Daging Sapi,MATCH,4,0,433,433,0,55,55,0,9,9,0,0,0,0
+Dendeng mujahir goreng,MATCH,4,0,598,598,0,74.3,74.3,0,26.9,26.9,0,9.2,9.2,0
+Dideh darah ayam,MATCH,4,0,77,77,0,13.8,13.8,0,1.9,1.9,0,0.7,0.7,0
+Dideh darah sapi,MATCH,4,0,104,104,0,21.9,21.9,0,1.1,1.1,0,0,0,0
+Djibokum masakan,MATCH,4,0,248,248,0,10,10,0,2.3,2.3,0,40.9,40.9,0
+Dodol,MATCH,4,0,395,395,0,3,3,0,5.7,5.7,0,81.2,81.2,0
+Dodol bali,MATCH,4,0,298,298,0,3.7,3.7,0,2.1,2.1,0,65.9,65.9,0
+Dodol banjarmasin,MATCH,4,0,368,368,0,2.6,2.6,0,8.6,8.6,0,70,70,0
+Dodol galamai,MATCH,4,0,348,348,0,0.4,0.4,0,3.8,3.8,0,76.1,76.1,0
+Dodol kedondong,MATCH,4,0,331,331,0,1.9,1.9,0,7.6,7.6,0,63.8,63.8,0
+Dodol manado,MATCH,4,0,373,373,0,4.3,4.3,0,16.5,16.5,0,51.9,51.9,0
+Dodonkol ,MATCH,4,0,17.5,17.5,0,3.3,3.3,0,2.3,2.3,0,39.5,39.5,0
+Domba daging gemuk segar,MATCH,4,0,317,317,0,15.7,15.7,0,27.7,27.7,0,0,0,0
+Domba daging kurus  segar,MATCH,4,0,202,202,0,17.1,17.1,0,14.8,14.8,0,0,0,0
+Domba ginjal segar,MATCH,4,0,100,100,0,16.6,16.6,0,3.3,3.3,0,1,1,0
+Duku,MATCH,4,0,63,63,0,1,1,0,0.2,0.2,0,16.1,16.1,0
+Durian,MATCH,4,0,134,134,0,2.5,2.5,0,3,3,0,28,28,0
+Duwet segar,MATCH,4,0,80,80,0,0.5,0.5,0,0.6,0.6,0,18.2,18.2,0
+Eceng Gondok,MATCH,4,0,18,18,0,1,1,0,0.2,0.2,0,3.8,3.8,0
+Embacang,MATCH,4,0,98,98,0,1.4,1.4,0,0.2,0.2,0,25.4,25.4,0
+Empal (daging) Goreng masakan,MATCH,4,0,248,248,0,36.2,36.2,0,6.9,6.9,0,10.1,10.1,0
+Empal Goreng,MATCH,4,0,590,590,0,18.5,18.5,0,57,57,0,0,0,0
+Emping (kerupuk melinjo),MATCH,4,0,345,345,0,12,12,0,1.5,1.5,0,71.5,71.5,0
+Emping beras,MATCH,4,0,403,403,0,10.6,10.6,0,2.2,2.2,0,85.3,85.3,0
+Emping komak,MATCH,4,0,355,355,0,17.8,17.8,0,4.6,4.6,0,60.7,60.7,0
+Encung asam segar,MATCH,4,0,122,122,0,3.5,3.5,0,4.5,4.5,0,17.5,17.5,0
+Enting-enting gepuk hello kity,MATCH,4,0,538,538,0,13.6,13.6,0,30.3,30.3,0,52.6,52.6,0
+Enting-enting gepuk kacang tanah,MATCH,4,0,524,524,0,13.3,13.3,0,29.2,29.2,0,52,52,0
+Enting-enting wijen,MATCH,4,0,565,565,0,18.2,18.2,0,38.4,38.4,0,36.8,36.8,0
+Erbis,MATCH,4,0,70,70,0,0.6,0.6,0,0,0,0,18.9,18.9,0
+Es krim,MATCH,4,0,210,210,0,4,4,0,12.5,12.5,0,20.6,20.6,0
+Es Krim (Coconut milk) ,MATCH,4,0,156.7,156.7,0,3,3,0,1.7,1.7,0,32.7,32.7,0
+Es Mambo ,MATCH,4,0,152,152,0,0,0,0,0,0,0,37.6,37.6,0
+Es Sirup ,MATCH,4,0,44.8,44.8,0,0,0,0,0,0,0,11.3,11.3,0
+Fillet o-fish,DIFF,0,4,270,51,219,12.3,270,-257.7,15.9,12.3,3.6,19.3,15.9,3.4
+Gadeng/Gadung kering,MATCH,4,0,322,322,0,2.4,2.4,0,0.6,0.6,0,76.6,76.6,0
+Gado-gado,MATCH,4,0,137,137,0,6.1,6.1,0,3.2,3.2,0,21,21,0
+Gadung kukus,MATCH,4,0,88,88,0,0.8,0.8,0,0.3,0.3,0,20.9,20.9,0
+Gadung mentah,MATCH,4,0,101,101,0,2.1,2.1,0,0.2,0.2,0,23.2,23.2,0
+Gadung ubi kukus,MATCH,4,0,88,88,0,0.6,0.6,0,0.3,0.3,0,20.9,20.9,0
+Gadung ubi segar,MATCH,4,0,100,100,0,0.9,0.9,0,0.3,0.3,0,23.5,23.5,0
+Gambas (Oyong),MATCH,4,0,18,18,0,0.8,0.8,0,0.2,0.2,0,4.1,4.1,0
+Gambas lodeh,MATCH,4,0,13,13,0,0.3,0.3,0,0.6,0.6,0,1.6,1.6,0
+Gandaria,MATCH,4,0,68,68,0,0.7,0.7,0,0.1,0.1,0,18,18,0
+Ganyong kukus,MATCH,4,0,100,100,0,0.8,0.8,0,0.2,0.2,0,23.8,23.8,0
+Ganyong mentah,MATCH,4,0,95,95,0,1,1,0,0.1,0.1,0,22.6,22.6,0
+Ganyong rebus,MATCH,4,0,100,100,0,0.8,0.8,0,0.2,0.2,0,23.8,23.8,0
+Ganyong segar,MATCH,4,0,77,77,0,0.6,0.6,0,0.2,0.2,0,18.4,18.4,0
+Gaplek,MATCH,4,0,338,338,0,1.5,1.5,0,0.7,0.7,0,81.3,81.3,0
+Gatep segar,MATCH,4,0,191,191,0,4.5,4.5,0,1.5,1.5,0,39.7,39.7,0
+Gatot,MATCH,4,0,347,347,0,1.3,1.3,0,0.7,0.7,0,83.8,83.8,0
+Geblek,MATCH,4,0,195,195,0,0.4,0.4,0,1.7,1.7,0,44.4,44.4,0
+Gelatine,MATCH,4,0,389,389,0,0,0,0,0,0,0,91,91,0
+Gembili,MATCH,4,0,95,95,0,1.5,1.5,0,0.1,0.1,0,22.4,22.4,0
+Gembili ubi segar,MATCH,4,0,131,131,0,1.1,1.1,0,0.2,0.2,0,31.3,31.3,0
+Gemblong,MATCH,4,0,274,274,0,1.7,1.7,0,5.4,5.4,0,55.5,55.5,0
+Gendar goreng,MATCH,4,0,407,407,0,6.4,6.4,0,28.2,28.2,0,32,32,0
+Genjer segar,MATCH,4,0,35,35,0,1.7,1.7,0,0.2,0.2,0,7.7,7.7,0
+Geplak,MATCH,4,0,350,350,0,1.4,1.4,0,14.4,14.4,0,53.6,53.6,0
+Geplak jahe,MATCH,4,0,462,462,0,3.1,3.1,0,24.4,24.4,0,57.7,57.7,0
+Gete kuah asam masakan,MATCH,4,0,75,75,0,8.2,8.2,0,2,2,0,6,6,0
+Getuk goreng,MATCH,4,0,360,360,0,1.3,1.3,0,6.4,6.4,0,74.3,74.3,0
+Getuk Lindri ,MATCH,4,0,171.4,171.4,0,4,4,0,4,4,0,32,32,0
+Getuk pisang,MATCH,4,0,144,144,0,1.1,1.1,0,0.4,0.4,0,34.1,34.1,0
+Getuk singkong,MATCH,4,0,204,204,0,0.5,0.5,0,1.4,1.4,0,47.4,47.4,0
+Ginjal Babi,MATCH,4,0,114,114,0,16.3,16.3,0,4.6,4.6,0,0.8,0.8,0
+Ginjal Domba,MATCH,4,0,105,105,0,16.6,16.6,0,3.3,3.3,0,1,1,0
+Ginjal Sapi,MATCH,4,0,141,141,0,15,15,0,8.1,8.1,0,0.9,0.9,0
+Gudeg ,MATCH,4,0,53,53,0,1.6,1.6,0,1.6,1.6,0,8.8,8.8,0
+Gudeg sayur,MATCH,4,0,160,160,0,3.3,3.3,0,9.2,9.2,0,16,16,0
+Gula Aren,DIFF,3,1,368,368,0,0,0,0,0,0,0,95,92,3
+Gula Kelapa,MATCH,4,0,386,386,0,3,3,0,10,10,0,76,76,0
+Gula Merah Tebu belum dimurnikan,MATCH,4,0,356,356,0,0.4,0.4,0,0.5,0.5,0,90.6,90.6,0
+Gula putih,MATCH,4,0,394,394,0,0,0,0,0,0,0,94,94,0
+Gulai asam keueung masakan,MATCH,4,0,52,52,0,10,10,0,0.5,0.5,0,1.8,1.8,0
+Gulai ikan masakan,MATCH,4,0,106,106,0,16.5,16.5,0,3.3,3.3,0,2.5,2.5,0
+Gulai ikan paya masakan,MATCH,4,0,148,148,0,10,10,0,9.8,9.8,0,5,5,0
+Gulai kambing,MATCH,4,0,126,126,0,4.2,4.2,0,9.4,9.4,0,6.2,6.2,0
+Gulai keumamah masakan,MATCH,4,0,110,110,0,5.9,5.9,0,8.2,8.2,0,3.2,3.2,0
+Gulai pakis,MATCH,4,0,143,143,0,4,4,0,11.4,11.4,0,6,6,0
+Gulai pliek,MATCH,4,0,176,176,0,7.3,7.3,0,14.9,14.9,0,3.2,3.2,0
+Gulai tiram masakan,MATCH,4,0,132,132,0,9,9,0,7.2,7.2,0,7.8,7.8,0
+Gurame asem manis masakan,MATCH,4,0,192,192,0,12.7,12.7,0,10.1,10.1,0,12.7,12.7,0
+Gurandil,MATCH,4,0,218,218,0,0.5,0.5,0,2.5,2.5,0,48.5,48.5,0
+Ham,DIFF,3,1,389,384,5,16.9,16.9,0,35,35,0,0.3,0.3,0
+Hangop,MATCH,4,0,65,65,0,10,10,0,1,1,0,3.5,3.5,0
+Hati Babi,MATCH,4,0,134,134,0,19.7,19.7,0,4.8,4.8,0,1.7,1.7,0
+Hati Sapi,MATCH,4,0,136,136,0,19.7,19.7,0,3.2,3.2,0,6,6,0
+Havermout,MATCH,4,0,390,390,0,14.2,14.2,0,7.4,7.4,0,68.2,68.2,0
+Hofa/Ubi hutan segar,MATCH,4,0,127,127,0,1.2,1.2,0,0.5,0.5,0,29.5,29.5,0
+Ikan asar merah masakan,MATCH,4,0,146,146,0,17.7,17.7,0,5.9,5.9,0,5.6,5.6,0
+Ikan Asin bilis goreng,MATCH,4,0,380,380,0,33.6,33.6,0,27.5,27.5,0,0,0,0
+Ikan Asin gabus goreng,MATCH,4,0,456,456,0,46.5,46.5,0,24.4,24.4,0,0,0,0
+Ikan Asin japuh goreng,MATCH,4,0,348,348,0,18.7,18.7,0,29.5,29.5,0,0,0,0
+Ikan Asin kering,MATCH,4,0,193,193,0,42,42,0,1.5,1.5,0,0,0,0
+Ikan Asin pari goreng,MATCH,4,0,430,430,0,58.2,58.2,0,23.6,23.6,0,0,0,0
+Ikan Asin pepetek goreng,MATCH,4,0,652,652,0,40.4,40.4,0,54.3,54.3,0,0,0,0
+Ikan Asin sirinding goreng,MATCH,4,0,319,319,0,6.9,6.9,0,31.7,31.7,0,0,0,0
+Ikan Asin teri goreng,MATCH,4,0,430,430,0,33.4,33.4,0,32.4,32.4,0,0,0,0
+Ikan Bader (Tawes),MATCH,4,0,198,198,0,19,19,0,13,13,0,0,0,0
+Ikan balong segar,MATCH,4,0,107,107,0,16.5,16.5,0,3.9,3.9,0,1.5,1.5,0
+Ikan bambangan segar,MATCH,4,0,112,112,0,20,20,0,1.3,1.3,0,3.7,3.7,0
+Ikan Bandeng,MATCH,4,0,129,129,0,20,20,0,4.8,4.8,0,0,0,0
+Ikan bandeng presto masakan,MATCH,4,0,296,296,0,17.1,17.1,0,20.3,20.3,0,11.3,11.3,0
+Ikan banjar segar,MATCH,4,0,111,111,0,19.4,19.4,0,0.9,0.9,0,4.8,4.8,0
+Ikan baronang segar,MATCH,4,0,78,78,0,14.5,14.5,0,0.6,0.6,0,3.7,3.7,0
+Ikan baung bakar,MATCH,4,0,144,144,0,17.8,17.8,0,5.8,5.8,0,5.2,5.2,0
+Ikan baung segar,MATCH,4,0,123,123,0,15.1,15.1,0,5.5,5.5,0,3.3,3.3,0
+Ikan Bawal,MATCH,4,0,96,96,0,19,19,0,1.7,1.7,0,0,0,0
+Ikan Bekasang,MATCH,4,0,138,138,0,14,14,0,0.7,0.7,0,7.4,7.4,0
+Ikan Belida bakar,MATCH,4,0,128,128,0,18,18,0,3,3,0,7.2,7.2,0
+Ikan Belida segar,MATCH,4,0,80,80,0,14.7,14.7,0,1.4,1.4,0,2.2,2.2,0
+Ikan Belut Segar goreng,MATCH,4,0,417,417,0,25.9,25.9,0,19.4,19.4,0,32,32,0
+Ikan Belut Segar mentah,MATCH,4,0,82,82,0,6.7,6.7,0,1,1,0,10.9,10.9,0
+Ikan Beunteur,MATCH,4,0,66,66,0,14,14,0,0,0,0,0,0,0
+Ikan biawan segar,MATCH,4,0,90,90,0,14.9,14.9,0,2.5,2.5,0,2.1,2.1,0
+Ikan bili segar,MATCH,4,0,88,88,0,14.2,14.2,0,0.7,0.7,0,6.2,6.2,0
+Ikan bubara segar,MATCH,4,0,100,100,0,14.7,14.7,0,2.4,2.4,0,4.9,4.9,0
+Ikan bulan-bulan segar,MATCH,4,0,134,134,0,25.5,25.5,0,1.3,1.3,0,5,5,0
+Ikan cakalang asap mentah,MATCH,4,0,204,204,0,34.2,34.2,0,5.6,5.6,0,1.9,1.9,0
+Ikan cakalang asin mentah,MATCH,4,0,198,198,0,36.5,36.5,0,2.2,2.2,0,5.5,5.5,0
+Ikan cakalang hati segar,MATCH,4,0,120,120,0,11.3,11.3,0,3.9,3.9,0,10,10,0
+Ikan cakalang jantung segar,MATCH,4,0,116,116,0,11.2,11.2,0,1.2,1.2,0,10.2,10.2,0
+Ikan cakalang perut segar,MATCH,4,0,86,86,0,10.2,10.2,0,1.1,1.1,0,8.7,8.7,0
+Ikan cakalang segar,MATCH,4,0,107,107,0,19.6,19.6,0,0.7,0.7,0,5.5,5.5,0
+Ikan calo/ peda mentah,MATCH,4,0,81,81,0,11.4,11.4,0,1.9,1.9,0,3.8,3.8,0
+Ikan daun segar,MATCH,4,0,101,101,0,11.5,11.5,0,4.1,4.1,0,4.6,4.6,0
+Ikan Ekor Kuning,MATCH,4,0,109,109,0,17,17,0,4,4,0,0,0,0
+Ikan Gabus asap mentah,MATCH,4,0,261,261,0,38.1,38.1,0,2.3,2.3,0,21.9,21.9,0
+Ikan Gabus kering,MATCH,4,0,292,292,0,58,58,0,4,4,0,0,0,0
+Ikan Gabus segar,MATCH,4,0,74,74,0,25.2,25.2,0,1.7,1.7,0,0,0,0
+Ikan gete goreng,MATCH,4,0,267,267,0,23.1,23.1,0,19.4,19.4,0,0.2,0.2,0
+Ikan hitam segar,MATCH,4,0,101,101,0,10.3,10.3,0,3.7,3.7,0,6.7,6.7,0
+Ikan hiu kering,MATCH,4,0,298,298,0,46.3,46.3,0,3.6,3.6,0,20.2,20.2,0
+Ikan hiu segar,MATCH,4,0,57,57,0,10.7,10.7,0,0.3,0.3,0,2.2,2.2,0
+Ikan kacangan segar,MATCH,4,0,77,77,0,15.6,15.6,0,0.9,0.9,0,1.6,1.6,0
+Ikan kakap segar,MATCH,4,0,92,92,0,20,20,0,0.7,0.7,0,0,0,0
+Ikan kakatua segar,MATCH,4,0,82,82,0,11.4,11.4,0,1.2,1.2,0,6.4,6.4,0
+Ikan kapar segar,MATCH,4,0,132,132,0,17,17,0,6.7,6.7,0,0.8,0.8,0
+Ikan katombo asin,MATCH,4,0,162,162,0,31.7,31.7,0,2.8,2.8,0,0.3,0.3,0
+Ikan kawalinya segar,MATCH,4,0,110,110,0,12.6,12.6,0,4.2,4.2,0,5.4,5.4,0
+Ikan kayu kering,MATCH,4,0,302,302,0,70.7,70.7,0,1.9,1.9,0,0.4,0.4,0
+Ikan Kembung,MATCH,4,0,103,103,0,22,22,0,1,1,0,0,0,0
+Ikan kima segar,MATCH,4,0,70,70,0,10.8,10.8,0,0.7,0.7,0,5.2,5.2,0
+Ikan Lais bakar,MATCH,4,0,147,147,0,17.5,17.5,0,6.5,6.5,0,5.4,5.4,0
+Ikan Layang,MATCH,4,0,109,109,0,22,22,0,1.7,1.7,0,0,0,0
+Ikan layur segar,MATCH,4,0,82,82,0,18,18,0,1,1,0,0.4,0.4,0
+Ikan lehoma segar,MATCH,4,0,90,90,0,20.4,20.4,0,0.9,0.9,0,0,0,0
+Ikan Lele goreng,MATCH,4,0,252,252,0,19.9,19.9,0,19.1,19.1,0,0,0,0
+Ikan Lemuru,MATCH,4,0,112,112,0,20,20,0,3,3,0,0,0,0
+Ikan lidah segar,MATCH,4,0,104,104,0,15.6,15.6,0,3.2,3.2,0,2,2,0
+Ikan lomak asin mentah,MATCH,4,0,258,258,0,40.3,40.3,0,2.3,2.3,0,18.9,18.9,0
+Ikan malalugis segar,MATCH,4,0,99,99,0,20.6,20.6,0,1.4,1.4,0,0.9,0.9,0
+Ikan Mas,MATCH,4,0,86,86,0,16,16,0,2,2,0,0,0,0
+Ikan Mas goreng,MATCH,4,0,188,188,0,19.3,19.3,0,12.2,12.2,0,0,0,0
+Ikan Mas pepes,MATCH,4,0,209,209,0,15.2,15.2,0,11.3,11.3,0,11.8,11.8,0
+Ikan mayong segar,MATCH,4,0,97,97,0,17.9,17.9,0,2,2,0,0.4,0.4,0
+Ikan Mujair dendeng goreng,MATCH,4,0,598,598,0,74.3,74.3,0,26.9,26.9,0,9.2,9.2,0
+Ikan Mujair dendeng mentah,MATCH,4,0,582,582,0,68.3,68.3,0,15.2,15.2,0,37.2,37.2,0
+Ikan Mujair goreng,MATCH,4,0,416,416,0,46.9,46.9,0,23.9,23.9,0,0,0,0
+Ikan Mujair pepes,MATCH,4,0,121,121,0,21.7,21.7,0,2.8,2.8,0,0.8,0.8,0
+Ikan Mujair segar,MATCH,4,0,89,89,0,18.7,18.7,0,1,1,0,0,0,0
+Ikan nasu metti segar,MATCH,4,0,154,154,0,16.8,16.8,0,5,5,0,10.5,10.5,0
+Ikan oci kembung segar,MATCH,4,0,125,125,0,21.3,21.3,0,3.4,3.4,0,2.2,2.2,0
+Ikan Papuyu bakar,MATCH,4,0,152,152,0,17.6,17.6,0,6.1,6.1,0,6.7,6.7,0
+Ikan papuyu/ betok segar,MATCH,4,0,120,120,0,14.3,14.3,0,4.9,4.9,0,4.6,4.6,0
+Ikan Patin bakar,MATCH,4,0,144,144,0,17.5,17.5,0,6.3,6.3,0,4.3,4.3,0
+Ikan Patin segar,MATCH,4,0,132,132,0,17,17,0,6.6,6.6,0,1.1,1.1,0
+Ikan peda banjar mentah,MATCH,4,0,156,156,0,28,28,0,4,4,0,2,2,0
+Ikan Pepetek,MATCH,4,0,176,176,0,32,32,0,4.4,4.4,0,0,0,0
+Ikan Pindang banjar mentah,MATCH,4,0,157,157,0,28,28,0,4.2,4.2,0,1.8,1.8,0
+Ikan Pindang benggol mentah,MATCH,4,0,170,170,0,31,31,0,4.2,4.2,0,0,0,0
+Ikan Pindang layang mentah,MATCH,4,0,153,153,0,30,30,0,2.8,2.8,0,0,0,0
+Ikan Pindang selar mentah,MATCH,4,0,142,142,0,27,27,0,3,3,0,0,0,0
+Ikan sale lais mentah,MATCH,4,0,415,415,0,61.3,61.3,0,17.6,17.6,0,2.9,2.9,0
+Ikan Sale segar,MATCH,4,0,534,534,0,40.2,40.2,0,39.3,39.3,0,4.9,4.9,0
+Ikan saluang kering mentah,MATCH,4,0,284,284,0,34.1,34.1,0,9.9,9.9,0,14.6,14.6,0
+Ikan saluang segar,MATCH,4,0,113,113,0,13.9,13.9,0,4.9,4.9,0,3.4,3.4,0
+Ikan sanggang masakan,MATCH,4,0,240,240,0,21.7,21.7,0,7.7,7.7,0,20.7,20.7,0
+Ikan sarden segar,MATCH,4,0,109,109,0,19.9,19.9,0,1.8,1.8,0,3.4,3.4,0
+Ikan Segar,MATCH,4,0,113,113,0,17,17,0,4.5,4.5,0,0,0,0
+Ikan Selar kering,MATCH,4,0,194,194,0,38,38,0,3.5,3.5,0,0,0,0
+Ikan selar kuning cue mentah,MATCH,4,0,138,138,0,27,27,0,3.3,3.3,0,0,0,0
+Ikan selar segar,MATCH,4,0,100,100,0,18.8,18.8,0,2.2,2.2,0,0,0,0
+Ikan Sepat kering,MATCH,4,0,289,289,0,38,38,0,14,14,0,0,0,0
+Ikan sepat segar,MATCH,4,0,84,84,0,15.2,15.2,0,0.6,0.6,0,4.7,4.7,0
+Ikan sidat segar,MATCH,4,0,81,81,0,11.4,11.4,0,1.9,1.9,0,3.8,3.8,0
+Ikan sunu asin mentah,MATCH,4,0,199,199,0,34.1,34.1,0,3.8,3.8,0,7.1,7.1,0
+Ikan sunu segar,MATCH,4,0,111,111,0,13.3,13.3,0,3.4,3.4,0,6.7,6.7,0
+Ikan tahuman segar,MATCH,4,0,88,88,0,15.9,15.9,0,0.9,0.9,0,4.1,4.1,0
+Ikan tarmon segar,MATCH,4,0,96,96,0,19.5,19.5,0,1.1,1.1,0,2,2,0
+Ikan telan segar,MATCH,4,0,95,95,0,15.8,15.8,0,0.7,0.7,0,6.5,6.5,0
+Ikan telur asin mentah,MATCH,4,0,358,358,0,20.7,20.7,0,26.4,26.4,0,9.4,9.4,0
+Ikan Tembang,MATCH,4,0,204,204,0,16,16,0,15,15,0,0,0,0
+Ikan tempahas segar,MATCH,4,0,101,101,0,15.1,15.1,0,4.1,4.1,0,1,1,0
+Ikan tepung mentah,MATCH,4,0,316,316,0,60.1,60.1,0,6.5,6.5,0,22.4,22.4,0
+Ikan terbang segar,MATCH,4,0,98,98,0,19.6,19.6,0,1.7,1.7,0,1,1,0
+Ikan Teri bubuk,MATCH,4,0,277,277,0,60,60,0,2.3,2.3,0,1.8,1.8,0
+Ikan Teri kering,MATCH,4,0,170,170,0,33.4,33.4,0,3,3,0,0,0,0
+Ikan Teri Kering tawar,MATCH,4,0,331,331,0,68.7,68.7,0,4.2,4.2,0,0,0,0
+Ikan Teri Nasi kering,MATCH,4,0,144,144,0,32.5,32.5,0,0.6,0.6,0,0,0,0
+Ikan teri segar,MATCH,4,0,74,74,0,10.3,10.3,0,1.4,1.4,0,4.1,4.1,0
+Ikan Teri tepung,MATCH,4,0,347,347,0,48.8,48.8,0,6.4,6.4,0,19.6,19.6,0
+Ikan titang segar,MATCH,4,0,82,82,0,17.4,17.4,0,0.4,0.4,0,2.3,2.3,0
+Ikan tongkol segar,MATCH,4,0,100,100,0,13.7,13.7,0,1.5,1.5,0,8,8,0
+Ikan turi segar,MATCH,4,0,96,96,0,19.2,19.2,0,2,2,0,0.2,0.2,0
+Intip goreng,MATCH,4,0,474,474,0,7.6,7.6,0,21.6,21.6,0,62.3,62.3,0
+Itik alabio daging dendeng mentah,MATCH,4,0,496,496,0,30.3,30.3,0,33.5,33.5,0,18.4,18.4,0
+Jagung grontol,MATCH,4,0,156,156,0,2.7,2.7,0,1.3,1.3,0,33.3,33.3,0
+Jagung Kuning giling,MATCH,4,0,361,361,0,8.7,8.7,0,4.5,4.5,0,72.4,72.4,0
+Jagung Kuning muda,MATCH,4,0,129,129,0,4.1,4.1,0,1.3,1.3,0,30.3,30.3,0
+Jagung Kuning pipil baru,MATCH,4,0,307,307,0,7.9,7.9,0,3.4,3.4,0,63.6,63.6,0
+Jagung kuning pipil kering mentah,MATCH,4,0,366,366,0,9.8,9.8,0,7.3,7.3,0,69.1,69.1,0
+Jagung Kuning pipil lama,MATCH,4,0,355,355,0,9.2,9.2,0,3.9,3.9,0,73.7,73.7,0
+Jagung kuning pipil rebus,MATCH,4,0,154,154,0,3.8,3.8,0,3.5,3.5,0,28.4,28.4,0
+Jagung Kuning segar,MATCH,4,0,140,140,0,4.7,4.7,0,1.3,1.3,0,33.1,33.1,0
+Jagung kuning tepung,MATCH,4,0,355,355,0,9.2,9.2,0,3.9,3.9,0,73.7,73.7,0
+Jagung muda,MATCH,4,0,35,35,0,2.2,2.2,0,0.1,0.1,0,7.4,7.4,0
+Jagung muda kuning mentah,MATCH,4,0,147,147,0,5.1,5.1,0,0.7,0.7,0,31.5,31.5,0
+Jagung muda rebus,MATCH,4,0,142,142,0,5,5,0,0.7,0.7,0,30.3,30.3,0
+Jagung pipil var. harapan kering,MATCH,4,0,367,367,0,6.2,6.2,0,5.1,5.1,0,76.2,76.2,0
+Jagung pipil var. metro kering,MATCH,4,0,368,368,0,5.5,5.5,0,4.6,4.6,0,78,78,0
+Jagung Putih giling,MATCH,4,0,361,361,0,8.7,8.7,0,4.5,4.5,0,72.4,72.4,0
+Jagung Putih muda,MATCH,4,0,129,129,0,4.1,4.1,0,1.3,1.3,0,30.3,30.3,0
+Jagung Putih pipil baru,MATCH,4,0,307,307,0,7.9,7.9,0,3.4,3.4,0,63.6,63.6,0
+Jagung Putih pipil lama,MATCH,4,0,355,355,0,9.2,9.2,0,3.9,3.9,0,73.7,73.7,0
+Jagung Putih segar,MATCH,4,0,140,140,0,4.7,4.7,0,1.3,1.3,0,33.1,33.1,0
+Jagung Rebus ,MATCH,4,0,175,175,0,1.8,1.8,0,1.8,1.8,0,35,35,0
+Jagung Sayur (tumis) ,MATCH,4,0,148.9,148.9,0,10.4,10.4,0,10.4,10.4,0,20.1,20.1,0
+Jagung titi,MATCH,4,0,374,374,0,9.4,9.4,0,2.2,2.2,0,79.1,79.1,0
+Jahe,MATCH,4,0,51,51,0,1.5,1.5,0,1,1,0,10.1,10.1,0
+Jali,MATCH,4,0,289,289,0,11,11,0,4,4,0,61,61,0
+Jam selai,MATCH,4,0,239,239,0,0.5,0.5,0,0.6,0.6,0,64.5,64.5,0
+Jambal goreng,MATCH,4,0,286,286,0,48.5,48.5,0,9.2,9.2,0,2.3,2.3,0
+Jambu Air,MATCH,4,0,46,46,0,0.6,0.6,0,0,0,0,11.8,11.8,0
+Jambu Biji,MATCH,4,0,49,49,0,0.9,0.9,0,0.3,0.3,0,12.2,12.2,0
+Jambu biji putih tidak berbiji,MATCH,4,0,61,61,0,0.9,0.9,0,0.3,0.3,0,15.4,15.4,0
+Jambu Bol,MATCH,4,0,56,56,0,0.6,0.6,0,0.3,0.3,0,14.2,14.2,0
+Jambu Monyet buah,MATCH,4,0,64,64,0,0.7,0.7,0,0.6,0.6,0,15.8,15.8,0
+Jampang huma mentah,MATCH,4,0,350,350,0,6.2,6.2,0,1.4,1.4,0,78.2,78.2,0
+Jamur Coklat (kulat siau),MATCH,4,0,45,45,0,2.5,2.5,0,3.9,3.9,0,0,0,0
+Jamur encik,MATCH,4,0,296,296,0,9.4,9.4,0,1.1,1.1,0,62,62,0
+Jamur kuping kering,MATCH,4,0,294,294,0,16,16,0,0.9,0.9,0,64.6,64.6,0
+Jamur kuping segar,MATCH,4,0,21,21,0,3.8,3.8,0,0.6,0.6,0,0.9,0.9,0
+Jamur merang segar,MATCH,4,0,30,30,0,3.5,3.5,0,0.2,0.2,0,4,4,0
+Jamur Putih (kulat putih),MATCH,4,0,48,48,0,2.8,2.8,0,4.1,4.1,0,2.9,2.9,0
+Jamur sagu,MATCH,4,0,48,48,0,1.9,1.9,0,3.2,3.2,0,2.8,2.8,0
+Jamur tiram segar,MATCH,4,0,30,30,0,1.9,1.9,0,0.1,0.1,0,5.5,5.5,0
+Jangang bintatoeng masakan,MATCH,4,0,107,107,0,5.3,5.3,0,2.2,2.2,0,16.5,16.5,0
+Jantung Pisang segar,MATCH,4,0,31,31,0,1.2,1.2,0,0.3,0.3,0,7.1,7.1,0
+Japilus,MATCH,4,0,500,500,0,1.2,1.2,0,25.1,25.1,0,67.3,67.3,0
+Jaruk Tigarun,MATCH,4,0,48,48,0,2.5,2.5,0,4.2,4.2,0,0,0,0
+Jawawut,MATCH,4,0,334,334,0,9.7,9.7,0,3.5,3.5,0,73.4,73.4,0
+Jenang ,MATCH,4,0,381.7,381.7,0,9.5,9.5,0,9.5,9.5,0,65.8,65.8,0
+Jengkol segar,MATCH,4,0,192,192,0,5.4,5.4,0,0.3,0.3,0,40.7,40.7,0
+Jeruk Bali,MATCH,4,0,48,48,0,0.6,0.6,0,0.2,0.2,0,12.4,12.4,0
+Jeruk banjar segar,MATCH,4,0,61,61,0,0.8,0.8,0,0.2,0.2,0,14.1,14.1,0
+Jeruk Garut,MATCH,4,0,44,44,0,0.8,0.8,0,0.3,0.3,0,10.9,10.9,0
+Jeruk Kalamansi segar,MATCH,4,0,39,39,0,0.3,0.3,0,0.3,0.3,0,8.9,8.9,0
+Jeruk Manis,MATCH,4,0,45,45,0,0.9,0.9,0,0.2,0.2,0,11.2,11.2,0
+Jeruk Nipis,MATCH,4,0,37,37,0,0.8,0.8,0,0.1,0.1,0,12.3,12.3,0
+Jeruk ragi segar,MATCH,4,0,49,49,0,0.7,0.7,0,0.2,0.2,0,11.1,11.1,0
+Jotang,MATCH,4,0,32,32,0,1.9,1.9,0,0.3,0.3,0,7.1,7.1,0
+Jukku pallu kaloa masakan,MATCH,4,0,15,15,0,15.2,15.2,0,4.3,4.3,0,8.8,8.8,0
+Kabau segar,MATCH,4,0,130,130,0,6.7,6.7,0,0.3,0.3,0,25.2,25.2,0
+Kaburan ubi segar,MATCH,4,0,133,133,0,1,1,0,0.2,0.2,0,32.2,32.2,0
+Kabuto,MATCH,4,0,250,250,0,2.6,2.6,0,2.5,2.5,0,35.4,35.4,0
+Kacang Andong,MATCH,4,0,356,356,0,20.5,20.5,0,4.1,4.1,0,61.6,61.6,0
+Kacang Arab,MATCH,4,0,330,330,0,23.8,23.8,0,1.4,1.4,0,60.2,60.2,0
+Kacang atom,MATCH,4,0,533,533,0,27.8,27.8,0,38.1,38.1,0,28.8,28.8,0
+Kacang babi kering,MATCH,4,0,341,341,0,30.4,30.4,0,3.2,3.2,0,51.3,51.3,0
+Kacang belimbing (kecipir) kering,MATCH,4,0,400,400,0,34.4,34.4,0,16.9,16.9,0,34.1,34.1,0
+Kacang Belimbing rebus,MATCH,4,0,204,204,0,16.9,16.9,0,8.8,8.8,0,17.5,17.5,0
+Kacang Belimbing tempe,MATCH,4,0,212,212,0,17.5,17.5,0,10,10,0,12.9,12.9,0
+Kacang beracun segar,MATCH,4,0,118,118,0,4.4,4.4,0,1.5,1.5,0,21.6,21.6,0
+Kacang Bogor goreng,MATCH,4,0,479,479,0,12.7,12.7,0,23.2,23.2,0,58.9,58.9,0
+Kacang bogor kering,MATCH,4,0,370,370,0,16,16,0,6,6,0,65,65,0
+Kacang Bogor rebus,MATCH,4,0,161,161,0,7.7,7.7,0,2.8,2.8,0,27.1,27.1,0
+Kacang bogor segar,MATCH,4,0,165,165,0,7.7,7.7,0,3.1,3.1,0,27.4,27.4,0
+Kacang Endel biji,MATCH,4,0,331,331,0,25,25,0,1,1,0,58,58,0
+Kacang ercis segar,MATCH,4,0,129,129,0,12.4,12.4,0,0.7,0.7,0,18.3,18.3,0
+kacang galing segar,MATCH,4,0,336,336,0,23.1,23.1,0,1.7,1.7,0,59.5,59.5,0
+Kacang goyang,MATCH,4,0,516,516,0,14.7,14.7,0,31.1,31.1,0,44.4,44.4,0
+Kacang Gude biji,MATCH,4,0,336,336,0,20.7,20.7,0,1.4,1.4,0,62,62,0
+Kacang gude biji kering,MATCH,4,0,316,316,0,20.7,20.7,0,1,1,0,58,58,0
+Kacang Gude biji muda,MATCH,4,0,114,114,0,7,7,0,0.6,0.6,0,20.8,20.8,0
+Kacang Gude muda,MATCH,4,0,123,123,0,8.4,8.4,0,0.6,0.6,0,1.8,1.8,0
+Kacang gude rebus,MATCH,4,0,147,147,0,9,9,0,0.5,0.5,0,27.5,27.5,0
+Kacang hijau kering,MATCH,4,0,323,323,0,22.9,22.9,0,1.5,1.5,0,56.8,56.8,0
+kacang hijau rebus,MATCH,4,0,109,109,0,8.7,8.7,0,0.5,0.5,0,18.3,18.3,0
+Kacang hijau var. bakti kering,MATCH,4,0,350,350,0,17.1,17.1,0,1.8,1.8,0,70.7,70.7,0
+Kacang hijau var. siwalik kering,MATCH,4,0,339,339,0,20.8,20.8,0,2.1,2.1,0,64.6,64.6,0
+Kacang hitam kering,MATCH,4,0,346,346,0,16.6,16.6,0,1.7,1.7,0,66.1,66.1,0
+Kacang Ijo,MATCH,4,0,345,345,0,22.2,22.2,0,1.2,1.2,0,62.9,62.9,0
+Kacang Kapri Goreng ,MATCH,4,0,445,445,0,11,11,0,11,11,0,65.5,65.5,0
+Kacang Kapri muda,MATCH,4,0,98,98,0,6.7,6.7,0,0.4,0.4,0,17.7,17.7,0
+Kacang Kedelai basah,MATCH,4,0,286,286,0,30.2,30.2,0,15.6,15.6,0,30.1,30.1,0
+Kacang kedelai goreng,MATCH,4,0,521,521,0,32.2,32.2,0,37.7,37.7,0,22.9,22.9,0
+Kacang kedelai kering,MATCH,4,0,381,381,0,40.4,40.4,0,16.7,16.7,0,24.9,24.9,0
+Kacang Kedelai kukus,MATCH,4,0,75,75,0,4.1,4.1,0,2.1,2.1,0,10.7,10.7,0
+Kacang kedelai rebus,MATCH,4,0,189,189,0,20.2,20.2,0,8.2,8.2,0,12.7,12.7,0
+Kacang kedelai segar,MATCH,4,0,286,286,0,30.2,30.2,0,15.6,15.6,0,30.1,30.1,0
+Kacang komak segar,MATCH,4,0,327,327,0,16.4,16.4,0,4.3,4.3,0,55.8,55.8,0
+Kacang kuning kering,MATCH,4,0,355,355,0,17,17,0,2.5,2.5,0,66,66,0
+Kacang lebui /iris kering,MATCH,4,0,346,346,0,16.5,16.5,0,1.5,1.5,0,66.6,66.6,0
+Kacang mekah polong segar,MATCH,4,0,22,22,0,1.1,1.1,0,1,1,0,3.4,3.4,0
+Kacang mentega kering,MATCH,4,0,344,344,0,16.7,16.7,0,2.1,2.1,0,64.6,64.6,0
+Kacang Merah,MATCH,4,0,336,336,0,23.1,23.1,0,1.7,1.7,0,59.5,59.5,0
+Kacang merah /banda kering,MATCH,4,0,350,350,0,13.9,13.9,0,3,3,0,66.9,66.9,0
+Kacang merah kering,MATCH,4,0,314,314,0,22.1,22.1,0,1.1,1.1,0,56.2,56.2,0
+Kacang Merah kering rebus,MATCH,4,0,158,158,0,10.3,10.3,0,0.9,0.9,0,28.2,28.2,0
+Kacang merah segar,MATCH,4,0,171,171,0,11,11,0,2.2,2.2,0,28,28,0
+Kacang Merah segar rebus,MATCH,4,0,144,144,0,10,10,0,1,1,0,24.7,24.7,0
+Kacang merah tua kering,MATCH,4,0,280,280,0,16.7,16.7,0,1.6,1.6,0,63.2,63.2,0
+Kacang mete/biji jambu monyet goreng,MATCH,4,0,629,629,0,20.4,20.4,0,56.3,56.3,0,19.8,19.8,0
+Kacang mete/biji jambu monyet segar,MATCH,4,0,616,616,0,16.3,16.3,0,48.4,48.4,0,28.7,28.7,0
+Kacang negara,MATCH,4,0,480,480,0,18.4,18.4,0,19.1,19.1,0,58.5,58.5,0
+Kacang Panjang,MATCH,4,0,44,44,0,2.7,2.7,0,0.3,0.3,0,7.8,7.8,0
+Kacang Panjang biji,MATCH,4,0,357,357,0,17.3,17.3,0,1.5,1.5,0,70,70,0
+Kacang Panjang kukus,MATCH,4,0,39,39,0,3,3,0,0.6,0.6,0,7.6,7.6,0
+Kacang Panjang tumis,MATCH,4,0,150,150,0,2.5,2.5,0,12.5,12.5,0,7,7,0
+Kacang ranti polong,MATCH,4,0,37,37,0,3.1,3.1,0,0.2,0.2,0,7.9,7.9,0
+Kacang sukro,MATCH,4,0,484,484,0,8.8,8.8,0,26.1,26.1,0,57.7,57.7,0
+Kacang Sukro Putih ,MATCH,4,0,488,488,0,25.6,25.6,0,25.6,25.6,0,59.6,59.6,0
+Kacang Tanah atom,MATCH,4,0,535,535,0,27.8,27.8,0,38.1,38.1,0,28.8,28.8,0
+Kacang tanah goreng,MATCH,4,0,564,564,0,25.5,25.5,0,44.4,44.4,0,25.5,25.5,0
+Kacang Tanah kacang sari,MATCH,4,0,561,561,0,25.5,25.5,0,43.8,43.8,0,26,26,0
+Kacang tanah kering,MATCH,4,0,525,525,0,27.9,27.9,0,42.7,42.7,0,17.4,17.4,0
+Kacang Tanah Rebus ,MATCH,4,0,385,385,0,14,14,0,31,31,0,13,13,0
+Kacang Tanah rebus berkulit,MATCH,4,0,360,360,0,13.5,13.5,0,31.2,31.2,0,12.8,12.8,0
+Kacang Tanah rempeyek,MATCH,4,0,513,513,0,17.5,17.5,0,32.5,32.5,0,44.3,44.3,0
+Kacang Tanah sangan berselaput,MATCH,4,0,569,569,0,28.8,28.8,0,48.4,48.4,0,15.8,15.8,0
+Kacang tanah sangan tanpa selaput,MATCH,4,0,559,559,0,26.9,26.9,0,44.2,44.2,0,23.6,23.6,0
+Kacang tanah sari,MATCH,4,0,561,561,0,25.5,25.5,0,43.8,43.8,0,26,26,0
+Kacang Telur ,MATCH,4,0,748,748,0,20.8,20.8,0,20.8,20.8,0,124.8,124.8,0
+Kacang tolo / tunggak kering,MATCH,4,0,331,331,0,24.4,24.4,0,1.9,1.9,0,56.6,56.6,0
+Kacang tolo rebus,MATCH,4,0,138,138,0,10.7,10.7,0,1.1,1.1,0,22.6,22.6,0
+Kacang Tunggak (tolo),MATCH,4,0,342,342,0,22.9,22.9,0,1.4,1.4,0,61.6,61.6,0
+Kacang Tunggak rebus,MATCH,4,0,138,138,0,10.7,10.7,0,1.1,1.1,0,22.6,22.6,0
+Kacang Tunggak rempeyek,MATCH,4,0,451,451,0,11.2,11.2,0,20.2,20.2,0,59.7,59.7,0
+Kacang tunis kering,MATCH,4,0,351,351,0,12.2,12.2,0,1.2,1.2,0,72.9,72.9,0
+Kacang uci kering,MATCH,4,0,358,358,0,23.4,23.4,0,2.4,2.4,0,60.6,60.6,0
+Kacang urei kering,MATCH,4,0,354,354,0,12.8,12.8,0,1.8,1.8,0,69.3,69.3,0
+Kadada katembe,MATCH,4,0,110,110,0,4.5,4.5,0,6.9,6.9,0,7.1,7.1,0
+Kaholeo masakan,MATCH,4,0,413,413,0,28.7,28.7,0,19.8,19.8,0,29.8,29.8,0
+Kakap,MATCH,4,0,92,92,0,20,20,0,0.7,0.7,0,0,0,0
+Kalakai,MATCH,4,0,66,66,0,2.8,2.8,0,6.8,6.8,0,3.4,3.4,0
+Kalio jeroan masakan,MATCH,4,0,163,163,0,16.5,16.5,0,9,9,0,4.1,4.1,0
+Kalio kikil (tunjang) masakan,MATCH,4,0,122,122,0,13.8,13.8,0,5.7,5.7,0,3.9,3.9,0
+Kalio otak masakan,MATCH,4,0,157,157,0,8.1,8.1,0,8.8,8.8,0,11.4,11.4,0
+Kalio telur masakan,MATCH,4,0,193,193,0,10.6,10.6,0,12.4,12.4,0,9.7,9.7,0
+Kambing daging segar,MATCH,4,0,149,149,0,16.6,16.6,0,9.2,9.2,0,0,0,0
+Kambose,MATCH,4,0,164,164,0,3,3,0,2.4,2.4,0,32.6,32.6,0
+Kangkung,MATCH,4,0,29,29,0,3,3,0,0.3,0.3,0,5.4,5.4,0
+Kangkung kukus,MATCH,4,0,30,30,0,3.2,3.2,0,0.7,0.7,0,4.7,4.7,0
+Kangkung rebus,MATCH,4,0,22,22,0,2.5,2.5,0,0.6,0.6,0,3.1,3.1,0
+Kangkung tondano,MATCH,4,0,43,43,0,1.8,1.8,0,0.2,0.2,0,8.4,8.4,0
+Kangkung tumis,MATCH,4,0,52,52,0,1.8,1.8,0,3.6,3.6,0,3,3,0
+Kaparende sayur,MATCH,4,0,38,38,0,2.4,2.4,0,2,2,0,2.6,2.6,0
+Kapri Muda,MATCH,4,0,42,42,0,3.3,3.3,0,0.2,0.2,0,9.6,9.6,0
+Kapurung,MATCH,4,0,41,41,0,2,2,0,0.3,0.3,0,7.8,7.8,0
+Kapusa,MATCH,4,0,158,158,0,4.4,4.4,0,3.2,3.2,0,27.8,27.8,0
+Karawila,MATCH,4,0,25,25,0,2.3,2.3,0,0.2,0.2,0,3.5,3.5,0
+Karedok ,MATCH,4,0,146.7,146.7,0,5.9,5.9,0,5.9,5.9,0,19.7,19.7,0
+Karedok sayur,MATCH,4,0,92,92,0,2.2,2.2,0,3.3,3.3,0,14.1,14.1,0
+Karoket ,MATCH,4,0,292,292,0,11.2,11.2,0,11.2,11.2,0,2.8,2.8,0
+Katak,MATCH,4,0,73,73,0,16.4,16.4,0,0.3,0.3,0,0,0,0
+Katul Beras,MATCH,4,0,275,275,0,12.6,12.6,0,14.8,14.8,0,54.6,54.6,0
+Katul Jagung,MATCH,4,0,356,356,0,9,9,0,8.5,8.5,0,64.5,64.5,0
+Kawista segar,MATCH,4,0,120,120,0,3.5,3.5,0,2.5,2.5,0,20.8,20.8,0
+Kecap,DIFF,3,1,46,71,-25,5.7,5.7,0,1.3,1.3,0,9,9,0
+Kecimpring singkong goreng,MATCH,4,0,464,464,0,1.2,1.2,0,18.6,18.6,0,73,73,0
+Kecipir biji,MATCH,4,0,405,405,0,32.8,32.8,0,17,17,0,36.5,36.5,0
+Kecipir buah muda,MATCH,4,0,35,35,0,2.9,2.9,0,0.2,0.2,0,0.8,0.8,0
+Kecipir muda segar,MATCH,4,0,32,32,0,2.9,2.9,0,0.2,0.2,0,5.8,5.8,0
+Kecombrang segar,MATCH,4,0,34,34,0,0.9,0.9,0,1,1,0,6.7,6.7,0
+Kedondong segar ,MATCH,4,0,47,47,0,0.5,0.5,0,0.2,0.2,0,10.4,10.4,0
+Keju,MATCH,4,0,326,326,0,22.8,22.8,0,20.3,20.3,0,13.1,13.1,0
+Keju Kacang Tanah,MATCH,4,0,590,590,0,27,27,0,49,49,0,20.9,20.9,0
+Kelapa hutan kering,MATCH,4,0,623,623,0,2,2,0,52.1,52.1,0,36.5,36.5,0
+Kelapa Muda air,MATCH,4,0,17,17,0,0.2,0.2,0,0.1,0.1,0,3.8,3.8,0
+Kelapa Muda daging,MATCH,4,0,68,68,0,1,1,0,0.9,0.9,0,14,14,0
+Kelapa Setengah Tua daging,MATCH,4,0,180,180,0,4,4,0,15,15,0,10,10,0
+Kelapa Tua daging,MATCH,4,0,359,359,0,3.4,3.4,0,34.7,34.7,0,14,14,0
+Kelepon ,MATCH,4,0,214,214,0,5.4,5.4,0,5.4,5.4,0,40.2,40.2,0
+Kelewih,MATCH,4,0,111,111,0,1.5,1.5,0,0.3,0.3,0,27.2,27.2,0
+Kelinci daging segar,MATCH,4,0,142,142,0,16.9,16.9,0,7.8,7.8,0,0,0,0
+Kemang,MATCH,4,0,48,48,0,1,1,0,0.2,0.2,0,11.9,11.9,0
+Kembang tahu,MATCH,4,0,380,380,0,48.9,48.9,0,13.8,13.8,0,23.3,23.3,0
+Kembang Turi,MATCH,4,0,44,44,0,1.8,1.8,0,0.6,0.6,0,9.6,9.6,0
+Kemiri,DIFF,3,1,636,675,-39,19,19,0,63,63,0,8,8,0
+Kenari,MATCH,4,0,657,657,0,15,15,0,66,66,0,13,13,0
+Kenari banda kering,MATCH,4,0,616,616,0,13.9,13.9,0,56.2,56.2,0,13.7,13.7,0
+Kentang,MATCH,4,0,83,83,0,2,2,0,0.1,0.1,0,19.1,19.1,0
+Kentang Hitam,MATCH,4,0,142,142,0,0.9,0.9,0,0.4,0.4,0,33.7,33.7,0
+Keong,MATCH,4,0,64,64,0,12,12,0,1,1,0,2,2,0
+Kepala Susu (Krim),MATCH,4,0,204,204,0,2.6,2.6,0,20,20,0,4,4,0
+Kepiting,MATCH,4,0,151,151,0,13.8,13.8,0,3.8,3.8,0,14.1,14.1,0
+Kerang,MATCH,4,0,59,59,0,18,18,0,1.1,1.1,0,3.6,3.6,0
+Kerang asap mentah,MATCH,4,0,393,393,0,38.9,38.9,0,13.3,13.3,0,29.4,29.4,0
+Kerang dendeng mentah,MATCH,4,0,357,357,0,41.1,41.1,0,10,10,0,25.6,25.6,0
+Kerbau daging segar,MATCH,4,0,79,79,0,18.7,18.7,0,0.5,0.5,0,0,0,0
+Keremes,DIFF,3,1,475,475,0,1.6,1.6,0,25.5,25.2,0.3,64.4,64.4,0
+Keribang ubi segar,MATCH,4,0,137,137,0,1.3,1.3,0,1.1,1.1,0,29.8,29.8,0
+Keripik bayam,MATCH,4,0,586,586,0,4.9,4.9,0,40.6,40.6,0,50.2,50.2,0
+Keripik gadung,MATCH,4,0,446,446,0,2.8,2.8,0,14.5,14.5,0,76,76,0
+Keripik kentang,MATCH,4,0,448,448,0,2.7,2.7,0,18.8,18.8,0,67.1,67.1,0
+Keripik lampung,MATCH,4,0,485,485,0,1.7,1.7,0,22.2,22.2,0,69.7,69.7,0
+Keripik oncom,MATCH,4,0,598,598,0,8.3,8.3,0,43.8,43.8,0,42.6,42.6,0
+Keripik singkong,MATCH,4,0,478,478,0,0.9,0.9,0,20.7,20.7,0,72,72,0
+Keripik singkong berbumbu,MATCH,4,0,481,481,0,2.2,2.2,0,19.7,19.7,0,73.6,73.6,0
+Keripik tempe,MATCH,4,0,581,581,0,12.1,12.1,0,40.6,40.6,0,41.7,41.7,0
+Keripik tempe abadi murni,MATCH,4,0,542,542,0,40.3,40.3,0,42.4,42.4,0,11.6,11.6,0
+Keripik tempe abadi sedang,MATCH,4,0,510,510,0,12.3,12.3,0,27.9,27.9,0,52.4,52.4,0
+Keripik tempe abadi telur,MATCH,4,0,529,529,0,20.8,20.8,0,31.7,31.7,0,40.2,40.2,0
+Keripik ubi,MATCH,4,0,486,486,0,0.2,0.2,0,23.9,23.9,0,67.6,67.6,0
+Kerokot segar,MATCH,4,0,26,26,0,1.7,1.7,0,0.4,0.4,0,3.8,3.8,0
+Kerupuk Aci,MATCH,4,0,350,350,0,0.5,0.5,0,0.2,0.2,0,85.9,85.9,0
+Kerupuk cumi goreng,MATCH,4,0,444,444,0,6.9,6.9,0,14.6,14.6,0,71.3,71.3,0
+Kerupuk Ikan berpati,MATCH,4,0,342,342,0,16,16,0,0.4,0.4,0,65.6,65.6,0
+Kerupuk kemplang  (ikan) mentah,MATCH,4,0,325,325,0,1.8,1.8,0,0.4,0.4,0,78.5,78.5,0
+Kerupuk kemplang goreng,MATCH,4,0,504,504,0,5.6,5.6,0,28.1,28.1,0,57.1,57.1,0
+Kerupuk kemplang panggang,MATCH,4,0,356,356,0,9.7,9.7,0,1.1,1.1,0,76.9,76.9,0
+Kerupuk Kulit kerbau,MATCH,4,0,422,422,0,83,83,0,4,4,0,0,0,0
+Kerupuk Melinjo mentah,MATCH,4,0,345,345,0,12,12,0,1.5,1.5,0,71.5,71.5,0
+Kerupuk Melinjo tebal goreng asin,MATCH,4,0,431,431,0,11.1,11.1,0,16.2,16.2,0,63,63,0
+Kerupuk Melinjo tebal goreng manis,MATCH,4,0,439,439,0,10,10,0,16.4,16.4,0,65.7,65.7,0
+Kerupuk Melinjo tipis goreng,MATCH,4,0,485,485,0,11.5,11.5,0,24.5,24.5,0,59.1,59.1,0
+Kerupuk mie kuning goreng,MATCH,4,0,476,476,0,0.1,0.1,0,21.1,21.1,0,71.3,71.3,0
+Kerupuk Sayong ,MATCH,4,0,46.7,46.7,0,17.3,17.3,0,17.3,17.3,0,81.3,81.3,0
+Kerupuk Udang ,MATCH,4,0,340,340,0,30,30,0,30,30,0,52,52,0
+Kerupuk Udang berpati,MATCH,4,0,359,359,0,17.2,17.2,0,68.2,68.2,0,332,332,0
+Kerupuk udang goreng,MATCH,4,0,477,477,0,4.7,4.7,0,20.5,20.5,0,68.5,68.5,0
+Kerupuk urat,MATCH,4,0,588,588,0,53.7,53.7,0,40.9,40.9,0,1.2,1.2,0
+Kesemek,MATCH,4,0,78,78,0,0.8,0.8,0,0.4,0.4,0,20,20,0
+Ketan hitam matang,MATCH,4,0,181,181,0,4,4,0,1.2,1.2,0,37.3,37.3,0
+Ketan putih matang,MATCH,4,0,163,163,0,3,3,0,0.4,0.4,0,35.7,35.7,0
+Ketapang ,MATCH,4,0,340,340,0,11,11,0,11,11,0,54,54,0
+Ketela Pohon Kuning,MATCH,4,0,157,157,0,0.8,0.8,0,0.3,0.3,0,37.9,37.9,0
+Ketela singkong segar,MATCH,4,0,154,154,0,1,1,0,0.3,0.3,0,36.8,36.8,0
+Ketela pohon/singkong kukus,MATCH,4,0,153,153,0,1.2,1.2,0,0.3,0.3,0,36.4,36.4,0
+Ketimun,MATCH,4,0,12,12,0,0.7,0.7,0,0.1,0.1,0,2.7,2.7,0
+Ketimun madura segar,MATCH,4,0,9,9,0,0.5,0.5,0,0.1,0.1,0,1.9,1.9,0
+Ketoprak,MATCH,4,0,153,153,0,7.9,7.9,0,7.7,7.7,0,13,13,0
+Ketumbar,MATCH,4,0,404,404,0,14.1,14.1,0,16.1,16.1,0,54.2,54.2,0
+Ketupat ketan,MATCH,4,0,212,212,0,4,4,0,4.6,4.6,0,38.6,38.6,0
+Ketupat Tahu ,MATCH,4,0,109.6,109.6,0,2.6,2.6,0,2.6,2.6,0,18.6,18.6,0
+Kluwek,MATCH,4,0,310,310,0,10,10,0,24,24,0,13.5,13.5,0
+Kodok segar,MATCH,4,0,73,73,0,16.4,16.4,0,0.3,0.3,0,0,0,0
+Kokosan,MATCH,4,0,86,86,0,1.6,1.6,0,0.2,0.2,0,13,13,0
+Komak polong segar,MATCH,4,0,99,99,0,3.3,3.3,0,0.1,0.1,0,21.2,21.2,0
+Kool Kembang,MATCH,4,0,25,25,0,2.4,2.4,0,0.2,0.2,0,4.9,4.9,0
+Kool Merah kool putih,MATCH,4,0,24,24,0,1.4,1.4,0,0.2,0.2,0,5.3,5.3,0
+Kopi bagian yang larut,MATCH,4,0,352,352,0,17.4,17.4,0,1.3,1.3,0,69,69,0
+Kopi bubuk instant,MATCH,4,0,129,129,0,12.3,12.3,0,0.5,0.5,0,35,35,0
+Koro andong kering,MATCH,4,0,356,356,0,20.5,20.5,0,4.1,4.1,0,61.6,61.6,0
+Koro Benguk biji,MATCH,4,0,332,332,0,24,24,0,3,3,0,55,55,0
+Koro Benguk tempe,MATCH,4,0,141,141,0,10.2,10.2,0,1.3,1.3,0,23.2,23.2,0
+Koro Kerupuk biji,MATCH,4,0,125,125,0,8.3,8.3,0,0.7,0.7,0,22.1,22.1,0
+Koro Loke biji,MATCH,4,0,33,33,0,2.7,2.7,0,0.2,0.2,0,7.9,7.9,0
+Koro Roway biji,MATCH,4,0,344,344,0,12.5,12.5,0,2.1,2.1,0,69.4,69.4,0
+Koro Wedus biji,MATCH,4,0,338,338,0,22.2,22.2,0,1.5,1.5,0,61,61,0
+Koro Wedus buah muda,MATCH,4,0,38,38,0,3,3,0,0.3,0.3,0,7.9,7.9,0
+Koro wedus polong,MATCH,4,0,46,46,0,3,3,0,0.3,0.3,0,7.9,7.9,0
+Kotiu hinela tawang nggole,MATCH,4,0,46,46,0,2.2,2.2,0,1.5,1.5,0,6,6,0
+Koya,MATCH,4,0,366,366,0,4.2,4.2,0,4.3,4.3,0,77.5,77.5,0
+Koya mirasa,MATCH,4,0,370,370,0,8,8,0,1,1,0,82.2,82.2,0
+Kranji segar,MATCH,4,0,315,315,0,2.1,2.1,0,1.4,1.4,0,73.5,73.5,0
+Kripik Tempe Goreng ,MATCH,4,0,542,542,0,40.3,40.3,0,42.4,42.4,0,11.5,11.5,0
+Krokot,MATCH,4,0,21,21,0,1.7,1.7,0,0.4,0.4,0,3.8,3.8,0
+Kucai,MATCH,4,0,45,45,0,2.2,2.2,0,0.3,0.3,0,10.3,10.3,0
+Kucai Muda (Lokio),MATCH,4,0,42,42,0,3.8,3.8,0,0.6,0.6,0,7.8,7.8,0
+Kuda daging segar,MATCH,4,0,113,113,0,18.1,18.1,0,4.1,4.1,0,0.9,0.9,0
+Kue ali,MATCH,4,0,440,440,0,3.8,3.8,0,18.5,18.5,0,64.5,64.5,0
+Kue Apem ,MATCH,4,0,186.7,186.7,0,1.6,1.6,0,1.6,1.6,0,39.6,39.6,0
+Kue bangket,MATCH,4,0,338,338,0,1.5,1.5,0,1.2,1.2,0,80.3,80.3,0
+Kue Bugis ,MATCH,4,0,240,240,0,1,1,0,4,4,0,54,54,0
+Kue jahe,MATCH,4,0,425,425,0,1.6,1.6,0,8.8,8.8,0,84.6,84.6,0
+Kue kelapa,MATCH,4,0,591,591,0,5.6,5.6,0,42.1,42.1,0,47.5,47.5,0
+Kue Koya ,MATCH,4,0,366,366,0,4.2,4.2,0,4.3,4.3,0,7.9,7.9,0
+Kue lumpur,MATCH,4,0,291,291,0,3.6,3.6,0,11.1,11.1,0,44.1,44.1,0
+Kue mangkok ,MATCH,4,0,182,182,0,1,1,0,1,1,0,40.4,40.4,0
+Kue Pacar Cina ,MATCH,4,0,126.7,126.7,0,0.7,0.7,0,0.7,0.7,0,57.3,57.3,0
+Kue Pia ,MATCH,4,0,296,296,0,1.4,1.4,0,1.4,1.4,0,66.4,66.4,0
+Kue putu cangkir,MATCH,4,0,304,304,0,5.3,5.3,0,7,7,0,54.9,54.9,0
+Kue putu singkong,MATCH,4,0,217,217,0,1.2,1.2,0,0.5,0.5,0,53.2,53.2,0
+Kue Satu ,MATCH,4,0,393.3,393.3,0,2.7,2.7,0,2.7,2.7,0,79.3,79.3,0
+Kue Semprong ,MATCH,4,0,380,380,0,1,1,0,1,1,0,92,92,0
+Kue sus,MATCH,4,0,221,221,0,7.5,7.5,0,10.2,10.2,0,24.8,24.8,0
+Kue Talam ,MATCH,4,0,180,180,0,5,5,0,5,5,0,32,32,0
+Kue Tambang ,MATCH,4,0,512,512,0,26,26,0,26,26,0,60.4,60.4,0
+Kue thipan,MATCH,4,0,247,247,0,2.9,2.9,0,4.2,4.2,0,49.5,49.5,0
+Kulit melinjo,MATCH,4,0,111,111,0,4.5,4.5,0,1.1,1.1,0,20.7,20.7,0
+Kundur segar,MATCH,4,0,22,22,0,0.4,0.4,0,0.2,0.2,0,4.7,4.7,0
+Kunyit,MATCH,4,0,63,63,0,2,2,0,2.7,2.7,0,9.1,9.1,0
+Kura-kura,MATCH,4,0,83,83,0,19.1,19.1,0,0.2,0.2,0,0,0,0
+Kwaci,MATCH,4,0,515,515,0,30.6,30.6,0,42.1,42.1,0,13.8,13.8,0
+Kwark (Quark),MATCH,4,0,242,242,0,19,19,0,17,17,0,3,3,0
+Labu Air,MATCH,4,0,17,17,0,0.6,0.6,0,0.2,0.2,0,3.8,3.8,0
+Labu kuning segar,MATCH,4,0,51,51,0,1.7,1.7,0,0.5,0.5,0,10,10,0
+Labu Siam,MATCH,4,0,26,26,0,0.6,0.6,0,0.1,0.1,0,6.7,6.7,0
+Labu waluh segar,MATCH,4,0,32,32,0,1.1,1.1,0,0.1,0.1,0,6.6,6.6,0
+Laksa ,MATCH,4,0,166.3,166.3,0,2.7,2.7,0,3.9,3.9,0,29.5,29.5,0
+Lamtoro (pete cina) biji muda,MATCH,4,0,85,85,0,5.7,5.7,0,0.3,0.3,0,15.4,15.4,0
+Lamtoro biji tua,MATCH,4,0,148,148,0,10.6,10.6,0,0.5,0.5,0,26.2,26.2,0
+Lamtoro tempe,MATCH,4,0,142,142,0,11,11,0,2.5,2.5,0,20.4,20.4,0
+Lamtoro var. gung tanpa kulit,MATCH,4,0,367,367,0,46.4,46.4,0,5.4,5.4,0,32.5,32.5,0
+Lamtoro var. lokal dengan kulit,MATCH,4,0,336,336,0,23.8,23.8,0,1.2,1.2,0,59.7,59.7,0
+Langsat,MATCH,4,0,56,56,0,0.9,0.9,0,0.2,0.2,0,14.3,14.3,0
+Lantar segar,MATCH,4,0,34,34,0,2.2,2.2,0,0.3,0.3,0,5.5,5.5,0
+Lanting getuk,MATCH,4,0,422,422,0,0.9,0.9,0,10.8,10.8,0,80.4,80.4,0
+Lapis legit,MATCH,4,0,389,389,0,6.6,6.6,0,15.7,15.7,0,55.5,55.5,0
+Lawar babi masakan,MATCH,4,0,174,174,0,17,17,0,10,10,0,3,3,0
+Lawar penyu masakan,MATCH,4,0,141,141,0,23,23,0,1.5,1.5,0,7.6,7.6,0
+Lawara jangang masakan,MATCH,4,0,159,159,0,5,5,0,10.9,10.9,0,10.1,10.1,0
+Lawara penjah masakan,MATCH,4,0,207,207,0,7.4,7.4,0,15.4,15.4,0,9.6,9.6,0
+Ledre pisang,MATCH,4,0,405,405,0,4.8,4.8,0,5.1,5.1,0,84.9,84.9,0
+Lema/ Rebung asam,MATCH,4,0,15,15,0,1,1,0,0.4,0.4,0,1.9,1.9,0
+Lemak Babi,MATCH,4,0,902,902,0,0,0,0,100,100,0,0,0,0
+Lemak Babi (Bacon),DIFF,3,1,630,626,4,9.1,9.1,0,65,65,0,1.1,1.1,0
+Lemak ikan,MATCH,4,0,372,372,0,12,12,0,29.4,29.4,0,14.4,14.4,0
+Lemak Kerbau,MATCH,4,0,818,818,0,1.5,1.5,0,90,90,0,0,0,0
+Lemon segar,MATCH,4,0,34,34,0,0.5,0.5,0,0.8,0.8,0,6.2,6.2,0
+Lemon Squasih,MATCH,4,0,36,36,0,0,0,0,0,0,0,10,10,0
+Lemonade,MATCH,4,0,30,30,0,0,0,0,0,0,0,8,8,0
+Lemper ,MATCH,4,0,221.3,221.3,0,3.8,3.8,0,3.6,3.6,0,43.4,43.4,0
+Lempog durian,MATCH,4,0,320,320,0,3.5,3.5,0,5.7,5.7,0,63.7,63.7,0
+Lepok/Ubi rumput,MATCH,4,0,181,181,0,2.8,2.8,0,1.2,1.2,0,39.8,39.8,0
+Leunca buah,MATCH,4,0,33,33,0,1.9,1.9,0,0.1,0.1,0,7.4,7.4,0
+Leupeut Ketan ,MATCH,4,0,240,240,0,7.8,7.8,0,0.5,0.5,0,51.3,51.3,0
+Leverwost (sosis hati),MATCH,4,0,387,387,0,16,16,0,22,22,0,3,3,0
+Lilin bungkus gedi,MATCH,4,0,79,79,0,2.3,2.3,0,5.2,5.2,0,5.8,5.8,0
+Lobak,MATCH,4,0,19,19,0,0.9,0.9,0,0.1,0.1,0,4.2,4.2,0
+Lokan segar,MATCH,4,0,217,217,0,11,11,0,1.7,1.7,0,5.1,5.1,0
+Lontar segar,MATCH,4,0,27,27,0,0.4,0.4,0,0.2,0.2,0,6,6,0
+Lopis ,MATCH,4,0,163.3,163.3,0,2.8,2.8,0,2.2,2.2,0,33,33,0
+Lumai/Leunca segar,MATCH,4,0,38,38,0,1.1,1.1,0,0.3,0.3,0,7.6,7.6,0
+Lupis ketan,MATCH,4,0,164,164,0,1.8,1.8,0,2.1,2.1,0,34.5,34.5,0
+Madu,MATCH,4,0,294,294,0,0.3,0.3,0,0,0,0,79.5,79.5,0
+Maizena tepung,MATCH,4,0,341,341,0,0.3,0.3,0,0,0,0,85,85,0
+Makaroni,MATCH,4,0,363,363,0,8.7,8.7,0,0.4,0.4,0,78.7,78.7,0
+Mangga benggala segar,MATCH,4,0,63,63,0,2.4,2.4,0,0.4,0.4,0,12.4,12.4,0
+Mangga Gedong,MATCH,4,0,44,44,0,0.7,0.7,0,0.2,0.2,0,11.2,11.2,0
+Mangga Golek,MATCH,4,0,63,63,0,0.5,0.5,0,0.2,0.2,0,16.7,16.7,0
+Mangga Harum Manis,MATCH,4,0,46,46,0,0.4,0.4,0,0.2,0.2,0,11.9,11.9,0
+Mangga Indramayu,MATCH,4,0,72,72,0,0.8,0.8,0,0.2,0.2,0,18.7,18.7,0
+Mangga Kopek,MATCH,4,0,56,56,0,0.4,0.4,0,0.2,0.2,0,14.6,14.6,0
+Mangga kwini segar,MATCH,4,0,86,86,0,0.7,0.7,0,0.5,0.5,0,19.8,19.8,0
+Mangga manalagi segar,MATCH,4,0,133,133,0,1,1,0,0.1,0.1,0,32.1,32.1,0
+Mangga Muda,MATCH,4,0,59,59,0,0.5,0.5,0,0.4,0.4,0,15.1,15.1,0
+Mangga segar,MATCH,4,0,52,52,0,0.7,0.7,0,0,0,0,12.3,12.3,0
+Manggis,MATCH,4,0,63,63,0,0.6,0.6,0,0.6,0.6,0,15.6,15.6,0
+Margarin,MATCH,4,0,720,720,0,0.6,0.6,0,81,81,0,0.4,0.4,0
+Markisa segar,MATCH,4,0,144,144,0,3.5,3.5,0,1.2,1.2,0,29.8,29.8,0
+Markisa squash,MATCH,4,0,217,217,0,2.5,2.5,0,1,1,0,49.6,49.6,0
+Markisa squash BD,MATCH,4,0,104,104,0,1.2,1.2,0,0.5,0.5,0,23.7,23.7,0
+Martabak  manis,MATCH,4,0,265.3,265.3,0,4.7,4.7,0,5.5,5.5,0,49.3,49.3,0
+Martabak india,MATCH,4,0,153,153,0,4.5,4.5,0,4.2,4.2,0,24.3,24.3,0
+Martabak mesir,MATCH,4,0,278,278,0,5.1,5.1,0,8.6,8.6,0,45,45,0
+Martabak Telur ,MATCH,4,0,200,200,0,8.9,8.9,0,5.1,5.1,0,29.5,29.5,0
+Masekat,MATCH,4,0,369,369,0,2.1,2.1,0,7,7,0,74.1,74.1,0
+Matoa segar,MATCH,4,0,90,90,0,1.2,1.2,0,0.1,0.1,0,21.1,21.1,0
+Melase,DIFF,2,2,276,276,0,0.1,0.1,0,0.1,71,-70.9,71,0,71
+Melinjo,MATCH,4,0,66,66,0,5,5,0,0.7,0.7,0,13.3,13.3,0
+Melon segar,MATCH,4,0,37,37,0,0.6,0.6,0,0.4,0.4,0,7.8,7.8,0
+Menjangan daging dendeng mentah,MATCH,4,0,322,322,0,55.8,55.8,0,2,2,0,22.7,22.7,0
+Mentega,DIFF,3,1,725,742,-17,0.5,0.5,0,81.6,81.6,0,1.4,1.4,0
+Menteng,MATCH,4,0,65,65,0,1.7,1.7,0,0.2,0.2,0,16.1,16.1,0
+Merica,MATCH,4,0,359,359,0,11.5,11.5,0,6.8,6.8,0,64.4,64.4,0
+Mi basah,MATCH,4,0,88,88,0,0.6,0.6,0,3.3,3.3,0,14,14,0
+Mi golosor,MATCH,4,0,71,71,0,0.2,0.2,0,0.8,0.8,0,15.9,15.9,0
+Mi kering,MATCH,4,0,339,339,0,10,10,0,1.7,1.7,0,6.3,6.3,0
+Mie aceh rebus,MATCH,4,0,113,113,0,3,3,0,3.2,3.2,0,18.1,18.1,0
+Mie ayam,MATCH,4,0,102,102,0,6.2,6.2,0,3.9,3.9,0,10.5,10.5,0
+Mie bakso,MATCH,4,0,114,114,0,5.3,5.3,0,3,3,0,16.4,16.4,0
+Mie basah,MATCH,4,0,86,86,0,0.6,0.6,0,3.3,3.3,0,14,14,0
+Mie Bendo,MATCH,4,0,353,353,0,0.3,0.3,0,0,0,0,88,88,0
+Mie celon,MATCH,4,0,102,102,0,3,3,0,2.1,2.1,0,17.8,17.8,0
+Mie Goreng ,MATCH,4,0,468,468,0,7.6,7.6,0,20.4,20.4,0,62.4,62.4,0
+Mie kering,MATCH,4,0,337,337,0,7.9,7.9,0,11.8,11.8,0,50,50,0
+Mie pangsit basah,MATCH,4,0,105,105,0,5.9,5.9,0,4.9,4.9,0,9.4,9.4,0
+Mie Sagu,MATCH,4,0,190,190,0,0.2,0.2,0,0.4,0.4,0,46.5,46.5,0
+Minyak Hati Hiu (Eulamia),MATCH,4,0,902,902,0,0,0,0,100,100,0,0,0,0
+Minyak Ikan,MATCH,4,0,902,902,0,0,0,0,100,100,0,0,0,0
+Minyak Kacang Tanah,MATCH,4,0,902,902,0,0,0,0,100,100,0,0,0,0
+Minyak kedelai,MATCH,4,0,883,883,0,0,0,0,99.9,99.9,0,0,0,0
+Minyak Kelapa,MATCH,4,0,870,870,0,1,1,0,98,98,0,0,0,0
+Minyak Kelapa Sawit,DIFF,3,1,902,884,18,0,0,0,100,100,0,0,0,0
+Minyak Wijen,DIFF,2,2,902,881,21,0.2,0.2,0,100,99.7,0.3,0,0,0
+Minyak Zaitun,MATCH,4,0,884,884,0,0,0,0,100,100,0,0,0,0
+Misoa,MATCH,4,0,345,345,0,8.5,8.5,0,2.2,2.2,0,78,78,0
+Misro ,MATCH,4,0,218,218,0,0.8,0.8,0,16,16,0,50.2,50.2,0
+Moon tahu,MATCH,4,0,128,128,0,8,8,0,10,10,0,1.3,1.3,0
+Mostarda metan -sawi,MATCH,4,0,33,33,0,2.3,2.3,0,0.5,0.5,0,4.7,4.7,0
+Mujahir acar kuning masakan,MATCH,4,0,330,330,0,17.8,17.8,0,23.4,23.4,0,12.1,12.1,0
+Naan maran sapi masakan,MATCH,4,0,478,478,0,38.3,38.3,0,33.9,33.9,0,5.1,5.1,0
+Nanas,MATCH,4,0,52,52,0,0.4,0.4,0,0.2,0.2,0,13.7,13.7,0
+Nanas palembang segar,MATCH,4,0,58,58,0,0.7,0.7,0,0.2,0.2,0,13.3,13.3,0
+Nangka biji,MATCH,4,0,165,165,0,4.2,4.2,0,0.1,0.1,0,36.7,36.7,0
+Nangka masak di pohon,MATCH,4,0,106,106,0,1.2,1.2,0,0.3,0.3,0,27.6,27.6,0
+Nangka Muda,MATCH,4,0,51,51,0,2,2,0,0.4,0.4,0,11.3,11.3,0
+Nasi,MATCH,4,0,180,180,0,3,3,0,0.3,0.3,0,39.8,39.8,0
+Nasi beras merah,MATCH,4,0,149,149,0,2.8,2.8,0,0.4,0.4,0,32.5,32.5,0
+Nasi gemuk,MATCH,4,0,192,192,0,3.8,3.8,0,8.8,8.8,0,24.4,24.4,0
+Nasi Goreng ,MATCH,4,0,276,276,0,3.2,3.2,0,3.2,3.2,0,30.2,30.2,0
+Nasi gurih,MATCH,4,0,190,190,0,4.7,4.7,0,7.5,7.5,0,26,26,0
+Nasi jagung,MATCH,4,0,357,357,0,8.8,8.8,0,0.5,0.5,0,79.5,79.5,0
+Nasi minyak,MATCH,4,0,207,207,0,3.5,3.5,0,5,5,0,37.1,37.1,0
+Nasi rames,MATCH,4,0,155,155,0,10.3,10.3,0,4.2,4.2,0,19.1,19.1,0
+Nasi tim,MATCH,4,0,120,120,0,2.4,2.4,0,0.4,0.4,0,26,26,0
+Nasi Uduk ,MATCH,4,0,253.3,253.3,0,4.3,4.3,0,21,21,0,11.7,11.7,0
+Nasu likku masakan,MATCH,4,0,196,196,0,14.5,14.5,0,8.3,8.3,0,15.9,15.9,0
+Noga Kacang Tanah ,MATCH,4,0,600,600,0,14,14,0,41.7,41.7,0,42,42,0
+Nopia spesial,MATCH,4,0,387,387,0,5.3,5.3,0,7.6,7.6,0,74.3,74.3,0
+Olah-olah,MATCH,4,0,9,9,0,2.1,2.1,0,6,6,0,7.1,7.1,0
+Oncom,MATCH,4,0,187,187,0,13,13,0,6,6,0,22.6,22.6,0
+Oncom ampas kacang hijau,MATCH,4,0,376,376,0,14.9,14.9,0,6,6,0,65.7,65.7,0
+Oncom Goreng ,MATCH,4,0,363.3,363.3,0,19.3,19.3,0,19.3,19.3,0,40.3,40.3,0
+Oncom Hitam Goreng ,MATCH,4,0,284,284,0,12,12,0,14.4,14.4,0,13.6,13.6,0
+Oncom Hitam Goreng bertepung ,MATCH,4,0,306.7,306.7,0,9,9,0,18,18,0,27,27,0
+Oncom kacang hijau + singkong,MATCH,4,0,351,351,0,11,11,0,5.3,5.3,0,65.9,65.9,0
+Oncom Kacang Tanah pepes,MATCH,4,0,132,132,0,12.7,12.7,0,3.8,3.8,0,13.7,13.7,0
+Oncom Kedele,MATCH,4,0,187,187,0,13,13,0,6,6,0,22.6,22.6,0
+Oncom Merah Goreng ,MATCH,4,0,368,368,0,6.8,6.8,0,32,32,0,13.2,13.2,0
+Oncom Merah Goreng bertepung ,MATCH,4,0,320,320,0,7.3,7.3,0,18.7,18.7,0,31,31,0
+Oncom Merah Sayur (tumis) ,MATCH,4,0,40,40,0,2,2,0,2,2,0,3,3,0
+Oncom pepes,MATCH,4,0,76,76,0,5.2,5.2,0,1.8,1.8,0,10.6,10.6,0
+Onde-onde ,DIFF,0,4,288.6,336,-47.4,8.3,4,4.3,8.9,9.8,-0.9,44.3,57.9,-13.6
+Ongol-ongol ,MATCH,4,0,115,115,0,1.5,1.5,0,6,6,0,14,14,0
+Ongol-ongol sagu,MATCH,4,0,111,111,0,0.3,0.3,0,2.7,2.7,0,21.2,21.2,0
+Opak Singkong ,MATCH,4,0,940,940,0,36,36,0,42,42,0,104,104,0
+Oramu ninahu ndawa olaho masakan,MATCH,4,0,117,117,0,13.7,13.7,0,5,5,0,4.3,4.3,0
+Otak,MATCH,4,0,125,125,0,10.4,10.4,0,8.6,8.6,0,0.8,0.8,0
+Oyek,MATCH,4,0,351,351,0,0.9,0.9,0,0.9,0.9,0,84.9,84.9,0
+Oyek (dari singkong),MATCH,4,0,342,342,0,2.3,2.3,0,0.1,0.1,0,83.1,83.1,0
+Paku hinela wulelenggapaya,MATCH,4,0,77,77,0,3.5,3.5,0,4.6,4.6,0,5.4,5.4,0
+Pala biji,MATCH,4,0,494,494,0,7.5,7.5,0,36.4,36.4,0,40.1,40.1,0
+Pala daging,MATCH,4,0,42,42,0,0.3,0.3,0,0.2,0.2,0,10.9,10.9,0
+Paniki masak santan masakan,MATCH,4,0,460,460,0,28.5,28.5,0,35.2,35.2,0,7.2,7.2,0
+Papais ,MATCH,4,0,133.8,133.8,0,3,3,0,1.6,1.6,0,27,27,0
+Papeda,MATCH,4,0,61,61,0,0.2,0.2,0,0.1,0.1,0,14.9,14.9,0
+Parede baleh masakan,MATCH,4,0,87,87,0,10.5,10.5,0,2.5,2.5,0,5.5,5.5,0
+Paria (Pare),MATCH,4,0,29,29,0,1.1,1.1,0,0.3,0.3,0,6.6,6.6,0
+Paria Putih kukus,MATCH,4,0,16,16,0,0.8,0.8,0,0.2,0.2,0,3.4,3.4,0
+Paria putih segar,MATCH,4,0,19,19,0,1,1,0,0.4,0.4,0,3.6,3.6,0
+Pastel,MATCH,4,0,307,307,0,4.5,4.5,0,13.3,13.3,0,42.4,42.4,0
+Pati Singkong (tapioka),MATCH,4,0,362,362,0,0.5,0.5,0,0.3,0.3,0,86.9,86.9,0
+Pe-Cay,MATCH,4,0,23,23,0,1.8,1.8,0,0.3,0.3,0,4.5,4.5,0
+Peda Ikan Banjar,MATCH,4,0,156,156,0,28,28,0,4,4,0,0,0,0
+Pelecing kangkung,MATCH,4,0,75,75,0,2.5,2.5,0,2.8,2.8,0,10,10,0
+Pelepah manuk masakan,MATCH,4,0,219,219,0,19.7,19.7,0,13.6,13.6,0,4.4,4.4,0
+Pempek adaan,MATCH,4,0,162,162,0,4.9,4.9,0,3,3,0,27.8,27.8,0
+Pempek belida,MATCH,4,0,156,156,0,4.2,4.2,0,1.4,1.4,0,31.6,31.6,0
+Pempek kapal selam,MATCH,4,0,152,152,0,4.5,4.5,0,2.3,2.3,0,28.2,28.2,0
+Pempek kelesan,MATCH,4,0,211,211,0,12.3,12.3,0,6.1,6.1,0,26.6,26.6,0
+Pempek kulit,MATCH,4,0,243,243,0,5.2,5.2,0,7.3,7.3,0,39.1,39.1,0
+Pempek tenggiri,MATCH,4,0,173,173,0,7.2,7.2,0,1.2,1.2,0,33.4,33.4,0
+Pencok lele masakan,MATCH,4,0,372,372,0,7.8,7.8,0,36.3,36.3,0,3.5,3.5,0
+Penyu serapah masakan,MATCH,4,0,174,174,0,13.1,13.1,0,12.2,12.2,0,2.2,2.2,0
+Pepare ular segar,MATCH,4,0,19,19,0,0.6,0.6,0,0.1,0.1,0,3.9,3.9,0
+Pepaya lodeh,MATCH,4,0,275,275,0,11.6,11.6,0,11.6,11.6,0,30.2,30.2,0
+Pepaya Muda,MATCH,4,0,26,26,0,2.1,2.1,0,0.1,0.1,0,4.9,4.9,0
+Pepaya segar,MATCH,4,0,46,46,0,0.5,0.5,0,12,12,0,12.2,12.2,0
+Pepea oncom ampas tahu,MATCH,4,0,76,76,0,5.2,5.2,0,1.8,1.8,0,10.6,10.6,0
+Permen ,MATCH,4,0,400,400,0,0,0,0,0,0,0,95,95,0
+Pete Segar,MATCH,4,0,142,142,0,10.4,10.4,0,2,2,0,22,22,0
+Peterseli,MATCH,4,0,50,50,0,3.7,3.7,0,1,1,0,9,9,0
+Petis Ikan,DIFF,2,2,161,165,-4,20,20,0,0.2,0.2,0,24,20.8,3.2
+Petis Udang,MATCH,4,0,220,220,0,15,15,0,0.1,0.1,0,40,40,0
+Petis udang kering,MATCH,4,0,345,345,0,23.8,23.8,0,1.4,1.4,0,59.3,59.3,0
+Petis udang pasta,MATCH,4,0,220,220,0,15,15,0,0.9,0.9,0,38,38,0
+Pilus ,MATCH,4,0,514,514,0,1,1,0,27.8,27.8,0,647,647,0
+Pinda masakan,MATCH,4,0,107,107,0,15.9,15.9,0,0.6,0.6,0,0.4,0.4,0
+Pindang Ikan Banjar,MATCH,4,0,157,157,0,28,28,0,4.2,4.2,0,0,0,0
+Pindang Ikan Benggol,MATCH,4,0,170,170,0,31,31,0,4.2,4.2,0,0,0,0
+Pindang Ikan Layang,MATCH,4,0,153,153,0,30,30,0,2.8,2.8,0,0,0,0
+Pindang Ikan Selar Kecil,MATCH,4,0,142,142,0,27,27,0,3,3,0,0,0,0
+Pindang kenari masakan,MATCH,4,0,124,124,0,9.5,9.5,0,9.6,9.6,0,0,0,0
+Pisang Ambon,MATCH,4,0,99,99,0,1.2,1.2,0,0.2,0.2,0,25.8,25.8,0
+Pisang angleng (pisang ampyang) segar,MATCH,4,0,68,68,0,1.3,1.3,0,0.2,0.2,0,17.2,17.2,0
+Pisang ayam segar,MATCH,4,0,120,120,0,1.1,1.1,0,0.2,0.2,0,26.8,26.8,0
+Pisang gapi segar ,MATCH,4,0,127,127,0,2.1,2.1,0,0.3,0.3,0,31.1,31.1,0
+Pisang Goreng ,MATCH,4,0,220,220,0,2.3,2.3,0,2.3,2.3,0,6.3,6.3,0
+Pisang goroho segar,MATCH,4,0,115,115,0,1.9,1.9,0,0.2,0.2,0,27.9,27.9,0
+Pisang hijau segar,MATCH,4,0,117,117,0,2,2,0,0.3,0.3,0,28.9,28.9,0
+Pisang kayu segar,MATCH,4,0,100,100,0,1.4,1.4,0,0.5,0.5,0,23.6,23.6,0
+Pisang kepok segar,MATCH,4,0,109,109,0,0.8,0.8,0,0.5,0.5,0,26.3,26.3,0
+Pisang ketip segar,MATCH,4,0,145,145,0,1.1,1.1,0,0.3,0.3,0,34.5,34.5,0
+Pisang kidang segar,MATCH,4,0,96,96,0,1,1,0,0.2,0.2,0,22.5,22.5,0
+Pisang Lampung,MATCH,4,0,99,99,0,1.3,1.3,0,0.2,0.2,0,25.6,25.6,0
+Pisang Mas,MATCH,4,0,127,127,0,1.4,1.4,0,0.2,0.2,0,33.6,33.6,0
+Pisang mas bali,MATCH,4,0,127,127,0,1.4,1.4,0,0.2,0.2,0,31.8,31.8,0
+Pisang Oli,MATCH,4,0,134,134,0,1.1,1.1,0,0.5,0.5,0,35.5,35.5,0
+Pisang Raja,MATCH,4,0,120,120,0,1.2,1.2,0,0.2,0.2,0,31.8,31.8,0
+Pisang Raja Sere (Susu),MATCH,4,0,118,118,0,1.2,1.2,0,0.2,0.2,0,31.1,31.1,0
+Pisang rotan segar,MATCH,4,0,98,98,0,1.3,1.3,0,1.2,1.2,0,20.5,20.5,0
+Pisang Siam goreng,MATCH,4,0,625,625,0,1,1,0,0,0,0,8.1,8.1,0
+Pisang talas segar,MATCH,4,0,113,113,0,1.2,1.2,0,0.2,0.2,0,26.7,26.7,0
+Prey (bawang daun),MATCH,4,0,45,45,0,2.2,2.2,0,0.3,0.3,0,10.3,10.3,0
+Pucuk lumai/daun leunca segar,MATCH,4,0,33,33,0,4.5,4.5,0,0.4,0.4,0,2.8,2.8,0
+Pulut,MATCH,4,0,216,216,0,2.6,2.6,0,3.1,3.1,0,44.4,44.4,0
+Punai daging goreng,MATCH,4,0,224,224,0,26.2,26.2,0,11.3,11.3,0,4.4,4.4,0
+Pundut nasi,MATCH,4,0,104,104,0,1.9,1.9,0,4.1,4.1,0,15.1,15.1,0
+Purundawa,MATCH,4,0,25,25,0,1.5,1.5,0,0.5,0.5,0,3.6,3.6,0
+Purut segar,MATCH,4,0,76,76,0,4.1,4.1,0,1.1,1.1,0,15.2,15.2,0
+Putri malu segar,MATCH,4,0,76,76,0,3.6,3.6,0,0.3,0.3,0,14.6,14.6,0
+Putri selat,MATCH,4,0,163,163,0,2.2,2.2,0,6.5,6.5,0,23.8,23.8,0
+Putu Mayang ,MATCH,4,0,200,200,0,1,1,0,2.4,2.4,0,43.8,43.8,0
+Ragi,MATCH,4,0,136,136,0,43,43,0,2.4,2.4,0,3,3,0
+Rajungan segar,MATCH,4,0,76,76,0,12.1,12.1,0,2,2,0,2.4,2.4,0
+Rambutan,MATCH,4,0,69,69,0,0.9,0.9,0,0.1,0.1,0,18.1,18.1,0
+Rambutan Aceh,MATCH,4,0,11,11,0,0,0,0,0,0,0,2.7,2.7,0
+Rambutan binjai segar,MATCH,4,0,76,76,0,0.5,0.5,0,0.2,0.2,0,18,18,0
+Rambutan sinyonya,MATCH,4,0,4,4,0,0,0,0,0,0,0,0.9,0.9,0
+Rarawuan ,MATCH,4,0,295,295,0,7.3,7.3,0,8.5,8.5,0,47.5,47.5,0
+Rasbi (Beras Ubi),MATCH,4,0,394,394,0,2.2,2.2,0,8.8,8.8,0,76.6,76.6,0
+Rasi (Beras Singkong),MATCH,4,0,350,350,0,0.9,0.9,0,0.4,0.4,0,85.7,85.7,0
+Rawon masakan,MATCH,4,0,60,60,0,5.4,5.4,0,2.5,2.5,0,4,4,0
+Rebon (udang kecil segar),MATCH,4,0,81,81,0,16.2,16.2,0,1.2,1.2,0,0.7,0.7,0
+Rebon kering,MATCH,4,0,299,299,0,29.4,29.4,0,3.6,3.6,0,3.2,3.2,0
+Rebon udang kecil segar,MATCH,4,0,81,81,0,16.2,16.2,0,1.2,1.2,0,0.7,0.7,0
+Rebung,MATCH,4,0,27,27,0,0.6,0.6,0,0.3,0.3,0,5.2,5.2,0
+Rebung laut mentah,MATCH,4,0,320,320,0,7.2,7.2,0,4.2,4.2,0,63.3,63.3,0
+Rempeyek kacang tolo,MATCH,4,0,451,451,0,11.2,11.2,0,20.2,20.2,0,59.7,59.7,0
+Rempeyek kacang uci,MATCH,4,0,497,497,0,17,17,0,27.6,27.6,0,50.8,50.8,0
+Rendang sapi masakan,MATCH,4,0,193,193,0,22.6,22.6,0,7.9,7.9,0,7.8,7.8,0
+Renggi goreng,MATCH,4,0,471,471,0,4.7,4.7,0,21.8,21.8,0,64.1,64.1,0
+Rimbang segar,MATCH,4,0,75,75,0,1.6,1.6,0,0.6,0.6,0,15.8,15.8,0
+Risoles ,MATCH,4,0,335,335,0,5.3,5.3,0,3.5,3.5,0,70.5,70.5,0
+Roti boong,MATCH,4,0,341,341,0,5.5,5.5,0,16.2,16.2,0,43.3,43.3,0
+Roti Gambang ,MATCH,4,0,350,350,0,7.5,7.5,0,2,2,0,75.5,75.5,0
+Roti Putih,MATCH,4,0,248,248,0,8,8,0,1.2,1.2,0,50,50,0
+Roti warna sawo matang,MATCH,4,0,249,249,0,7.9,7.9,0,1.5,1.5,0,49.7,49.7,0
+Rujak cingur,MATCH,4,0,153,153,0,11.3,11.3,0,8.4,8.4,0,8,8,0
+Rumput laut,MATCH,4,0,41,41,0,1.4,1.4,0,0.3,0.3,0,8.1,8.1,0
+Rusa daging dendeng mentah,MATCH,4,0,536,536,0,40.5,40.5,0,41.5,41.5,0,0,0,0
+Rusip,MATCH,4,0,110,110,0,11.5,11.5,0,2,2,0,11.7,11.7,0
+RW anjing masakan,MATCH,4,0,198,198,0,24.6,24.6,0,10.7,10.7,0,0.9,0.9,0
+Saga biji tanpa kulit,MATCH,4,0,449,449,0,30.6,30.6,0,25.5,25.5,0,31.9,31.9,0
+Sagu Ambon ,MATCH,4,0,338,338,0,0.6,0.6,0,0.3,0.3,0,83.1,83.1,0
+Sagu aren kering,MATCH,4,0,355,355,0,0.6,0.6,0,1.1,1.1,0,85.6,85.6,0
+Sagu aren segar,MATCH,4,0,231,231,0,0.6,0.6,0,0.2,0.2,0,56.6,56.6,0
+Sagu forno,MATCH,4,0,291,291,0,0.5,0.5,0,4,4,0,63.4,63.4,0
+Sagu kasbi segar,MATCH,4,0,230,230,0,0.6,0.6,0,0.2,0.2,0,56.5,56.5,0
+Sagu Lemak (Kue Sagon),MATCH,4,0,452,452,0,2.8,2.8,0,14.8,14.8,0,76.8,76.8,0
+Sagu lempeng,MATCH,4,0,347,347,0,0.9,0.9,0,0.3,0.3,0,85.2,85.2,0
+Sagu Rendang,MATCH,4,0,364,364,0,0.1,0.1,0,0.2,0.2,0,90.5,90.5,0
+Sagu singkong kering,MATCH,4,0,362,362,0,0.5,0.5,0,0.3,0.3,0,86.9,86.9,0
+Sagu sinole,MATCH,4,0,354,354,0,0.8,0.8,0,8.3,8.3,0,68.9,68.9,0
+Salak bali segar,MATCH,4,0,57,57,0,0.5,0.5,0,0.1,0.1,0,13.6,13.6,0
+Salak medan segar,MATCH,4,0,55,55,0,0.4,0.4,0,0.2,0.2,0,12.8,12.8,0
+Salak pondoh segar,MATCH,4,0,87,87,0,0.8,0.8,0,0.4,0.4,0,20.1,20.1,0
+Sale pisang siam,MATCH,4,0,281,281,0,2.4,2.4,0,0.7,0.7,0,66.1,66.1,0
+Santan (dengan air),MATCH,4,0,122,122,0,2,2,0,10,10,0,7.6,7.6,0
+Santan (kelapa saja),MATCH,4,0,324,324,0,4.2,4.2,0,34.3,34.3,0,55.6,55.6,0
+Santan murni,MATCH,4,0,324,324,0,4.2,4.2,0,34.3,34.3,0,5.6,5.6,0
+Saos Tomat,DIFF,3,1,98,110,-12,2,2,0,0.4,0.4,0,24.5,24.5,0
+Sapi abon,MATCH,4,0,212,212,0,18,18,0,10.6,10.6,0,59.3,59.3,0
+Sapi babat segar,MATCH,4,0,108,108,0,17.6,17.6,0,4.2,4.2,0,0,0,0
+Sapi daging asap,MATCH,4,0,182,182,0,32,32,0,6,6,0,0,0,0
+Sapi daging dendeng mentah,MATCH,4,0,301,301,0,55,55,0,9,9,0,0,0,0
+Sapi daging gemuk segar,MATCH,4,0,273,273,0,17.5,17.5,0,22,22,0,0,0,0
+Sapi daging kornet,MATCH,4,0,289,289,0,16,16,0,25,25,0,0,0,0
+Sapi daging kurus segar,MATCH,4,0,174,174,0,19.6,19.6,0,10,10,0,0,0,0
+Sapi daging lemak sedang segar,MATCH,4,0,201,201,0,18.8,18.8,0,14,14,0,0,0,0
+Sapi daging sosis (Worst),MATCH,4,0,448,448,0,14.5,14.5,0,42.3,42.3,0,2.3,2.3,0
+Sapi daleman segar,MATCH,4,0,183,183,0,12,12,0,14.4,14.4,0,1.4,1.4,0
+Sapi dideh/darah,MATCH,4,0,98,98,0,21.9,21.9,0,1.1,1.1,0,0,0,0
+Sapi ginjal segar,MATCH,4,0,137,137,0,15,15,0,8.1,8.1,0,0.9,0.9,0
+Sapi hati sosis (liverworst),MATCH,4,0,274,274,0,16,16,0,22,22,0,3,3,0
+Sapi keleponan segar,MATCH,4,0,84,84,0,10.5,10.5,0,4.6,4.6,0,0.2,0.2,0
+Sapi liver segar,MATCH,4,0,132,132,0,19.7,19.7,0,3.2,3.2,0,6,6,0
+Sapi otak segar,MATCH,4,0,123,123,0,10.4,10.4,0,8.6,8.6,0,0.8,0.8,0
+Sapi paru dendeng mentah,MATCH,4,0,360,360,0,57.3,57.3,0,6,6,0,19.2,19.2,0
+Sapi paru goreng,MATCH,4,0,268,268,0,23.9,23.9,0,12.7,12.7,0,14.5,14.5,0
+Sapi usus segar,MATCH,4,0,126,126,0,14,14,0,7.2,7.2,0,1.5,1.5,0
+Sarang Burung,MATCH,4,0,281,281,0,37.5,37.5,0,0.3,0.3,0,32.1,32.1,0
+Sardines dalam kaleng,MATCH,4,0,338,338,0,21.1,21.1,0,27,27,0,1,1,0
+Sari Kedelai bubuk,MATCH,4,0,344,344,0,30,30,0,20,20,0,43,43,0
+Sarimuka,MATCH,4,0,166,166,0,2.3,2.3,0,2.8,2.8,0,32.9,32.9,0
+Sate Bandeng,MATCH,4,0,283,283,0,12.1,12.1,0,16.8,16.8,0,20.9,20.9,0
+Sate Kulit ,MATCH,4,0,110,110,0,15.5,15.5,0,0.5,0.5,0,11.5,11.5,0
+Sate penyu masakan,MATCH,4,0,179,179,0,22.5,22.5,0,3.5,3.5,0,13.3,13.3,0
+Sate pusut masakan,MATCH,4,0,274,274,0,12.9,12.9,0,18.6,18.6,0,13.6,13.6,0
+Sate Usus ,MATCH,4,0,126.7,126.7,0,14,14,0,7.3,7.3,0,1.3,1.3,0
+Sawi,MATCH,4,0,22,22,0,2.3,2.3,0,0.3,0.3,0,4,4,0
+Sawi putih / pecai segar,MATCH,4,0,9,9,0,1,1,0,0.1,0.1,0,1.7,1.7,0
+Sawi taiwan segar,MATCH,4,0,30,30,0,1.9,1.9,0,0.5,0.5,0,4.4,4.4,0
+Sawi tanah segar,MATCH,4,0,19,19,0,1.3,1.3,0,0.2,0.2,0,2.9,2.9,0
+Sawo,MATCH,4,0,92,92,0,0.5,0.5,0,1.1,1.1,0,22.4,22.4,0
+Sawo duren segar,MATCH,4,0,64,64,0,1,1,0,3.1,3.1,0,8,8,0
+Sawo kecik segar,MATCH,4,0,111,111,0,0.9,0.9,0,2.3,2.3,0,21.6,21.6,0
+Sawo Manila segar,MATCH,4,0,92,92,0,0.5,0.5,0,1.1,1.1,0,22.4,22.4,0
+Sayur asem,MATCH,4,0,29,29,0,0.7,0.7,0,0.6,0.6,0,5,5,0
+Sayur bunga pepaya,MATCH,4,0,49,49,0,1.7,1.7,0,0.3,0.3,0,9.8,9.8,0
+Sayur garu,MATCH,4,0,178,178,0,2.6,2.6,0,13.9,13.9,0,10.6,10.6,0
+Sayur kohu-kohu,MATCH,4,0,133,133,0,7.3,7.3,0,6.6,6.6,0,11.2,11.2,0
+Sayur lebui,MATCH,4,0,64,64,0,2.1,2.1,0,0.6,0.6,0,12.5,12.5,0
+Sayur lilin-terubuk,MATCH,4,0,36,36,0,2.7,2.7,0,0.7,0.7,0,4.8,4.8,0
+Sayur ndusuk,MATCH,4,0,49,49,0,3.1,3.1,0,2.5,2.5,0,3.6,3.6,0
+Sayur sop,MATCH,4,0,27,27,0,1.3,1.3,0,2,2,0,1,1,0
+Sayur umbut kelapa,MATCH,4,0,67,67,0,5.2,5.2,0,2.9,2.9,0,5.1,5.1,0
+Sayur umbut rotan,MATCH,4,0,57,57,0,5.4,5.4,0,2.6,2.6,0,3.1,3.1,0
+Selada,MATCH,4,0,15,15,0,1.2,1.2,0,0.2,0.2,0,2.9,2.9,0
+Selada Air,MATCH,4,0,17,17,0,1.7,1.7,0,0.3,0.3,0,3,3,0
+Selada Air rebus,MATCH,4,0,19,19,0,2.7,2.7,0,0.2,0.2,0,2.9,2.9,0
+Seledri,MATCH,4,0,20,20,0,1,1,0,0.1,0.1,0,4.6,4.6,0
+Semangka,MATCH,4,0,28,28,0,0.5,0.5,0,0.2,0.2,0,6.9,6.9,0
+Semur Jengkol ,DIFF,1,3,192.5,52.7,139.8,4.5,212,-207.5,6,6,0,30.3,10,20.3
+Sente,MATCH,4,0,64,64,0,0.6,0.6,0,0.3,0.3,0,14.8,14.8,0
+Sente talas segar,MATCH,4,0,353,353,0,0.7,0.7,0,0.2,0.2,0,84.7,84.7,0
+Sepi masakan,MATCH,4,0,88,88,0,7.9,7.9,0,1.6,1.6,0,10.6,10.6,0
+Serbuk Coklat,MATCH,4,0,298,298,0,8,8,0,23.8,23.8,0,48.9,48.9,0
+Serimping talas kebumen,MATCH,4,0,478,478,0,2.5,2.5,0,21.2,21.2,0,69.2,69.2,0
+Setrup sirup,MATCH,4,0,213,213,0,0,0,0,0,0,0,55,55,0
+Shabu-shabu,DIFF,0,4,88,87.1,0.9,3.2,88,-84.8,8,3.2,4.8,0.8,8,-7.2
+Sie reuboh masakan,MATCH,4,0,474,474,0,11.2,11.2,0,42.5,42.5,0,11.7,11.7,0
+Singkah (rotan muda),MATCH,4,0,81,81,0,5.1,5.1,0,4.5,4.5,0,5.1,5.1,0
+Singkong Goreng ,MATCH,4,0,285,285,0,1,1,0,18,18,0,28,28,0
+Singkong kukus,MATCH,4,0,146,146,0,1.2,1.2,0,0.3,0.3,0,34.7,34.7,0
+Singkong tape,MATCH,4,0,173,173,0,0.5,0.5,0,0.1,0.1,0,42.5,42.5,0
+Siomay ,MATCH,4,0,95.3,95.3,0,4.4,4.4,0,2.2,2.2,0,14.4,14.4,0
+Sirsak,MATCH,4,0,65,65,0,1,1,0,0.3,0.3,0,16.3,16.3,0
+Sirup,MATCH,4,0,213,213,0,0,0,0,0,0,0,55,55,0
+Sop buntut masakan,MATCH,4,0,71,71,0,7.5,7.5,0,3.6,3.6,0,2.2,2.2,0
+Sop daging sapi masakan,MATCH,4,0,49,49,0,5.8,5.8,0,0.5,0.5,0,5.3,5.3,0
+Sop kaki sapi masakan,MATCH,4,0,68,68,0,9,9,0,1.9,1.9,0,3.7,3.7,0
+Sop kambing masakan,MATCH,4,0,34,34,0,5.5,5.5,0,0.8,0.8,0,1.1,1.1,0
+Sop konro masakan,MATCH,4,0,71,71,0,7.4,7.4,0,2.6,2.6,0,4.5,4.5,0
+Sop Kool,MATCH,4,0,12,12,0,0.5,0.5,0,0.1,0.1,0,2,2,0
+Sop Kool dan Wortel,MATCH,4,0,15,15,0,0.6,0.6,0,0.1,0.1,0,3.1,3.1,0
+Sop saudara masakan,MATCH,4,0,89,89,0,7.2,7.2,0,5,5,0,3.9,3.9,0
+Soto bandung masakan,MATCH,4,0,42,42,0,3.9,3.9,0,1.7,1.7,0,2.8,2.8,0
+Soto banjar masakan,MATCH,4,0,110,110,0,2.9,2.9,0,9.5,9.5,0,3.2,3.2,0
+Soto betawi masakan,MATCH,4,0,135,135,0,2.5,2.5,0,8.8,8.8,0,11.5,11.5,0
+Soto dengan Daging,MATCH,4,0,127.5,127.5,0,2.6,2.6,0,9.4,9.4,0,8.3,8.3,0
+Soto jeroan masakan,MATCH,4,0,92,92,0,11.8,11.8,0,4.3,4.3,0,1.4,1.4,0
+Soto kudus masakan,MATCH,4,0,38,38,0,2.6,2.6,0,2.3,2.3,0,1.8,1.8,0
+Soto madura masakan,MATCH,4,0,60,60,0,3.5,3.5,0,4.5,4.5,0,1.3,1.3,0
+Soto padang masakan,MATCH,4,0,127,127,0,5.9,5.9,0,6.6,6.6,0,11,11,0
+Soto pekalongan masakan,MATCH,4,0,94,94,0,3,3,0,6.8,6.8,0,5.1,5.1,0
+Soto pemalang masakan,MATCH,4,0,75,75,0,3.6,3.6,0,5.2,5.2,0,3.5,3.5,0
+Soto sukaraja masakan,MATCH,4,0,80,80,0,3.2,3.2,0,3.5,3.5,0,9,9,0
+Soto sulung masakan,MATCH,4,0,86,86,0,2.3,2.3,0,8.5,8.5,0,0,0,0
+Soto tanpa Daging ,MATCH,4,0,117.1,117.1,0,0.4,0.4,0,8.6,8.6,0,9.6,9.6,0
+Spaghetti,MATCH,4,0,139,139,0,7.4,7.4,0,2.1,2.1,0,22.6,22.6,0
+Srikaya,MATCH,4,0,101,101,0,1.7,1.7,0,0.6,0.6,0,35.2,35.2,0
+Sukiyaki masakan,MATCH,4,0,75,75,0,5.6,5.6,0,0.4,0.4,0,12.2,12.2,0
+Sukun muda segar,MATCH,4,0,119,119,0,1.4,1.4,0,0.2,0.2,0,28.1,28.1,0
+Sukun tua segar,MATCH,4,0,126,126,0,1.6,1.6,0,0.2,0.2,0,24.5,24.5,0
+Susu asam untuk bayi bubuk,MATCH,4,0,418,418,0,19,19,0,9,9,0,65.5,65.5,0
+Susu bubuk,MATCH,4,0,513,513,0,24.6,24.6,0,30,30,0,36.2,36.2,0
+Susu Kambing,MATCH,4,0,64,64,0,4.3,4.3,0,2.3,2.3,0,6.6,6.6,0
+Susu Kedelai,MATCH,4,0,41,41,0,3.5,3.5,0,2.5,2.5,0,5,5,0
+Susu Kental Manis,DIFF,3,1,336,343,-7,8.2,8.2,0,10,10,0,55,55,0
+Susu Kental Tak Manis,MATCH,4,0,138,138,0,7,7,0,7.9,7.9,0,9.9,9.9,0
+Susu Kerbau,MATCH,4,0,160,160,0,6.3,6.3,0,12,12,0,7.1,7.1,0
+Susu Sapi,MATCH,4,0,61,61,0,3.2,3.2,0,3.5,3.5,0,4.3,4.3,0
+Susu Skim (tak berlemak),MATCH,4,0,36,36,0,3.5,3.5,0,0.1,0.1,0,5.1,5.1,0
+Susu skim bubuk,MATCH,4,0,359,359,0,35.6,35.6,0,1,1,0,52,52,0
+Susu skim segar,MATCH,4,0,36,36,0,3.5,3.5,0,0.1,0.1,0,5.1,5.1,0
+Susupan,MATCH,4,0,87,87,0,5.3,5.3,0,5.2,5.2,0,6.3,6.3,0
+Suweg kukus,MATCH,4,0,90,90,0,1.5,1.5,0,0.1,0.1,0,21.9,21.9,0
+Suweg mentah,MATCH,4,0,69,69,0,1,1,0,0.1,0.1,0,15.7,15.7,0
+Suweg talas segar,MATCH,4,0,74,74,0,1.4,1.4,0,0.1,0.1,0,17.2,17.2,0
+Suwir-suwir,MATCH,4,0,347,347,0,0.5,0.5,0,0.9,0.9,0,84.2,84.2,0
+Tahu,MATCH,4,0,68,68,0,7.8,7.8,0,4.6,4.6,0,1.6,1.6,0
+Tahu goreng,MATCH,4,0,115,115,0,9.7,9.7,0,8.5,8.5,0,2.5,2.5,0
+Tahu telur,DIFF,0,4,328,41.8,286.2,12.6,328,-315.4,19.9,12.6,7.3,24.6,19.9,4.7
+Takwa,MATCH,4,0,148,148,0,13.8,13.8,0,8.5,8.5,0,4,4,0
+Talas bogor kukus,MATCH,4,0,120,120,0,1.5,1.5,0,0.3,0.3,0,28.2,28.2,0
+Talas pontianak segar,MATCH,4,0,163,163,0,2.3,2.3,0,0.5,0.5,0,36.4,36.4,0
+Talas viqueque segar,MATCH,4,0,115,115,0,1.8,1.8,0,0.5,0.5,0,25.9,25.9,0
+Tales kukus,MATCH,4,0,120,120,0,1.5,1.5,0,0.3,0.3,0,28.2,28.2,0
+Tales mentah,MATCH,4,0,98,98,0,1.9,1.9,0,0.2,0.2,0,23.7,23.7,0
+Taoco,MATCH,4,0,166,166,0,10.4,10.4,0,4.9,4.9,0,24.1,24.1,0
+Taoge goreng,MATCH,4,0,88,88,0,3.2,3.2,0,2.1,2.1,0,14,14,0
+Taoge kacang kedelai segar,MATCH,4,0,76,76,0,9,9,0,2.6,2.6,0,6.4,6.4,0
+Taoge seduh,MATCH,4,0,28,28,0,3,3,0,0.8,0.8,0,4,4,0
+Taoge segar,MATCH,4,0,34,34,0,3.7,3.7,0,1.2,1.2,0,4.3,4.3,0
+Taokoa,MATCH,4,0,104,104,0,12.9,12.9,0,6.8,6.8,0,1.2,1.2,0
+Tapai beras,MATCH,4,0,99,99,0,1.7,1.7,0,0.3,0.3,0,22.4,22.4,0
+Tapai ketan hitam,MATCH,4,0,166,166,0,3.8,3.8,0,1,1,0,34.4,34.4,0
+Tapai ketan putih,MATCH,4,0,172,172,0,3,3,0,0.5,0.5,0,37.5,37.5,0
+Tapai singkong,MATCH,4,0,169,169,0,1.4,1.4,0,0.3,0.3,0,40.2,40.2,0
+Tauco cap DAS cake,MATCH,4,0,358,358,0,7.5,7.5,0,4.3,4.3,0,70.4,70.4,0
+Tauji cap singa,MATCH,4,0,277,277,0,9.1,9.1,0,4.7,4.7,0,49.6,49.6,0
+Tebu Terubuk,MATCH,4,0,25,25,0,4.6,4.6,0,0.4,0.4,0,3,3,0
+Tedong pallu basa masakan,MATCH,4,0,83,83,0,10.4,10.4,0,3.4,3.4,0,2.8,2.8,0
+Teh,MATCH,4,0,132,132,0,19.5,19.5,0,0.7,0.7,0,67.8,67.8,0
+Teh hijau daun kering,MATCH,4,0,300,300,0,28.3,28.3,0,4.8,4.8,0,53.6,53.6,0
+Teh melati daun kering,MATCH,4,0,299,299,0,24.1,24.1,0,3.5,3.5,0,59,59,0
+Tekokak,MATCH,4,0,34,34,0,2,2,0,0.1,0.1,0,7.9,7.9,0
+Tekokak kering,MATCH,4,0,294,294,0,8.3,8.3,0,1.7,1.7,0,72.6,72.6,0
+Tekwan,MATCH,4,0,53,53,0,1.9,1.9,0,0.9,0.9,0,9.4,9.4,0
+Telur Ayam,MATCH,4,0,162,162,0,12.8,12.8,0,11.5,11.5,0,0.7,0.7,0
+Telur Ayam bagian kuning,MATCH,4,0,361,361,0,19.3,19.3,0,31.9,31.9,0,0.7,0.7,0
+Telur Ayam bagian putih,MATCH,4,0,50,50,0,10.8,10.8,0,0,0,0,0.8,0.8,0
+Telur Ayam ceplok,MATCH,4,0,383,383,0,15.1,15.1,0,32.9,32.9,0,8.3,8.3,0
+Telur Ayam dadar,MATCH,4,0,251,251,0,16.3,16.3,0,19.4,19.4,0,1.4,1.4,0
+Telur ayam kampung ,MATCH,4,0,179,179,0,13.6,13.6,0,13.3,13.3,0,4.4,4.4,0
+Telur bebek bagian kuning segar,MATCH,4,0,386,386,0,17,17,0,35,35,0,0.8,0.8,0
+Telur Bebek bagian putih,MATCH,4,0,54,54,0,11,11,0,0,0,0,0.8,0.8,0
+Telur bebek bagian putih segar,MATCH,4,0,54,54,0,11,11,0,0,0,0,0.8,0.8,0
+Telur Bebek ceplok,MATCH,4,0,320,320,0,15.1,15.1,0,30.5,30.5,0,0.9,0.9,0
+Telur Bebek dadar,MATCH,4,0,301,301,0,20,20,0,23.7,23.7,0,0,0,0
+Telur bebek tambak segar,MATCH,4,0,187,187,0,10.9,10.9,0,12.4,12.4,0,7.9,7.9,0
+Telur Bebek telur asin,MATCH,4,0,195,195,0,13.6,13.6,0,13.6,13.6,0,1.4,1.4,0
+Telur burung puyuh segar,MATCH,4,0,116,116,0,10.7,10.7,0,7,7,0,1.6,1.6,0
+Telur Penyu,MATCH,4,0,144,144,0,12,12,0,10.2,10.2,0,0,0,0
+Telur Terubuk,MATCH,4,0,425,425,0,31,31,0,28,28,0,10,10,0
+Tempe bongkrek,MATCH,4,0,119,119,0,4.4,4.4,0,3.5,3.5,0,18.3,18.3,0
+Tempe Gembus,MATCH,4,0,73,73,0,5.7,5.7,0,1.3,1.3,0,4.2,4.2,0
+Tempe gembus yogya,MATCH,4,0,76,76,0,6.8,6.8,0,0.7,0.7,0,10.6,10.6,0
+Tempe Goreng ,MATCH,4,0,328,328,0,18.4,18.4,0,23.2,23.2,0,12.8,12.8,0
+Tempe kacang babi,MATCH,4,0,139,139,0,12.5,12.5,0,0.8,0.8,0,21.9,21.9,0
+Tempe kacang belimbing,MATCH,4,0,212,212,0,17.5,17.5,0,10,10,0,12.9,12.9,0
+Tempe kedelai + jagung,MATCH,4,0,143,143,0,12,12,0,5.5,5.5,0,11.4,11.4,0
+Tempe kedelai murni goreng,MATCH,4,0,350,350,0,24.5,24.5,0,26.6,26.6,0,10.4,10.4,0
+Tempe kedelai murni mentah,MATCH,4,0,201,201,0,20.8,20.8,0,8.8,8.8,0,13.5,13.5,0
+Tempe koro benguk,MATCH,4,0,141,141,0,10.2,10.2,0,1.3,1.3,0,23.2,23.2,0
+Tempe lamtoro var. gung dengan kulit,MATCH,4,0,146,146,0,11.7,11.7,0,2.3,2.3,0,19.6,19.6,0
+Tempe lamtoro var. gung tanpa kulit,MATCH,4,0,131,131,0,18,18,0,0.8,0.8,0,13,13,0
+Tempe pasar segar,MATCH,4,0,150,150,0,14,14,0,7.7,7.7,0,9.1,9.1,0
+Tempe pasar goreng,MATCH,4,0,336,336,0,20,20,0,28,28,0,7.8,7.8,0
+Tempe Sayur ,MATCH,4,0,240,240,0,6,6,0,2.7,2.7,0,49.3,49.3,0
+Tempoya,MATCH,4,0,110,110,0,1.7,1.7,0,1.3,1.3,0,21.9,21.9,0
+Tempuyak,MATCH,4,0,126,126,0,1.1,1.1,0,2.2,2.2,0,25.7,25.7,0
+Tepung Arrowroot,MATCH,4,0,355,355,0,0.7,0.7,0,0.2,0.2,0,85.2,85.2,0
+Tepung Beras,MATCH,4,0,364,364,0,7,7,0,0.5,0.5,0,80,80,0
+Tepung beras mentah,MATCH,4,0,353,353,0,7,7,0,0.5,0.5,0,80,80,0
+Tepung Ganyong,MATCH,4,0,353,353,0,0.8,0.8,0,1.7,1.7,0,83.6,83.6,0
+Tepung Gaplek,DIFF,0,4,363,345,18,1.1,2.4,-1.3,0.5,0.4,0.1,88.2,83.1,5.1
+Tepung Garut (arrowroot),MATCH,4,0,355,355,0,0.7,0.7,0,0.2,0.2,0,85.2,85.2,0
+Tepung Hunkwee,MATCH,4,0,364,364,0,4.5,4.5,0,1,1,0,83.5,83.5,0
+Tepung Ikan,MATCH,4,0,316,316,0,60.1,60.1,0,6.5,6.5,0,22.4,22.4,0
+Tepung Jagung Kuning,MATCH,4,0,355,355,0,9.2,9.2,0,3.9,3.9,0,73.7,73.7,0
+Tepung jagung putih,MATCH,4,0,355,355,0,9.2,9.2,0,3.9,3.9,0,73.7,73.7,0
+Tepung Jalejo,MATCH,4,0,388,388,0,19,19,0,7.5,7.5,0,61.2,61.2,0
+Tepung Kacang Kedelai,MATCH,4,0,347,347,0,35.9,35.9,0,20.6,20.6,0,29.9,29.9,0
+Tepung Kentang,MATCH,4,0,347,347,0,0.3,0.3,0,0.1,0.1,0,85.6,85.6,0
+Tepung Mocaf,MATCH,4,0,350,350,0,1.2,1.2,0,0.6,0.6,0,85,85,0
+Tepung Pisang,MATCH,4,0,338,338,0,2.9,2.9,0,0.4,0.4,0,80.6,80.6,0
+Tepung Sagu,MATCH,4,0,353,353,0,0.7,0.7,0,0.2,0.2,0,84.7,84.7,0
+Tepung Sente,MATCH,4,0,326,326,0,4,4,0,0.4,0.4,0,76.7,76.7,0
+Tepung singkong/ Tapioka,MATCH,4,0,363,363,0,1.1,1.1,0,0.5,0.5,0,88.2,88.2,0
+Tepung Sukun,MATCH,4,0,353,353,0,2.9,2.9,0,0.5,0.5,0,84.4,84.4,0
+Tepung Susu,MATCH,4,0,509,509,0,24.6,24.6,0,30,30,0,36.2,36.2,0
+Tepung Susu Asam untuk bayi,MATCH,4,0,418,418,0,19,19,0,9,9,0,65.5,65.5,0
+Tepung Susu Skim,MATCH,4,0,362,362,0,35.6,35.6,0,1,1,0,52,52,0
+Tepung Tales Beneng,MATCH,4,0,332,332,0,5.7,5.7,0,0.6,0.6,0,76.1,76.1,0
+Tepung Terigu,DIFF,0,4,365,333,32,8.9,9,-0.1,1.3,1,0.3,77.3,77.2,0.1
+Tepung Ubi Ungu,MATCH,4,0,354,354,0,2.8,2.8,0,0.6,0.6,0,84.4,84.4,0
+Terasi,MATCH,4,0,155,155,0,22.3,22.3,0,2.9,2.9,0,9.9,9.9,0
+Terasi dobo,MATCH,4,0,191,191,0,33.1,33.1,0,3.6,3.6,0,6.6,6.6,0
+Terasi Merah,DIFF,3,1,174,174,0,30,30,0,3.5,3.5,0,3.5,5.6,-2.1
+Terasi merah,MATCH,4,0,174,174,0,30,30,0,3.5,3.5,0,5.6,5.6,0
+Teri balado masakan,MATCH,4,0,365,365,0,23.7,23.7,0,22.3,22.3,0,17.5,17.5,0
+Teripang dendeng mentah,MATCH,4,0,462,462,0,39.1,39.1,0,32.4,32.4,0,3.5,3.5,0
+Terong,MATCH,4,0,24,24,0,1.1,1.1,0,0.2,0.2,0,5.5,5.5,0
+Terong + Oncom makanan,MATCH,4,0,285,285,0,4.3,4.3,0,25.7,25.7,0,9.5,9.5,0
+Terong Asam,MATCH,4,0,39,39,0,2.3,2.3,0,1.9,1.9,0,2,2,0
+Terong Belanda,MATCH,4,0,48,48,0,1.5,1.5,0,0.3,0.3,0,11.3,11.3,0
+Terong hintalo segar,MATCH,4,0,45,45,0,1.9,1.9,0,0.8,0.8,0,7.5,7.5,0
+Terong kukus,MATCH,4,0,23,23,0,1.8,1.8,0,0.1,0.1,0,4.9,4.9,0
+Terong segar,MATCH,4,0,28,28,0,1.1,1.1,0,0.2,0.2,0,5.5,5.5,0
+Terung belanda segar,MATCH,4,0,52,52,0,2.1,2.1,0,1.1,1.1,0,8.6,8.6,0
+Terung bengkulu segar,MATCH,4,0,52,52,0,1.1,1.1,0,0.4,0.4,0,11.2,11.2,0
+Terung panjang,MATCH,4,0,25,25,0,2.1,2.1,0,0.1,0.1,0,5.3,5.3,0
+Terung panjang kukus,MATCH,4,0,23,23,0,1.8,1.8,0,0.1,0.1,0,4.9,4.9,0
+Tespong daun,MATCH,4,0,59,59,0,2.9,2.9,0,0.3,0.3,0,13.9,13.9,0
+Tim (nasi tim),MATCH,4,0,120,120,0,2.4,2.4,0,0.4,0.4,0,26,26,0
+Tinira ninahu nggaluku,MATCH,4,0,33,33,0,1.2,1.2,0,1.3,1.3,0,4.1,4.1,0
+Tinoransak masakan,MATCH,4,0,516,516,0,17.7,17.7,0,49.5,49.5,0,0,0,0
+Tipa-tipa,MATCH,4,0,355,355,0,6.2,6.2,0,1.2,1.2,0,79.8,79.8,0
+Tiwul  ,MATCH,4,0,353,353,0,2.4,2.4,0,1.1,1.1,0,83.4,83.4,0
+Tiwul Instan,MATCH,4,0,395,395,0,3.2,3.2,0,8.5,8.5,0,76.5,76.5,0
+Toge -Tahu makanan,MATCH,4,0,392,392,0,5.4,5.4,0,28.5,28.5,0,28.4,28.4,0
+Toge Goreng ,MATCH,4,0,93.6,93.6,0,4.4,4.4,0,1.8,1.8,0,15.1,15.1,0
+Toge kacang ijo,MATCH,4,0,23,23,0,2.9,2.9,0,0.2,0.2,0,4.1,4.1,0
+Toge kacang tunggak,MATCH,4,0,35,35,0,5,5,0,0.2,0.2,0,5.8,5.8,0
+Toge kedelai,MATCH,4,0,67,67,0,9,9,0,2.6,2.6,0,6.4,6.4,0
+Toge seduh,MATCH,4,0,28,28,0,3,3,0,0.8,0.8,0,4,4,0
+Tomat air (juice) segar,MATCH,4,0,20,20,0,1,1,0,0.2,0.2,0,3.5,3.5,0
+Tomat Masak,MATCH,4,0,20,20,0,1,1,0,0.3,0.3,0,4.2,4.2,0
+Tomat merah segar,MATCH,4,0,24,24,0,1.3,1.3,0,0.5,0.5,0,4.7,4.7,0
+Tomat muda segar,MATCH,4,0,24,24,0,2,2,0,0.7,0.7,0,3.3,3.3,0
+Tumis bandeng,MATCH,4,0,189,189,0,11.3,11.3,0,15.7,15.7,0,0.6,0.6,0
+Tumis bayam bersantan,MATCH,4,0,48,48,0,1.4,1.4,0,4.2,4.2,0,2.6,2.6,0
+Ubi Cilembu,MATCH,4,0,186,186,0,1.9,1.9,0,0.2,0.2,0,44.3,44.3,0
+Ubi Jalar Goreng ,MATCH,4,0,160,160,0,3.7,3.7,0,1.3,1.3,0,55.3,55.3,0
+Ubi jalar kuning kukus,MATCH,4,0,100,100,0,0.7,0.7,0,0.3,0.3,0,23.8,23.8,0
+Ubi jalar kuning segar,MATCH,4,0,119,119,0,0.5,0.5,0,0.4,0.4,0,25.1,25.1,0
+Ubi jalar manis segar,MATCH,4,0,83,83,0,1.5,1.5,0,0.2,0.2,0,18.8,18.8,0
+Ubi Jalar Merah,MATCH,4,0,123,123,0,1.8,1.8,0,0.7,0.7,0,27.9,27.9,0
+Ubi jalar merah segar,MATCH,4,0,151,151,0,1.6,1.6,0,0.3,0.3,0,35.4,35.4,0
+Ubi Jalar Putih,MATCH,4,0,123,123,0,1.8,1.8,0,0.7,0.7,0,27.9,27.9,0
+Ubi Jalar Rebus,MATCH,4,0,114,114,0,1.4,1.4,0,9.6,9.6,0,25.6,25.6,0
+Ubi Jalar Sayur,MATCH,4,0,184,184,0,1.4,1.4,0,0.3,0.3,0,22.5,22.5,0
+Ubi jalar tinta/ kemayung,MATCH,4,0,108,108,0,0.5,0.5,0,0.4,0.4,0,25.6,25.6,0
+Ubi jalar tinta/ kemayung kukus,MATCH,4,0,165,165,0,0.9,0.9,0,0.2,0.2,0,39.8,39.8,0
+Uceng/ bunga melinjo segar,MATCH,4,0,82,82,0,5.8,5.8,0,1.3,1.3,0,11.7,11.7,0
+Udang besar segar,MATCH,4,0,56,56,0,11.4,11.4,0,0.6,0.6,0,1.2,1.2,0
+Udang galah segar,MATCH,4,0,81,81,0,16.5,16.5,0,0.3,0.3,0,3,3,0
+Udang kering,MATCH,4,0,295,295,0,62.4,62.4,0,2.3,2.3,0,1.8,1.8,0
+Udang kering mentah,MATCH,4,0,278,278,0,62.6,62.6,0,4.1,4.1,0,2.2,2.2,0
+Udang papay mentah,MATCH,4,0,273,273,0,47.8,47.8,0,3.8,3.8,0,12.5,12.5,0
+Udang segar,MATCH,4,0,91,91,0,21,21,0,0.2,0.2,0,0.1,0.1,0
+Ulat sagu panggang,MATCH,4,0,380,380,0,11.9,11.9,0,30.3,30.3,0,14.9,14.9,0
+Ulat sagu segar,MATCH,4,0,241,241,0,5.8,5.8,0,21.6,21.6,0,5.8,5.8,0
+Umbi Uwi segar,MATCH,4,0,120,120,0,2.8,2.8,0,0.5,0.5,0,82.3,82.3,0
+Umbut rotan,MATCH,4,0,34,34,0,2.4,2.4,0,0.3,0.3,0,5.5,5.5,0
+Usus Sapi,MATCH,4,0,130,130,0,14,14,0,7.2,7.2,0,1.5,1.5,0
+Uwi,MATCH,4,0,101,101,0,2,2,0,0.2,0.2,0,19.8,19.8,0
+Vermicelli,MATCH,4,0,363,363,0,8.7,8.7,0,0.4,0.4,0,78.7,78.7,0
+Wajit camilan,MATCH,4,0,303,303,0,6.3,6.3,0,2.7,2.7,0,63.3,63.3,0
+Waluh balamak,MATCH,4,0,45,45,0,0.8,0.8,0,0.9,0.9,0,8.1,8.1,0
+Widaran,MATCH,4,0,424,424,0,1.3,1.3,0,10.7,10.7,0,80.7,80.7,0
+Wijen,MATCH,4,0,568,568,0,19.3,19.3,0,51.1,51.1,0,18.1,18.1,0
+Wingko babat,MATCH,4,0,355,355,0,3.2,3.2,0,15.1,15.1,0,51.4,51.4,0
+Woku ubi,MATCH,4,0,143,143,0,3.1,3.1,0,7.8,7.8,0,15,15,0
+Worst (sosis daging),MATCH,4,0,452,452,0,14.5,14.5,0,42.3,42.3,0,2.3,2.3,0
+Wortel Segar,MATCH,4,0,42,42,0,1.2,1.2,0,0.6,0.6,0,9.3,9.3,0
+Wortel kukus,MATCH,4,0,37,37,0,1,1,0,0.6,0.6,0,8.3,8.3,0
+Wortel rebus,MATCH,4,0,28,28,0,0.7,0.7,0,0.5,0.5,0,6.3,6.3,0
+Yangko,MATCH,4,0,254,254,0,3,3,0,1.1,1.1,0,58.1,58.1,0
+Yoghurt,MATCH,4,0,52,52,0,3.3,3.3,0,2.5,2.5,0,4,4,0

@@ -1,11 +1,11 @@
 import "./DatasetPanel.css";
 
-function DatasetPanel({ datasets, activeDatasetId, onLoadDataset }) {
+function DatasetPanel({ datasets, activeDatasetId, onLoadDataset, isDatasetLoading }) {
   return (
     <section className="panel">
       <div className="panel-heading">
-        <h2>Sample Datasets</h2>
-        <p>Load realistic MBG menu presets to test the optimizer with one click.</p>
+        <h2>Dataset Demo (Opsional)</h2>
+        <p>Gunakan preset ini hanya untuk demo/testing cepat. Operasional harian tetap disarankan input manual sesuai menu MBG hari itu.</p>
       </div>
 
       <div className="dataset-grid">
@@ -18,8 +18,13 @@ function DatasetPanel({ datasets, activeDatasetId, onLoadDataset }) {
               <h3>{dataset.name}</h3>
               <p>{dataset.description}</p>
             </div>
-            <button className="secondary-button" onClick={() => onLoadDataset(dataset)} type="button">
-              Load Dataset
+            <button
+              className="secondary-button"
+              onClick={() => onLoadDataset(dataset)}
+              type="button"
+              disabled={isDatasetLoading}
+            >
+              {isDatasetLoading && activeDatasetId === dataset.id ? "Memuat..." : "Pakai Dataset Demo"}
             </button>
           </article>
         ))}

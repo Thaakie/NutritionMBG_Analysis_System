@@ -86,30 +86,30 @@ function MenuInputPanel({ foodForm, foods, error, onFoodFormChange, onAddFood, o
             <tr>
               <th>Food</th>
               <th>Kategori</th>
-              <th>Porsi</th>
-              <th>Protein</th>
-              <th>Kalori</th>
-              <th>Lemak</th>
-              <th>Karbo</th>
-              <th>Harga</th>
-              <th>Action</th>
+              <th className="text-right">Porsi</th>
+              <th className="text-right">Protein</th>
+              <th className="text-right">Kalori</th>
+              <th className="text-right">Lemak</th>
+              <th className="text-right">Karbo</th>
+              <th className="text-right">Harga</th>
+              <th className="text-center">Action</th>
             </tr>
           </thead>
           <tbody>
             {foods.map((food) => (
               <tr key={food.id}>
-                <td>{food.name}</td>
-                <td>{food.category || "Lainnya"}</td>
-                <td>
+                <td><strong>{food.name}</strong></td>
+                <td><span className="status-pill warning">{food.category || "Lainnya"}</span></td>
+                <td className="text-right">
                   {formatNumber(food.portionGrams)} g{food.portionScale && food.portionScale !== "custom" ? ` (${food.portionScale})` : ""}
                 </td>
-                <td>{formatNumber(food.protein)} g</td>
-                <td>{formatNumber(food.calories)} kcal</td>
-                <td>{formatNumber(food.fat)} g</td>
-                <td>{formatNumber(food.carbs)} g</td>
-                <td>Rp {formatNumber(food.price)}</td>
-                <td>
-                  <button className="table-button" onClick={() => onRemoveFood(food.id)} type="button">
+                <td className="text-right">{formatNumber(food.protein)} g</td>
+                <td className="text-right">{formatNumber(food.calories)} kcal</td>
+                <td className="text-right">{formatNumber(food.fat)} g</td>
+                <td className="text-right">{formatNumber(food.carbs)} g</td>
+                <td className="text-right">Rp {formatNumber(food.price)}</td>
+                <td className="text-center">
+                  <button className="table-button remove-btn" onClick={() => onRemoveFood(food.id)} type="button">
                     Remove
                   </button>
                 </td>

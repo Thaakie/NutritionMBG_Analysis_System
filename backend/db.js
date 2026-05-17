@@ -67,6 +67,18 @@ async function initializeDatabase() {
       updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
   `);
+
+  await pool.query(`
+    DELETE FROM foods a
+    USING foods b
+    WHERE a.id > b.id
+      AND LOWER(BTRIM(a.name)) = LOWER(BTRIM(b.name))
+  `);
+
+  await pool.query(`
+    CREATE UNIQUE INDEX IF NOT EXISTS foods_unique_name_ci
+    ON foods ((LOWER(BTRIM(name))))
+  `);
 }
 
 async function getDatabaseHealth() {
@@ -170,6 +182,19 @@ async function listFoods(limit = 1500) {
 }
 
 async function createFood(data) {
+  const existing = await pool.query(
+    `
+      SELECT *
+      FROM foods
+      WHERE LOWER(BTRIM(name)) = LOWER(BTRIM($1))
+      LIMIT 1
+    `,
+    [data.name],
+  );
+  if (existing.rows[0]) {
+    return existing.rows[0];
+  }
+
   const query = `
     INSERT INTO foods (name, category, portion_grams, protein, calories, fat, carbs, price)
     VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
@@ -223,6 +248,11 @@ async function deleteFood(id) {
 async function closePool() {
   await pool.end();
 }
+
+pool
+  .connect()
+  .then(() => console.log("DB Connected"))
+  .catch((err) => console.error("DB Error:", err.message));
 
 module.exports = {
   closePool,

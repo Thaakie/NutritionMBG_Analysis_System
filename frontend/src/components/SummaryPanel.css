@@ -58,3 +58,9 @@
   color: var(--muted);
   font-size: 0.82rem;
 }
+
+.comparison-row-highlight td {
+  background: linear-gradient(135deg, rgba(217, 77, 52, 0.1), rgba(233, 123, 70, 0.06));
+  font-weight: 600;
+}
+

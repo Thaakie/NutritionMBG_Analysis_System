@@ -2,4 +2,47 @@
 .controls-panel .primary-button {
   width: fit-content;
   min-width: 200px;
+  margin-top: var(--space-3);
 }
+
+.akg-minimum-note {
+  margin-top: var(--space-3);
+}
+
+.akg-minimum-note summary {
+  cursor: pointer;
+  font-weight: 700;
+  padding: var(--space-1) 0;
+}
+
+.akg-mini-table-wrap {
+  margin-top: var(--space-2);
+  overflow-x: auto;
+}
+
+.akg-mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.akg-mini-table th,
+.akg-mini-table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.akg-mini-table th {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.68rem;
+}
+
+.akg-mini-table tr.active td {
+  background: rgba(212, 95, 46, 0.08);
+  font-weight: 700;
+}
+

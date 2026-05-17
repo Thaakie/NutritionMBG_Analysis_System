@@ -66,6 +66,7 @@ function ResultsPanel({ result, recommendedFoods, historyEntries, onClearHistory
                   <p>
                     Skor {formatNumber(alternative.nutrition_score)} | Rp {formatNumber(alternative.total_cost)}
                   </p>
+                  <p>Stabilitas biaya: {formatPercent(alternative.cost_stability_score || 0)}</p>
                   <p>
                     AKG: {formatPercent(alternative.akg_percentages.calories)} kalori,{" "}
                     {formatPercent(alternative.akg_percentages.protein)} protein

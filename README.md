@@ -172,7 +172,7 @@ AI_ENGINE_URL=http://localhost:5001
 2. Buat database baru:
 
 ```sql
-CREATE DATABASE nutrisafety;
+CREATE DATABASE MBGAnalysist;
 ```
 
 3. Salin file environment:
@@ -187,9 +187,9 @@ copy .env.example .env
 ```text
 PGHOST=localhost
 PGPORT=5432
-PGDATABASE=nutrisafety
+PGDATABASE=MBGAnalysist
 PGUSER=postgres
-PGPASSWORD=postgres
+PGPASSWORD=
 ```
 
 5. Cek koneksi PostgreSQL:

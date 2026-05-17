@@ -12,7 +12,7 @@
   min-width: 0;
   padding: 8px 12px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   background: var(--input-bg);
   color: var(--heading-color);
   font: inherit;
@@ -34,7 +34,7 @@
   min-width: 180px;
   padding: 8px 10px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   background: var(--input-bg);
   color: var(--heading-color);
   font: inherit;
@@ -96,8 +96,16 @@
   color: var(--text);
 }
 
+.food-db-table-wrap tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.015);
+}
+
 .food-db-table-wrap tr.row-selected {
   background: rgba(212, 95, 46, 0.05);
+}
+
+.food-db-table-wrap tr.row-clickable {
+  cursor: pointer;
 }
 
 .food-db-table-wrap tr:hover {
@@ -106,6 +114,14 @@
 
 .food-db-table-wrap tr.row-selected:hover {
   background: rgba(212, 95, 46, 0.08);
+}
+
+.food-db-table-wrap td:nth-child(2),
+.food-db-table-wrap th:nth-child(2) {
+  position: sticky;
+  left: 42px;
+  z-index: 2;
+  background: inherit;
 }
 
 .food-db-table-wrap input[type="checkbox"] {
@@ -130,6 +146,27 @@
   display: flex;
   gap: 4px;
   flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.action-button {
+  min-width: 58px;
+  height: 34px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+}
+
+.action-button.action-danger {
+  background: rgba(186, 67, 43, 0.12);
+  color: var(--danger);
+}
+
+.action-button.action-danger:hover {
+  background: rgba(186, 67, 43, 0.2);
 }
 
 /* Pagination */
@@ -192,6 +229,28 @@
   padding: 0 14px 14px;
 }
 
+/* Auto-calculated portion field */
+.input-auto {
+  background: rgba(34, 139, 34, 0.06) !important;
+  border-color: rgba(34, 139, 34, 0.25) !important;
+  color: var(--heading-color);
+  cursor: default;
+}
+
+.input-auto:focus {
+  box-shadow: none !important;
+  border-color: rgba(34, 139, 34, 0.25) !important;
+}
+
+.portion-hint {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.72rem;
+  color: #228b22;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
 /* Responsive */
 @media (max-width: 700px) {
   .filter-bar {
@@ -203,3 +262,4 @@
     width: 100%;
   }
 }
+
