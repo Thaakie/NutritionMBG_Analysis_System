@@ -19,19 +19,14 @@ function Sidebar({ foodsCount, resultReady, dashboardUpdatePending, onDashboardS
   }, [location.pathname, dashboardUpdatePending, onDashboardSeen]);
 
   const hasSelectedFoods = foodsCount > 0;
-  const progressSteps = [
-    true,
-    hasSelectedFoods,
-    resultReady,
-    resultReady,
-  ];
+  const progressSteps = [true, hasSelectedFoods, resultReady, resultReady];
   const completedCount = progressSteps.filter(Boolean).length;
   const progressPercent = Math.round((completedCount / progressSteps.length) * 100);
 
   function getStepStatus(pathname) {
     if (pathname === "/") return "Siap";
     if (pathname === "/database") return hasSelectedFoods ? "Selesai" : "Perlu input";
-    if (pathname === "/optimize") return resultReady ? "Selesai" : (hasSelectedFoods ? "Siap jalan" : "Tunggu bahan");
+    if (pathname === "/optimize") return resultReady ? "Selesai" : hasSelectedFoods ? "Siap jalan" : "Tunggu bahan";
     if (pathname === "/results") return resultReady ? "Siap dilihat" : "Belum ada hasil";
     return "";
   }
@@ -49,7 +44,7 @@ function Sidebar({ foodsCount, resultReady, dashboardUpdatePending, onDashboardS
       <div className="sidebar-brand">
         <span className="sidebar-logo"></span>
         <div>
-          <h1 className="sidebar-title">NutriSafety</h1>
+          <h1 className="sidebar-title">NUTRI SAFETY</h1>
           <span className="sidebar-subtitle">apalah itu pokoknya</span>
         </div>
       </div>
@@ -64,42 +59,36 @@ function Sidebar({ foodsCount, resultReady, dashboardUpdatePending, onDashboardS
       </div>
 
       <nav className="sidebar-nav">
-        {navItems.map((item) => (
+        {navItems.map((item) =>
           (() => {
             const disabled = isStepDisabled(item.to);
             return (
-          <NavLink
-            key={item.to}
-            to={disabled ? "#" : item.to}
-            end={item.to === "/"}
-            className={({ isActive }) => `sidebar-link${isActive ? " active" : ""}${disabled ? " disabled" : ""}`}
-            onClick={(event) => {
-              if (disabled) {
-                event.preventDefault();
-              }
-            }}
-            aria-disabled={disabled ? "true" : "false"}
-            tabIndex={disabled ? -1 : 0}
-          >
-            <span className="sidebar-icon">{item.icon}</span>
-            <span className="sidebar-label-wrap">
-              <span className="sidebar-label">{item.label}</span>
-              <span className="sidebar-hint">{item.hint}</span>
-            </span>
-            <span className="sidebar-step-state">{getStepStatus(item.to)}</span>
-            {item.to === "/database" && foodsCount > 0 && (
-              <span className="sidebar-badge">{foodsCount}</span>
-            )}
-            {item.to === "/" && dashboardUpdatePending && (
-              <span className="sidebar-badge sidebar-badge-update">Baru</span>
-            )}
-            {item.to === "/results" && resultReady && (
-              <span className="sidebar-dot" />
-            )}
-          </NavLink>
+              <NavLink
+                key={item.to}
+                to={disabled ? "#" : item.to}
+                end={item.to === "/"}
+                className={({ isActive }) => `sidebar-link${isActive ? " active" : ""}${disabled ? " disabled" : ""}`}
+                onClick={(event) => {
+                  if (disabled) {
+                    event.preventDefault();
+                  }
+                }}
+                aria-disabled={disabled ? "true" : "false"}
+                tabIndex={disabled ? -1 : 0}
+              >
+                <span className="sidebar-icon">{item.icon}</span>
+                <span className="sidebar-label-wrap">
+                  <span className="sidebar-label">{item.label}</span>
+                  <span className="sidebar-hint">{item.hint}</span>
+                </span>
+                <span className="sidebar-step-state">{getStepStatus(item.to)}</span>
+                {item.to === "/database" && foodsCount > 0 && <span className="sidebar-badge">{foodsCount}</span>}
+                {item.to === "/" && dashboardUpdatePending && <span className="sidebar-badge sidebar-badge-update">Baru</span>}
+                {item.to === "/results" && resultReady && <span className="sidebar-dot" />}
+              </NavLink>
             );
-          })()
-        ))}
+          })(),
+        )}
       </nav>
 
       <div className="sidebar-footer">
