@@ -131,6 +131,22 @@ function DashboardPage({
         <article className="stat-card highlight-cost">
           <span className="stat-label">Total Pengeluaran ({periodDays} hari)</span>
           <strong className="stat-value">Rp {formatNumber(periodSummary.totalSpent || 0)}</strong>
+          <div className="period-toggle period-toggle-compact">
+            <button
+              className={`secondary-button ${periodDays === 7 ? "period-active" : ""}`}
+              type="button"
+              onClick={() => setPeriodDays(7)}
+            >
+              7 hari
+            </button>
+            <button
+              className={`secondary-button ${periodDays === 30 ? "period-active" : ""}`}
+              type="button"
+              onClick={() => setPeriodDays(30)}
+            >
+              30 hari
+            </button>
+          </div>
           <span className="stat-hint">berdasarkan periode terpilih</span>
           <button
             className="see-more-button"
@@ -239,22 +255,6 @@ function DashboardPage({
         <div className="panel-heading">
           <h2>Riwayat Menu ({periodDays} hari)</h2>
           <p>Riwayat 5 optimasi terakhir berdasarkan periode.</p>
-        </div>
-        <div className="period-toggle">
-          <button
-            className={`secondary-button ${periodDays === 7 ? "period-active" : ""}`}
-            type="button"
-            onClick={() => setPeriodDays(7)}
-          >
-            7 hari
-          </button>
-          <button
-            className={`secondary-button ${periodDays === 30 ? "period-active" : ""}`}
-            type="button"
-            onClick={() => setPeriodDays(30)}
-          >
-            30 hari
-          </button>
         </div>
         {!periodSummary.recentMenus.length ? (
           <p className="comparison-note">Belum ada riwayat optimasi yang tersimpan.</p>

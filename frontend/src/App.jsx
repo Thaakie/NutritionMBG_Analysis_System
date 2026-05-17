@@ -125,7 +125,11 @@ function App() {
 
   const pushToast = useCallback((message, type = "success") => {
     const id = Date.now() + Math.random();
-    setToasts((prev) => [...prev, { id, message, type }]);
+    setToasts((prev) => {
+      const hasSameToast = prev.some((toast) => toast.message === message && toast.type === type);
+      if (hasSameToast) return prev;
+      return [...prev, { id, message, type }];
+    });
     window.setTimeout(() => {
       setToasts((prev) => prev.filter((toast) => toast.id !== id));
     }, 2400);

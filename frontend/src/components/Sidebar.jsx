@@ -83,7 +83,7 @@ function Sidebar({ foodsCount, resultReady, dashboardUpdatePending, onDashboardS
                 </span>
                 <span className="sidebar-step-state">{getStepStatus(item.to)}</span>
                 {item.to === "/database" && foodsCount > 0 && <span className="sidebar-badge">{foodsCount}</span>}
-                {item.to === "/" && dashboardUpdatePending && <span className="sidebar-badge sidebar-badge-update">Baru</span>}
+                {item.to === "/" && dashboardUpdatePending && <span className="sidebar-dot" />}
                 {item.to === "/results" && resultReady && <span className="sidebar-dot" />}
               </NavLink>
             );
