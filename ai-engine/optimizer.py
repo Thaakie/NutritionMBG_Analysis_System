@@ -16,6 +16,8 @@ CATEGORY_SCORE_BONUS = {
     "Buah-buahan": 4,
     "Susu & Produk Susu": 4,
     "Sayuran": 2.5,
+    "Lauk Hewani": 2.5,
+    "Lauk Nabati": 2.2,
 }
 
 
@@ -64,6 +66,10 @@ def classify_feasibility(totals, akg_percentages, budget):
 
 def normalize_category(food):
     return food.get("category", "Lainnya")
+
+
+def is_lauk_category(category):
+    return category in {"Lauk Pauk", "Lauk Hewani", "Lauk Nabati"}
 
 
 def calculate_food_score(food):
@@ -164,11 +170,25 @@ def solve_ranked_alternatives(
             >= minimum_protein
         )
         for category in CORE_MENU_CATEGORIES:
-            category_foods = [
-                food["name"] for food in items if normalize_category(food) == category
-            ]
+            if category == "Lauk Pauk":
+                category_foods = [
+                    food["name"]
+                    for food in items
+                    if is_lauk_category(normalize_category(food))
+                ]
+            else:
+                category_foods = [
+                    food["name"] for food in items if normalize_category(food) == category
+                ]
             if category_foods:
                 problem += lpSum(decision_variables[name] for name in category_foods) >= 1
+
+        # Prefer menu yang tetap memuat buah jika tersedia kandidatnya.
+        fruit_foods = [
+            food["name"] for food in items if normalize_category(food) == "Buah-buahan"
+        ]
+        if fruit_foods:
+            problem += lpSum(decision_variables[name] for name in fruit_foods) >= 1
 
         for excluded_names in excluded_name_sets:
             problem += (
@@ -246,6 +266,15 @@ def optimize_menu(data):
 
     ranked_alternatives = sort_alternatives(ranked_alternatives)
     best_alternative = ranked_alternatives[0]
+
+    # Skor tambahan agar user bisa lihat kestabilan biaya antar alternatif.
+    baseline_cost = min(
+        alternative["total_cost"] for alternative in ranked_alternatives
+    ) or 1
+    for alternative in ranked_alternatives:
+        alternative["cost_stability_score"] = round(
+            (baseline_cost / max(alternative["total_cost"], 1)) * 100, 2
+        )
 
     return {
         **best_alternative,

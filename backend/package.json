@@ -5,13 +5,18 @@
   "scripts": {
     "start": "node server.js",
     "db:check": "node scripts/check-db.js",
-    "db:seed": "node scripts/seed-foods.js"
+    "db:seed": "node scripts/seed-foods.js",
+    "db:seed-prices": "node scripts/seed-prices.js",
+    "data:merge-tkpi": "node scripts/merge-tkpi-into-nutrition.js",
+    "data:extract-tkpi-pdf": "node scripts/extract-tkpi-pdf-to-reference.js",
+    "data:validate-report": "node scripts/generate-validation-report.js"
   },
   "dependencies": {
     "axios": "^1.14.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "pdf-parse": "^2.4.5",
     "pg": "^8.20.0"
   }
 }

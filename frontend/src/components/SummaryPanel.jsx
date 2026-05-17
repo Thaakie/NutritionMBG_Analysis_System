@@ -19,6 +19,12 @@ function SummaryPanel({ result, mealTarget, currentTotals, currentAkgPercentages
 
   const comparisonRows = [
     {
+      label: "Biaya",
+      manual: currentTotals.totalCost,
+      optimized: optimizedTotals.cost,
+      prefix: "Rp ",
+    },
+    {
       label: "Kalori",
       manual: currentTotals.totalCalories,
       optimized: optimizedTotals.calories,
@@ -41,12 +47,6 @@ function SummaryPanel({ result, mealTarget, currentTotals, currentAkgPercentages
       manual: currentTotals.totalCarbs,
       optimized: optimizedTotals.carbs,
       suffix: "g",
-    },
-    {
-      label: "Biaya",
-      manual: currentTotals.totalCost,
-      optimized: optimizedTotals.cost,
-      prefix: "Rp ",
     },
     {
       label: "AKG Kalori",
@@ -90,7 +90,7 @@ function SummaryPanel({ result, mealTarget, currentTotals, currentAkgPercentages
       </div>
 
       <div className="totals-grid metrics-wide">
-        <article className="metric-card">
+        <article className="metric-card metric-highlight-calories">
           <span>Recommended calories</span>
           <strong>{formatNumber(result?.total_calories || 0)} kcal</strong>
         </article>
@@ -106,7 +106,7 @@ function SummaryPanel({ result, mealTarget, currentTotals, currentAkgPercentages
           <span>Recommended carbs</span>
           <strong>{formatNumber(result?.total_carbs || 0)} g</strong>
         </article>
-        <article className="metric-card">
+        <article className="metric-card metric-highlight-cost">
           <span>Recommended cost</span>
           <strong>Rp {formatNumber(result?.total_cost || 0)}</strong>
         </article>
@@ -167,7 +167,7 @@ function SummaryPanel({ result, mealTarget, currentTotals, currentAkgPercentages
             </thead>
             <tbody>
               {comparisonRows.map((row) => (
-                <tr key={row.label}>
+                <tr key={row.label} className={row.label === "Biaya" ? "comparison-row-highlight" : ""}>
                   <td>{row.label}</td>
                   <td>{renderValue(row.manual, row)}</td>
                   <td>{renderValue(row.optimized, row)}</td>

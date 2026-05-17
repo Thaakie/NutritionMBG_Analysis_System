@@ -2,8 +2,8 @@
 
 /* Panels */
 .panel {
-  padding: 20px;
-  border: 1px solid var(--border);
+  padding: var(--space-5);
+  border: 2px solid var(--card-border-strong);
   border-radius: var(--radius-lg);
   background: var(--panel);
   box-shadow: var(--shadow);
@@ -11,7 +11,7 @@
 }
 
 .panel-heading {
-  margin-bottom: 16px;
+  margin-bottom: var(--space-4);
   text-align: left;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .panel-heading p {
-  margin-top: 4px;
+  margin-top: var(--space-1);
   color: var(--muted);
   font-size: 0.85rem;
 }
@@ -31,14 +31,14 @@
 .input-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: var(--space-3);
 }
 
 /* Form elements */
 label {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--space-1);
   text-align: left;
   font-weight: 500;
   color: var(--text);
@@ -56,11 +56,11 @@ label span {
 input,
 select {
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   background: var(--input-bg);
   color: var(--heading-color);
   font: inherit;
-  padding: 8px 10px;
+  padding: var(--space-2) var(--space-3);
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 
@@ -79,9 +79,9 @@ input:disabled {
 /* Metric cards */
 .totals-grid {
   display: grid;
-  gap: 8px;
+  gap: var(--space-2);
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 12px;
+  margin-top: var(--space-3);
 }
 
 .metrics-wide {
@@ -89,10 +89,10 @@ input:disabled {
 }
 
 .metric-card {
-  border: 1px solid var(--border);
+  border: 2px solid var(--card-border-strong);
   border-radius: var(--radius);
   background: var(--card-bg);
-  padding: 12px;
+  padding: var(--space-3);
   text-align: left;
   transition: background var(--transition), border-color var(--transition);
 }
@@ -103,7 +103,7 @@ input:disabled {
 
 .metric-card span {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: var(--space-1);
   color: var(--muted);
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -117,12 +117,22 @@ input:disabled {
   font-weight: 700;
 }
 
+.metric-card.metric-highlight-cost {
+  border-color: rgba(217, 77, 52, 0.35);
+  background: linear-gradient(135deg, rgba(217, 77, 52, 0.09), rgba(233, 123, 70, 0.08));
+}
+
+.metric-card.metric-highlight-calories {
+  border-color: rgba(22, 163, 74, 0.35);
+  background: linear-gradient(135deg, rgba(22, 163, 74, 0.1), rgba(77, 187, 122, 0.08));
+}
+
 /* Status */
 .status-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin: 12px 0;
+  gap: var(--space-2);
+  margin: var(--space-3) 0;
 }
 
 .status-pill {
@@ -143,12 +153,17 @@ input:disabled {
   color: var(--warning);
 }
 
+.status-pill.danger {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
 /* Buttons */
 .primary-button,
 .secondary-button,
 .table-button {
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius);
   font: inherit;
   font-weight: 600;
   font-size: 0.85rem;
@@ -158,7 +173,7 @@ input:disabled {
 
 .primary-button,
 .secondary-button {
-  padding: 10px 18px;
+  padding: 10px var(--space-4);
 }
 
 .primary-button {
@@ -185,12 +200,23 @@ input:disabled {
 .table-button {
   background: var(--danger-bg);
   color: var(--danger);
-  padding: 5px 10px;
+  padding: 6px var(--space-3);
   font-size: 0.78rem;
 }
 
 .table-button:hover {
   background: rgba(186, 67, 43, 0.18);
+}
+
+.remove-btn {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  border-radius: var(--radius);
 }
 
 .primary-button:disabled {
@@ -202,8 +228,8 @@ input:disabled {
 
 /* Info blocks */
 .reference-note {
-  margin-top: 12px;
-  padding: 10px 14px;
+  margin-top: var(--space-3);
+  padding: var(--space-3) var(--space-4);
   border-radius: var(--radius);
   border-left: 3px solid rgba(32, 79, 81, 0.4);
   background: rgba(32, 79, 81, 0.06);
@@ -213,9 +239,9 @@ input:disabled {
 }
 
 .feedback {
-  margin-top: 10px;
-  padding: 8px 12px;
-  border-radius: 8px;
+  margin-top: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
   text-align: left;
   font-size: 0.85rem;
 }
@@ -260,3 +286,4 @@ input:disabled {
     grid-template-columns: 1fr;
   }
 }
+

@@ -41,6 +41,37 @@ function parseCsvLine(line) {
   return { id, calories, proteins, fat, carbohydrate, name: name.trim() };
 }
 
+function parseCsvLineWithHeader(line, headerIndex) {
+  const parts = line.split(",");
+  if (parts.length < 7) return null;
+
+  const get = (key, fallback = "") => {
+    const idx = headerIndex[key];
+    if (idx === undefined || idx < 0 || idx >= parts.length) return fallback;
+    return parts[idx];
+  };
+
+  const id = parseInt(get("id"), 10);
+  const calories = parseFloat(get("calories")) || 0;
+  const proteins = parseFloat(get("proteins")) || 0;
+  const fat = parseFloat(get("fat")) || 0;
+  const carbohydrate = parseFloat(get("carbohydrate")) || 0;
+  const name = get("name", "");
+  const price = parseFloat(get("price")) || 0;
+
+  if (!name.trim() || Number.isNaN(id)) return null;
+
+  return {
+    id,
+    calories,
+    proteins,
+    fat,
+    carbohydrate,
+    name: name.trim(),
+    price,
+  };
+}
+
 async function main() {
   await initializeDatabase();
 
@@ -55,6 +86,8 @@ async function main() {
   const csvContent = fs.readFileSync(CSV_PATH, "utf-8");
   const lines = csvContent.split("\n").filter((line) => line.trim());
   const header = lines[0];
+  const headerParts = header.split(",").map((item) => item.trim());
+  const headerIndex = Object.fromEntries(headerParts.map((key, idx) => [key, idx]));
   const dataLines = lines.slice(1);
 
   console.log(`Membaca ${dataLines.length} baris dari CSV...`);
@@ -63,7 +96,10 @@ async function main() {
   let skipped = 0;
 
   for (const line of dataLines) {
-    const parsed = parseCsvLine(line.replace(/\r$/, ""));
+    const sanitizedLine = line.replace(/\r$/, "");
+    const parsed = headerIndex.price !== undefined
+      ? parseCsvLineWithHeader(sanitizedLine, headerIndex)
+      : parseCsvLine(sanitizedLine);
     if (!parsed) {
       skipped++;
       continue;
@@ -80,7 +116,7 @@ async function main() {
         calories: parsed.calories,
         fat: parsed.fat,
         carbs: parsed.carbohydrate,
-        price: 0, // Harga belum tersedia di dataset
+        price: parsed.price || 0,
       });
       inserted++;
 
@@ -98,7 +134,7 @@ async function main() {
   console.log(`  Dilewati: ${skipped} baris`);
   console.log(`\nCatatan:`);
   console.log(`  - Semua porsi diset 100g (sesuai standar TKPI)`);
-  console.log(`  - Harga diset Rp 0 (perlu diisi manual lewat dashboard)`);
+  console.log(`  - Harga diambil dari kolom price jika tersedia, fallback Rp 0`);
   console.log(`  - Kategori dideteksi otomatis dari nama bahan`);
 }
 

@@ -53,3 +53,14 @@ export async function deleteFoodFromDb(id) {
 
   return response.json();
 }
+
+export async function fetchOptimizationHistory(limit = 100) {
+  const response = await fetch(`${API_BASE}/api/optimization-history?limit=${limit}`);
+  if (!response.ok) {
+    const data = await response.json().catch(() => ({}));
+    throw new Error(data.error || "Gagal mengambil riwayat optimasi.");
+  }
+
+  const data = await response.json();
+  return data.items;
+}

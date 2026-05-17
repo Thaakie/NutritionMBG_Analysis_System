@@ -1,6 +1,7 @@
 import { getMealTarget } from "./akgProfiles";
 
 const elementaryTarget = getMealTarget("7-9");
+const preTeenTarget = getMealTarget("10-12");
 const middleTarget = getMealTarget("13-15");
 const teenTarget = getMealTarget("16-18");
 
@@ -24,6 +25,27 @@ export const sampleDatasets = [
       { id: 105, name: "Sayur Bayam", category: "Sayuran", portionGrams: 70, protein: 3, calories: 60, fat: 1, carbs: 9, price: 1500 },
       { id: 106, name: "Pisang", category: "Buah-buahan", portionGrams: 80, protein: 1, calories: 90, fat: 0.3, carbs: 23, price: 2000 },
       { id: 107, name: "Wortel Kukus", category: "Sayuran", portionGrams: 65, protein: 1.2, calories: 35, fat: 0.2, carbs: 8, price: 1200 },
+    ],
+  },
+  {
+    id: "pre-teen-balanced",
+    name: "Pre-Teen AKG",
+    description: "Dataset AKG usia 10-12 tahun dengan harga bahan yang lengkap.",
+    constraints: {
+      ageGroup: "10-12",
+      budget: 18000,
+      studentCount: 1,
+      minimumCalories: preTeenTarget.calories,
+      minimumProtein: preTeenTarget.protein,
+    },
+    foods: [
+      { id: 151, name: "Nasi Putih", category: "Makanan Pokok", portionGrams: 110, protein: 4.1, calories: 190, fat: 0.5, carbs: 42, price: 2600 },
+      { id: 152, name: "Telur Dadar", category: "Lauk Pauk", portionGrams: 60, protein: 8, calories: 120, fat: 8, carbs: 1, price: 3200 },
+      { id: 153, name: "Ayam Bumbu Kuning", category: "Lauk Pauk", portionGrams: 65, protein: 18, calories: 205, fat: 11, carbs: 2, price: 7800 },
+      { id: 154, name: "Tumis Buncis", category: "Sayuran", portionGrams: 75, protein: 2.2, calories: 55, fat: 2, carbs: 8, price: 1800 },
+      { id: 155, name: "Pisang Ambon", category: "Buah-buahan", portionGrams: 85, protein: 1, calories: 95, fat: 0.3, carbs: 24, price: 2200 },
+      { id: 156, name: "Susu UHT Plain", category: "Susu & Produk Susu", portionGrams: 200, protein: 6.2, calories: 130, fat: 7, carbs: 12, price: 4800 },
+      { id: 157, name: "Tempe Kukus", category: "Lauk Pauk", portionGrams: 55, protein: 10, calories: 160, fat: 8, carbs: 9, price: 2900 },
     ],
   },
   {

@@ -18,6 +18,14 @@ const app = express();
 const PORT = Number(process.env.PORT || 3000);
 const AI_ENGINE_URL = process.env.AI_ENGINE_URL || "http://localhost:5001";
 const SUPPORTED_AGE_GROUPS = ["7-9", "10-12", "13-15", "16-18"];
+const FOOD_FIELD_MAX = {
+  portion_grams: 2000,
+  protein: 200,
+  calories: 2500,
+  fat: 200,
+  carbs: 400,
+  price: 200000,
+};
 
 app.use(
   cors({
@@ -60,6 +68,10 @@ function validateFoodPayload(payload) {
 
     if (!isValidNumber(payload[field])) {
       return `${field} must be a non-negative number.`;
+    }
+
+    if (payload[field] > FOOD_FIELD_MAX[field]) {
+      return `${field} is too large. Max allowed is ${FOOD_FIELD_MAX[field]}.`;
     }
   }
 
@@ -132,6 +144,10 @@ function validateOptimizePayload(payload) {
     for (const field of ["portion_grams", "protein", "calories", "fat", "carbs", "price"]) {
       if (!isValidNumber(food[field])) {
         return `${field} for food at index ${index} must be a non-negative number.`;
+      }
+
+      if (food[field] > FOOD_FIELD_MAX[field]) {
+        return `${field} for food at index ${index} is too large. Max allowed is ${FOOD_FIELD_MAX[field]}.`;
       }
     }
   }

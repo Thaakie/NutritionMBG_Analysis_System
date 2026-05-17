@@ -1,56 +1,36 @@
-AKG_PROFILES = {
-    "7-9": {
-        "label": "Usia 7-9 tahun",
-        "daily_target": {
-            "calories": 1650,
-            "protein": 40,
-            "fat": 55,
-            "carbs": 250,
-        },
-    },
-    "10-12": {
-        "label": "Usia 10-12 tahun",
-        "daily_target": {
-            "calories": 2000,
-            "protein": 50,
-            "fat": 65,
-            "carbs": 300,
-        },
-    },
-    "13-15": {
-        "label": "Usia 13-15 tahun",
-        "daily_target": {
-            "calories": 2400,
-            "protein": 70,
-            "fat": 80,
-            "carbs": 350,
-        },
-    },
-    "16-18": {
-        "label": "Usia 16-18 tahun",
-        "daily_target": {
-            "calories": 2650,
-            "protein": 75,
-            "fat": 85,
-            "carbs": 400,
-        },
-    },
-}
+import json
+from pathlib import Path
 
-MBG_MEAL_SHARE = 0.3
+
+def _load_akg_shared_data():
+    shared_file = (
+        Path(__file__).resolve().parent.parent
+        / "frontend"
+        / "src"
+        / "data"
+        / "akgProfiles.shared.json"
+    )
+    with shared_file.open("r", encoding="utf-8") as file:
+        return json.load(file)
+
+
+_AKG_SHARED_DATA = _load_akg_shared_data()
+AKG_PROFILES = _AKG_SHARED_DATA["profiles"]
+MBG_MEAL_SHARE = _AKG_SHARED_DATA["mbgMealShare"]
+AKG_SOURCE = _AKG_SHARED_DATA.get("source", "Permenkes No. 28 Tahun 2019")
 
 
 def get_akg_profile(age_group):
     profile = AKG_PROFILES[age_group]
     meal_target = {
         key: round(value * MBG_MEAL_SHARE, 2)
-        for key, value in profile["daily_target"].items()
+        for key, value in profile["dailyTarget"].items()
     }
 
     return {
         "age_group": age_group,
         "label": profile["label"],
-        "daily_target": profile["daily_target"],
+        "daily_target": profile["dailyTarget"],
         "meal_target": meal_target,
-        "source": "Prototype reference aligned to Permenkes No. 28 Tahun 2019",
+        "source": AKG_SOURCE,
     }
