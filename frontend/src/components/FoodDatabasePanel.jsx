@@ -26,6 +26,25 @@ function parseNum(val) {
   return Number.isFinite(n) ? n : 0;
 }
 
+function formatPriceRupiah(value) {
+  const numericValue = Number(value);
+  if (!Number.isFinite(numericValue) || numericValue <= 0) return "";
+  return new Intl.NumberFormat("id-ID", { maximumFractionDigits: 0 }).format(Math.round(numericValue));
+}
+
+function formatPriceInput(raw) {
+  const digits = String(raw ?? "").replace(/\D/g, "");
+  if (!digits) return "";
+  return formatPriceRupiah(Number(digits));
+}
+
+function parsePriceInput(raw) {
+  if (raw === "" || raw === undefined || raw === null) return 0;
+  const normalized = String(raw).replace(/\./g, "").replace(",", ".");
+  const n = Number(normalized);
+  return Number.isFinite(n) ? Math.round(n) : 0;
+}
+
 function mapDbToOptimizer(food) {
   return {
     id: food.id,
@@ -186,6 +205,10 @@ function FoodDatabasePanel({ onSelectionChange, datasetFoodNames, onDatasetAppli
         return next;
       });
     } else {
+      if (name === "price") {
+        setForm((c) => ({ ...c, price: formatPriceInput(value) }));
+        return;
+      }
       setForm((c) => ({ ...c, [name]: value }));
     }
   }
@@ -220,7 +243,7 @@ function FoodDatabasePanel({ onSelectionChange, datasetFoodNames, onDatasetAppli
       calories: String(food.calories),
       fat: String(food.fat),
       carbs: String(food.carbs),
-      price: String(food.price),
+      price: formatPriceRupiah(food.price),
     });
     setError("");
     setSuccess("");
@@ -239,7 +262,7 @@ function FoodDatabasePanel({ onSelectionChange, datasetFoodNames, onDatasetAppli
     for (const field of fields) {
       const raw = form[field];
       if (raw === "" || raw === undefined) return { error: `${field} tidak boleh kosong.` };
-      const value = Number(raw);
+      const value = field === "price" ? parsePriceInput(raw) : Number(raw);
       if (!Number.isFinite(value) || value < 0) return { error: `${field} harus angka >= 0.` };
       parsed[field] = value;
     }
@@ -373,7 +396,14 @@ function FoodDatabasePanel({ onSelectionChange, datasetFoodNames, onDatasetAppli
             </label>
             <label>
               <span>Harga (Rp)</span>
-              <input min="0" name="price" placeholder="3500" type="number" step="any" value={form.price} onChange={handleFormChange} />
+              <input
+                inputMode="numeric"
+                name="price"
+                placeholder="3.500"
+                type="text"
+                value={form.price}
+                onChange={handleFormChange}
+              />
             </label>
           </div>
           <div className="form-actions">

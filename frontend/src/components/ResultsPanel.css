@@ -29,6 +29,12 @@
   gap: 8px;
 }
 
+.recommendation-list + .ranking-list {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 2px solid var(--card-border-strong);
+}
+
 .history-block {
   margin-top: 20px;
 }

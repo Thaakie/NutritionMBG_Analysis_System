@@ -179,11 +179,6 @@
   font-weight: 700;
 }
 
-.sidebar-badge.sidebar-badge-update {
-  background: rgba(22, 163, 74, 0.18);
-  color: #7fe0a1;
-}
-
 .sidebar-dot {
   width: 7px;
   height: 7px;

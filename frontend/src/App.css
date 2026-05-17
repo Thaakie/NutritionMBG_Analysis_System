@@ -250,6 +250,25 @@
   margin-bottom: var(--space-2);
 }
 
+.period-toggle-compact {
+  margin: var(--space-2) 0 var(--space-1);
+}
+
+.period-toggle-compact .secondary-button {
+  padding: 6px 12px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+}
+
+.stat-card.highlight-cost .stat-hint {
+  margin-top: 2px;
+}
+
+.stat-card.highlight-cost .see-more-button {
+  margin-top: var(--space-1);
+}
+
 .period-toggle .secondary-button.period-active {
   background: #d45f2e;
   color: #fffaf3;
