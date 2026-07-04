@@ -1,11 +1,12 @@
 FROM python:3.11-slim
 
-WORKDIR /app
+WORKDIR /workspace/ai-engine
 
-COPY requirement.txt ./
+COPY ai-engine/requirement.txt ./
 RUN pip install --no-cache-dir -r requirement.txt
 
-COPY . .
+COPY ai-engine/ ./
+COPY shared/ ../shared/
 
 EXPOSE 5001
 
