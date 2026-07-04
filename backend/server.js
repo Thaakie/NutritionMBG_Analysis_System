@@ -17,6 +17,10 @@ const {
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
 const AI_ENGINE_URL = process.env.AI_ENGINE_URL || "http://localhost:5001";
+const CLIENT_ORIGINS = (process.env.CLIENT_ORIGINS || "http://localhost:5173")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 const SUPPORTED_AGE_GROUPS = ["7-9", "10-12", "13-15", "16-18"];
 const FOOD_FIELD_MAX = {
   portion_grams: 2000,
@@ -29,7 +33,7 @@ const FOOD_FIELD_MAX = {
 
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: CLIENT_ORIGINS,
   }),
 );
 app.use(express.json());

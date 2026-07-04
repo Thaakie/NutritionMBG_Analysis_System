@@ -1,0 +1,55 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+    container_name: nutrisafety-frontend
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_API_BASE_URL: http://localhost:3000
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+    container_name: nutrisafety-backend
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      AI_ENGINE_URL: http://ai-engine:5001
+      PGHOST: postgres
+      PGPORT: 5432
+      PGDATABASE: MBGAnalysist
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      PGSSLMODE: disable
+      CLIENT_ORIGINS: http://localhost:5173
+    depends_on:
+      - ai-engine
+      - postgres
+
+  ai-engine:
+    build:
+      context: ./ai-engine
+    container_name: nutrisafety-ai-engine
+    ports:
+      - "5001:5001"
+    environment:
+      PORT: 5001
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: nutrisafety-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: MBGAnalysist
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
