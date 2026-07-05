@@ -1,0 +1,68 @@
+CATATAN PERUBAHAN TERBARU (MBG / NutriSafety)
+Tanggal: 17 Mei 2026
+
+1) DATASET DAN VALIDASI
+- Menetapkan nutrition.csv sebagai dataset kerja utama sistem.
+- Menambahkan alur referensi dataset (AKG + TKPI/PDF) untuk pembandingan/validasi data.
+- Menambahkan script pendukung ekstraksi/merge/validasi agar sumber data bisa diaudit.
+- Menambahkan catatan sumber data dan validasi agar asal data jelas.
+
+2) BACKEND / SEEDING DATA
+- Menambahkan/memperbaiki alur seed harga bahan dari CSV ke database.
+- Menegaskan bahwa proses seed mengisi database (bukan mengubah CSV langsung).
+- Menambahkan script pemeriksaan data database untuk kebutuhan testing/demo.
+
+3) RULE OPTIMASI MENU
+- Menyesuaikan aturan anti-pengulangan menu:
+  - Nasi boleh berulang.
+  - Susu dibatasi seminggu sekali.
+- Menambahkan warning komposisi kandidat agar menu lebih stabil (contoh: kurang sayuran).
+- Menambahkan feedback saat solver infeasible (tidak ada kombinasi yang memenuhi batas).
+
+4) DASHBOARD
+- Menambahkan indikator optimasi hari ini.
+- Menambahkan kartu total pengeluaran berdasarkan periode (7/30 hari).
+- Menambahkan rincian pengeluaran harian (group per hari + jumlah run/input pada hari yang sama).
+- Menambahkan riwayat menu dan detail input historis.
+- Memindahkan toggle periode 7/30 hari agar fokus ke kartu Total Pengeluaran (UX lebih kontekstual).
+
+5) HALAMAN /DATABASE (INPUT MANUAL BAHAN)
+- Menjadikan seluruh row tabel sebagai trigger checklist (tidak harus klik checkbox kecil).
+- Menambahkan auto scroll ke atas saat klik Edit agar langsung fokus ke form edit.
+- Menambahkan smooth scroll dan merapikan konsistensi tombol Edit/Hapus.
+- Memperbaiki kasus seleksi bahan reset saat pindah halaman.
+- Menambahkan toast sukses agar konsisten saat tambah/edit/hapus data.
+- Menambahkan format harga input dengan pemisah ribuan titik (contoh 10.000).
+- Memperbaiki bug format harga saat mode edit agar tidak salah besar (normalisasi nilai lama).
+- Menambahkan guard agar toast dataset tidak tampil dobel.
+
+6) HALAMAN /OPTIMIZE
+- Menambahkan highlight biaya dan kalori.
+- Menambahkan info AKG minimal per kelompok umur (ringkas) di panel kontrol.
+- Memperbaiki bug tabel preview kandidat (field bahan) saat scroll.
+- Menambahkan feedback warning yang lebih jelas untuk kondisi komposisi kandidat.
+
+7) HALAMAN /RESULTS
+- Menambahkan/merapikan perbandingan manual vs hasil optimasi.
+- Memastikan biaya berada di urutan atas tabel perbandingan.
+- Menambahkan pemisah visual (garis) agar blok rekomendasi dan ranking tidak terlihat menyatu.
+- Merapikan layout riwayat: margin, alignment badge usia, dan spacing konten agar tidak turun/berantakan.
+
+8) SIDEBAR DAN NAVIGASI
+- Merapikan posisi/spacing step cards di sidebar.
+- Mengubah indikator "Baru" menjadi dot hijau agar konsisten dengan indikator status lain.
+- Menyesuaikan progress tahapan agar user paham urutan kerja aplikasi.
+
+9) UI SYSTEM (GLOBAL)
+- Merapikan padding/margin global agar ritme visual antar panel konsisten.
+- Menegaskan border card agar hierarki konten lebih jelas.
+- Menyesuaikan border radius ke 15px sesuai arahan akhir.
+- Meningkatkan visibilitas toast global di kanan atas untuk feedback aksi penting.
+
+10) FILE CATATAN / DOKUMENTASI
+- Menambahkan catatan sumber data dan validasi dalam file teks.
+- Menata struktur folder data agar jelas mana data kerja utama dan mana referensi/laporan.
+
+Catatan:
+- Aplikasi tetap berjalan normal dengan nutrition.csv sebagai dataset utama.
+- File referensi/validasi tetap berguna untuk audit keaslian data saat presentasi/laporan.

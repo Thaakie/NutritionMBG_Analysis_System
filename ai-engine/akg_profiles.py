@@ -5,9 +5,7 @@ from pathlib import Path
 def _load_akg_shared_data():
     shared_file = (
         Path(__file__).resolve().parent.parent
-        / "frontend"
-        / "src"
-        / "data"
+        / "shared"
         / "akgProfiles.shared.json"
     )
     with shared_file.open("r", encoding="utf-8") as file:

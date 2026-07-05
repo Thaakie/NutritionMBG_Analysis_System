@@ -1,4 +1,4 @@
-import akgShared from "./akgProfiles.shared.json";
+import akgShared from "../../../shared/akgProfiles.shared.json";
 
 export const akgProfiles = akgShared.profiles;
 export const mbgMealShare = akgShared.mbgMealShare;

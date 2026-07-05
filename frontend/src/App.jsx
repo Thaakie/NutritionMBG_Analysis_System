@@ -9,7 +9,7 @@ import OptimizePage from "./pages/OptimizePage";
 import ResultsPage from "./pages/ResultsPage";
 import { getMealTarget } from "./data/akgProfiles";
 import { sampleDatasets } from "./data/sampleDatasets";
-import { createFoodInDb, fetchOptimizationHistory } from "./services/api";
+import { API_BASE, createFoodInDb, fetchOptimizationHistory } from "./services/api";
 import {
   calculateAkgPercentages,
   calculateBatchTotals,
@@ -348,7 +348,7 @@ function App() {
     setResult(null);
 
     try {
-      const response = await fetch("http://localhost:3000/api/optimize", {
+      const response = await fetch(`${API_BASE}/api/optimize`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payloadPreview),
