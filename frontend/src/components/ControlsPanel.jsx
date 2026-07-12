@@ -4,9 +4,9 @@ import { formatNumber, formatPercent } from "../utils/formatters";
 
 function ControlsPanel({ constraints, currentTotals, currentAkgPercentages, currentStatus, isSubmitting, foodsCount, foods, mealTarget, onConstraintChange, onOptimize }) {
   const budgetValue = Number(constraints.budget || 0);
-  const budgetRatio = budgetValue > 0 ? (currentTotals.totalCost / budgetValue) : 0;
-  const calorieRatio = mealTarget.calories > 0 ? (currentTotals.totalCalories / mealTarget.calories) : 0;
-  const proteinRatio = mealTarget.protein > 0 ? (currentTotals.totalProtein / mealTarget.protein) : 0;
+  const budgetRatio = budgetValue > 0 ? currentTotals.totalCost / budgetValue : 0;
+  const calorieRatio = mealTarget.calories > 0 ? currentTotals.totalCalories / mealTarget.calories : 0;
+  const proteinRatio = mealTarget.protein > 0 ? currentTotals.totalProtein / mealTarget.protein : 0;
 
   function statusToneByRatio(ratio, { minOk = 1, near = 0.9 } = {}) {
     if (ratio >= minOk) return "success";
@@ -64,7 +64,7 @@ function ControlsPanel({ constraints, currentTotals, currentAkgPercentages, curr
           <input min="0" name="budget" type="number" value={constraints.budget} onChange={onConstraintChange} />
         </label>
         <label>
-          <span>Jumlah siswa</span>
+          <span>Jumlah Penerima</span>
           <input min="1" name="studentCount" type="number" value={constraints.studentCount} onChange={onConstraintChange} />
         </label>
       </div>
@@ -123,28 +123,14 @@ function ControlsPanel({ constraints, currentTotals, currentAkgPercentages, curr
       </div>
 
       <div className="status-row">
-        <span className={`status-pill ${budgetTone}`}>
-          {budgetRatio > 1 ? "Over budget" : budgetRatio > 0.9 ? "Biaya mepet budget" : "Biaya aman"}
-        </span>
-        <span className={`status-pill ${caloriesTone}`}>
-          {calorieRatio >= 1 ? "Kalori capai target AI" : calorieRatio >= 0.85 ? "Kalori hampir capai target" : "Kalori masih jauh dari target"}
-        </span>
-        <span className={`status-pill ${proteinTone}`}>
-          {proteinRatio >= 1 ? "Protein capai target AI" : proteinRatio >= 0.85 ? "Protein hampir capai target" : "Protein masih jauh dari target"}
-        </span>
+        <span className={`status-pill ${budgetTone}`}>{budgetRatio > 1 ? "Over budget" : budgetRatio > 0.9 ? "Biaya mepet budget" : "Biaya aman"}</span>
+        <span className={`status-pill ${caloriesTone}`}>{calorieRatio >= 1 ? "Kalori capai target AI" : calorieRatio >= 0.85 ? "Kalori hampir capai target" : "Kalori masih jauh dari target"}</span>
+        <span className={`status-pill ${proteinTone}`}>{proteinRatio >= 1 ? "Protein capai target AI" : proteinRatio >= 0.85 ? "Protein hampir capai target" : "Protein masih jauh dari target"}</span>
       </div>
 
-      {missingCoreCategories.length > 0 ? (
-        <div className="feedback error">
-          Komposisi kandidat belum lengkap untuk optimasi stabil. Tambahkan: {missingCoreCategories.join(", ")}.
-        </div>
-      ) : null}
+      {missingCoreCategories.length > 0 ? <div className="feedback error">Komposisi kandidat belum lengkap untuk optimasi stabil. Tambahkan: {missingCoreCategories.join(", ")}.</div> : null}
 
-      {missingCoreCategories.length === 0 && !hasFruit ? (
-        <div className="reference-note">
-          Belum ada buah pada kandidat. Ini tidak selalu wajib, tapi disarankan agar menu lebih seimbang.
-        </div>
-      ) : null}
+      {missingCoreCategories.length === 0 && !hasFruit ? <div className="reference-note">Belum ada buah pada kandidat. Ini tidak selalu wajib, tapi disarankan agar menu lebih seimbang.</div> : null}
 
       <details className="reference-note akg-minimum-note">
         <summary>AKG minimal per kelompok umur (ringkas)</summary>

@@ -3,6 +3,7 @@ import "./FoodDatabasePanel.css";
 import { foodCategoryOptions } from "../data/foodCategories";
 import { portionUnits, getGramsPerUnit } from "../data/portionScales";
 import { createFoodInDb, deleteFoodFromDb, fetchFoods, updateFoodInDb } from "../services/api";
+import { toOptimizerFood } from "../utils/foodNormalization";
 import { formatNumber } from "../utils/formatters";
 
 const emptyForm = {
@@ -45,21 +46,6 @@ function parsePriceInput(raw) {
   return Number.isFinite(n) ? Math.round(n) : 0;
 }
 
-function mapDbToOptimizer(food) {
-  return {
-    id: food.id,
-    name: food.name,
-    category: food.category || "Lainnya",
-    portionScale: "custom",
-    portionGrams: parseNum(food.portion_grams),
-    protein: parseNum(food.protein),
-    calories: parseNum(food.calories),
-    fat: parseNum(food.fat),
-    carbs: parseNum(food.carbs),
-    price: parseNum(food.price),
-  };
-}
-
 function FoodDatabasePanel({ onSelectionChange, datasetFoodNames, onDatasetApplied, selectedFoodIds, onNotify }) {
   const [dbFoods, setDbFoods] = useState([]);
   const [selectedIds, setSelectedIds] = useState(new Set());
@@ -78,7 +64,7 @@ function FoodDatabasePanel({ onSelectionChange, datasetFoodNames, onDatasetAppli
 
   const notifySelection = useCallback(
     (foods, ids) => {
-      const selected = foods.filter((f) => ids.has(f.id)).map(mapDbToOptimizer);
+      const selected = foods.filter((f) => ids.has(f.id)).map(toOptimizerFood);
       onSelectionChange(selected);
     },
     [onSelectionChange],

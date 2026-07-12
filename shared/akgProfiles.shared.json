@@ -1,41 +1,41 @@
 {
-  "source": "Permenkes No. 28 Tahun 2019 via Andra Farm",
+  "source": "Peraturan Menteri Kesehatan Republik Indonesia Nomor 28 Tahun 2019",
   "mbgMealShare": 0.3,
   "profiles": {
-    "7-9": {
-      "label": "Usia 7-9 tahun",
+    "BALITA": {
+      "label": "BALITA (1-3 tahun)",
+      "basis": "Permenkes No. 28 Tahun 2019, usia 1-3 tahun",
       "dailyTarget": {
-        "calories": 1650,
-        "protein": 40,
-        "fat": 55,
-        "carbs": 250
+        "calories": 1350,
+        "protein": 20,
+        "fat": 45,
+        "carbs": 215,
+        "fiber": 19,
+        "water": 1150
       }
     },
-    "10-12": {
-      "label": "Usia 10-12 tahun",
+    "IBU_HAMIL": {
+      "label": "IBU HAMIL (trimester 2)",
+      "basis": "Permenkes No. 28 Tahun 2019, perempuan 19-29 tahun + trimester 2",
       "dailyTarget": {
-        "calories": 2000,
-        "protein": 50,
-        "fat": 65,
-        "carbs": 300
-      }
-    },
-    "13-15": {
-      "label": "Usia 13-15 tahun",
-      "dailyTarget": {
-        "calories": 2400,
+        "calories": 2550,
         "protein": 70,
-        "fat": 80,
-        "carbs": 350
+        "fat": 67.3,
+        "carbs": 400,
+        "fiber": 36,
+        "water": 2650
       }
     },
-    "16-18": {
-      "label": "Usia 16-18 tahun",
+    "LANSIA": {
+      "label": "LANSIA (65-80 tahun)",
+      "basis": "Permenkes No. 28 Tahun 2019, laki-laki 65-80 tahun",
       "dailyTarget": {
-        "calories": 2650,
-        "protein": 75,
-        "fat": 85,
-        "carbs": 400
+        "calories": 1800,
+        "protein": 64,
+        "fat": 50,
+        "carbs": 275,
+        "fiber": 25,
+        "water": 1800
       }
     }
   }

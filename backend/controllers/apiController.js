@@ -11,6 +11,53 @@ const {
 const { fetchAkgProfilesFromAi, requestMenuOptimization } = require("../services/aiEngineService");
 const { getSystemHealthStatus } = require("../services/healthService");
 
+function toNumber(value) {
+  if (value === "" || value === undefined || value === null) {
+    return 0;
+  }
+
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function pickValue(source, keys, fallback = undefined) {
+  for (const key of keys) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) {
+      return source[key];
+    }
+  }
+
+  return fallback;
+}
+
+function normalizeFoodRecord(food) {
+  const source = food || {};
+
+  return {
+    name: String(pickValue(source, ["name"], "")).trim(),
+    category: String(pickValue(source, ["category"], "Lainnya") || "Lainnya").trim() || "Lainnya",
+    portion_grams: toNumber(pickValue(source, ["portion_grams", "portionGrams"])),
+    protein: toNumber(pickValue(source, ["protein", "proteins"])),
+    calories: toNumber(pickValue(source, ["calories", "energy"])),
+    fat: toNumber(pickValue(source, ["fat"])),
+    carbs: toNumber(pickValue(source, ["carbs", "carbohydrate"])),
+    price: toNumber(pickValue(source, ["price"])),
+  };
+}
+
+function normalizeOptimizationPayload(payload) {
+  const source = payload || {};
+
+  return {
+    ...source,
+    budget: toNumber(source.budget),
+    minimum_calories: toNumber(source.minimum_calories),
+    minimum_protein: toNumber(source.minimum_protein),
+    student_count: source.student_count == null ? source.student_count : Number(source.student_count),
+    foods: Array.isArray(source.foods) ? source.foods.map(normalizeFoodRecord) : [],
+  };
+}
+
 function normalizeLimit(value, fallback = 10) {
   const parsedLimit = Number.parseInt(value, 10);
   if (Number.isNaN(parsedLimit) || parsedLimit <= 0) {
@@ -38,10 +85,11 @@ async function getAkgProfiles(req, res) {
 
 async function optimizeMenu(req, res) {
   try {
-    const optimizationResult = await requestMenuOptimization(req.body);
+    const normalizedPayload = normalizeOptimizationPayload(req.body);
+    const optimizationResult = await requestMenuOptimization(normalizedPayload);
 
     try {
-      const savedRun = await createOptimizationRun(req.body, optimizationResult);
+      const savedRun = await createOptimizationRun(normalizedPayload, optimizationResult);
 
       return res.json({
         ...optimizationResult,
@@ -96,7 +144,7 @@ async function getFoods(req, res) {
 
 async function createFoodItem(req, res) {
   try {
-    const food = await createFoodRecord(req.body);
+    const food = await createFoodRecord(normalizeFoodRecord(req.body));
     res.status(201).json(food);
   } catch (error) {
     console.error("Database write error:", error.message);
@@ -106,7 +154,7 @@ async function createFoodItem(req, res) {
 
 async function updateFoodItem(req, res) {
   try {
-    const food = await updateFoodRecord(req.foodId, req.body);
+    const food = await updateFoodRecord(req.foodId, normalizeFoodRecord(req.body));
     if (!food) {
       return res.status(404).json({ error: "Food not found." });
     }

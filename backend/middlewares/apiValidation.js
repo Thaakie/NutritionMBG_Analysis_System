@@ -1,4 +1,4 @@
-const SUPPORTED_AGE_GROUPS = ["7-9", "10-12", "13-15", "16-18"];
+const SUPPORTED_AGE_GROUPS = ["BALITA", "IBU_HAMIL", "LANSIA"];
 const FOOD_FIELD_MAX = {
   portion_grams: 2000,
   protein: 200,
@@ -10,6 +10,33 @@ const FOOD_FIELD_MAX = {
 
 function isValidNumber(value) {
   return typeof value === "number" && Number.isFinite(value) && value >= 0;
+}
+
+function getFirstPresentValue(payload, aliases) {
+  for (const alias of aliases) {
+    if (Object.prototype.hasOwnProperty.call(payload, alias)) {
+      return payload[alias];
+    }
+  }
+
+  return undefined;
+}
+
+function validateRequiredNumericField(payload, aliases, fieldLabel, maxValue) {
+  const value = getFirstPresentValue(payload, aliases);
+  if (value === undefined) {
+    return `Missing required field: ${fieldLabel}.`;
+  }
+
+  if (!isValidNumber(value)) {
+    return `${fieldLabel} must be a non-negative number.`;
+  }
+
+  if (value > maxValue) {
+    return `${fieldLabel} is too large. Max allowed is ${maxValue}.`;
+  }
+
+  return null;
 }
 
 function validateFoodPayload(payload) {
@@ -25,18 +52,21 @@ function validateFoodPayload(payload) {
     return "category must be a non-empty string.";
   }
 
-  const numericFields = ["portion_grams", "protein", "calories", "fat", "carbs", "price"];
-  for (const field of numericFields) {
-    if (!(field in payload)) {
-      return `Missing required field: ${field}.`;
-    }
+  const foodFields = [
+    { aliases: ["portion_grams", "portionGrams"], label: "portion_grams" },
+    { aliases: ["protein", "proteins"], label: "protein" },
+    { aliases: ["calories", "energy"], label: "calories" },
+    { aliases: ["fat"], label: "fat" },
+    { aliases: ["carbs", "carbohydrate"], label: "carbs" },
+    { aliases: ["price"], label: "price" },
+  ];
 
-    if (!isValidNumber(payload[field])) {
-      return `${field} must be a non-negative number.`;
-    }
-
-    if (payload[field] > FOOD_FIELD_MAX[field]) {
-      return `${field} is too large. Max allowed is ${FOOD_FIELD_MAX[field]}.`;
+  for (const field of foodFields) {
+    const normalizedLabel = field.label === "carbs" ? "carbs" : field.label;
+    const maxValue = FOOD_FIELD_MAX[normalizedLabel];
+    const validationError = validateRequiredNumericField(payload, field.aliases, normalizedLabel, maxValue);
+    if (validationError) {
+      return validationError;
     }
   }
 
@@ -95,24 +125,32 @@ function validateOptimizePayload(payload) {
       return `Food at index ${index} must be an object.`;
     }
 
-    const requiredFoodFields = ["name", "portion_grams", "protein", "calories", "fat", "carbs", "price"];
-    for (const field of requiredFoodFields) {
-      if (!(field in food)) {
-        return `Food at index ${index} is missing field: ${field}.`;
-      }
-    }
-
     if (typeof food.name !== "string" || !food.name.trim()) {
       return `Food at index ${index} must have a non-empty name.`;
     }
 
-    for (const field of ["portion_grams", "protein", "calories", "fat", "carbs", "price"]) {
-      if (!isValidNumber(food[field])) {
-        return `${field} for food at index ${index} must be a non-negative number.`;
+    const foodFields = [
+      { aliases: ["portion_grams", "portionGrams"], label: "portion_grams" },
+      { aliases: ["protein", "proteins"], label: "protein" },
+      { aliases: ["calories", "energy"], label: "calories" },
+      { aliases: ["fat"], label: "fat" },
+      { aliases: ["carbs", "carbohydrate"], label: "carbs" },
+      { aliases: ["price"], label: "price" },
+    ];
+
+    for (const field of foodFields) {
+      const normalizedLabel = field.label === "carbs" ? "carbs" : field.label;
+      const value = getFirstPresentValue(food, field.aliases);
+      if (value === undefined) {
+        return `Food at index ${index} is missing field: ${normalizedLabel}.`;
       }
 
-      if (food[field] > FOOD_FIELD_MAX[field]) {
-        return `${field} for food at index ${index} is too large. Max allowed is ${FOOD_FIELD_MAX[field]}.`;
+      if (!isValidNumber(value)) {
+        return `${normalizedLabel} for food at index ${index} must be a non-negative number.`;
+      }
+
+      if (value > FOOD_FIELD_MAX[normalizedLabel]) {
+        return `${normalizedLabel} for food at index ${index} is too large. Max allowed is ${FOOD_FIELD_MAX[normalizedLabel]}.`;
       }
     }
   }

@@ -16,16 +16,8 @@ function ResultsPanel({ result, recommendedFoods, historyEntries, onClearHistory
       ) : (
         <>
           <div className="status-row">
-            <span className={result.status === "optimal" ? "status-pill success" : "status-pill warning"}>
-              Solver: {result.status}
-            </span>
-            <span
-              className={
-                result.feasibility_status === "Layak" ? "status-pill success" : "status-pill warning"
-              }
-            >
-              Status: {result.feasibility_status}
-            </span>
+            <span className={result.status === "optimal" ? "status-pill success" : "status-pill warning"}>Solver: {result.status}</span>
+            <span className={result.feasibility_status === "Layak" ? "status-pill success" : "status-pill warning"}>Status: {result.feasibility_status}</span>
           </div>
 
           {result.message ? <p className="feedback warning">{result.message}</p> : null}
@@ -60,16 +52,13 @@ function ResultsPanel({ result, recommendedFoods, historyEntries, onClearHistory
                     <span>{alternative.feasibility_status}</span>
                   </div>
                   <p>{alternative.recommended_menu.join(", ")}</p>
-                  {alternative.selected_categories?.length ? (
-                    <p>Kategori: {alternative.selected_categories.join(", ")}</p>
-                  ) : null}
+                  {alternative.selected_categories?.length ? <p>Kategori: {alternative.selected_categories.join(", ")}</p> : null}
                   <p>
                     Skor {formatNumber(alternative.nutrition_score)} | Rp {formatNumber(alternative.total_cost)}
                   </p>
                   <p>Stabilitas biaya: {formatPercent(alternative.cost_stability_score || 0)}</p>
                   <p>
-                    AKG: {formatPercent(alternative.akg_percentages.calories)} kalori,{" "}
-                    {formatPercent(alternative.akg_percentages.protein)} protein
+                    AKG: {formatPercent(alternative.akg_percentages.calories)} kalori, {formatPercent(alternative.akg_percentages.protein)} protein
                   </p>
                 </article>
               ))}
@@ -96,7 +85,7 @@ function ResultsPanel({ result, recommendedFoods, historyEntries, onClearHistory
                   <span>{entry.ageGroup}</span>
                 </div>
                 <p>{new Date(entry.generatedAt).toLocaleString("id-ID")}</p>
-                <p>{formatNumber(entry.studentCount || 1)} siswa</p>
+                <p>{formatNumber(entry.studentCount || 1)}penerima</p>
               </article>
             ))}
           </div>

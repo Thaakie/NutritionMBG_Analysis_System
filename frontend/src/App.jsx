@@ -17,6 +17,7 @@ import {
   classifyFeasibility,
   scaleFoodsForStudents,
 } from "./utils/nutrition";
+import { toApiFood } from "./utils/foodNormalization";
 
 const defaultDataset = sampleDatasets[0];
 const MENU_HISTORY_STORAGE_KEY = "nutrisafety-menu-history";
@@ -71,21 +72,6 @@ function parseNum(val) {
   if (val === "" || val === undefined || val === null) return 0;
   const n = Number(val);
   return Number.isFinite(n) ? n : 0;
-}
-
-function mapDbToOptimizer(food) {
-  return {
-    id: food.id,
-    name: food.name,
-    category: food.category || "Lainnya",
-    portionScale: "custom",
-    portionGrams: parseNum(food.portion_grams),
-    protein: parseNum(food.protein),
-    calories: parseNum(food.calories),
-    fat: parseNum(food.fat),
-    carbs: parseNum(food.carbs),
-    price: parseNum(food.price),
-  };
 }
 
 function DashboardLayout({ foodsCount, resultReady, dashboardUpdatePending, onDashboardSeen }) {
@@ -182,16 +168,7 @@ function App() {
       student_count: studentCount,
       minimum_calories: mealTarget.calories,
       minimum_protein: mealTarget.protein,
-      foods: foods.map(({ name, category, portionGrams, protein, calories, fat, carbs, price }) => ({
-        name,
-        category: category || "Lainnya",
-        portion_grams: portionGrams,
-        protein,
-        calories,
-        fat,
-        carbs,
-        price,
-      })),
+      foods: foods.map(toApiFood),
     }),
     [constraints.ageGroup, budget, studentCount, foods, mealTarget.calories, mealTarget.protein, payloadExcludedMenus],
   );
@@ -257,7 +234,7 @@ function App() {
       return;
     }
     if (scenarioId === "protein-high") {
-      setConstraints((c) => ({ ...c, ageGroup: "13-15", budget: "22000" }));
+      setConstraints((c) => ({ ...c, ageGroup: "IBU_HAMIL", budget: "22000" }));
       pushToast("Skenario QA aktif: Protein tinggi.");
       return;
     }
@@ -285,16 +262,7 @@ function App() {
       // Insert dataset foods into DB (backend has duplicate guard by food name)
       for (const food of dataset.foods) {
         try {
-          await createFoodInDb({
-            name: food.name,
-            category: food.category || "Lainnya",
-            portion_grams: food.portionGrams,
-            protein: food.protein,
-            calories: food.calories,
-            fat: food.fat,
-            carbs: food.carbs,
-            price: food.price,
-          });
+          await createFoodInDb(toApiFood(food));
         } catch {
           /* skip */
         }

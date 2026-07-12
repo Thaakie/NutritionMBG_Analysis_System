@@ -1,42 +1,40 @@
 import { getMealTarget } from "./akgProfiles";
 
-const elementaryTarget = getMealTarget("7-9");
-const preTeenTarget = getMealTarget("10-12");
-const middleTarget = getMealTarget("13-15");
-const teenTarget = getMealTarget("16-18");
+const balitaTarget = getMealTarget("BALITA");
+const ibuHamilTarget = getMealTarget("IBU_HAMIL");
+const lansiaTarget = getMealTarget("LANSIA");
 
 export const sampleDatasets = [
   {
-    id: "elementary-lunch",
-    name: "Elementary Lunch",
-    description: "Balanced low-cost lunch set for elementary students.",
+    id: "balita-umum",
+    name: "Menu Balita",
+    description: "Contoh kandidat menu untuk balita berdasarkan AKG Permenkes 28/2019.",
     constraints: {
-      ageGroup: "7-9",
+      ageGroup: "BALITA",
       budget: 15000,
       studentCount: 1,
-      minimumCalories: elementaryTarget.calories,
-      minimumProtein: elementaryTarget.protein,
+      minimumCalories: balitaTarget.calories,
+      minimumProtein: balitaTarget.protein,
     },
     foods: [
       { id: 101, name: "Nasi", category: "Makanan Pokok", portionGrams: 100, protein: 4, calories: 180, fat: 0.4, carbs: 40, price: 2500 },
       { id: 102, name: "Ayam", category: "Lauk Pauk", portionGrams: 60, protein: 18, calories: 240, fat: 14, carbs: 0, price: 8000 },
       { id: 103, name: "Tempe", category: "Lauk Pauk", portionGrams: 50, protein: 10, calories: 190, fat: 11, carbs: 9, price: 3000 },
-      { id: 104, name: "Tahu", category: "Lauk Pauk", portionGrams: 55, protein: 8, calories: 120, fat: 7, carbs: 3, price: 2500 },
-      { id: 105, name: "Sayur Bayam", category: "Sayuran", portionGrams: 70, protein: 3, calories: 60, fat: 1, carbs: 9, price: 1500 },
-      { id: 106, name: "Pisang", category: "Buah-buahan", portionGrams: 80, protein: 1, calories: 90, fat: 0.3, carbs: 23, price: 2000 },
-      { id: 107, name: "Wortel Kukus", category: "Sayuran", portionGrams: 65, protein: 1.2, calories: 35, fat: 0.2, carbs: 8, price: 1200 },
+      { id: 104, name: "Sayur Bayam", category: "Sayuran", portionGrams: 70, protein: 3, calories: 60, fat: 1, carbs: 9, price: 1500 },
+      { id: 105, name: "Pisang", category: "Buah-buahan", portionGrams: 80, protein: 1, calories: 90, fat: 0.3, carbs: 23, price: 2000 },
+      { id: 106, name: "Wortel Kukus", category: "Sayuran", portionGrams: 65, protein: 1.2, calories: 35, fat: 0.2, carbs: 8, price: 1200 },
     ],
   },
   {
-    id: "pre-teen-balanced",
-    name: "Pre-Teen AKG",
-    description: "Dataset AKG usia 10-12 tahun dengan harga bahan yang lengkap.",
+    id: "ibu-hamil-umum",
+    name: "Menu Ibu Hamil",
+    description: "Contoh kandidat menu untuk ibu hamil dengan target trimester 2 sebagai acuan utama.",
     constraints: {
-      ageGroup: "10-12",
-      budget: 18000,
+      ageGroup: "IBU_HAMIL",
+      budget: 25000,
       studentCount: 1,
-      minimumCalories: preTeenTarget.calories,
-      minimumProtein: preTeenTarget.protein,
+      minimumCalories: ibuHamilTarget.calories,
+      minimumProtein: ibuHamilTarget.protein,
     },
     foods: [
       { id: 151, name: "Nasi Putih", category: "Makanan Pokok", portionGrams: 110, protein: 4.1, calories: 190, fat: 0.5, carbs: 42, price: 2600 },
@@ -49,15 +47,15 @@ export const sampleDatasets = [
     ],
   },
   {
-    id: "middle-school",
-    name: "Middle School",
-    description: "More energy and protein for older students with active schedules.",
+    id: "lansia-umum",
+    name: "Menu Lansia",
+    description: "Contoh kandidat menu untuk lansia berdasarkan AKG Permenkes 28/2019.",
     constraints: {
-      ageGroup: "13-15",
+      ageGroup: "LANSIA",
       budget: 22000,
       studentCount: 1,
-      minimumCalories: middleTarget.calories,
-      minimumProtein: middleTarget.protein,
+      minimumCalories: lansiaTarget.calories,
+      minimumProtein: lansiaTarget.protein,
     },
     foods: [
       { id: 201, name: "Nasi Merah", category: "Makanan Pokok", portionScale: "150", portionGrams: 150, protein: 5, calories: 220, fat: 1.5, carbs: 46, price: 3200 },
@@ -68,28 +66,6 @@ export const sampleDatasets = [
       { id: 206, name: "Tumis Kangkung", category: "Sayuran", portionScale: "70", portionGrams: 70, protein: 3, calories: 70, fat: 3, carbs: 8, price: 2000 },
       { id: 207, name: "Pepaya", category: "Buah-buahan", portionScale: "1/2 buah", portionGrams: 90, protein: 1, calories: 60, fat: 0.2, carbs: 15, price: 1800 },
       { id: 208, name: "Capcay", category: "Sayuran", portionScale: "80", portionGrams: 80, protein: 2.5, calories: 65, fat: 2, carbs: 10, price: 2200 },
-    ],
-  },
-  {
-    id: "senior-budget",
-    name: "Senior Budget Mix",
-    description: "Cost-aware candidates for upper-grade students while keeping AKG tracking visible.",
-    constraints: {
-      ageGroup: "16-18",
-      budget: 24000,
-      studentCount: 1,
-      minimumCalories: teenTarget.calories,
-      minimumProtein: teenTarget.protein,
-    },
-    foods: [
-      { id: 301, name: "Nasi Jagung", category: "Makanan Pokok", portionGrams: 120, protein: 4, calories: 170, fat: 1.2, carbs: 35, price: 2200 },
-      { id: 302, name: "Ayam Panggang", category: "Lauk Pauk", portionGrams: 70, protein: 20, calories: 210, fat: 12, carbs: 1, price: 8500 },
-      { id: 303, name: "Tahu Goreng", category: "Lauk Pauk", portionGrams: 60, protein: 8, calories: 140, fat: 9, carbs: 4, price: 2500 },
-      { id: 304, name: "Tempe Goreng", category: "Lauk Pauk", portionGrams: 60, protein: 9, calories: 180, fat: 11, carbs: 10, price: 2800 },
-      { id: 305, name: "Sayur Sop", category: "Sayuran", portionGrams: 90, protein: 2, calories: 55, fat: 1, carbs: 10, price: 1500 },
-      { id: 306, name: "Jeruk", category: "Buah-buahan", portionGrams: 90, protein: 1, calories: 70, fat: 0.2, carbs: 17, price: 1800 },
-      { id: 307, name: "Susu Kedelai", category: "Susu & Produk Susu", portionGrams: 200, protein: 7, calories: 110, fat: 4, carbs: 12, price: 3500 },
-      { id: 308, name: "Buncis Rebus", category: "Sayuran", portionGrams: 75, protein: 2.1, calories: 45, fat: 0.2, carbs: 8, price: 1600 },
     ],
   },
 ];
